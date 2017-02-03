@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title ><p style="font-size:30px;"color="navcolor">Textile</p></ion-title>
+ <ion-buttons left>
+      <button ion-button (click)="goToOtherPage()" >
+       <ion-icon name="MYICON"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      
+      <button ion-button icon-only color="primary" (click)="goToSaved()">
+        <ion-icon color="navcolor"ios="ios-photos-outline" md="md-photos"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="home" padding>
+
+    <div swing-stack #myswing1 [stackConfig]="stackConfig1" (throwoutleft)="voteUp1($event)" (throwoutright)="voteUp1($event)" id="card-stack"[style.zIndex]="-1000">
+    <ion-card #mycards1 swing-card *ngFor="let c of cards1; trackBy:trackByCards1 let t=index;"[style.zIndex]="-1*t" [style.marginTop]="t === 0 ? '0px':'0px'"(tap)="openModal1({images:cards1})">
+        
+          <img *ngIf="c"[src]="c"id="image">
+  
+    </ion-card>
+  </div>
+   <div swing-stack #myswing2 [stackConfig]="stackConfig2" (throwoutleft)="voteUp2()" (throwoutright)="voteUp2()" id="card-stack"[style.zIndex]="-1000">
+    <ion-card #mycards2 swing-card *ngFor="let p of cards2; trackBy:trackByCards2; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal2({images:cards2 })">
+          <img *ngIf="p"[src]="p"id="image">
+    </ion-card>
+  </div>
+    <div swing-stack #myswing3 [stackConfig]="stackConfig3" (throwoutleft)="voteUp3()" (throwoutright)="voteUp3()" id="card-stack"[style.zIndex]="-1000">
+    <ion-card #mycards2 swing-card *ngFor="let l of cards3; trackBy:trackByCards3; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal3({images:cards3 })">
+          <img *ngIf="l"[src]="l"id="image">
+    </ion-card>
+  </div>
+    <div swing-stack #myswing4 [stackConfig]="stackConfig4" (throwoutleft)="voteUp4()" (throwoutright)="voteUp4()" id="card-stack"[style.zIndex]="-1000">
+    <ion-card #mycards2 swing-card *ngFor="let g of cards4; trackBy:trackByCards3; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal4({images:cards4 })">
+          <img *ngIf="g"[src]="g"id="image">
+    </ion-card>
+  </div>
+</ion-content>
+<ion-footer >
+  <ion-toolbar>
+  <ion-buttons class="butts">
+<button (click)="saveOutfit()" color = "light" ion-button icon-only full><ion-icon color="heart" name="heart"></ion-icon></button>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
+
+  

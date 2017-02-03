@@ -1,0 +1,27 @@
+import { BuildContext, File } from './interfaces';
+export declare function getAppScriptsPackageJson(): any;
+export declare function getAppScriptsVersion(): any;
+export declare function getSystemInfo(userRootDir: string): string[];
+export declare function splitLineBreaks(sourceText: string): string[];
+export declare const objectAssign: {
+    <T, U>(target: T, source: U): T & U;
+    <T, U, V>(target: T, source1: U, source2: V): T & U & V;
+    <T, U, V, W>(target: T, source1: U, source2: V, source3: W): T & U & V & W;
+    (target: any, ...sources: any[]): any;
+};
+export declare function titleCase(str: string): string;
+export declare function writeFileAsync(filePath: string, content: string): Promise<any>;
+export declare function readFileAsync(filePath: string): Promise<string>;
+export declare function unlinkAsync(filePath: string): Promise<any>;
+export declare function rimRafAsync(directoryPath: string): Promise<null>;
+export declare function copyFileAsync(srcPath: string, destPath: string): Promise<any>;
+export declare function createFileObject(filePath: string): File;
+export declare function setContext(context: BuildContext): void;
+export declare function getContext(): BuildContext;
+export declare function transformSrcPathToTmpPath(originalPath: string, context: BuildContext): string;
+export declare function transformTmpPathToSrcPath(originalPath: string, context: BuildContext): string;
+export declare function changeExtension(filePath: string, newExtension: string): string;
+export declare function escapeHtml(unsafe: string): string;
+export declare function rangeReplace(source: string, startIndex: number, endIndex: number, newContent: string): string;
+export declare function stringSplice(source: string, startIndex: number, numToDelete: number, newContent: string): string;
+export declare function toUnixPath(filePath: string): string;

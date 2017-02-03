@@ -1,0 +1,53 @@
+.ion-ios-MYICON:before,
+.ion-ios-MYICON-circle:before,
+.ion-ios-MYICON-circle-outline:before,
+.ion-ios-MYICON-outline:before,
+.ion-md-MYICON:before,
+.ion-md-MYICON-circle:before,
+.ion-md-MYICON-circle-outline:before,
+.ion-md-MYICON-outline:before {
+  @extend .ion;
+}
+
+.ion-ios-MYICON:before,
+.ion-ios-MYICON-outline:before,
+.ion-md-MYICON:before,
+.ion-md-MYICON-outline:before {
+  content: url("https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fhanger.svg?alt=media&token=acf7f853-8a8b-4858-9568-a6addcef65c2");
+
+
+
+}
+.home {
+
+  #card-stack {
+    width: 38%;
+    height: 24%;
+  background: #FEFEFE;
+ //   border: 10px solid #6EFEFE;
+    margin: 0px auto 0;
+   
+    position: relative;
+  }
+
+  #card-stack ion-card {
+    border-radius: 5px;
+    position: absolute;
+    text-align: center;
+   
+   //top: 20%;
+    height: 90%;
+    width:90%;
+  
+
+  }
+
+
+
+}
+
+
+.butts{
+margin-left: 46%;
+
+}
