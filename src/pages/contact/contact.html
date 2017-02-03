@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-buttons >
+		<button color="navcolor" ion-button navPop icon-only>
+			<ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+		</button>
+	</ion-buttons>
+    <ion-title >
+  <p style="font-size:22px;" >My Closet</p>    </ion-title>
+ 
+ <ion-buttons end>
+      <button ion-button color="primary" (click)="addPics(pet)">
+        <ion-icon color="navcolor" name="md-add"></ion-icon>
+      </button>
+ </ion-buttons>
+      
+
+  </ion-navbar>
+
+  <ion-toolbar no-border-top>
+    <ion-segment color="navcolor" [(ngModel)]="pet">
+      <ion-segment-button color="navcolor" value="Hats">
+        Hats
+      </ion-segment-button>
+      <ion-segment-button value="Tops">
+        Tops
+      </ion-segment-button>
+      <ion-segment-button value="Bottoms">
+        Bottoms
+      </ion-segment-button>
+      <ion-segment-button value="Shoes">
+        Shoes
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <div [ngSwitch]="pet">
+    <div *ngSwitchCase="'Hats'">
+   <ion-row wrap>
+  <ion-col width-33 *ngFor="let f of items1" (click)="show(f)">
+  <img *ngIf="f"[src]="f">
+  </ion-col>
+</ion-row>
+</div>
+ 
+    <div *ngSwitchCase="'Tops'">
+   <ion-row wrap>
+  <ion-col width-33 *ngFor="let g of items2" (click)="show(g)">
+  <img *ngIf="g"[src]="g">
+  </ion-col>
+</ion-row>
+    </div>
+
+    <div *ngSwitchCase="'Bottoms'">
+ <ion-row wrap>
+  <ion-col width-33 *ngFor="let t of items3" (click)="show(t)">
+  <img *ngIf="t"[src]="t">
+  </ion-col>
+</ion-row>
+    </div>
+        <div *ngSwitchCase="'Shoes'">
+ <ion-row wrap>
+  <ion-col width-33 *ngFor="let c of items4" (click)="show(c)">
+  <img *ngIf="c"[src]="c">
+  </ion-col>
+</ion-row>
+    </div>
+  </div>
+</ion-content>
+

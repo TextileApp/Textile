@@ -1,0 +1,12 @@
+import { Node, ScriptTarget, SourceFile, SyntaxKind } from 'typescript';
+export declare function getTypescriptSourceFile(filePath: string, fileContent: string, languageVersion: ScriptTarget, setParentNodes: boolean): SourceFile;
+export declare function removeDecorators(fileName: string, source: string): string;
+export declare function findNodes(sourceFile: SourceFile, node: Node, kind: SyntaxKind, keepGoing?: boolean): Node[];
+export declare function replaceNode(filePath: string, fileContent: string, node: Node, replacement: string): string;
+export declare function removeNode(filePath: string, fileContent: string, node: Node): string;
+export declare function appendAfter(source: string, node: Node, toAppend: string): string;
+export declare function appendBefore(filePath: string, fileContent: string, node: Node, toAppend: string): string;
+export declare function insertNamedImportIfNeeded(filePath: string, fileContent: string, namedImport: string, fromModule: string): string;
+export declare function replaceNamedImport(filePath: string, fileContent: string, namedImportOriginal: string, namedImportReplacement: string): string;
+export declare function replaceImportModuleSpecifier(filePath: string, fileContent: string, moduleSpecifierOriginal: string, moduleSpecifierReplacement: string): string;
+export declare function checkIfFunctionIsCalled(filePath: string, fileContent: string, functionName: string): boolean;

@@ -1,0 +1,24 @@
+page-login {
+  h2 {
+    text-align: center;
+    margin: 10px;
+  }
+  form {
+    margin-bottom: 20px;
+    button {
+      margin-top: 20px !important;
+    }
+    p {
+      font-style: italic;
+      color: red;
+    }
+  }
+
+  .invalid {
+    border-bottom: 1px solid #FF6153;
+  }
+
+  .error-message .item-inner {
+    border-bottom: 0 !important;
+  }
+}

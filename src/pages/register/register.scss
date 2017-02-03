@@ -1,0 +1,36 @@
+page-register {
+  h2 {
+    text-align: center;
+    margin: 10px;
+  }
+  
+  ion-header::after {
+    background: transparent;
+    background-image: none;
+    
+  }
+  .toolbar {
+   
+    .toolbar-background{
+      background: transparent;
+    }
+  }
+  form {
+    button {
+      margin-top: 20px !important;
+    
+    }
+    p {
+      font-style: italic;
+      color: red;
+    }
+  }
+
+  .invalid {
+    border-bottom: 1px solid #FF6153;
+  }
+
+  .error-message .item-inner {
+    border-bottom: 0 !important;
+  }
+}
