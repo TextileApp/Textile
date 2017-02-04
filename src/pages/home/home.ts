@@ -1,7 +1,7 @@
 import { Component, ViewChild, ViewChildren, QueryList, Inject, OnInit, NgZone, NgModule} from '@angular/core';
 import * as firebase from 'firebase';
 import { LoginPage } from '../login/login';
-import {AboutPage} from '../about/about';
+import {OutfitsPage} from '../outfits/outfits';
 import { NavController,ModalController,NavParams,ViewController,ToastController } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service';
 import { ContactPage } from '../contact/contact';
@@ -402,7 +402,7 @@ decimalToHex(d, padding) {
   return hex;
 }
   goToSaved() {
-    this.navCtrl.push(AboutPage);
+    this.navCtrl.push(OutfitsPage);
   }
   saveOutfit() {
 if(this.didSaveThisOutfit == false){
