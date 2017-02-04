@@ -26975,18 +26975,6 @@ sub {
   }
 }
 
-.fab[mini] {
-  margin: 0px;
-  width: 11px;
-  height: 28px;
-  line-height: 0px;
-}
-
-button[fab].fab-map {
-  position: absolute;
-  z-index: 100;
-}
-
 .ion-ios-MYICON:before,
 .ion-ios-MYICON-outline:before,
 .ion-md-MYICON:before,
@@ -27038,6 +27026,18 @@ page-login .invalid {
 
 page-login .error-message .item-inner {
   border-bottom: 0 !important;
+}
+
+.fab[mini] {
+  margin: 0px;
+  width: 11px;
+  height: 28px;
+  line-height: 0px;
+}
+
+button[fab].fab-map {
+  position: absolute;
+  z-index: 100;
 }
 
 page-register h2 {

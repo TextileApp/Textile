@@ -51,7 +51,7 @@ firebase.initializeApp(firebaseConfig);
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
+    OutfitsPage,
     ContactPage,
     HomePage,
     imagePicker,
