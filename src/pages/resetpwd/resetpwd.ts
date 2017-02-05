@@ -33,31 +33,40 @@ export class ResetpwdPage {
     this[field + "Changed"] = true;
   }
 
-  resetPwd() {
+   resetPwd() {
+  this.submitAttempt = true;
+
     if (!this.resetpwdForm.valid){
       console.log(this.resetpwdForm.value);
     } else {
-      this.authService.resetPassword(this.resetpwdForm.value.email).then( authService => {
-        this.navCtrl.setRoot(HomePage);
-      }, error => {
-        this.loading.dismiss().then( () => {
-          let alert = this.alertCtrl.create({
-            message: error.message,
-            buttons: [
-              {
-                text: "Ok",
-                role: 'cancel'
+      this.authService.resetPassword(this.resetpwdForm.value.email)
+      .then((user) => {
+        let alert = this.alertCtrl.create({
+          message: "We just sent you a reset link to your email",
+          buttons: [
+            {
+              text: "Ok",
+              role: 'cancel',
+              handler: () => {
+                this.navCtrl.setRoot(HomePage);
               }
-            ]
-          });
-          alert.present();
+            }
+          ]
         });
+        alert.present();
+      }, (error) => {
+        var errorMessage: string = error.message;
+        let errorAlert = this.alertCtrl.create({
+          message: errorMessage,
+          buttons: [
+            {
+              text: "Ok",
+              role: 'cancel'
+            }
+          ]
+        });
+        errorAlert.present();
       });
-
-      this.loading = this.loadingCtrl.create({
-        dismissOnPageChange: true,
-      });
-      this.loading.present();
     }
   }
 

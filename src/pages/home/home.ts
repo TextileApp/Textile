@@ -54,13 +54,13 @@ export class HomePage implements OnInit{
   allPants: Array<any>;
   allShoes: Array<any>;
 
-  constructor(public navCtrl: NavController, public authService: AuthService,private http: Http, private ngZone: NgZone,public modalCtrl: ModalController,public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController,public af:AngularFire, public authService: AuthService,private http: Http, private ngZone: NgZone,public modalCtrl: ModalController,public toastCtrl: ToastController) {
            
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (!user) {
+       const authObserver = af.auth.subscribe( user => {
+  if (!user) {
         //navCtrl.push(LoginPage);
         navCtrl.setRoot(LoginPage);
-      }else if(user){
+      }else{
          
 
 this.stackConfig1 = {
@@ -110,12 +110,11 @@ this.stackConfig1 = {
     // .. otherwise
     // show the login modal page
     this.didSaveThisOutfit = false;
-    firebase.auth().onAuthStateChanged((_currentUser) => {
-
+  const authObserver = this.af.auth.subscribe( user => {
       this.ngZone.run(() => {
-        if (_currentUser) {
-          console.log("in auth subscribe", _currentUser)
-          this.currentUser = _currentUser.uid;
+        if (user) {
+          console.log("in auth subscribe", user)
+          this.currentUser = user.uid;
 
           this.loadData();
 
@@ -433,6 +432,7 @@ this.didSaveThisOutfit = true;
 
 @Component({template: `
 <ion-header>
+
   <ion-toolbar>
     <ion-title>
       Choose a photo

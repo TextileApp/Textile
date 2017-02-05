@@ -35,7 +35,7 @@
     <icon src="resources/ios/icon/icon-small.png" width="29" height="29"/>
     <icon src="resources/ios/icon/icon-small@2x.png" width="58" height="58"/>
     <icon src="resources/ios/icon/icon-small@3x.png" width="87" height="87"/>
-     </platform>
+  </platform>
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>
@@ -55,5 +55,6 @@
   <allow-navigation href="http://10.10.203.116:8100"/>
   <allow-navigation href="http://10.10.203.159:8100"/>
   <allow-navigation href="http://10.10.203.168:8100"/>
+  <allow-navigation href="http://10.10.203.67:8100"/>
   <icon src="resources/ios/icon/icon-small@3x.png"/>
 </widget>

@@ -22,13 +22,13 @@
        
 
        
-  <ion-col width-33 *ngFor="let f of outfits">
+  <ion-col width-33 *ngFor="let f of outfits | async">
     
 
     <ion-card no-padding> 
         <div style="position: relative; top:0%; left:0px;">
     <ion-fab right top>
-      <button *ngIf ="isEnabled"ion-fab mini class="fab-map" mini color="navcolor" (click)="deleteOutfits(f)">
+      <button *ngIf ="isEnabled"ion-fab mini class="fab-map" mini color="navcolor" (click)="deleteOutfits(f.$key)">
         <ion-icon name="close"></ion-icon>
       </button>
     </ion-fab>

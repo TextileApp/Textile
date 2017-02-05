@@ -46,33 +46,34 @@ export class LoginPage {
   }
 
   loginUser(){
-    this.submitAttempt = true;
-
-    if (!this.loginForm.valid){
-      console.log(this.loginForm.value);
-    } else {
-      this.authService.doLogin(this.loginForm.value.email, this.loginForm.value.password).then( authService => {
-        this.navCtrl.setRoot(HomePage);
-      }, error => {
-        this.loading.dismiss().then( () => {
-          let alert = this.alertCtrl.create({
-            message: error.message,
-            buttons: [
-              {
-                text: "Ok",
-                role: 'cancel'
-              }
-            ]
+ this.submitAttempt = true;
+      
+      if (!this.loginForm.valid){
+        console.log(this.loginForm.value);
+      } else {
+        this.authService.loginUser(this.loginForm.value.email, this.loginForm.value.password)
+        .then( authData => {
+          this.navCtrl.setRoot(HomePage);
+        }, error => {
+          this.loading.dismiss().then( () => {
+            let alert = this.alertCtrl.create({
+              message: error.message,
+              buttons: [
+                {
+                  text: "Ok",
+                  role: 'cancel'
+                }
+              ]
+            });
+            alert.present();
           });
-          alert.present();
         });
-      });
 
-      this.loading = this.loadingCtrl.create({
-        dismissOnPageChange: true,
-      });
-      this.loading.present();
-    }
+        this.loading = this.loadingCtrl.create({
+          dismissOnPageChange: true,
+        });
+        this.loading.present();
+      }
   }
 
 }
