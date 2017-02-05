@@ -49,6 +49,7 @@ export class HomePage implements OnInit{
   recentCard4: string = '';
   storage = firebase.storage();
   public currentUser: any;
+  isEmpty: boolean;
   allHats: Array<any>;
   allShirts: Array<any>;
   allPants: Array<any>;
@@ -202,6 +203,8 @@ goToOtherPage() {
 let modal = this.modalCtrl.create(imagePicker, imagesArray);
      modal.onDidDismiss(data => {
     this.cards1.unshift(data.image);
+    this.cards1.pop();
+    
    });
    modal.present();
  }
@@ -211,6 +214,7 @@ let modal = this.modalCtrl.create(imagePicker, imagesArray);
 let modal = this.modalCtrl.create(imagePicker, imagesArray);
      modal.onDidDismiss(data => {
     this.cards2.unshift(data.image);
+    this.cards2.pop();
    });
    modal.present();
  }
@@ -221,6 +225,7 @@ let modal = this.modalCtrl.create(imagePicker, imagesArray);
 let modal = this.modalCtrl.create(imagePicker, imagesArray);
      modal.onDidDismiss(data => {
     this.cards3.unshift(data.image);
+    this.cards3.pop();
    });
    modal.present();
  }
@@ -231,6 +236,7 @@ let modal = this.modalCtrl.create(imagePicker, imagesArray);
 let modal = this.modalCtrl.create(imagePicker, imagesArray);
      modal.onDidDismiss(data => {
     this.cards4.unshift(data.image);
+    this.cards4.pop();
    });
    modal.present();
  }
@@ -258,12 +264,12 @@ result1.push(element);
          result1.push(dupe);
          result1.push(url);
 
-     
+      this.cards1 = result1;
 
     });
   }
 });
- this.cards1 = result1;
+
 
 var result2 = [];
 
@@ -283,15 +289,10 @@ firebase.database().ref(this.currentUser+'/Tops/').once('value', function(snapsh
        var dupe = url;
    result2.push(dupe);
          result2.push(url);
-  
+   this.cards2 = result2;
 });
   }
 });
- this.cards2 = result2;
-
-
-   
-
   
   var result3 = [];
 //this.cards3 = [];
@@ -422,9 +423,30 @@ newPostRef.set(
     
     });
     toast.present();
+    this.didSaveThisOutfit = true;
   }
-this.didSaveThisOutfit = true;
+  else if(this.didSaveThisOutfit == true){
+var newChildRef = firebase.database().ref(firebase.auth().currentUser.uid+'/outfits/');
+  newChildRef.remove(function(error) {
+
+
+  });
+
+ let toast = this.toastCtrl.create({
+      message: 'Outfit removed successfully 💔',
+      duration: 3000,
+      position:"middle"
+    
+    });
+    toast.present();
+    this.didSaveThisOutfit = false;
+
+
+  
 }
+
+}
+
   }
   
 

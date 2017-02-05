@@ -102,7 +102,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		jvZBJNSWWvSjl8tzy28lxyuYymc=
+		LEP6qz+OWfOveBMiI2ZJ8aSyY/8=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -110,7 +110,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		1VEyZh4c+7JO3g0eFYrTqUqqq7E=
+		KaRX6bRmJ/v07HB89Zljo8efrgs=
 		</data>
 		<key>GMEmptyFolder@1x.png</key>
 		<data>
@@ -138,11 +138,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		4lb7eY4s2xqan7GT2yiKMbabos8=
+		X1X7wzMkV0nEnP+7rjEwelGggSg=
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		h5Bz3QDiRbUtGx1/4mN1AcCNb1o=
+		Q4HRsI0AI39cda6kFt2JnKZKajU=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -163,7 +163,7 @@
 		</dict>
 		<key>config.xml</key>
 		<data>
-		joh5o3kRXd/SX5DwaIJMI6wzepc=
+		+zkFUNeEUvOCXOsF61S42dctWaM=
 		</data>
 		<key>de.lproj/GMImagePicker.strings</key>
 		<dict>
@@ -329,15 +329,15 @@
 		</data>
 		<key>www/build/main.css</key>
 		<data>
-		H60TP2Jfd1b9aFZRJq0LF7vYuF8=
+		4771Xtjfwud9wtSx64w777C8qPY=
 		</data>
 		<key>www/build/main.js</key>
 		<data>
-		q3L61wwFwiHzNSOMlgHQlUKQBCQ=
+		ZAu7wWC9e1SNnlit1pPG7MWhGVk=
 		</data>
 		<key>www/build/main.js.map</key>
 		<data>
-		qIbcmrbd/9weeNELy1dWe6Awd1w=
+		bHCaEKau3JSyTU2t4k0QsercmSM=
 		</data>
 		<key>www/build/polyfills.js</key>
 		<data>
@@ -778,11 +778,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			jvZBJNSWWvSjl8tzy28lxyuYymc=
+			LEP6qz+OWfOveBMiI2ZJ8aSyY/8=
 			</data>
 			<key>hash2</key>
 			<data>
-			hjk9hXwBhYKb8jcSbwkWSBI9vEk5KrAbL5S04Ah+IIg=
+			pN+8K/XEJ69EcS8DMA7BPSrhAIcq3OoZtM9czmLCEnM=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -800,11 +800,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			1VEyZh4c+7JO3g0eFYrTqUqqq7E=
+			KaRX6bRmJ/v07HB89Zljo8efrgs=
 			</data>
 			<key>hash2</key>
 			<data>
-			XxsdcBQaaxfMJysW6rhPkSlI8nML3m8Z40zwEMMp0Zg=
+			KzIrbZ3cERUlbJ8SMc53UEoGHtGxvyInPQ4jKZwPL30=
 			</data>
 		</dict>
 		<key>GMEmptyFolder@1x.png</key>
@@ -877,11 +877,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			h5Bz3QDiRbUtGx1/4mN1AcCNb1o=
+			Q4HRsI0AI39cda6kFt2JnKZKajU=
 			</data>
 			<key>hash2</key>
 			<data>
-			ix0PvvFhD0yTPqMv6Zqbz6np5Xz9a3MX/LZOal8PKoA=
+			+8DIjHTuH+oSrcbFaUWQU5EDquWef2UVxhvFJRYBP70=
 			</data>
 		</dict>
 		<key>archived-expanded-entitlements.xcent</key>
@@ -912,11 +912,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			joh5o3kRXd/SX5DwaIJMI6wzepc=
+			+zkFUNeEUvOCXOsF61S42dctWaM=
 			</data>
 			<key>hash2</key>
 			<data>
-			RJl9IfRuNthhvALkFJ4GEvaq/lyE57GWS2Eq/h4WDE4=
+			qsL4LnYr8dLzhn44zyizYjiAQEsCv4pBwy2H0K8gtgI=
 			</data>
 		</dict>
 		<key>de.lproj/GMImagePicker.strings</key>
@@ -1298,33 +1298,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			H60TP2Jfd1b9aFZRJq0LF7vYuF8=
+			4771Xtjfwud9wtSx64w777C8qPY=
 			</data>
 			<key>hash2</key>
 			<data>
-			F+aefXD5ZoLfz7JLehRuOWwwBdfoFY7sg2FrjerqtEU=
+			0rGMYsZu3J3kZRxxIvrNC6+AFmTB4Mnthc1vzQEec2E=
 			</data>
 		</dict>
 		<key>www/build/main.js</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			q3L61wwFwiHzNSOMlgHQlUKQBCQ=
+			ZAu7wWC9e1SNnlit1pPG7MWhGVk=
 			</data>
 			<key>hash2</key>
 			<data>
-			D0dQ9vBQH1BpXgcSILLZ/cB3F02Nb3UWO5e0rRvtZwo=
+			YKm6+I/aH6dcd3hxXmVQ3aYA1f3OMF20WjNStAh+T+M=
 			</data>
 		</dict>
 		<key>www/build/main.js.map</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			qIbcmrbd/9weeNELy1dWe6Awd1w=
+			bHCaEKau3JSyTU2t4k0QsercmSM=
 			</data>
 			<key>hash2</key>
 			<data>
-			O7ezeEuBBDAerbUfT39vaDznDRb3cFSLArBZDjbhcQo=
+			cFfVF+XLEExyKoXHpPI1xBPIPinO2vtZzGGulxwtZqs=
 			</data>
 		</dict>
 		<key>www/build/polyfills.js</key>
