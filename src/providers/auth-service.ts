@@ -1,40 +1,49 @@
 import { Injectable } from '@angular/core';
-import firebase from 'firebase';
+import { AuthProviders, AngularFireAuth, FirebaseAuthState, AuthMethods } from 'angularfire2';
 
-/*
-  Generated class for the AuthService provider.
-
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular 2 DI.
-*/
 @Injectable()
 export class AuthService {
+  private authState: FirebaseAuthState;
 
-  public fireAuth: any;
-  public userData: any;
-
-  constructor() {
-    this.fireAuth = firebase.auth();
-    this.userData = firebase.database().ref('/userData');
+  constructor(public auth$: AngularFireAuth) {
+    this.authState = auth$.getAuth();
+    auth$.subscribe((state: FirebaseAuthState) => {
+      this.authState = state;
+    });
   }
 
-  doLogin(email: string, password: string): any {
-    return this.fireAuth.signInWithEmailAndPassword(email, password);
+  get authenticated(): boolean {
+    return this.authState !== null;
   }
-
-  register(email: string, password: string): any {
-    return this.fireAuth.createUserWithEmailAndPassword(email, password)
-      .then((newUser) => {
-        this.userData.child(newUser.uid).set({email: email});
-      });
-  }
-
   resetPassword(email: string): any {
-    return this.fireAuth.sendPasswordResetEmail(email);
+    return firebase.auth().sendPasswordResetEmail(email);
   }
-
-  doLogout(): any {
-    return this.fireAuth.signOut();
+  signInWithFacebook(): firebase.Promise<FirebaseAuthState> {
+    return this.auth$.login({
+      provider: AuthProviders.Facebook,
+      method: AuthMethods.Popup
+    });
   }
-
+  loginUser(newEmail: string, newPassword: string): any {
+    return this.auth$.login({
+      email: newEmail,
+      password: newPassword
+    });
+  }
+  signOut(): void {
+    this.auth$.logout();
+  }
+  signupUser(newEmail: string, newPassword: string): any {
+    return this.auth$.createUser({ 
+      email: newEmail, 
+      password: newPassword 
+    });
+  }
+  displayName(): string {
+    if (this.authState != null) {
+      return this.authState.facebook.displayName;
+    } else {
+      return '';
+    }
+  }
 }

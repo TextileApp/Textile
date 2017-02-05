@@ -41,19 +41,21 @@ export class RegisterPage {
     if (!this.registerForm.valid){
       console.log(this.registerForm.value);
     } else {
-      this.authService.register(this.registerForm.value.email, this.registerForm.value.password).then( authService => {
+      this.authService.signupUser(this.registerForm.value.email, this.registerForm.value.password)
+      .then(() => {
         this.navCtrl.setRoot(HomePage);
-      }, error => {
+      }, (error) => {
         this.loading.dismiss().then( () => {
-          let alert = this.alertCtrl.create({
-            message: error.message,
-            buttons: [
-              {
-                text: "Ok",
-                role: 'cancel'
-              }
-            ]
-          });
+          var errorMessage: string = error.message;
+            let alert = this.alertCtrl.create({
+              message: errorMessage,
+              buttons: [
+                {
+                  text: "Ok",
+                  role: 'cancel'
+                }
+              ]
+            });
           alert.present();
         });
       });
