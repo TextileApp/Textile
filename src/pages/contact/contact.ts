@@ -1,9 +1,10 @@
-import { Component, Inject, NgZone,NgModule,OnInit } from '@angular/core';
+import { Component, Inject, NgZone,NgModule,OnInit} from '@angular/core';
 import { Camera } from 'ionic-native';
 import { PhotoViewer } from 'ionic-native';
-import { NavController } from 'ionic-angular';
+import { NavController,PopoverController } from 'ionic-angular';
 import { ImagePicker, File} from 'ionic-native';
 import { FirebaseApp,FirebaseListObservable,AngularFire } from 'angularfire2';
+import { PopoverContentPage } from './popover';
 
 import * as firebase from 'firebase';
 declare var window: any
@@ -50,7 +51,7 @@ export class ContactPage {
 
 
 
-  constructor(public navCtrl: NavController,@Inject(FirebaseApp) firebaseApp: any,private ngZone: NgZone
+  constructor(public navCtrl: NavController,@Inject(FirebaseApp) firebaseApp: any,private ngZone: NgZone,public popoverCtrl: PopoverController
  ) {
    this.storageRef = firebaseApp.storage().ref();
     this.currentUser = firebase.auth().currentUser.uid;
@@ -155,7 +156,12 @@ result4.push(element);
   }
   
 
-
+  openPopover(myEvent) {
+    let popover = this.popoverCtrl.create(PopoverContentPage,{pet:this.pet,user:this.currentUser});
+    popover.present({
+      ev: myEvent
+    });
+  }
 
 
  addPics(clothes: string)

@@ -3,6 +3,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { OutfitsPage } from '../pages/outfits/outfits';
 import { ContactPage } from '../pages/contact/contact';
+import { PopoverContentPage } from '../pages/contact/popover';
 import { HomePage,imagePicker } from '../pages/home/home';
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 import { LoginPage } from '../pages/login/login';
@@ -37,6 +38,7 @@ firebase.initializeApp(firebaseConfig);
     RegisterPage,
     ResetpwdPage,
     imagePicker,
+    PopoverContentPage
     
   ],
   imports: [
@@ -57,7 +59,8 @@ firebase.initializeApp(firebaseConfig);
     imagePicker,
     LoginPage,
     RegisterPage,
-    ResetpwdPage
+    ResetpwdPage,
+    PopoverContentPage
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
