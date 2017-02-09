@@ -26975,6 +26975,23 @@ sub {
   }
 }
 
+.fab[mini] {
+  margin: 0px;
+  width: 11px;
+  height: 28px;
+  line-height: 0px;
+}
+
+button[fab].fab-map {
+  position: absolute;
+  z-index: 100;
+}
+
+ion-row,
+ion-col {
+  padding: 0;
+}
+
 .ion-ios-MYICON:before,
 .ion-ios-MYICON-outline:before,
 .ion-md-MYICON:before,
