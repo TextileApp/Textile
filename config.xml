@@ -56,5 +56,6 @@
   <allow-navigation href="http://10.10.203.159:8100"/>
   <allow-navigation href="http://10.10.203.168:8100"/>
   <allow-navigation href="http://10.10.203.67:8100"/>
+  <allow-navigation href="http://153.90.41.106:8100"/>
   <icon src="resources/ios/icon/icon-small@3x.png"/>
 </widget>

@@ -11,6 +11,7 @@ import { RegisterPage } from '../pages/register/register';
 import { ResetpwdPage } from '../pages/resetpwd/resetpwd';
 import { AuthService } from '../providers/auth-service';
 import * as firebase from 'firebase';
+import { ShareService } from '../providers/ShareService';
 
 import { SwingModule } from 'angular2-swing';
 export const firebaseConfig = {
@@ -64,7 +65,7 @@ firebase.initializeApp(firebaseConfig);
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthService
+    AuthService,ShareService
   ]
 })
 export class AppModule {}

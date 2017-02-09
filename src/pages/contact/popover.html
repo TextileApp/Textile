@@ -1,21 +1,19 @@
 
-      <ion-list>
+
       <ion-row>
         <ion-col>
-      
-         <ion-item>
-      <a color="navcolor" ion-item (click)="addPics(user,pet)">
-        <ion-icon icon="add"></ion-icon>
-        </a>
-    </ion-item>
+
+         <button class="add" (click)="addPics()" ion-item  detail-none  icon-only>
+  <ion-icon color="navcolor" name="add"></ion-icon>
+</button>
+
         </ion-col>
         <ion-col>
-     <button color="navcolor" ion-item (click)="addPics(user,pet)">
-        <ion-icon icon="remove"></ion-icon>
-      </button>
+          <button class="add" (click)="canDelete()" ion-item  detail-none  icon-only>
+  <ion-icon color="navcolor" name="remove"></ion-icon>
+</button>
        </ion-col>
       </ion-row>
-    </ion-list>
+
         
       
-

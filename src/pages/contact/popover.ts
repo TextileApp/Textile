@@ -1,7 +1,8 @@
 import { Component,NgZone } from '@angular/core';
 import { ViewController,NavParams } from 'ionic-angular';
 import { ImagePicker, File} from 'ionic-native';
-
+import {ShareService} from '../../providers/ShareService';
+import { Events } from 'ionic-angular';
 declare var window: any
 
 function generateUUID(){
@@ -25,12 +26,19 @@ export class PopoverContentPage {
   currentImage
    user: string;
     pet: string;
-constructor(public viewCtrl: ViewController,private ngZone: NgZone,private navParams: NavParams) {}
+    
+constructor(public viewCtrl: ViewController,private ngZone: NgZone,private navParams: NavParams,private shareService: ShareService) {}
   ngOnInit() {
     if (this.navParams.data) {
       this.user = this.navParams.data.user;
       this.pet = this.navParams.data.pet;
     }
+  }
+
+  canDelete(){
+    this.shareService.setCanDelete(true);
+    this.close();    
+
   }
   doImageResize(img, callback, MAX_WIDTH: number = 900, MAX_HEIGHT: number = 900) {
     var canvas = document.createElement("canvas");
@@ -68,105 +76,14 @@ constructor(public viewCtrl: ViewController,private ngZone: NgZone,private navPa
 
     image.src = img;
   }
-addPics(user:string,clothes:string )
-{
+addPics(){
+  this.shareService.setIsUploading(true);
+    this.close();  
+}
 
-var options =  {
-          // if no title is passed, the plugin should use a sane default (preferrably the same as it was, so check the old one.. there are screenshots in the marketplace doc)
-          maximumImagesCount: 10,
-          title: 'Select photos',
-        // optional default no helper message above the picker UI
-          // be careful with these options as they require additional processing
-         
-          //             outputType: imagePicker.OutputType.BASE64_STRING
-        }
-     
-ImagePicker.getPictures(options).then((results) => {
-  
-  for (var i = 0; i < results.length; i++) {
-    
-      console.log('Image URI: ' + results[i]);
-        window.resolveLocalFileSystemURL('file:///'+results[i], (fileEntry) => {
-            var uuid = generateUUID();
-            this.doImageResize(results[i], (_data) => {
-        this.ngZone.run(() => {
-          this.currentImage = _data
-        })
-      }, 640)
-                    fileEntry.file((resFile) => {
-
-          var reader = new FileReader();
-          reader.onloadend = (evt: any) => {
-            var imgBlob: any = new Blob([evt.target.result], { type: 'image/jpeg' });
-            imgBlob.name = uuid+'.jpg';
-      var uploadTask = this.storageRef.child(user+'/'+clothes+'/'+imgBlob.name).put(imgBlob);
-        console.log(imgBlob.name+'fuck the popopopop');
-       console.log("FUCK MY GERORIIIM");
-
-// Listen for state changes, errors, and completion of the upload.
-uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
-  function(snapshot) {
-    // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-    var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-    console.log('Upload is ' + progress + '% done');
-    switch (snapshot.state) {
-      case firebase.storage.TaskState.PAUSED: // or 'paused'
-        console.log('Upload is paused');
-        break;
-      case firebase.storage.TaskState.RUNNING: // or 'running'
-        console.log('Upload is running');
-        break;
-    }
-  }, function(error) {
-  switch (error.code) {
-    case 'storage/unauthorized':
-      // User doesn't have permission to access the object
-       console.log('NIGGA WE unauthorized IT');
-      break;
-
-    case 'storage/canceled':
-      // User canceled the upload
-             console.log('NIGGA WE CANCELLED IT');
-
-      break;
-
- 
-    case 'storage/unknown':
-      // Unknown error occurred, inspect error.serverResponse
-                   console.log(error.serverResponse);
-
-      break;
-  }
-}, function() {
-       console.log('NIGGA WE MADE IT');
-  // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-  var downloadURL = uploadTask.snapshot.downloadURL;
-     this.db = firebase.database().ref(firebase.auth().currentUser.uid+'/'+clothes);
-var newPostRef = this.db.push();
-newPostRef.set(
-  downloadURL
-);
-});
          
         
-};
-          reader.onerror = (e) => {
-            console.log("Failed file read: " + e.toString());
-          };
-          reader.readAsArrayBuffer(resFile);
-
-        });
-      }, (err) => {
-        console.log(err);
-        alert(JSON.stringify(err))
-      });
-  
-    }
-}, (err) => {
-      console.log("resolveLocalFileSystemURL", err);
-      alert(JSON.stringify(err))
-    });
-}
+   
 close() {
     this.viewCtrl.dismiss();
   }
