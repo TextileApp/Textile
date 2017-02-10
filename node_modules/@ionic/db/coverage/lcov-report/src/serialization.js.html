@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/serialization.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">src</a> serialization.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>27/27</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>16/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>6/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>27/27</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2255x</span>
+<span class="cline-any cline-yes">5778x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2255x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7878x</span>
+<span class="cline-any cline-yes">85x</span>
+<span class="cline-any cline-yes">7793x</span>
+<span class="cline-any cline-yes">4496x</span>
+<span class="cline-any cline-yes">3297x</span>
+<span class="cline-any cline-yes">984x</span>
+<span class="cline-any cline-yes">2313x</span>
+<span class="cline-any cline-yes">58x</span>
+<span class="cline-any cline-yes">58x</span>
+<span class="cline-any cline-yes">58x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2255x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3403x</span>
+<span class="cline-any cline-yes">7560x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3403x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10497x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">10485x</span>
+<span class="cline-any cline-yes">6172x</span>
+<span class="cline-any cline-yes">4313x</span>
+<span class="cline-any cline-yes">670x</span>
+<span class="cline-any cline-yes">3643x</span>
+<span class="cline-any cline-yes">240x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3403x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const PRIMITIVES = [
+  'string', 'number', 'boolean', 'function', 'symbol' ]
+&nbsp;
+function modifyObject(doc) {
+  Object.keys(doc).forEach(key =&gt; {
+    doc[key] = deserialize(doc[key])
+  })
+  return doc
+}
+&nbsp;
+export function deserialize(value) {
+  if (value == null) {
+    return value
+  } else if (PRIMITIVES.indexOf(typeof value) !== -1) {
+    return value
+  } else if (Array.isArray(value)) {
+    return value.map(deserialize)
+  } else if (value.$reql_type$ === 'TIME') {
+    const date = new Date()
+    date.setTime(value.epoch_time * 1000)
+    return date
+  } else {
+    return modifyObject(value)
+  }
+}
+&nbsp;
+function jsonifyObject(doc) {
+  Object.keys(doc).forEach(key =&gt; {
+    doc[key] = serialize(doc[key])
+  })
+  return doc
+}
+&nbsp;
+export function serialize(value) {
+  if (value == null) {
+    return value
+  } else if (PRIMITIVES.indexOf(typeof value) !== -1) {
+    return value
+  } else if (Array.isArray(value)) {
+    return value.map(serialize)
+  } else if (value instanceof Date) {
+    return {
+      $reql_type$: 'TIME',
+      epoch_time: value.getTime() / 1000,
+      // Rethink will serialize this as "+00:00", but accepts Z
+      timezone: 'Z',
+    }
+  } else {
+    return jsonifyObject(value)
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 14 2016 10:39:07 GMT-0500 (CDT)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

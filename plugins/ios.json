@@ -39,6 +39,9 @@
         },
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.ionicframework.ionic2firebaseemail197311"
+        },
+        "ionic-plugin-deploy": {
+            "PACKAGE_NAME": "com.ionicframework.ionic2firebaseemail197311"
         }
     },
     "dependent_plugins": {

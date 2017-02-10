@@ -55,6 +55,10 @@
                         {
                             "xml": "<feature name=\"Keyboard\"><param name=\"ios-package\" onload=\"true\" value=\"IonicKeyboard\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"IonicDeploy\"><param name=\"ios-package\" onload=\"true\" value=\"IonicDeploy\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -118,6 +122,9 @@
             "PACKAGE_NAME": "com.ionicframework.ionic2firebaseemail197311"
         },
         "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.ionicframework.ionic2firebaseemail197311"
+        },
+        "ionic-plugin-deploy": {
             "PACKAGE_NAME": "com.ionicframework.ionic2firebaseemail197311"
         }
     },
@@ -392,6 +399,14 @@
                 "cordova.plugins.Keyboard"
             ],
             "runs": true
+        },
+        {
+            "id": "ionic-plugin-deploy.IonicDeploy",
+            "file": "plugins/ionic-plugin-deploy/www/ionicdeploy.js",
+            "pluginId": "ionic-plugin-deploy",
+            "clobbers": [
+                "IonicDeploy"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -405,6 +420,7 @@
         "cordova-plugin-splashscreen": "4.0.1",
         "cordova-plugin-statusbar": "2.2.1",
         "cordova-plugin-whitelist": "1.3.1",
-        "ionic-plugin-keyboard": "2.2.1"
+        "ionic-plugin-keyboard": "2.2.1",
+        "ionic-plugin-deploy": "0.6.5"
     }
 }

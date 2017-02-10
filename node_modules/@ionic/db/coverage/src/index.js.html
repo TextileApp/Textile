@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">src</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">91.49% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>43/47</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">72.41% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>21/29</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">92.86% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>13/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">91.49% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>43/47</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">677x</span>
+<span class="cline-any cline-yes">677x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1678x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import 'rxjs/add/observable/of'
+import 'rxjs/add/observable/from'
+import 'rxjs/add/operator/catch'
+import 'rxjs/add/operator/concatMap'
+import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/filter'
+&nbsp;
+import { Collection, UserDataTerm } from './ast'
+import { HorizonSocket } from './socket'
+import { authEndpoint, TokenStorage, clearAuthTokens } from './auth'
+import { aggregate, model } from './model'
+&nbsp;
+const defaultHost = typeof window !== 'undefined' &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >window.location </span>&amp;&amp;
+<span class="branch-2 cbranch-no" title="branch not covered" >        `${window.location.host}` </span>|| 'localhost:8181'
+const defaultSecure = typeof window !== 'undefined' &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >window.location </span>&amp;&amp;
+<span class="branch-2 cbranch-no" title="branch not covered" >        window.location.protocol === 'https:' </span>|| false
+&nbsp;
+function Horizon({
+  host = defaultHost,
+  secure = defaultSecure,
+  path = 'horizon',
+  lazyWrites = false,
+  authType = 'unauthenticated',
+  keepalive = 60,
+  WebSocketCtor = WebSocket,
+} = {}) {
+  // If we're in a redirection from OAuth, store the auth token for
+  // this user in localStorage.
+&nbsp;
+  const tokenStorage = new TokenStorage({ authType, path })
+  tokenStorage.setAuthFromQueryParams()
+&nbsp;
+  const url = `ws${secure ? <span class="branch-0 cbranch-no" title="branch not covered" >'s' </span>: ''}:\/\/${host}\/${path}`
+  const socket = new HorizonSocket({
+    url,
+    handshakeMaker: tokenStorage.handshake.bind(tokenStorage),
+    keepalive,
+    WebSocketCtor,
+  })
+&nbsp;
+  // Store whatever token we get back from the server when we get a
+  // handshake response
+  socket.handshake.subscribe({
+    next(handshake) {
+      if (authType !== 'unauthenticated') {
+        tokenStorage.set(handshake.token)
+      }
+    },
+    error(err) {
+<span class="cstat-no" title="statement not covered" >      if (/JsonWebTokenError|TokenExpiredError/.test(err.message)) {</span>
+<span class="cstat-no" title="statement not covered" >        console.error('Horizon: clearing token storage since auth failed')</span>
+<span class="cstat-no" title="statement not covered" >        tokenStorage.remove()</span>
+      }
+    },
+  })
+&nbsp;
+  // This is the object returned by the Horizon function. It's a
+  // function so we can construct a collection simply by calling it
+  // like horizon('my_collection')
+  function horizon(name) {
+    return new Collection(sendRequest, name, lazyWrites)
+  }
+&nbsp;
+  horizon.currentUser = () =&gt;
+    new UserDataTerm(horizon, socket.handshake, socket)
+&nbsp;
+  horizon.disconnect = () =&gt; {
+    socket.complete()
+  }
+&nbsp;
+  // Dummy subscription to force it to connect to the
+  // server. Optionally provide an error handling function if the
+  // socket experiences an error.
+  // Note: Users of the Observable interface shouldn't need this
+  horizon.connect = (
+    onError = err =&gt; { console.error(`Received an error: ${err}`) }
+  ) =&gt; {
+    socket.subscribe(
+      () =&gt; {},
+      onError
+    )
+  }
+&nbsp;
+  // Either subscribe to status updates, or return an observable with
+  // the current status and all subsequent status changes.
+  horizon.status = subscribeOrObservable(socket.status)
+&nbsp;
+  // Convenience method for finding out when disconnected
+  horizon.onDisconnected = subscribeOrObservable(
+    socket.status.filter(x =&gt; x.type === 'disconnected'))
+&nbsp;
+  // Convenience method for finding out when ready
+  horizon.onReady = subscribeOrObservable(
+    socket.status.filter(x =&gt; x.type === 'ready'))
+&nbsp;
+  // Convenience method for finding out when an error occurs
+  horizon.onSocketError = subscribeOrObservable(
+    socket.status.filter(<span class="fstat-no" title="function not covered" >x </span>=&gt; <span class="cstat-no" title="statement not covered" >x.type === 'error')</span>)
+&nbsp;
+  horizon.utensils = {
+    sendRequest,
+    tokenStorage,
+    handshake: socket.handshake,
+  }
+  Object.freeze(horizon.utensils)
+&nbsp;
+  horizon._authMethods = null
+  horizon._root = `http${(secure) ? <span class="branch-0 cbranch-no" title="branch not covered" >'s' </span>: ''}://${host}`
+  horizon._horizonPath = `${horizon._root}/${path}`
+  horizon.authEndpoint = authEndpoint
+  horizon.hasAuthToken = tokenStorage.hasAuthToken.bind(tokenStorage)
+  horizon.aggregate = aggregate
+  horizon.model = model
+&nbsp;
+  return horizon
+&nbsp;
+  // Sends a horizon protocol request to the server, and pulls the data
+  // portion of the response out.
+  function sendRequest(type, options) {
+    // Both remove and removeAll use the type 'remove' in the protocol
+    const normalizedType = type === 'removeAll' ? 'remove' : type
+    return socket
+      .hzRequest({ type: normalizedType, options }) // send the raw request
+      .takeWhile(resp =&gt; resp.state !== 'complete')
+  }
+}
+&nbsp;
+function subscribeOrObservable(observable) {
+  return (...args) =&gt; {
+    if (args.length &gt; 0) {
+      return observable.subscribe(...args)
+    } else {
+      return observable
+    }
+  }
+}
+&nbsp;
+Horizon.Socket = HorizonSocket
+Horizon.clearAuthTokens = clearAuthTokens
+&nbsp;
+module.exports = Horizon
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 14 2016 10:39:07 GMT-0500 (CDT)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
