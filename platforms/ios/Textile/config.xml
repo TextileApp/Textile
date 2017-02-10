@@ -45,6 +45,9 @@
     <feature name="Keyboard">
         <param name="ios-package" onload="true" value="IonicKeyboard" />
     </feature>
+    <feature name="IonicDeploy">
+        <param name="ios-package" onload="true" value="IonicDeploy" />
+    </feature>
     <name>Textile</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
@@ -104,7 +107,4 @@
     <preference name="android-minSdkVersion" value="16" />
     <preference name="SplashMaintainAspectRatio" value="true" />
     <preference name="FadeSplashScreenDuration" value="300" />
-    <feature name="IonicDeploy">
-        <param name="ios-package" onload="true" value="IonicDeploy" />
-    </feature>
 </widget>
