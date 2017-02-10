@@ -1,0 +1,5 @@
+test
+scripts
+dist/test*
+dist/mocha*
+webpack*

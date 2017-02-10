@@ -12,7 +12,7 @@ import { ResetpwdPage } from '../pages/resetpwd/resetpwd';
 import { AuthService } from '../providers/auth-service';
 import * as firebase from 'firebase';
 import { ShareService } from '../providers/ShareService';
-
+import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
 import { SwingModule } from 'angular2-swing';
 export const firebaseConfig = {
     apiKey: "AIzaSyCbJvS86BwyrrfTy3lwJ71tt0zkoTz6wRU",
@@ -26,7 +26,11 @@ const myFirebaseAuthConfig = {
   provider: AuthProviders.Password,
   method: AuthMethods.Password
 }
-
+const cloudSettings: CloudSettings = {
+  'core': {
+    'app_id': '3a4b03cd'
+  }
+};
 firebase.initializeApp(firebaseConfig);
 
 @NgModule({
@@ -49,7 +53,7 @@ firebase.initializeApp(firebaseConfig);
     }, {}
   ),
     AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig),
-     SwingModule
+     SwingModule,CloudModule.forRoot(cloudSettings)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -66,6 +70,6 @@ firebase.initializeApp(firebaseConfig);
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthService,ShareService
-  ]
+  ],
 })
 export class AppModule {}

@@ -1,0 +1,24 @@
+{
+    "angularCompilerOptions": {
+        "genDir": "dist/es5"
+    },
+    "compilerOptions": {
+        "allowJs": false,
+        "declaration": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "forceConsistentCasingInFileNames": true,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "noImplicitAny": false,
+        "noImplicitReturns": true,
+        "outDir": "dist/es5",
+        "removeComments": false,
+        "skipLibCheck": true,
+        "sourceMap": true,
+        "target": "es5"
+    },
+    "files": [
+        "src/index.ts"
+    ]
+}

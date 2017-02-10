@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/model.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">src</a> model.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">82.43% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>61/74</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">81.58% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>31/38</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">85.71% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>30/35</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">82.35% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>56/68</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">31x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">96x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">60x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">62x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">58x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">58x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">58x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">58x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">54x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">59x</span>
+<span class="cline-any cline-yes">59x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">56x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">96x</span>
+<span class="cline-any cline-yes">34x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">62x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">58x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Observable } from 'rxjs/Observable'
+&nbsp;
+import 'rxjs/add/observable/of'
+import 'rxjs/add/observable/forkJoin'
+import 'rxjs/add/observable/combineLatest'
+import 'rxjs/add/operator/map'
+&nbsp;
+// Other imports
+import isPlainObject from 'is-plain-object'
+&nbsp;
+// Unlike normal queries' .watch(), we don't support rawChanges: true
+// for aggregates
+function checkWatchArgs(args) {
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (args.length &gt; 0) {
+<span class="cstat-no" title="statement not covered" >    throw new Error(".watch() on aggregates doesn't support arguments!")</span>
+  }
+}
+&nbsp;
+function isTerm(term) {
+  return typeof term.fetch === 'function' &amp;&amp;
+         typeof term.watch === 'function'
+}
+&nbsp;
+function isPromise(term) {
+  return typeof term.then === 'function'
+}
+&nbsp;
+function isObservable(term) {
+  return typeof term.subscribe === 'function' &amp;&amp;
+         typeof term.lift === 'function'
+}
+&nbsp;
+// Whether an object is primitive. We consider functions
+// non-primitives, lump Dates and ArrayBuffers into primitives.
+function isPrimitive(value) {
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (value === null) {
+<span class="cstat-no" title="statement not covered" >    return true</span>
+  }
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (value === undefined) {
+<span class="cstat-no" title="statement not covered" >    return false</span>
+  }
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof value === 'function') {
+<span class="cstat-no" title="statement not covered" >    return false</span>
+  }
+  if ([ 'boolean', 'number', 'string' ].indexOf(typeof value) !== -1) {
+    return true
+  }
+  if (value instanceof Date || value instanceof ArrayBuffer) {
+    return true
+  }
+  return false
+}
+&nbsp;
+// Simple wrapper for primitives. Just emits the primitive
+class PrimitiveTerm {
+  constructor(value) {
+    this._value = value
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  to</span>String() {
+<span class="cstat-no" title="statement not covered" >    return this._value.toString()</span>
+  }
+&nbsp;
+  fetch() {
+    return Observable.of(this._value)
+  }
+&nbsp;
+  watch(...watchArgs) {
+    checkWatchArgs(watchArgs)
+    return Observable.of(this._value)
+  }
+}
+&nbsp;
+// Simple wrapper for observables to normalize the
+// interface. Everything in an aggregate tree should be one of these
+// term-likes
+class ObservableTerm {
+  constructor(value) {
+    this._value = value
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  to</span>String() {
+<span class="cstat-no" title="statement not covered" >    return this._value.toString()</span>
+  }
+&nbsp;
+  fetch() {
+    return Observable.from(this._value)
+  }
+&nbsp;
+  watch(...watchArgs) {
+    checkWatchArgs(watchArgs)
+    return Observable.from(this._value)
+  }
+}
+&nbsp;
+// Handles aggregate syntax like [ query1, query2 ]
+class ArrayTerm {
+  constructor(value) {
+    // Ensure this._value is an array of Term
+    this._value = value.map(x =&gt; aggregate(x))
+  }
+&nbsp;
+  _reducer(...args) {
+    return args
+  }
+&nbsp;
+  _query(operation) {
+    return this._value.map(x =&gt; x[operation]())
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  to</span>String() {
+<span class="cstat-no" title="statement not covered" >    return `[ ${this._query('toString').join(', ')} ]`</span>
+  }
+&nbsp;
+  fetch() {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (this._value.length === 0) {
+<span class="cstat-no" title="statement not covered" >      return Observable.empty()</span>
+    }
+&nbsp;
+    const qs = this._query('fetch')
+    return Observable.forkJoin(...qs, this._reducer)
+  }
+&nbsp;
+  watch(...watchArgs) {
+    checkWatchArgs(watchArgs)
+&nbsp;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (this._value.length === 0) {
+<span class="cstat-no" title="statement not covered" >      return Observable.empty()</span>
+    }
+&nbsp;
+    const qs = this._query('watch')
+    return Observable.combineLatest(...qs, this._reducer)
+  }
+}
+&nbsp;
+class AggregateTerm {
+  constructor(value) {
+    // Ensure this._value is an array of [ key, Term ] pairs
+    this._value = Object.keys(value).map(k =&gt; [ k, aggregate(value[k]) ])
+  }
+&nbsp;
+  _reducer(...pairs) {
+    return pairs.reduce((prev, [ k, x ]) =&gt; {
+      prev[k] = x
+      return prev
+    }, {})
+  }
+&nbsp;
+  _query(operation) {
+    return this._value.map(
+      ([ k, term ]) =&gt; term[operation]().map(x =&gt; [ k, x ]))
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  to</span>String() {
+    const s = <span class="cstat-no" title="statement not covered" >this._value.map(<span class="fstat-no" title="function not covered" >([</span> k, term ]) =&gt; <span class="cstat-no" title="statement not covered" >`'${k}': ${term}`)</span></span>
+<span class="cstat-no" title="statement not covered" >    return `{ ${s.join(', ')} }`</span>
+  }
+&nbsp;
+  fetch() {
+    if (this._value.length === 0) {
+      return Observable.of({})
+    }
+&nbsp;
+    const qs = this._query('fetch')
+    return Observable.forkJoin(...qs, this._reducer)
+  }
+&nbsp;
+  watch(...watchArgs) {
+    checkWatchArgs(watchArgs)
+&nbsp;
+    if (this._value.length === 0) {
+      return Observable.of({})
+    }
+&nbsp;
+    const qs = this._query('watch')
+    return Observable.combineLatest(...qs, this._reducer)
+  }
+}
+&nbsp;
+export function aggregate(spec) {
+  if (isTerm(spec)) {
+    return spec
+  }
+  if (isObservable(spec) || isPromise(spec)) {
+    return new ObservableTerm(spec)
+  }
+  if (isPrimitive(spec)) {
+    return new PrimitiveTerm(spec)
+  }
+  if (Array.isArray(spec)) {
+    return new ArrayTerm(spec)
+  }
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (isPlainObject(spec)) {
+    return new AggregateTerm(spec)
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  throw new Error(`Can't make an aggregate with ${spec} in it`)</span>
+}
+&nbsp;
+export function model(constructor) {
+  return (...args) =&gt; aggregate(constructor(...args))
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 14 2016 10:39:07 GMT-0500 (CDT)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+gulpfile.js
+src
+tsconfig.json
+tslint.json
+dist/es5/node_modules
+dist/es5/src

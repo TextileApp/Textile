@@ -1,0 +1,14 @@
+{
+    "parserOptions": {
+        "sourceType": "module"
+    },
+    "env": {
+        "browser": true,
+        "commonjs": true
+    },
+    "extends": "ionic",
+    "globals": {
+        "angular": true,
+        "Ionic": true
+    }
+}
