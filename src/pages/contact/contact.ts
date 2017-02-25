@@ -229,11 +229,13 @@ uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
  
      this.db = firebase.database().ref(firebase.auth().currentUser.uid+'/'+clothes);
 var newPostRef = this.db.push();
-newPostRef.set(
-  downloadURL
-);
+
+
+newPostRef.set(downloadURL);
+newPostRef.child.update(imgBlob.name);
+
 });
-         
+
       
 };
           reader.onerror = (e) => {
@@ -260,27 +262,45 @@ return this.shareService.getCanDelete();
 }
 
 
-deleteHats(outfitkey: string){
+deleteHats(outfitkey: string,outfitval: string){
 //firebase.database().ref(this.myUser+'/outfits/'+outfit.key).remove();
-this.items1.remove(outfitkey);
+
+this.storageRef.child(this.currentUser+'/Hats/'+outfitval).delete().then(function() {
+}).catch(function(error) {
+console.log(error);
+});
 this.shareService.setCanDelete(false);
 this.isEnabled = false;
 }
-deleteTops(outfitkey: string){
+deleteTops(outfitkey: string,outfitval: string){
 //firebase.database().ref(this.myUser+'/outfits/'+outfit.key).remove();
+this.storageRef.child(this.currentUser+'/Tops/'+outfitkey+".jpg").delete().then(function() {
+}).catch(function(error) {
+console.log(error);
+});
 this.items2.remove(outfitkey);
 this.shareService.setCanDelete(false);
 this.isEnabled = false;
 }
-deleteBottoms(outfitkey: string){
+deleteBottoms(outfitkey: string,outfitval: string){
 //firebase.database().ref(this.myUser+'/outfits/'+outfit.key).remove();
+this.storageRef.child(this.currentUser+'/Bottoms/'+outfitkey+".jpg").delete().then(function() {
+}).catch(function(error) {
+console.log(error);
+});
 this.items3.remove(outfitkey);
 this.shareService.setCanDelete(false);
 this.isEnabled = false;
 
 }
-deleteShoes(outfitkey: string){
+deleteShoes(outfitkey: string,outfitval: string){
 //firebase.database().ref(this.myUser+'/outfits/'+outfit.key).remove();
+this.items1.remove(outfitkey);
+this.storageRef.child(this.currentUser+'/Shoes/'+outfitkey+".jpg").delete().then(function() {
+}).catch(function(error) {
+console.log(this.currentUser+'/Shoes/'+outfitval);
+console.log(error);
+});
 this.items4.remove(outfitkey);
 this.shareService.setCanDelete(false);
 this.isEnabled = false;

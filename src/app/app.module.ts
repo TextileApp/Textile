@@ -4,6 +4,7 @@ import { MyApp } from './app.component';
 import { OutfitsPage } from '../pages/outfits/outfits';
 import { ContactPage } from '../pages/contact/contact';
 import { PopoverContentPage } from '../pages/contact/popover';
+import {closetMenuPage } from '../pages/closetMenu/closetMenu';
 import { HomePage,imagePicker } from '../pages/home/home';
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 import { LoginPage } from '../pages/login/login';
@@ -39,6 +40,7 @@ firebase.initializeApp(firebaseConfig);
     OutfitsPage,
     ContactPage,
     HomePage,
+    closetMenuPage,
     LoginPage,
     RegisterPage,
     ResetpwdPage,
@@ -60,6 +62,7 @@ firebase.initializeApp(firebaseConfig);
     MyApp,
     OutfitsPage,
     ContactPage,
+    closetMenuPage,
     HomePage,
     imagePicker,
     LoginPage,

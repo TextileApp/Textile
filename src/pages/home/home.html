@@ -9,7 +9,7 @@
     <ion-buttons end>
       
       <button ion-button icon-only color="primary" (click)="goToSaved()">
-        <ion-icon color="navcolor"ios="ios-photos-outline" md="md-photos"></ion-icon>
+        <ion-icon color="navcolor" name="CLOSETICON"></ion-icon>
       </button>
     </ion-buttons>
     
@@ -17,29 +17,99 @@
 </ion-header>
 
 <ion-content class="home" padding>
+    <span class="colfirst">
+        <div class ="firstcol" id="card-stack"[style.zIndex]="-1000">
+    <ion-card [style.zIndex]="-1*t" [style.marginTop]="t === 0 ? '0px':'0px'"(tap)="openModal1(cards1)">
+          <button (click)="saveOutfit()" color = "nothing" ion-button icon-only><ion-icon color="navcolor" name="add"></ion-icon></button>
+    </ion-card>
+  </div>
+    <div  class ="firstcol"swing-stack #myswing1 [stackConfig]="stackConfig1" (throwoutleft)="voteUp1($event)" (throwoutright)="voteUp1($event)" id="card-stack"[style.zIndex]="-1000">
+        <div [hidden]="!showCard1" style="position: relative; top:-12%; left:10%;">
+    <ion-fab right top>
+      <button *ngIf="showDelete1" ion-fab mini class="fab-map" mini color="navcolor" (click)="removeCard1()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+                    <button *ngIf="!card1Activated"(click)="activateCard1()" color = "nothing"  ion-button icon-only><ion-icon color="navcolor" name="add"></ion-icon></button>
 
-    <div swing-stack #myswing1 [stackConfig]="stackConfig1" (throwoutleft)="voteUp1($event)" (throwoutright)="voteUp1($event)" id="card-stack"[style.zIndex]="-1000">
-    <ion-card #mycards1 swing-card *ngFor="let c of cards1; trackBy:trackByCards1 let t=index;"[style.zIndex]="-1*t" [style.marginTop]="t === 0 ? '0px':'0px'"(tap)="openModal1({images:cards1})">
-        
-          <img *ngIf="c"[src]="c"id="image">
+    </ion-fab>
+  </div>
+    <ion-card [hidden]="!showCard1"  (press)="pressEvent($event)" #mycards1 swing-card *ngFor="let c of cards1; trackBy:trackByCards1 let t=index;"[style.zIndex]="-1*t" [style.marginTop]="t === 0 ? '0px':'0px'"(tap)="openModal1(cards1)">
+       
+          <img [hidden]="!showPic1" *ngIf="c"[src]="c"id="image">
   
     </ion-card>
-  </div>
-   <div swing-stack #myswing2 [stackConfig]="stackConfig2" (throwoutleft)="voteUp2()" (throwoutright)="voteUp2()" id="card-stack"[style.zIndex]="-1000">
-    <ion-card #mycards2 swing-card *ngFor="let p of cards2; trackBy:trackByCards2; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal2({images:cards2 })">
-          <img *ngIf="p"[src]="p"id="image">
+     </div>
+       <div class ="firstcol" id="card-stack"[style.zIndex]="-1000">
+    <ion-card [style.zIndex]="-1*t" [style.marginTop]="t === 0 ? '0px':'0px'"(tap)="openModal1(cards1)">
     </ion-card>
   </div>
-    <div swing-stack #myswing3 [stackConfig]="stackConfig3" (throwoutleft)="voteUp3()" (throwoutright)="voteUp3()" id="card-stack"[style.zIndex]="-1000">
-    <ion-card #mycards2 swing-card *ngFor="let l of cards3; trackBy:trackByCards3; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal3({images:cards3 })">
+    <div class ="firstcol" id="card-stack"[style.zIndex]="-1000">
+    <ion-card [style.zIndex]="-1*t" [style.marginTop]="t === 0 ? '0px':'0px'"(tap)="openModal1(cards1)">
+          <button (click)="saveOutfit()" color = "nothing"  ion-button icon-only><ion-icon color="navcolor" name="add"></ion-icon></button>
+    </ion-card>
+  </div>
+   <div class ="firstcol"  swing-stack #myswing2 [stackConfig]="stackConfig2" (throwoutleft)="voteUp2()" (throwoutright)="voteUp2()" id="card-stack"[style.zIndex]="-1000">
+         <div style="position: relative; top:-12%; left:10%;">
+
+    <ion-fab right top>
+      <button *ngIf="showDelete2" ion-fab mini class="fab-map" mini color="navcolor" (click)="removeCard2()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+                    <button *ngIf="!card2Activated"(click)="activateCard2()" color = "nothing"  ion-button icon-only><ion-icon color="navcolor" name="add"></ion-icon></button>
+
+    </ion-fab>
+  </div>
+    <ion-card [hidden]="!showCard2"  #mycards2 swing-card (press)="pressEvent($event)" *ngFor="let p of cards2; trackBy:trackByCards2; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal2(cards2)">
+       
+          <img [hidden]= "!showPic2" *ngIf="p"[src]="p"id="image">
+    </ion-card>
+    
+  </div>
+      <div class ="firstcol" id="card-stack"[style.zIndex]="-1000">
+    <ion-card [style.zIndex]="-1*t" [style.marginTop]="t === 0 ? '0px':'0px'"(tap)="openModal1(cards1)">
+          <button (click)="saveOutfit()" color = "nothing"  ion-button icon-only><ion-icon color="navcolor" name="add"></ion-icon></button>
+    </ion-card>
+  </div>
+     <div class ="firstcol" id="card-stack"[style.zIndex]="-1000">
+    <ion-card [style.zIndex]="-1*t" [style.marginTop]="t === 0 ? '0px':'0px'"(tap)="openModal1(cards1)">
+          <button (click)="saveOutfit()" color = "nothing"  ion-button icon-only><ion-icon color="navcolor" name="add"></ion-icon></button>
+    </ion-card>
+  </div>
+
+ 
+   
+    
+    
+    <div class ="firstcol" swing-stack  #myswing3 [stackConfig]="stackConfig3" (throwoutleft)="voteUp3()" (throwoutright)="voteUp3()" id="card-stack"[style.zIndex]="-1000">
+    <ion-card #mycards2 swing-card *ngFor="let l of cards3; trackBy:trackByCards3; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal3(cards3)">
           <img *ngIf="l"[src]="l"id="image">
     </ion-card>
   </div>
-    <div swing-stack #myswing4 [stackConfig]="stackConfig4" (throwoutleft)="voteUp4()" (throwoutright)="voteUp4()" id="card-stack"[style.zIndex]="-1000">
-    <ion-card #mycards2 swing-card *ngFor="let g of cards4; trackBy:trackByCards3; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal4({images:cards4 })">
-          <img *ngIf="g"[src]="g"id="image">
+    <div class ="firstcol" id="card-stack"[style.zIndex]="-1000">
+    <ion-card [style.zIndex]="-1*t" [style.marginTop]="t === 0 ? '0px':'0px'"(tap)="openModal1(cards1)">
+          <button (click)="saveOutfit()" color = "nothing"  ion-button icon-only><ion-icon color="navcolor" name="add"></ion-icon></button>
     </ion-card>
   </div>
+    <div class ="firstcol" id="card-stack"[style.zIndex]="-1000">
+    <ion-card [style.zIndex]="-1*t" [style.marginTop]="t === 0 ? '0px':'0px'"(tap)="openModal1(cards1)">
+          <button (click)="saveOutfit()" color = "nothing"  ion-button icon-only><ion-icon color="navcolor" name="add"></ion-icon></button>
+    </ion-card>
+  </div>
+    <div class ="firstcol" swing-stack #myswing4 [stackConfig]="stackConfig4" (throwoutleft)="voteUp4()" (throwoutright)="voteUp4()" id="card-stack"[style.zIndex]="-1000">
+    <ion-card #mycards2 swing-card *ngFor="let g of cards4; trackBy:trackByCards3; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal4(cards4)">
+          <img *ngIf="g"[src]="g"id="image">
+    </ion-card>
+
+     </div>
+   <div class ="firstcol" id="card-stack"[style.zIndex]="-1000">
+    <ion-card [style.zIndex]="-1*t" [style.marginTop]="t === 0 ? '0px':'0px'"(tap)="openModal1(cards1)">
+          <button (click)="saveOutfit()" color = "nothing" ion-button icon-only><ion-icon color="navcolor" name="add"></ion-icon></button>
+    </ion-card>
+  </div>
+     </span>
+    
+
+
 </ion-content>
 <ion-footer >
   <ion-toolbar>

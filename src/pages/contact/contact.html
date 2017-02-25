@@ -11,8 +11,7 @@
  
  <ion-buttons end>
         <button ion-button color = "navcolor" icon-only (click)="openPopover($event)">
-  <ion-icon name="more"></ion-icon>
-</button>
+  <ion-icon name="more"></ion-icon></button>
  </ion-buttons>
       
 
@@ -32,7 +31,9 @@
       <ion-segment-button value="Shoes">
         Shoes
       </ion-segment-button>
+      
     </ion-segment>
+    
   </ion-toolbar>
 </ion-header>
 <ion-content>
@@ -43,7 +44,7 @@
   <ion-col width-33 *ngFor="let f of items1 | async" (click)="show(f.$value)" >
        <div style="position: relative; top:0%; left:0px;">
     <ion-fab right top>
-      <button *ngIf ="isEnabled"ion-fab mini class="fab-map" mini color="navcolor" (click)="deleteHats(f.$key)">
+      <button *ngIf ="isEnabled"ion-fab mini class="fab-map" mini color="navcolor" (click)="deleteHats(f.$key,f.ref.$value)">
         <ion-icon name="close"></ion-icon>
       </button>
     </ion-fab>
@@ -59,7 +60,7 @@
   <ion-col width-33 *ngFor="let g of items2 | async" (click)="show(g.$value)">
        <div style="position: relative; top:0%; left:0px;">
     <ion-fab right top>
-      <button *ngIf ="isEnabled"ion-fab mini class="fab-map" mini color="navcolor" (click)="deleteTops(g.$key)">
+      <button *ngIf ="isEnabled"ion-fab mini class="fab-map" mini color="navcolor" (click)="deleteTops(g.$key,g.$value)">
         <ion-icon name="close"></ion-icon>
       </button>
     </ion-fab>
@@ -74,7 +75,7 @@
   <ion-col width-33 *ngFor="let t of items3 | async" (click)="show(t.$value)">
       <div style="position: relative; top:0%; left:0px;">
     <ion-fab right top>
-      <button *ngIf ="isEnabled"ion-fab mini class="fab-map" mini color="navcolor" (click)="deleteBottoms(t.$key)">
+      <button *ngIf ="isEnabled"ion-fab mini class="fab-map" mini color="navcolor" (click)="deleteBottoms(t.$key,t.$value)">
         <ion-icon name="close"></ion-icon>
       </button>
     </ion-fab>
@@ -88,7 +89,7 @@
   <ion-col width-33 *ngFor="let c of items4 | async" (click)="show(c.$value)">
        <div style="position: relative; top:0%; left:0px;">
     <ion-fab right top>
-      <button *ngIf ="isEnabled"ion-fab mini class="fab-map" mini color="navcolor" (click)="deleteShoes(c.$key)">
+      <button *ngIf ="isEnabled"ion-fab mini class="fab-map" mini color="navcolor" (click)="deleteShoes(c.$key,c.$value)">
         <ion-icon name="close"></ion-icon>
       </button>
     </ion-fab>
