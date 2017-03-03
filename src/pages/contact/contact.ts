@@ -1,7 +1,7 @@
 import { Component, Inject, NgZone,NgModule,OnInit} from '@angular/core';
 import { Camera } from 'ionic-native';
 import { PhotoViewer } from 'ionic-native';
-import { NavController,PopoverController } from 'ionic-angular';
+import { NavController,PopoverController,NavParams } from 'ionic-angular';
 import { ImagePicker, File} from 'ionic-native';
 import { FirebaseApp,FirebaseListObservable,AngularFire } from 'angularfire2';
 import { PopoverContentPage } from './popover';
@@ -39,36 +39,33 @@ isEnabled: boolean;
     selectedItem: any;
   icons: string[];
  items1: FirebaseListObservable<any>;
- items2: FirebaseListObservable<any>;
- items3: FirebaseListObservable<any>;
- items4: FirebaseListObservable<any>;
 	options: any;
   db: any;
   uploadType: number = 0;
   public currentUser: any;
   public photoRef:any;
   storageRef: any;
+  whichType:string;
   currentImage
   grid: Array<Array<string>>;
 af: AngularFire;
 
 
 
-  constructor(public navCtrl: NavController,@Inject(FirebaseApp) firebaseApp: any,public events: Events,private ngZone: NgZone,public popoverCtrl: PopoverController,af: AngularFire,private _auth: AuthService,private shareService: ShareService
+  constructor(private params: NavParams,public navCtrl: NavController,@Inject(FirebaseApp) firebaseApp: any,public events: Events,private ngZone: NgZone,public popoverCtrl: PopoverController,af: AngularFire,private _auth: AuthService,private shareService: ShareService
  ) {
   this.isEnabled = false;
     const authObserver = af.auth.subscribe( user => {
   if (user) {
+    this.whichType = this.params.get("type");
      this.storageRef = firebaseApp.storage().ref();
     this.currentUser = user.uid;
-  this.items1 = af.database.list(this.currentUser+'/Hats');
-  this.items2 = af.database.list(this.currentUser+'/Tops');
-  this.items3 = af.database.list(this.currentUser+'/Bottoms/');
-  this.items4 = af.database.list(this.currentUser+'/Shoes/');
-  console.log(this.items1.forEach);
-    console.log(this.items2.forEach);
-    
-        console.log(this.items4);
+  this.items1 = af.database.list(this.currentUser+'/'+this.whichType);
+  console.log(this.currentUser+'/'+this.whichType);
+  //this.items2 = af.database.list(this.currentUser+'/Tops');
+ // this.items3 = af.database.list(this.currentUser+'/Bottoms/');
+ // this.items4 = af.database.list(this.currentUser+'/Shoes/');
+
   } 
   
 });
@@ -134,13 +131,13 @@ PhotoViewer.show(pic);
   
 
   openPopover(myEvent) {
-    let popover = this.popoverCtrl.create(PopoverContentPage,{pet:this.pet,user:this.currentUser,items1:this.items1,items2:this.items2,items3:this.items3,items4:this.items4,storageRef:this.storageRef});
+    let popover = this.popoverCtrl.create(PopoverContentPage,{pet:this.whichType,user:this.currentUser,items1:this.items1,storageRef:this.storageRef});
     popover.present({
       ev: myEvent
     });
   popover.onDidDismiss(() => {
 if(this.shareService.getIsUploading()){
-this.addPics(this.pet);
+this.addPics();
 this.shareService.setIsUploading(false);
 }
     // Navigate to new page.  Popover should be gone at this point completely
@@ -150,9 +147,9 @@ this.isEnabled = this.shareService.getCanDelete();
   }
 
 
- addPics(clothes: string)
+ addPics()
 {
-
+var clothes = this.whichType;
   
   console.log(clothes);
 var options =  {
@@ -260,53 +257,19 @@ isDeleteEnabled()
 {
 return this.shareService.getCanDelete();
 }
-
-
-deleteHats(outfitkey: string,outfitval: string){
+deleteItem(outfitkey: string,outfitval: string){
 //firebase.database().ref(this.myUser+'/outfits/'+outfit.key).remove();
 
-this.storageRef.child(this.currentUser+'/Hats/'+outfitval).delete().then(function() {
+this.storageRef.child(this.currentUser+'/'+this.whichType+'/'+outfitval).delete().then(function() {
 }).catch(function(error) {
 console.log(error);
 });
 this.shareService.setCanDelete(false);
 this.isEnabled = false;
 }
-deleteTops(outfitkey: string,outfitval: string){
-//firebase.database().ref(this.myUser+'/outfits/'+outfit.key).remove();
-this.storageRef.child(this.currentUser+'/Tops/'+outfitkey+".jpg").delete().then(function() {
-}).catch(function(error) {
-console.log(error);
-});
-this.items2.remove(outfitkey);
-this.shareService.setCanDelete(false);
-this.isEnabled = false;
-}
-deleteBottoms(outfitkey: string,outfitval: string){
-//firebase.database().ref(this.myUser+'/outfits/'+outfit.key).remove();
-this.storageRef.child(this.currentUser+'/Bottoms/'+outfitkey+".jpg").delete().then(function() {
-}).catch(function(error) {
-console.log(error);
-});
-this.items3.remove(outfitkey);
-this.shareService.setCanDelete(false);
-this.isEnabled = false;
 
-}
-deleteShoes(outfitkey: string,outfitval: string){
-//firebase.database().ref(this.myUser+'/outfits/'+outfit.key).remove();
-this.items1.remove(outfitkey);
-this.storageRef.child(this.currentUser+'/Shoes/'+outfitkey+".jpg").delete().then(function() {
-}).catch(function(error) {
-console.log(this.currentUser+'/Shoes/'+outfitval);
-console.log(error);
-});
-this.items4.remove(outfitkey);
-this.shareService.setCanDelete(false);
-this.isEnabled = false;
 
-}
-  
+
 
 
 }
