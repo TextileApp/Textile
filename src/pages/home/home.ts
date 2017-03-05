@@ -292,8 +292,8 @@ let modal = this.modalCtrl.create(imagePicker,{images:imagesArray,user:this.curr
 let modal = this.modalCtrl.create(imagePicker,{images:imagesArray,user:this.currentUser,type:"Dresses"});
      modal.onDidDismiss(data => {
     if(data){
-    this.cards4.unshift(data.image);
-    this.cards4.pop();
+    this.cards5.unshift(data.image);
+    this.cards5.pop();
     }
    });
    modal.present();

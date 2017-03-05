@@ -81,19 +81,7 @@ addPics(){
     this.close();  
 }
 
-saveChanges(e):void{
-if(this.showDresses.checked){
-this.shareService.setShowDresses(true);
-console.log("ITS TRUE BITCHES");
-this.close();
-}
-else
-{
-this.shareService.setShowDresses(false);
-this.close();
-}
 
-}
         
    
 close() {
