@@ -32,7 +32,7 @@
   </div>
     <div class = "dress" [hidden]="!showDress" swing-stack #myswing5 [stackConfig]="stackConfig5" (throwoutleft)="voteUp5()" (throwoutright)="voteUp5()" id="card-stack"[style.zIndex]="-1000">
     <ion-card #mycards2 swing-card *ngFor="let g of cards5; trackBy:trackByCards5; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal5(cards5)">
-          <img *ngIf="g"[src]="g"id="image">
+          <img id="apic" *ngIf="g"[src]="g"id="image">
     </ion-card>
   </div>
     <div [hidden]="showDress" swing-stack #myswing3 [stackConfig]="stackConfig3" (throwoutleft)="voteUp3()" (throwoutright)="voteUp3()" id="card-stack"[style.zIndex]="-1000">

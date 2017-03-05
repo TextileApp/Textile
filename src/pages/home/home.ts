@@ -75,7 +75,7 @@ export class HomePage implements OnInit{
   allShirts: Array<any>;
   allPants: Array<any>;
   allShoes: Array<any>;
-
+  
   constructor( public popoverCtrl: PopoverController,public navCtrl: NavController,public af:AngularFire,public loadingCtrl: LoadingController, public authService: AuthService,private http: Http, private ngZone: NgZone,public modalCtrl: ModalController,public toastCtrl: ToastController) {
            
        const authObserver = af.auth.subscribe( user => {
@@ -523,6 +523,26 @@ decimalToHex(d, padding) {
   }
   saveOutfit() {
 if(this.didSaveThisOutfit == false){
+if(this.showDress == true){
+var newChildRef = firebase.database().ref(firebase.auth().currentUser.uid+'/outfits/');
+var newPostRef = newChildRef.push();
+var topcard1 = this.cards1[0];
+var topcard2 = this.cards5[0];
+var topcard3 = this.cards4[0];
+
+newPostRef.set(
+  {first:topcard1,second:topcard2,third:topcard3}
+);
+ let toast = this.toastCtrl.create({
+      message: 'Outfit saved successfully ❤️️',
+      duration: 3000,
+      position:"middle"
+    
+    });
+    toast.present();
+    this.didSaveThisOutfit = true;
+  }
+  else{
 var newChildRef = firebase.database().ref(firebase.auth().currentUser.uid+'/outfits/');
 var newPostRef = newChildRef.push();
 var topcard1 = this.cards1[0];
@@ -542,6 +562,10 @@ newPostRef.set(
     toast.present();
     this.didSaveThisOutfit = true;
   }
+
+
+}
+
   else if(this.didSaveThisOutfit == true){
 var newChildRef = firebase.database().ref(firebase.auth().currentUser.uid+'/outfits/');
   newChildRef.remove(function(error) {
@@ -561,10 +585,12 @@ var newChildRef = firebase.database().ref(firebase.auth().currentUser.uid+'/outf
 
   
 }
+}
+
 
 }
 
-  }
+  
   
 
 
