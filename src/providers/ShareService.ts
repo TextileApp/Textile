@@ -6,9 +6,11 @@ import 'rxjs/add/operator/map';
 export class ShareService {  
   
   canDelete: boolean;
+  showDresses:boolean;
   isUploading:boolean;
     constructor() {
        this.canDelete = false;
+       this.showDresses = false;
     }
   
     setCanDelete(can) {
@@ -17,6 +19,13 @@ export class ShareService {
   
     getCanDelete() {
        return this.canDelete;
+    }   
+     setShowDresses(can) {
+       this.showDresses = can; 
+    }
+  
+    getShowDresses() {
+       return this.showDresses;
     }   
     setIsUploading(can) {
        this.isUploading = can; 

@@ -38,10 +38,12 @@ export class ContactPage {
 isEnabled: boolean;
     selectedItem: any;
   icons: string[];
+  showDresses:boolean;
  items1: FirebaseListObservable<any>;
  items2: FirebaseListObservable<any>;
  items3: FirebaseListObservable<any>;
  items4: FirebaseListObservable<any>;
+ items5: FirebaseListObservable<any>;
 	options: any;
   db: any;
   uploadType: number = 0;
@@ -59,10 +61,12 @@ af: AngularFire;
   this.isEnabled = false;
     const authObserver = af.auth.subscribe( user => {
   if (user) {
+    this.showDresses = false;
      this.storageRef = firebaseApp.storage().ref();
     this.currentUser = user.uid;
   this.items1 = af.database.list(this.currentUser+'/Hats');
   this.items2 = af.database.list(this.currentUser+'/Tops');
+  this.items5 = af.database.list(this.currentUser+'/Dresses/');
   this.items3 = af.database.list(this.currentUser+'/Bottoms/');
   this.items4 = af.database.list(this.currentUser+'/Shoes/');
   console.log(this.items1.forEach);
@@ -134,7 +138,7 @@ PhotoViewer.show(pic);
   
 
   openPopover(myEvent) {
-    let popover = this.popoverCtrl.create(PopoverContentPage,{pet:this.pet,user:this.currentUser,items1:this.items1,items2:this.items2,items3:this.items3,items4:this.items4,storageRef:this.storageRef});
+    let popover = this.popoverCtrl.create(PopoverContentPage,{pet:this.pet,user:this.currentUser,items1:this.items1,items2:this.items2,items3:this.items3,items4:this.items4,items5:this.items5,storageRef:this.storageRef});
     popover.present({
       ev: myEvent
     });
@@ -145,6 +149,8 @@ this.shareService.setIsUploading(false);
 }
     // Navigate to new page.  Popover should be gone at this point completely
 this.isEnabled = this.shareService.getCanDelete();
+this.showDresses = this.shareService.getShowDresses();
+console.log(this.showDresses);
 });
   
   }
@@ -275,6 +281,13 @@ this.isEnabled = false;
 deleteBottoms(outfitkey: string){
 //firebase.database().ref(this.myUser+'/outfits/'+outfit.key).remove();
 this.items3.remove(outfitkey);
+this.shareService.setCanDelete(false);
+this.isEnabled = false;
+
+}
+deleteDresses(outfitkey: string){
+//firebase.database().ref(this.myUser+'/outfits/'+outfit.key).remove();
+this.items5.remove(outfitkey);
 this.shareService.setCanDelete(false);
 this.isEnabled = false;
 

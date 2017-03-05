@@ -14,6 +14,9 @@
 </button>
        </ion-col>
       </ion-row>
-
-        
-      
+  
+        <ion-item no-lines>
+  <ion-label color ="navcolor">Dresses</ion-label>
+  <ion-checkbox color="navcolor" [(ngModel)]="showDresses.checked"  (click)="saveChanges($event)"></ion-checkbox>
+</ion-item>
+     

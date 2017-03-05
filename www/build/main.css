@@ -968,7 +968,21 @@ ion-navbar {
 .ion-md-MYICON:before,
 .ion-md-MYICON-circle:before,
 .ion-md-MYICON-circle-outline:before,
-.ion-md-MYICON-outline:before {
+.ion-md-MYICON-outline:before, .ion-ios-CLOSETICON:before,
+.ion-ios-CLOSETICON-circle:before,
+.ion-ios-CLOSETICON-circle-outline:before,
+.ion-ios-CLOSETICON-outline:before,
+.ion-md-CLOSETICON:before,
+.ion-md-CLOSETICON-circle:before,
+.ion-md-CLOSETICON-circle-outline:before,
+.ion-md-CLOSETICON-outline:before, .ion-ios-dressicon:before,
+.ion-ios-dressicon-circle:before,
+.ion-ios-dressicon-circle-outline:before,
+.ion-ios-dressicon-outline:before,
+.ion-md-dressicon:before,
+.ion-md-dressicon-circle:before,
+.ion-md-dressicon-circle-outline:before,
+.ion-md-dressicon-outline:before {
   display: inline-block;
   font-family: "Ionicons";
   speak: none;
@@ -13560,7 +13574,7 @@ ion-loading {
 }
 
 .loading-ios .spinner-crescent circle {
-  stroke: #69717d;
+  stroke: #EE6C4D;
 }
 
 .loading-ios .spinner-dots circle {
@@ -26996,12 +27010,34 @@ ion-col {
 .ion-ios-MYICON-outline:before,
 .ion-md-MYICON:before,
 .ion-md-MYICON-outline:before {
+  content: url("https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/closet.svg?alt=media&token=0882026e-51a8-48ee-a795-1dbf33399b01");
+}
+
+.ion-ios-CLOSETICON:before,
+.ion-ios-CLOSETICON-outline:before,
+.ion-md-CLOSETICON:before,
+.ion-md-CLOSETICON-outline:before {
   content: url("https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fhanger.svg?alt=media&token=acf7f853-8a8b-4858-9568-a6addcef65c2");
+}
+
+.ion-ios-dressicon:before,
+.ion-ios-dressicon-outline:before,
+.ion-md-dressicon:before,
+.ion-md-dressicon-outline:before {
+  content: url("https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/dressIcon.svg?alt=media&token=9d675185-e558-4f2f-b5db-a51549e41163");
 }
 
 .home #card-stack {
   width: 38%;
   height: 24%;
+  background: #FEFEFE;
+  margin: 0px auto 0;
+  position: relative;
+}
+
+.home #card-stack.dress {
+  width: 38%;
+  height: 48%;
   background: #FEFEFE;
   margin: 0px auto 0;
   position: relative;
@@ -27016,7 +27052,39 @@ ion-col {
 }
 
 .butts {
+  margin-top: 1%;
   margin-left: 46%;
+}
+
+.leftbut {
+  width: 100%;
+  padding: 0px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.rightbut {
+  width: 100%;
+  padding: 0px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+/*Footer*/
+#footer {
+  position: absolute;
+  bottom: 0;
+  height: 40px;
+  margin-top: 40px;
+}
+
+.col {
+  background: gray;
+  border: thick solid black;
 }
 
 page-login h2 {

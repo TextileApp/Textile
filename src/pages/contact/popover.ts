@@ -26,7 +26,7 @@ export class PopoverContentPage {
   currentImage
    user: string;
     pet: string;
-    
+ showDresses =  {"name" : "showDresses", "checked" : false};
 constructor(public viewCtrl: ViewController,private ngZone: NgZone,private navParams: NavParams,private shareService: ShareService) {}
   ngOnInit() {
     if (this.navParams.data) {
@@ -81,7 +81,19 @@ addPics(){
     this.close();  
 }
 
-         
+saveChanges(e):void{
+if(this.showDresses.checked){
+this.shareService.setShowDresses(true);
+console.log("ITS TRUE BITCHES");
+this.close();
+}
+else
+{
+this.shareService.setShowDresses(false);
+this.close();
+}
+
+}
         
    
 close() {

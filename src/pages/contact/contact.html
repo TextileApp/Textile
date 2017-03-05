@@ -26,6 +26,9 @@
       <ion-segment-button value="Tops">
         Tops
       </ion-segment-button>
+         <ion-segment-button *ngIf="showDresses" value="Dresses">
+        Dresses
+      </ion-segment-button>
       <ion-segment-button value="Bottoms">
         Bottoms
       </ion-segment-button>
@@ -68,7 +71,20 @@
   </ion-col>
 </ion-row>
     </div>
-
+       <div *ngSwitchCase="'Dresses'">
+ <ion-row wrap>
+  <ion-col width-33 *ngFor="let c of items5 | async" (click)="show(c.$value)">
+       <div style="position: relative; top:0%; left:0px;">
+    <ion-fab right top>
+      <button *ngIf ="isEnabled"ion-fab mini class="fab-map" mini color="navcolor" (click)="deleteDresses(c.$key)">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-fab>
+  </div>
+  <img *ngIf="c.$value"[src]="c.$value">
+  </ion-col>
+</ion-row>
+    </div>
     <div *ngSwitchCase="'Bottoms'">
  <ion-row wrap>
   <ion-col width-33 *ngFor="let t of items3 | async" (click)="show(t.$value)">

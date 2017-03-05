@@ -2,14 +2,29 @@ import { Component, ViewChild, ViewChildren, QueryList, Inject, OnInit, NgZone, 
 import * as firebase from 'firebase';
 import { LoginPage } from '../login/login';
 import {OutfitsPage} from '../outfits/outfits';
-import { NavController,ModalController,NavParams,ViewController,ToastController } from 'ionic-angular';
+import { NavController,ModalController,NavParams,ViewController,ToastController,PopoverController,LoadingController } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service';
+import {ShareService} from '../../providers/ShareService';
+import{ImagePicker, File} from'ionic-native';
 import { ContactPage } from '../contact/contact';
 import { Http } from '@angular/http';
 import { FirebaseApp,FirebaseListObservable,AngularFire } from 'angularfire2';
 
 import 'rxjs/Rx';
 
+declare var window: any
+function generateUUID(){
+    var d = new Date().getTime();
+    if(window.performance && typeof window.performance.now === "function"){
+        d += performance.now(); //use high-precision timer if available
+    }
+    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = (d + Math.random()*16)%16 | 0;
+        d = Math.floor(d/16);
+        return (c=='x' ? r : (r&0x3|0x8)).toString(16);
+    });
+    return uuid;
+}
 import {
   StackConfig,
   Stack,
@@ -33,8 +48,13 @@ export class HomePage implements OnInit{
   @ViewChildren('mycards3') swingCards3: QueryList<SwingCardComponent>;
    @ViewChild('myswing4') swingStack4: SwingStackComponent;
   @ViewChildren('mycards4') swingCards4: QueryList<SwingCardComponent>;
+     @ViewChild('myswing5') swingStack5: SwingStackComponent;
+    @ViewChildren('mycards5') swingCards5: QueryList<SwingCardComponent>;
+
   cards1: Array<any>;
+  cards5: Array<any>;
   stackConfig1: StackConfig;
+  stackConfig5: StackConfig;
   recentCard1: string = '';
   cards2: Array<any>;
   didSaveThisOutfit: boolean;
@@ -46,6 +66,7 @@ export class HomePage implements OnInit{
   recentCard3: string = '';
   cards4: Array<any>;
   stackConfig4: StackConfig;
+  showDress:boolean;
   recentCard4: string = '';
   storage = firebase.storage();
   public currentUser: any;
@@ -55,7 +76,7 @@ export class HomePage implements OnInit{
   allPants: Array<any>;
   allShoes: Array<any>;
 
-  constructor(public navCtrl: NavController,public af:AngularFire, public authService: AuthService,private http: Http, private ngZone: NgZone,public modalCtrl: ModalController,public toastCtrl: ToastController) {
+  constructor( public popoverCtrl: PopoverController,public navCtrl: NavController,public af:AngularFire,public loadingCtrl: LoadingController, public authService: AuthService,private http: Http, private ngZone: NgZone,public modalCtrl: ModalController,public toastCtrl: ToastController) {
            
        const authObserver = af.auth.subscribe( user => {
   if (!user) {
@@ -100,9 +121,17 @@ this.stackConfig1 = {
         return 400;
       }
     };
+            this.stackConfig5 = {
+      throwOutConfidence: (offset, element) => {
+        return Math.min(Math.abs(offset) / (element.offsetWidth/2), 1);
+      }, 
+  
+      throwOutDistance: (d) => {
+        return 400;
+      }
+    };
       }
     });
-
   }
   ngOnInit() {
     // subscribe to the auth object to check for the login status
@@ -110,6 +139,7 @@ this.stackConfig1 = {
     // execute the firebase query...
     // .. otherwise
     // show the login modal page
+    this.showDress = true;
     this.didSaveThisOutfit = false;
   const authObserver = this.af.auth.subscribe( user => {
       this.ngZone.run(() => {
@@ -149,7 +179,10 @@ ngAfterViewInit() {
     this.swingStack4.stack.getCard(event.target).throwIn(0,0);	
       
     });
-
+         this.swingStack5.throwout.subscribe((event: DragEvent) => {
+    this.swingStack5.stack.getCard(event.target).throwIn(0,0);	
+      
+    });
   }
 
 
@@ -192,51 +225,76 @@ addNewCards4(oldcard: string) {
   //  } 
   //})
 }
+addNewCards5(oldcard: string) {
+  this.cards5.push(oldcard);
 
+ // this.http.get('https://randomuser.me/api/?results=' + count)
+ // .map(data => data.json().results)
+ // .subscribe(result => {
+  //  for (let val of result) {
+ ///     this.cards1.push(val);
+  //  } 
+  //})
+}
 goToOtherPage() {
     //push another page onto the history stack
     //causing the nav controller to animate the new page in
     this.navCtrl.push(ContactPage);
   }
-  openModal1(imagesArray) {
+    openModal1(imagesArray) {
   this.didSaveThisOutfit = false;
-let modal = this.modalCtrl.create(imagePicker, imagesArray);
+let modal = this.modalCtrl.create(imagePicker,{images:imagesArray,user:this.currentUser,type:"Hats"});
      modal.onDidDismiss(data => {
+    if(data){
     this.cards1.unshift(data.image);
     this.cards1.pop();
-    
+    }
    });
    modal.present();
  }
-   openModal2(imagesArray) {
-       this.didSaveThisOutfit = false;
 
-let modal = this.modalCtrl.create(imagePicker, imagesArray);
+    openModal2(imagesArray) {
+  this.didSaveThisOutfit = false;
+let modal = this.modalCtrl.create(imagePicker,{images:imagesArray,user:this.currentUser,type:"Tops"});
      modal.onDidDismiss(data => {
+    if(data){
     this.cards2.unshift(data.image);
     this.cards2.pop();
+    }
    });
    modal.present();
  }
-
-  openModal3(imagesArray) {
-      this.didSaveThisOutfit = false;
-
-let modal = this.modalCtrl.create(imagePicker, imagesArray);
+    openModal3(imagesArray) {
+  this.didSaveThisOutfit = false;
+let modal = this.modalCtrl.create(imagePicker,{images:imagesArray,user:this.currentUser,type:"Bottoms"});
      modal.onDidDismiss(data => {
+    if(data){
     this.cards3.unshift(data.image);
     this.cards3.pop();
+    }
    });
    modal.present();
  }
 
-  openModal4(imagesArray) {
-      this.didSaveThisOutfit = false;
-
-let modal = this.modalCtrl.create(imagePicker, imagesArray);
+     openModal4(imagesArray) {
+  this.didSaveThisOutfit = false;
+let modal = this.modalCtrl.create(imagePicker,{images:imagesArray,user:this.currentUser,type:"Shoes"});
      modal.onDidDismiss(data => {
+    if(data){
     this.cards4.unshift(data.image);
     this.cards4.pop();
+    }
+   });
+   modal.present();
+ }
+     openModal5(imagesArray) {
+  this.didSaveThisOutfit = false;
+let modal = this.modalCtrl.create(imagePicker,{images:imagesArray,user:this.currentUser,type:"Dresses"});
+     modal.onDidDismiss(data => {
+    if(data){
+    this.cards4.unshift(data.image);
+    this.cards4.pop();
+    }
    });
    modal.present();
  }
@@ -245,6 +303,15 @@ let modal = this.modalCtrl.create(imagePicker, imagesArray);
   
 
 loadData() {
+     let loader = this.loadingCtrl.create({
+    content: "",
+    spinner:'crescent',
+    duration:3000,
+    showBackdrop:false
+    
+  });
+  //Show the loading indicator
+  loader.present();
     var result1 = [];
 
 firebase.database().ref(this.currentUser+'/Hats/').on('child_added', function(data) {
@@ -291,6 +358,10 @@ firebase.database().ref(this.currentUser+'/Tops/').once('value', function(snapsh
          result2.push(url);
    this.cards2 = result2;
 });
+//loader.dismiss();
+}
+  else{
+//loader.dismiss();
   }
 });
   
@@ -315,7 +386,7 @@ var userStorageRef = firebase.storage().ref().child('Icons/pantsIcon.png');
        var dupe = url;
    result3.push(dupe);
   result3.push(url);
-     
+  
 
     });
   }
@@ -347,8 +418,38 @@ var userStorageRef = firebase.storage().ref().child('Icons/shoeIcon.png');
                   
     });
   }
+  else{
+  }
 }); 
 this.cards4 = result4;
+
+     var result5 = [];
+
+    firebase.database().ref(this.currentUser+'/Dresses/').on('child_added', function(data) {
+var element = data.val();
+if(element){
+
+result5.push(element);
+}
+});
+
+ this.cards5 = result5;
+  // this.grid = Array(Math.ceil(this.items1.length/2));
+
+   firebase.database().ref(this.currentUser+'/Dresses/').once('value', function(snapshot) {
+  if (!(snapshot.exists())) {
+var userStorageRef = firebase.storage().ref().child('Icons/dressIcon.png');
+    userStorageRef.getDownloadURL().then(url => {
+       var dupe = url;
+                  result5.push(url);
+                  result5.push(dupe);
+                  
+    });
+  }
+  else{
+  }
+}); 
+this.cards5 = result5;
 }
 voteUp1() {
  let removedCard = this.cards1.shift();
@@ -377,6 +478,13 @@ voteUp4() {
    this.cards4.push(removedCard);
 
 }
+voteUp5() {
+ let removedCard = this.cards5.shift();
+   this.didSaveThisOutfit = false;
+
+   this.cards5.push(removedCard);
+
+}
 trackByCards1(index: number, card1: any){
 return card1;
 }
@@ -389,6 +497,15 @@ return card3;
 }
 trackByCards4(index: number, card4: any){
 return card4;
+}
+trackByCards5(index: number, card4: any){
+return card4;
+}
+changeToDress(){
+  this.showDress = true;
+}
+changeToShirt(){
+  this.showDress = false;
 }
 // http://stackoverflow.com/questions/57803/how-to-convert-decimal-to-hex-in-javascript
 decimalToHex(d, padding) {
@@ -459,7 +576,16 @@ var newChildRef = firebase.database().ref(firebase.auth().currentUser.uid+'/outf
     <ion-title>
       Choose a photo
     </ion-title>
-
+      <ion-buttons start>
+    <button icon-only ion-button (click)="dismiss()">
+        <ion-icon name="close" color="navcolor"> </ion-icon>
+      </button>
+    </ion-buttons>
+     <ion-buttons end>
+        <button ion-button color = "navcolor" icon-only (click)="addPics()">
+  <ion-icon name="add"></ion-icon>
+</button>
+ </ion-buttons>
   </ion-toolbar>
 </ion-header>
 <ion-content>
@@ -473,21 +599,180 @@ var newChildRef = firebase.database().ref(firebase.auth().currentUser.uid+'/outf
 export class imagePicker {
 images: Array<any>;
 pickedImage: string;
- constructor( public params: NavParams,
-    public viewCtrl: ViewController) {
+didSaveThisOutfit:boolean;
+ storageRef: any;
+  currentImage
+ currentUser: any;
+ type: string;
+ 
+ constructor( private params: NavParams,
+    public viewCtrl: ViewController,public popoverCtrl: PopoverController,private ngZone: NgZone,private shareService: ShareService,@Inject(FirebaseApp) firebaseApp: any,) {
+     this.storageRef = firebaseApp.storage().ref();
 
-    this.images = this.params.get('images');
-
+   // this.images = this.params.get('images');
+  this.currentUser = this.params.get("user");
+  this.images = this.params.get("images");
+ for (let entry of this.images) {
+    console.log(entry); // 1, "string", false
+} 
+  this.type = this.params.get("type");
 
 }
  dismiss() {
+   if(this.pickedImage){
    let data = { image:this.pickedImage };
-   this.viewCtrl.dismiss(data);
+      this.viewCtrl.dismiss(data);
+   }
+   else{
+    this.viewCtrl.dismiss();  
+   }
  }
 
   chooseImage(tapimage) {
     this.pickedImage = tapimage;
     
     this.dismiss();
+}
+  doImageResize(img, callback, MAX_WIDTH: number = 900, MAX_HEIGHT: number = 900) {
+    var canvas = document.createElement("canvas");
+
+    var image = new Image();
+
+    image.onload = function () {
+      console.log("Size Before: " + image.src.length + " bytes");
+
+      var width = image.width;
+      var height = image.height;
+
+      if (width > height) {
+        if (width > MAX_WIDTH) {
+          height *= MAX_WIDTH / width;
+          width = MAX_WIDTH;
+        }
+      } else {
+        if (height > MAX_HEIGHT) {
+          width *= MAX_HEIGHT / height;
+          height = MAX_HEIGHT;
+        }
+      }
+      canvas.width = width;
+      canvas.height = height;
+      var ctx = canvas.getContext("2d");
+
+      ctx.drawImage(image, 0, 0, width, height);
+
+      var dataUrl = canvas.toDataURL('image/jpeg');
+      // IMPORTANT: 'jpeg' NOT 'jpg'
+      console.log("Size After:  " + dataUrl.length + " bytes");
+      callback(dataUrl)
+    }
+
+    image.src = img;
+  }
+  
+ addPics()
+{
+var clothes = this.type;
+  
+  console.log(clothes);
+var options =  {
+          // if no title is passed, the plugin should use a sane default (preferrably the same as it was, so check the old one.. there are screenshots in the marketplace doc)
+          maximumImagesCount: 10,
+          title: 'Select photos',
+        // optional default no helper message above the picker UI
+          // be careful with these options as they require additional processing
+         
+          //             outputType: imagePicker.OutputType.BASE64_STRING
+        }
+     
+ImagePicker.getPictures(options).then((results) => {
+  
+  for (var i = 0; i < results.length; i++) {
+    
+      console.log('Image URI: ' + results[i]);
+        window.resolveLocalFileSystemURL('file:///'+results[i], (fileEntry) => {
+            var uuid = generateUUID();
+            this.doImageResize(results[i], (_data) => {
+        this.ngZone.run(() => {
+          this.currentImage = _data
+        })
+      }, 640)
+                    fileEntry.file((resFile) => {
+
+          var reader = new FileReader();
+          reader.onloadend = (evt: any) => {
+            var imgBlob: any = new Blob([evt.target.result], { type: 'image/jpeg' });
+            imgBlob.name = uuid+'.jpg';
+      var uploadTask = this.storageRef.child(this.currentUser+'/'+clothes+'/'+imgBlob.name).put(imgBlob);
+        console.log(imgBlob.name+'fuck the popopopop');
+       console.log("FUCK MY GERORIIIM");
+
+// Listen for state changes, errors, and completion of the upload.
+uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
+  function(snapshot) {
+    // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+    var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+    console.log('Upload is ' + progress + '% done');
+    switch (snapshot.state) {
+      case firebase.storage.TaskState.PAUSED: // or 'paused'
+        console.log('Upload is paused');
+        break;
+      case firebase.storage.TaskState.RUNNING: // or 'running'
+        console.log('Upload is running');
+        break;
+    }
+  }, function(error) {
+  switch (error.code) {
+    case 'storage/unauthorized':
+      // User doesn't have permission to access the object
+       console.log('NIGGA WE unauthorized IT');
+      break;
+
+    case 'storage/canceled':
+      // User canceled the upload
+             console.log('NIGGA WE CANCELLED IT');
+
+      break;
+
+ 
+    case 'storage/unknown':
+      // Unknown error occurred, inspect error.serverResponse
+                   console.log(error.serverResponse);
+
+      break;
+  }
+}, function() {
+       console.log('NIGGA WE MADE IT');
+  // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+  var downloadURL = uploadTask.snapshot.downloadURL;
+  console.log(downloadURL);
+ 
+     this.db = firebase.database().ref(firebase.auth().currentUser.uid+'/'+clothes);
+var newPostRef = this.db.push();
+
+
+newPostRef.set(downloadURL);
+
+
+});
+
+      
+};
+          reader.onerror = (e) => {
+            console.log("Failed file read: " + e.toString());
+          };
+          reader.readAsArrayBuffer(resFile);
+
+        });
+      }, (err) => {
+        console.log(err);
+        alert(JSON.stringify(err))
+      });
+  
+    }
+}, (err) => {
+      console.log("resolveLocalFileSystemURL", err);
+      alert(JSON.stringify(err))
+    });
 }
 }
