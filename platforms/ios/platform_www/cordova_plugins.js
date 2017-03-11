@@ -277,6 +277,14 @@ module.exports = [
         "clobbers": [
             "IonicDeploy"
         ]
+    },
+    {
+        "id": "cordova-plugin-crop.CropPlugin",
+        "file": "plugins/cordova-plugin-crop/www/crop.js",
+        "pluginId": "cordova-plugin-crop",
+        "clobbers": [
+            "plugins.crop"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -293,7 +301,8 @@ module.exports.metadata =
     "cordova-plugin-statusbar": "2.2.1",
     "cordova-plugin-whitelist": "1.3.1",
     "ionic-plugin-keyboard": "2.2.1",
-    "ionic-plugin-deploy": "0.6.5"
+    "ionic-plugin-deploy": "0.6.5",
+    "cordova-plugin-crop": "0.3.1"
 };
 // BOTTOM OF METADATA
 });

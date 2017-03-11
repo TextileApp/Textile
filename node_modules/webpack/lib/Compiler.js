@@ -3,11 +3,9 @@
 	Author Tobias Koppers @sokra
 */
 var path = require("path");
-var assign = require("object-assign");
 var Tapable = require("tapable");
 
 var Compilation = require("./Compilation");
-var Resolver = require("enhanced-resolve/lib/Resolver");
 
 var NormalModuleFactory = require("./NormalModuleFactory");
 var ContextModuleFactory = require("./ContextModuleFactory");
@@ -23,7 +21,7 @@ function Watching(compiler, watchOptions, handler) {
 			aggregateTimeout: watchOptions
 		};
 	} else if(watchOptions && typeof watchOptions === "object") {
-		this.watchOptions = assign({}, watchOptions);
+		this.watchOptions = Object.assign({}, watchOptions);
 	} else {
 		this.watchOptions = {};
 	}
@@ -156,9 +154,9 @@ function Compiler() {
 	this.contextTimestamps = {};
 
 	this.resolvers = {
-		normal: new Resolver(null),
-		loader: new Resolver(null),
-		context: new Resolver(null)
+		normal: null,
+		loader: null,
+		context: null
 	};
 	var deprecationReported = false;
 	this.parser = {
@@ -189,7 +187,7 @@ function Compiler() {
 				});
 			});
 		}.bind(this)
-	}
+	};
 
 	this.options = {};
 }
@@ -322,8 +320,11 @@ Compiler.prototype.emitAssets = function(compilation, callback) {
 					return callback();
 				}
 				var content = source.source();
-				if(!Buffer.isBuffer(content))
-					content = new Buffer(content, "utf-8");
+
+				if(!Buffer.isBuffer(content)) {
+					content = new Buffer(content, "utf8"); //eslint-disable-line
+				}
+
 				source.existsAt = targetPath;
 				source.emitted = true;
 				this.outputFileSystem.writeFile(targetPath, content, callback);
@@ -337,7 +338,7 @@ Compiler.prototype.emitAssets = function(compilation, callback) {
 	}
 
 	function afterEmit() {
-		this.applyPluginsAsync("after-emit", compilation, function(err) {
+		this.applyPluginsAsyncSeries1("after-emit", compilation, function(err) {
 			if(err) return callback(err);
 
 			return callback();

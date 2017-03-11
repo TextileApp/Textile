@@ -45,6 +45,12 @@
     <feature name="Keyboard">
         <param name="ios-package" onload="true" value="IonicKeyboard" />
     </feature>
+    <feature name="IonicDeploy">
+        <param name="ios-package" onload="true" value="IonicDeploy" />
+    </feature>
+    <feature name="CropPlugin">
+        <param name="ios-package" value="CTCrop" />
+    </feature>
     <name>Textile</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
@@ -61,6 +67,8 @@
     <allow-navigation href="http://10.10.203.159:8100" />
     <allow-navigation href="http://10.10.203.168:8100" />
     <allow-navigation href="http://10.10.203.67:8100" />
+    <allow-navigation href="http://153.90.41.106:8100" />
+    <allow-navigation href="http://10.10.203.166:8100" />
     <icon src="resources/ios/icon/icon-small@3x.png" />
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />

@@ -2,26 +2,28 @@
 	MIT License http://www.opensource.org/licenses/mit-license.php
 	Author Gajus Kuizinas @gajus
 */
-var Ajv = require("ajv");
-var ajv = new Ajv({
+"use strict";
+
+const Ajv = require("ajv");
+const ajv = new Ajv({
 	errorDataPath: "configuration",
 	allErrors: true,
 	verbose: true
 });
-require('ajv-keywords')(ajv);
+require("ajv-keywords")(ajv, ["instanceof"]);
 
 function validateSchema(schema, options) {
 	if(Array.isArray(options)) {
-		var errors = options.map(validateObject.bind(this, schema));
-		errors.forEach(function(list, idx) {
+		const errors = options.map((options) => validateObject(schema, options));
+		errors.forEach((list, idx) => {
 			list.forEach(function applyPrefix(err) {
-				err.dataPath = "[" + idx + "]" + err.dataPath;
+				err.dataPath = `[${idx}]${err.dataPath}`;
 				if(err.children) {
 					err.children.forEach(applyPrefix);
 				}
 			});
 		});
-		return errors.reduce(function(arr, items) {
+		return errors.reduce((arr, items) => {
 			return arr.concat(items);
 		}, []);
 	} else {
@@ -30,33 +32,33 @@ function validateSchema(schema, options) {
 }
 
 function validateObject(schema, options) {
-	var validate = ajv.compile(schema);
-	var valid = validate(options);
+	const validate = ajv.compile(schema);
+	const valid = validate(options);
 	return valid ? [] : filterErrors(validate.errors);
 }
 
 function filterErrors(errors) {
-	var errorsByDataPath = {};
-	var newErrors = [];
-	errors.forEach(function(err) {
-		var dataPath = err.dataPath;
-		var key = "$" + dataPath;
-		if(errorsByDataPath[key]) {
-			var oldError = errorsByDataPath[key];
-			var idx = newErrors.indexOf(oldError);
-			newErrors.splice(idx, 1);
-			if(oldError.children) {
-				var children = oldError.children;
-				delete oldError.children;
+	let newErrors = [];
+	errors.forEach((err) => {
+		const dataPath = err.dataPath;
+		let children = [];
+		newErrors = newErrors.filter((oldError) => {
+			if(oldError.dataPath.includes(dataPath)) {
+				if(oldError.children) {
+					children = children.concat(oldError.children.slice(0));
+				}
+				oldError.children = undefined;
 				children.push(oldError);
-				err.children = children;
-			} else {
-				err.children = [oldError];
+				return false;
 			}
+			return true;
+		});
+		if(children.length) {
+			err.children = children;
 		}
-		errorsByDataPath[key] = err;
 		newErrors.push(err);
 	});
+
 	return newErrors;
 }
 

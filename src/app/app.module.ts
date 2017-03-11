@@ -14,6 +14,8 @@ import * as firebase from 'firebase';
 import { ShareService } from '../providers/ShareService';
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
 import { SwingModule } from 'angular2-swing';
+import { ImageCropperComponent } from'../pages/cropper/img-cropper';
+
 export const firebaseConfig = {
     apiKey: "AIzaSyCbJvS86BwyrrfTy3lwJ71tt0zkoTz6wRU",
     authDomain: "streetwear-3906e.firebaseapp.com",
@@ -43,6 +45,7 @@ firebase.initializeApp(firebaseConfig);
     RegisterPage,
     ResetpwdPage,
     imagePicker,
+    ImageCropperComponent,
     PopoverContentPage
     
   ],
@@ -65,6 +68,7 @@ firebase.initializeApp(firebaseConfig);
     LoginPage,
     RegisterPage,
     ResetpwdPage,
+    ImageCropperComponent,
     PopoverContentPage
   ],
   providers: [

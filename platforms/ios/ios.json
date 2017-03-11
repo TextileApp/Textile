@@ -59,6 +59,10 @@
                         {
                             "xml": "<feature name=\"IonicDeploy\"><param name=\"ios-package\" onload=\"true\" value=\"IonicDeploy\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"CropPlugin\"><param name=\"ios-package\" value=\"CTCrop\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -125,6 +129,9 @@
             "PACKAGE_NAME": "com.ionicframework.ionic2firebaseemail197311"
         },
         "ionic-plugin-deploy": {
+            "PACKAGE_NAME": "com.ionicframework.ionic2firebaseemail197311"
+        },
+        "cordova-plugin-crop": {
             "PACKAGE_NAME": "com.ionicframework.ionic2firebaseemail197311"
         }
     },
@@ -407,6 +414,14 @@
             "clobbers": [
                 "IonicDeploy"
             ]
+        },
+        {
+            "id": "cordova-plugin-crop.CropPlugin",
+            "file": "plugins/cordova-plugin-crop/www/crop.js",
+            "pluginId": "cordova-plugin-crop",
+            "clobbers": [
+                "plugins.crop"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -421,6 +436,7 @@
         "cordova-plugin-statusbar": "2.2.1",
         "cordova-plugin-whitelist": "1.3.1",
         "ionic-plugin-keyboard": "2.2.1",
-        "ionic-plugin-deploy": "0.6.5"
+        "ionic-plugin-deploy": "0.6.5",
+        "cordova-plugin-crop": "0.3.1"
     }
 }

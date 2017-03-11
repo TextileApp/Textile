@@ -50,13 +50,13 @@ ExternalModuleFactoryPlugin.prototype.apply = function(normalModuleFactory) {
 								return next();
 							}
 							callback(null, module);
-						}
+						};
 
 						do {
 							var async = true;
 							if(i >= externals.length) return callback();
 							handleExternals(externals[i++], handleExternalsAndCallback);
-						} while (!async);
+						} while (!async); // eslint-disable-line keyword-spacing
 						async = false;
 					}());
 					return;

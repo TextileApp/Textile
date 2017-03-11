@@ -2,8 +2,13 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports['default'] = injectDynamicImport;
+/* eslint-disable no-underscore-dangle */
+
 function injectDynamicImport(acorn) {
   var tt = acorn.tokTypes;
+
+  // NOTE: This allows `yield import()` to parse correctly.
+  tt._import.startsExpr = true;
 
   function parseDynamicImport() {
     var node = this.startNode();
@@ -25,7 +30,6 @@ function injectDynamicImport(acorn) {
         return function () {
           function parseStatement() {
             var node = this.startNode();
-            // eslint-disable-next-line no-underscore-dangle
             if (this.type === tt._import) {
               var nextToken = peekNext.call(this);
               if (nextToken === tt.parenL.label) {
@@ -48,7 +52,6 @@ function injectDynamicImport(acorn) {
       instance.extend('parseExprAtom', function (nextMethod) {
         return function () {
           function parseExprAtom(refDestructuringErrors) {
-            // eslint-disable-next-line no-underscore-dangle
             if (this.type === tt._import) {
               return parseDynamicImport.call(this);
             }

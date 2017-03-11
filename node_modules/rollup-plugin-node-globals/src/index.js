@@ -6,7 +6,7 @@ import {createFilter} from 'rollup-pluginutils';
 const PROCESS_PATH = require.resolve('process-es6');
 const BUFFER_PATH = require.resolve('buffer-es6');
 const GLOBAL_PATH = join(__dirname, '..', 'src', 'global.js');
-
+const BROWSER_PATH = join(__dirname, '..', 'src', 'browser.js');
 const DIRNAME = '\0node-globals:dirname';
 const FILENAME = '\0node-globals:filename';
 
@@ -23,7 +23,7 @@ function clone(obj) {
 }
 var _mods1 = {
   'process.nextTick': [PROCESS_PATH, 'nextTick'],
-  'process.browser': [PROCESS_PATH, 'browser'],
+  'process.browser': [BROWSER_PATH, 'browser'],
   'Buffer.isBuffer': [BUFFER_PATH, 'isBuffer']
 };
 var _mods2 = {

@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title style="font-size:28px">Crop</ion-title>
+           <ion-buttons >
+		<button color="navcolor" ion-button navPop>
+            cancel
+		</button>
+	</ion-buttons>
+     <ion-buttons end>
+        <button ion-button color = "navcolor" (click)="confirm()">
+confirm
+</button>
+ </ion-buttons>
+    </ion-toolbar>
+
+
+      
+
+</ion-header>
+
+<ion-content>
+    <ion-item *ngIf="imageB64 != null">
+        <img (load)="imageLoaded()" [src]="imageB64" #imgSrc>
+    </ion-item>
+</ion-content>

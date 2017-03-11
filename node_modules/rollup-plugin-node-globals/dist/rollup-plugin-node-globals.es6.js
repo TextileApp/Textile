@@ -1,8 +1,8 @@
-import { createFilter, attachScopes } from 'rollup-pluginutils';
+import { attachScopes, createFilter } from 'rollup-pluginutils';
 import { walk } from 'estree-walker';
 import { parse } from 'acorn';
 import MagicString from 'magic-string';
-import { join, relative, dirname } from 'path';
+import { dirname, join, relative } from 'path';
 import { randomBytes } from 'crypto';
 
 var reservedWords = 'break case class catch const continue debugger default delete do else export extends finally for function if import in instanceof let new return super switch this throw try typeof var void while with yield enum await implements package protected static interface private public'.split(' ');
@@ -63,7 +63,7 @@ function flatten(node) {
   };
 }
 
-function inject (code, id, mod1, mod2, sourceMap) {
+var inject = function (code, id, mod1, mod2, sourceMap) {
   var ast = void 0;
 
   try {
@@ -142,10 +142,9 @@ function inject (code, id, mod1, mod2, sourceMap) {
       }
 
       if (isReference(node, parent)) {
-        var _flatten = flatten(node);
-
-        var _name = _flatten.name;
-        var keypath = _flatten.keypath;
+        var _flatten = flatten(node),
+            _name = _flatten.name,
+            keypath = _flatten.keypath;
 
         handleReference(node, _name, keypath, parent);
       }
@@ -167,12 +166,12 @@ function inject (code, id, mod1, mod2, sourceMap) {
     code: magicString.toString(),
     map: sourceMap ? magicString.generateMap() : null
   };
-}
+};
 
 var PROCESS_PATH = require.resolve('process-es6');
 var BUFFER_PATH = require.resolve('buffer-es6');
 var GLOBAL_PATH = join(__dirname, '..', 'src', 'global.js');
-
+var BROWSER_PATH = join(__dirname, '..', 'src', 'browser.js');
 var DIRNAME = '\0node-globals:dirname';
 var FILENAME = '\0node-globals:filename';
 
@@ -189,7 +188,7 @@ function clone(obj) {
 }
 var _mods1 = {
   'process.nextTick': [PROCESS_PATH, 'nextTick'],
-  'process.browser': [PROCESS_PATH, 'browser'],
+  'process.browser': [BROWSER_PATH, 'browser'],
   'Buffer.isBuffer': [BUFFER_PATH, 'isBuffer']
 };
 var _mods2 = {

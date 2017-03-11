@@ -102,7 +102,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		nThVlzdsK8M+kh3qdXA8zdO9MW8=
+		yZt7R0BlvUWcoyrC1RF1ILkRFxs=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -110,7 +110,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		wBS+n7rmbzgI8ZQl40MTyXLvGPM=
+		CXzEK1iEtE+C4CGkUt8QMU/CNDk=
 		</data>
 		<key>GMEmptyFolder@1x.png</key>
 		<data>
@@ -138,12 +138,38 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		X1X7wzMkV0nEnP+7rjEwelGggSg=
+		4WHznGeZsu3YgNTJDKwAcnx7Byk=
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		z67hFCX6i5y3rui62S15JNivhIs=
+		mfJD++MiEARRywcRoSugnSVDfQc=
 		</data>
+		<key>PEPhotoCropEditor.bundle/PEPhotoCropEditorBorder.png</key>
+		<data>
+		WxpheozxbQQ5aXwJhE3xmtssOik=
+		</data>
+		<key>PEPhotoCropEditor.bundle/PEPhotoCropEditorBorder@2x.png</key>
+		<data>
+		RArjywb36PV18UmG7/WMtx1wz3w=
+		</data>
+		<key>PEPhotoCropEditor.bundle/en.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			IM3++VsMtA5cvT3/B4RZ2NWrNi4=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>PEPhotoCropEditor.bundle/ja.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			fntnRt/Jf8Q0bmSKFz6osnHqxzk=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>PkgInfo</key>
 		<data>
 		n57qDP4tZfLD1rCS43W0B4LQjzE=
@@ -163,7 +189,7 @@
 		</dict>
 		<key>config.xml</key>
 		<data>
-		+zkFUNeEUvOCXOsF61S42dctWaM=
+		5r9pLB0tqGbsR4JLVWvT6cvrn/A=
 		</data>
 		<key>de.lproj/GMImagePicker.strings</key>
 		<dict>
@@ -329,15 +355,19 @@
 		</data>
 		<key>www/build/main.css</key>
 		<data>
-		4771Xtjfwud9wtSx64w777C8qPY=
+		OY9dhNPUqlr7fJUQmcO7JKRnSd0=
+		</data>
+		<key>www/build/main.css.map</key>
+		<data>
+		K+iMpCQsduglOsYkdIUQZQMtaDM=
 		</data>
 		<key>www/build/main.js</key>
 		<data>
-		EEJ2V61KRQVxSuLEcqwG0XxF8Dk=
+		kA8LpJvD0suN1cGZI9PPlCPoSWw=
 		</data>
 		<key>www/build/main.js.map</key>
 		<data>
-		Kf6G0sTzEg5u/EO42491lwr/m+I=
+		BCe3E93q5FDyqRT4BEpf6FBrTt8=
 		</data>
 		<key>www/build/polyfills.js</key>
 		<data>
@@ -357,7 +387,7 @@
 		</data>
 		<key>www/cordova_plugins.js</key>
 		<data>
-		SqHTVxWkQr5kAKJJCkltepWP4Mw=
+		D/Hjlg98z6GJmlcbJBPYG6Y+FiU=
 		</data>
 		<key>www/index.html</key>
 		<data>
@@ -398,6 +428,10 @@
 		<key>www/plugins/cordova-plugin-console/www/logger.js</key>
 		<data>
 		tmAfmQQR8NZd7y+bTWuju4/TbY0=
+		</data>
+		<key>www/plugins/cordova-plugin-crop/www/crop.js</key>
+		<data>
+		20FBsyGYaY4jq+LwyWYFH5o1uf4=
 		</data>
 		<key>www/plugins/cordova-plugin-device/www/device.js</key>
 		<data>
@@ -498,6 +532,10 @@
 		<key>www/plugins/cordova-plugin-statusbar/www/statusbar.js</key>
 		<data>
 		hDT++3ZaOTp3t16AAFAibxtovj0=
+		</data>
+		<key>www/plugins/ionic-plugin-deploy/www/ionicdeploy.js</key>
+		<data>
+		Hxo7WsWEhfrC/S2Z4uBQt3ymdks=
 		</data>
 		<key>www/plugins/ionic-plugin-keyboard/www/ios/keyboard.js</key>
 		<data>
@@ -778,11 +816,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			nThVlzdsK8M+kh3qdXA8zdO9MW8=
+			yZt7R0BlvUWcoyrC1RF1ILkRFxs=
 			</data>
 			<key>hash2</key>
 			<data>
-			Rukay+IB9izju9Y5R44gLwRwQ8IEAe37CJ1j8WQyL7g=
+			2LynoOaoQrdNQ5sQMJSEIeBkTtQ6g9suh46zeiSJmE4=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -800,11 +838,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			wBS+n7rmbzgI8ZQl40MTyXLvGPM=
+			CXzEK1iEtE+C4CGkUt8QMU/CNDk=
 			</data>
 			<key>hash2</key>
 			<data>
-			c+mpZnngXOnmHtuTzi84EQ1TE50BsQTxmgD8VLqRJr8=
+			RXdACHm6qN5dE1Cv/JXREvv8Jvcvx0uDmUV2l81hmcU=
 			</data>
 		</dict>
 		<key>GMEmptyFolder@1x.png</key>
@@ -877,12 +915,60 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			z67hFCX6i5y3rui62S15JNivhIs=
+			mfJD++MiEARRywcRoSugnSVDfQc=
 			</data>
 			<key>hash2</key>
 			<data>
-			i1GsTfBSQ4Oao5qlsXKmrO2GbRxnIO0hPVLNPA/Wy6o=
+			x+ucKhlAHFzxAbEkoyvqtCnIX4XuexGfBnv+k5prVnk=
 			</data>
+		</dict>
+		<key>PEPhotoCropEditor.bundle/PEPhotoCropEditorBorder.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			WxpheozxbQQ5aXwJhE3xmtssOik=
+			</data>
+			<key>hash2</key>
+			<data>
+			EHaTRchwhd/sIIuv+Lq4w6CTz6R1+eCuRLIPtWQ4Frc=
+			</data>
+		</dict>
+		<key>PEPhotoCropEditor.bundle/PEPhotoCropEditorBorder@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			RArjywb36PV18UmG7/WMtx1wz3w=
+			</data>
+			<key>hash2</key>
+			<data>
+			/eJfq1DNuwOa8PXxwtlADAV/3nfkUi6x450Zp/xq7kY=
+			</data>
+		</dict>
+		<key>PEPhotoCropEditor.bundle/en.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			IM3++VsMtA5cvT3/B4RZ2NWrNi4=
+			</data>
+			<key>hash2</key>
+			<data>
+			1Hpc7QHxhMcDMz3Q0cmli0O4TwVLAwq+siTWffjieI8=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>PEPhotoCropEditor.bundle/ja.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			fntnRt/Jf8Q0bmSKFz6osnHqxzk=
+			</data>
+			<key>hash2</key>
+			<data>
+			Mos0volUvHmnb05LOjpln2oXZgCDb2Nr8pp5O6gvfus=
+			</data>
+			<key>optional</key>
+			<true/>
 		</dict>
 		<key>archived-expanded-entitlements.xcent</key>
 		<dict>
@@ -912,11 +998,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+zkFUNeEUvOCXOsF61S42dctWaM=
+			5r9pLB0tqGbsR4JLVWvT6cvrn/A=
 			</data>
 			<key>hash2</key>
 			<data>
-			qsL4LnYr8dLzhn44zyizYjiAQEsCv4pBwy2H0K8gtgI=
+			/kCekQ1ZCthmL0HH9hMvriMLeRK8TNy6nCW6Jzwj1Nc=
 			</data>
 		</dict>
 		<key>de.lproj/GMImagePicker.strings</key>
@@ -1298,33 +1384,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			4771Xtjfwud9wtSx64w777C8qPY=
+			OY9dhNPUqlr7fJUQmcO7JKRnSd0=
 			</data>
 			<key>hash2</key>
 			<data>
-			0rGMYsZu3J3kZRxxIvrNC6+AFmTB4Mnthc1vzQEec2E=
+			WYigUJqNxbnf/Qv1W+SgNGJ3owavlkqKqmvoMYa2da0=
+			</data>
+		</dict>
+		<key>www/build/main.css.map</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			K+iMpCQsduglOsYkdIUQZQMtaDM=
+			</data>
+			<key>hash2</key>
+			<data>
+			dCNOmK/nSY+12vHzasLXiswzlGT5UHA7jAGYkvmCuQs=
 			</data>
 		</dict>
 		<key>www/build/main.js</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			EEJ2V61KRQVxSuLEcqwG0XxF8Dk=
+			kA8LpJvD0suN1cGZI9PPlCPoSWw=
 			</data>
 			<key>hash2</key>
 			<data>
-			XvZcyByebia6Eq2rFhgNdphppumEhLNZ8Rg3H7XXTBQ=
+			mCoFHL+pBAs4UOzMFZUSGxkVfS4Ub2Lua+q6wHebq24=
 			</data>
 		</dict>
 		<key>www/build/main.js.map</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Kf6G0sTzEg5u/EO42491lwr/m+I=
+			BCe3E93q5FDyqRT4BEpf6FBrTt8=
 			</data>
 			<key>hash2</key>
 			<data>
-			geOuPS/QW2AxOl81Gspvg6O94XAl3RooXq/vpqwT72U=
+			f9gWKi9pnybGhQmIxojQlqMQPBhxK6UqUjNdBbqwrXs=
 			</data>
 		</dict>
 		<key>www/build/polyfills.js</key>
@@ -1375,11 +1472,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			SqHTVxWkQr5kAKJJCkltepWP4Mw=
+			D/Hjlg98z6GJmlcbJBPYG6Y+FiU=
 			</data>
 			<key>hash2</key>
 			<data>
-			AM58J9jIy8bM9bJs/ocN6m8Ur7biXJ2HeY8rX41e2PI=
+			baQoubH720pTvt1Os6OPEt9pcBDwDhU8Dd3pfTyKdUE=
 			</data>
 		</dict>
 		<key>www/index.html</key>
@@ -1490,6 +1587,17 @@
 			<key>hash2</key>
 			<data>
 			ESzk4H7ypO9esEfCCJl4Sw+BH3M31e0OkRdbsNe0Wcc=
+			</data>
+		</dict>
+		<key>www/plugins/cordova-plugin-crop/www/crop.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			20FBsyGYaY4jq+LwyWYFH5o1uf4=
+			</data>
+			<key>hash2</key>
+			<data>
+			bjuJ56YFSYqT/cTv0qQehoJkD3j4bSZgAmBwSbPrOxQ=
 			</data>
 		</dict>
 		<key>www/plugins/cordova-plugin-device/www/device.js</key>
@@ -1765,6 +1873,17 @@
 			<key>hash2</key>
 			<data>
 			JVFddhH/G0jM/7U0DOdpW1CvUNswIGcQB9WylyRtCBM=
+			</data>
+		</dict>
+		<key>www/plugins/ionic-plugin-deploy/www/ionicdeploy.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Hxo7WsWEhfrC/S2Z4uBQt3ymdks=
+			</data>
+			<key>hash2</key>
+			<data>
+			570mEuqG3N1XSZsJXzqmWO6gmq4z1hrbZJj4PHV2fi4=
 			</data>
 		</dict>
 		<key>www/plugins/ionic-plugin-keyboard/www/ios/keyboard.js</key>

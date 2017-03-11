@@ -48,10 +48,13 @@
     <feature name="IonicDeploy">
         <param name="ios-package" onload="true" value="IonicDeploy" />
     </feature>
+    <feature name="CropPlugin">
+        <param name="ios-package" value="CTCrop" />
+    </feature>
     <name>Textile</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
-    <content original-src="index.html" src="http://10.10.203.166:8100" />
+    <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />

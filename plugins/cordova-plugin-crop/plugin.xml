@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  id="cordova-plugin-crop"
+  version="0.3.1">
+
+  <name>CropPlugin</name>
+
+  <description>
+    Crop an image in a Cordova app
+  </description>
+
+  <license>MIT</license>
+
+  <engines>
+    <engine name="cordova-android" version=">=4.0.0" />
+    <engine name="cordova-ios" version=">=3.5.0" />
+  </engines>
+
+  <js-module src="www/crop.js" name="CropPlugin">
+    <clobbers target="plugins.crop" />
+  </js-module>
+
+  <!-- ios -->
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="CropPlugin">
+        <param name="ios-package" value="CTCrop"/>
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/CTCrop.h" />
+    <source-file src="src/ios/CTCrop.m" />
+    <header-file src="src/ios/Lib/PECropRectView.h" />
+    <source-file src="src/ios/Lib/PECropRectView.m" />
+    <header-file src="src/ios/Lib/PECropView.h" />
+    <source-file src="src/ios/Lib/PECropView.m" />
+    <header-file src="src/ios/Lib/PECropViewController.h" />
+    <source-file src="src/ios/Lib/PECropViewController.m" />
+    <header-file src="src/ios/Lib/PEResizeControl.h" />
+    <source-file src="src/ios/Lib/PEResizeControl.m" />
+    <header-file src="src/ios/Lib/UIImage+PECrop.h" />
+    <source-file src="src/ios/Lib/UIImage+PECrop.m" />
+    <resource-file src="src/ios/Lib/PEPhotoCropEditor.bundle" />
+
+    <framework src="QuartzCore.framework" />
+    <framework src="AVFoundation.framework" />
+  </platform>
+
+  <!-- android -->
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="CropPlugin">
+        <param name="android-package" value="com.jeduan.crop.CropPlugin"/>
+      </feature>
+    </config-file>
+
+    <framework src="com.soundcloud.android:android-crop:1.0.0@aar" />
+
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <activity android:name="com.soundcloud.android.crop.CropImageActivity" />
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    </config-file>
+
+    <source-file src="src/android/CropPlugin.java" target-dir="src/com/jeduan/crop" />
+  </platform>
+</plugin>

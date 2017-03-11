@@ -1,13 +1,16 @@
-import { Component, Inject, NgZone,NgModule,OnInit} from '@angular/core';
+import { Component, Inject, NgZone,NgModule,OnInit,ViewChild,ElementRef} from '@angular/core';
 import { Camera } from 'ionic-native';
 import { PhotoViewer } from 'ionic-native';
-import { NavController,PopoverController } from 'ionic-angular';
+import { NavController,PopoverController,ActionSheetController,ModalController } from 'ionic-angular';
 import { ImagePicker, File} from 'ionic-native';
 import { FirebaseApp,FirebaseListObservable,AngularFire } from 'angularfire2';
 import { PopoverContentPage } from './popover';
 import { AuthService } from '../../providers/auth-service';
 import {ShareService} from '../../providers/ShareService';
 import { Events } from 'ionic-angular';
+import Cropper from 'cropperjs';
+import { ImageCropperComponent } from "../cropper/img-cropper";
+
 import * as firebase from 'firebase';
 declare var window: any
 
@@ -23,7 +26,14 @@ function generateUUID(){
     });
     return uuid;
 }
-
+function dataURLtoBlob(dataurl) {
+    var arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
+        bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
+    while(n--){
+        u8arr[n] = bstr.charCodeAt(n);
+    }
+    return new Blob([u8arr], {type:mime});
+}
 @Component({
   selector: 'page-contact',
   templateUrl: 'contact.html',
@@ -38,6 +48,8 @@ export class ContactPage {
 isEnabled: boolean;
     selectedItem: any;
   icons: string[];
+    cropper : Cropper;
+  public imgUri: string;
   showDresses:boolean;
  items1: FirebaseListObservable<any>;
  items2: FirebaseListObservable<any>;
@@ -54,9 +66,9 @@ isEnabled: boolean;
   grid: Array<Array<string>>;
 af: AngularFire;
 
+  @ViewChild('imgSrc') input: ElementRef;
 
-
-  constructor(public navCtrl: NavController,@Inject(FirebaseApp) firebaseApp: any,public events: Events,private ngZone: NgZone,public popoverCtrl: PopoverController,af: AngularFire,private _auth: AuthService,private shareService: ShareService
+  constructor(public navCtrl: NavController, public actionSheetCtrl: ActionSheetController,public modalCtrl: ModalController , @Inject(FirebaseApp) firebaseApp: any,public events: Events,private ngZone: NgZone,public popoverCtrl: PopoverController,af: AngularFire,private _auth: AuthService,private shareService: ShareService
  ) {
   this.isEnabled = false;
     const authObserver = af.auth.subscribe( user => {
@@ -84,6 +96,131 @@ af: AngularFire;
       
 
     }
+      public presentActionSheet() {
+
+    let actionSheet = this.actionSheetCtrl.create({
+      title: 'Select Image Source',
+      buttons: [
+        {
+          text: 'Load from Library',
+          handler: () => {
+            this.takePicture(0); //Camera.PictureSourceType.PHOTOLIBRARY);
+          }
+        },
+        {
+          text: 'Use Camera',
+          handler: () => {
+            this.takePicture(1);//Camera.PictureSourceType.CAMERA);
+          }
+        },
+        {
+          text: 'Cancel',
+          role: 'cancel'
+        }
+      ]
+    });
+    actionSheet.present();
+  }
+  public presentCropModal(img: string,clothes: string) {
+    
+    let cropModal = this.modalCtrl.create(ImageCropperComponent, {'imgUri': img});
+       
+
+    cropModal.onDidDismiss(data => {
+       if(data){
+       if(this.pet == "Hats"){
+        console.log("ITS HATS");
+        clothes = 'Hats';
+       }
+       if(this.pet == "'Hats'")
+       {
+    console.log("ITS HATSSjjsjjj");
+       }
+       console.log(clothes);
+       console.log(this.pet);
+       console.log("hentai");
+      this.imgUri = data;
+      console.log(this.imgUri);
+            var uuid = generateUUID();
+            var imgBlob: any = dataURLtoBlob(this.imgUri);
+            imgBlob.name = uuid+'.jpg';
+      var uploadTask = this.storageRef.child(this.currentUser+'/'+clothes+'/'+imgBlob.name).put(imgBlob);
+    console.log(this.currentUser+'/'+this.pet+'/'+imgBlob.name);
+// Listen for state changes, errors, and completion of the upload.
+uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
+  function(snapshot) {
+    // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+    var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+    console.log('Upload is ' + progress + '% done');
+    switch (snapshot.state) {
+      case firebase.storage.TaskState.PAUSED: // or 'paused'
+        console.log('Upload is paused');
+        break;
+      case firebase.storage.TaskState.RUNNING: // or 'running'
+        console.log('Upload is running');
+        break;
+    }
+  }, function(error) {
+  switch (error.code) {
+    case 'storage/unauthorized':
+      // User doesn't have permission to access the object
+       console.log('NIGGA WE unauthorized IT');
+      break;
+
+    case 'storage/canceled':
+      // User canceled the upload
+             console.log('NIGGA WE CANCELLED IT');
+
+      break;
+
+ 
+    case 'storage/unknown':
+      // Unknown error occurred, inspect error.serverResponse
+                   console.log(error.serverResponse);
+
+      break;
+  }
+}, function() {
+       console.log('NIGGA WE MADE IT');
+  // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+  var downloadURL = uploadTask.snapshot.downloadURL;
+  console.log(downloadURL);
+ 
+     this.db = firebase.database().ref(firebase.auth().currentUser.uid+'/'+clothes);
+var newPostRef = this.db.push();
+newPostRef.set(
+  downloadURL
+);
+});
+         
+
+   
+       }
+    });
+ cropModal.present();
+  }
+
+  public takePicture(sourceType) {
+    // Create options for the Camera Dialog
+    var options = {
+      quality: 50,
+      sourceType: sourceType,
+      // targetWidth: 320,
+      // targetHeight: 320,
+      destinationType: 0, //Camera.DestinationType.DATA_URL,
+      saveToPhotoAlbum: false,
+      correctOrientation: true
+    };
+
+    Camera.getPicture(options).then((imageData) => {
+      // imageData is a base64 encoded string
+      // this.imgData = imageData;
+      this.imgUri = imageData;
+      this.presentCropModal(this.imgUri,this.pet);
+    }, (err) => {
+      console.log(err);
+    });
+  }
     show(pic){
 PhotoViewer.show(pic);
 
@@ -97,7 +234,7 @@ PhotoViewer.show(pic);
     
       
   }
-  
+
   doImageResize(img, callback, MAX_WIDTH: number = 900, MAX_HEIGHT: number = 900) {
     var canvas = document.createElement("canvas");
 
@@ -144,7 +281,8 @@ PhotoViewer.show(pic);
     });
   popover.onDidDismiss(() => {
 if(this.shareService.getIsUploading()){
-this.addPics(this.pet);
+//this.addPics(this.pet);
+this.presentActionSheet();
 this.shareService.setIsUploading(false);
 }
     // Navigate to new page.  Popover should be gone at this point completely
@@ -156,7 +294,7 @@ console.log(this.showDresses);
   }
 
 
- addPics(clothes: string)
+/** addPics(clothes: string)
 {
 
   
@@ -179,9 +317,8 @@ ImagePicker.getPictures(options).then((results) => {
         window.resolveLocalFileSystemURL('file:///'+results[i], (fileEntry) => {
             var uuid = generateUUID();
             this.doImageResize(results[i], (_data) => {
-        this.ngZone.run(() => {
-          this.currentImage = _data
-        })
+      
+      
       }, 640)
                     fileEntry.file((resFile) => {
 
@@ -259,7 +396,7 @@ newPostRef.set(
       alert(JSON.stringify(err))
     });
 }
-
+*/
 isDeleteEnabled()
 {
 return this.shareService.getCanDelete();

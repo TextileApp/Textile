@@ -78,6 +78,7 @@ constructor(public viewCtrl: ViewController,private ngZone: NgZone,private navPa
   }
 addPics(){
   this.shareService.setIsUploading(true);
+  this.shareService.setCanDelete(false);
     this.close();  
 }
 

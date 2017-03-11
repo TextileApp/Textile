@@ -46,7 +46,7 @@ ProgressPlugin.prototype.apply = function(compiler) {
 				activeModules.length + " active",
 				activeModules[activeModules.length - 1]
 			);
-		}
+		};
 
 		var moduleDone = function moduleDone(module) {
 			doneModules++;
@@ -56,7 +56,7 @@ ProgressPlugin.prototype.apply = function(compiler) {
 				if(idx >= 0) activeModules.splice(idx, 1);
 			}
 			update();
-		}
+		};
 		compiler.plugin("compilation", function(compilation) {
 			if(compilation.compiler.isChild()) return;
 			lastModulesCount = moduleCount;
@@ -131,7 +131,7 @@ ProgressPlugin.prototype.apply = function(compiler) {
 		});
 	}
 
-	var chars = 0,
+	var lineCaretPosition = 0,
 		lastState, lastStateTime;
 
 	function defaultHandler(percentage, msg) {
@@ -151,7 +151,7 @@ ProgressPlugin.prototype.apply = function(compiler) {
 				if(detail.length > 40) {
 					detail = "..." + detail.substr(detail.length - 37);
 				}
-				msg += " " + detail
+				msg += " " + detail;
 			});
 		}
 		if(profile) {
@@ -165,7 +165,7 @@ ProgressPlugin.prototype.apply = function(compiler) {
 					var stateMsg = (now - lastStateTime) + "ms " + lastState;
 					goToLineStart(stateMsg);
 					process.stderr.write(stateMsg + "\n");
-					chars = 0;
+					lineCaretPosition = 0;
 				}
 				lastState = state;
 				lastStateTime = now;
@@ -177,13 +177,13 @@ ProgressPlugin.prototype.apply = function(compiler) {
 
 	function goToLineStart(nextMessage) {
 		var str = "";
-		for(; chars > nextMessage.length; chars--) {
+		for(; lineCaretPosition > nextMessage.length; lineCaretPosition--) {
 			str += "\b \b";
 		}
-		chars = nextMessage.length;
-		for(var i = 0; i < chars; i++) {
+		for(var i = 0; i < lineCaretPosition; i++) {
 			str += "\b";
 		}
+		lineCaretPosition = nextMessage.length;
 		if(str) process.stderr.write(str);
 	}
 };

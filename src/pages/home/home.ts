@@ -5,7 +5,7 @@ import {OutfitsPage} from '../outfits/outfits';
 import { NavController,ModalController,NavParams,ViewController,ToastController,PopoverController,LoadingController } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service';
 import {ShareService} from '../../providers/ShareService';
-import{ImagePicker, File} from'ionic-native';
+import{ImagePicker, File,Crop} from'ionic-native';
 import { ContactPage } from '../contact/contact';
 import { Http } from '@angular/http';
 import { FirebaseApp,FirebaseListObservable,AngularFire } from 'angularfire2';
@@ -498,8 +498,8 @@ return card3;
 trackByCards4(index: number, card4: any){
 return card4;
 }
-trackByCards5(index: number, card4: any){
-return card4;
+trackByCards5(index: number, card5: any){
+return card5;
 }
 changeToDress(){
   this.showDress = true;
@@ -705,6 +705,7 @@ var options =  {
           // if no title is passed, the plugin should use a sane default (preferrably the same as it was, so check the old one.. there are screenshots in the marketplace doc)
           maximumImagesCount: 10,
           title: 'Select photos',
+          allowEdit:true
         // optional default no helper message above the picker UI
           // be careful with these options as they require additional processing
          

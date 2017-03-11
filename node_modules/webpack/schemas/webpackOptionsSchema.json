@@ -37,22 +37,25 @@
     },
     "entry": {
       "description": "The entry point(s) of the compilation.",
-      "anyOf": [
+      "oneOf": [
         {
+          "minProperties": 1,
           "additionalProperties": {
-            "$ref": "#/definitions/entry-item"
+            "oneOf": [
+              {
+                "description": "The string is resolved to a module which is loaded upon startup.",
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "description": "All modules are loaded upon startup. The last one is exported.",
+                "$ref": "#/definitions/common.nonEmptyArrayOfUniqueStringValues"
+              }
+            ]
           },
           "description": "Multiple entry bundles are created. The key is the chunk name. The value can be a string or an array.",
           "type": "object"
         },
-        {
-          "$ref": "#/definitions/entry-item"
-        }
-      ]
-    },
-    "entry-item": {
-      "description": "The entry point for one output file.",
-      "anyOf": [
         {
           "description": "The string is resolved to a module which is loaded upon startup.",
           "minLength": 1,
@@ -65,6 +68,10 @@
             }
           ],
           "description": "All modules are loaded upon startup. The last one is exported."
+        },
+        {
+          "description": "function returning an entry object or a promise.",
+          "instanceof": "Function"
         }
       ]
     },
@@ -180,6 +187,16 @@
         },
         "unknownContextRequest": {
           "type": "string"
+        },
+        "unsafeCache": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "instanceof": "Function"
+            }
+          ]
         },
         "wrappedContextCritical": {
           "type": "boolean"
@@ -455,6 +472,9 @@
               "type": "object"
             }
           ]
+        },
+        "useSyncFileSystemCalls": {
+          "type": "boolean"
         }
       },
       "type": "object"
@@ -610,6 +630,9 @@
           "$ref": "#/definitions/ruleSet-loader"
         },
         {
+          "instanceof": "Function"
+        },
+        {
           "additionalProperties": false,
           "properties": {
             "loader": {
@@ -749,26 +772,39 @@
     },
     "performance": {
       "description": "Configuration for web performance recommendations.",
-      "additionalProperties": false,
-      "properties": {
-        "hints": {
-          "description": "Turn hints on or off",
-          "type": "boolean"
+      "anyOf": [
+        {
+          "enum": [
+            false
+          ]
         },
-        "maxInitialChunkSize": {
-          "description": "Total size of all initial chunks (in bytes)",
-          "type": "number"
-        },
-        "maxAssetSize": {
-          "description": "Filesize limit (in bytes) when exceeded, that webpack will provide performance hints",
-          "type": "number"
-        },
-        "errorOnHint": {
-          "description": "Throw errors instead of warnings when performance hints are found",
-          "type": "boolean"
+        {
+          "additionalProperties": false,
+          "properties": {
+            "assetFilter": {
+              "description": "Filter function to select assets that are checked",
+              "instanceof": "Function"
+            },
+            "hints": {
+              "description": "Sets the format of the hints: warnings, errors or nothing at all",
+              "enum": [
+                false,
+                "warning",
+                "error"
+              ]
+            },
+            "maxEntrypointSize": {
+              "description": "Total size of an entry point (in bytes)",
+              "type": "number"
+            },
+            "maxAssetSize": {
+              "description": "Filesize limit (in bytes) when exceeded, that webpack will provide performance hints",
+              "type": "number"
+            }
+          },
+          "type": "object"
         }
-      },
-      "type": "object"
+      ]
     },
     "plugins": {
       "description": "Add additional plugins to the compiler.",

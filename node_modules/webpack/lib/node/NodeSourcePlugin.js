@@ -2,10 +2,9 @@
 	MIT License http://www.opensource.org/licenses/mit-license.php
 	Author Tobias Koppers @sokra
 */
-var path = require('path');
+var path = require("path");
 var AliasPlugin = require("enhanced-resolve/lib/AliasPlugin");
-var objectAssign = require('object-assign');
-var ModuleParserHelpers = require("../ModuleParserHelpers");
+var ParserHelpers = require("../ParserHelpers");
 var nodeLibsBrowser = require("node-libs-browser");
 
 function NodeSourcePlugin(options) {
@@ -38,7 +37,7 @@ NodeSourcePlugin.prototype.apply = function(compiler) {
 		suffix = suffix || "";
 		parser.plugin("expression " + name, function() {
 			if(this.state.module && this.state.module.resource === getPathToModule(module, type)) return;
-			return ModuleParserHelpers.addParsedVariable(this, name, buildExpression(this.state.module.context, getPathToModule(module, type)) + suffix);
+			return ParserHelpers.addParsedVariableToModule(this, name, buildExpression(this.state.module.context, getPathToModule(module, type)) + suffix);
 		});
 	}
 
@@ -50,11 +49,11 @@ NodeSourcePlugin.prototype.apply = function(compiler) {
 
 			var localOptions = options;
 			if(parserOptions.node)
-				localOptions = objectAssign({}, localOptions, parserOptions.node);
+				localOptions = Object.assign({}, localOptions, parserOptions.node);
 
 			if(localOptions.global) {
 				parser.plugin("expression global", function() {
-					return ModuleParserHelpers.addParsedVariable(this, "global", buildExpression(this.state.module.context, require.resolve("../../buildin/global.js")));
+					return ParserHelpers.addParsedVariableToModule(this, "global", buildExpression(this.state.module.context, require.resolve("../../buildin/global.js")));
 				});
 			}
 			if(localOptions.process) {
@@ -77,7 +76,6 @@ NodeSourcePlugin.prototype.apply = function(compiler) {
 		});
 	});
 	compiler.plugin("after-resolvers", function(compiler) {
-		var alias = {};
 		Object.keys(nodeLibsBrowser).forEach(function(lib) {
 			if(options[lib] !== false) {
 				compiler.resolvers.normal.apply(
