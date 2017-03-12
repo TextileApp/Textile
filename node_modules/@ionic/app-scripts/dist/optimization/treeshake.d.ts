@@ -1,0 +1,15 @@
+import { TreeShakeCalcResults } from '../util/interfaces';
+export declare function calculateUnusedComponents(dependencyMap: Map<string, Set<string>>): TreeShakeCalcResults;
+export declare function calculateUnusedComponentsImpl(dependencyMap: Map<string, Set<string>>, importee: string): any;
+export declare function getAppModuleNgFactoryPath(): string;
+export declare function isIonicComponentOrAppSource(modulePath: string): boolean;
+export declare function isNgFactory(modulePath: string): boolean;
+export declare function purgeUnusedImportsAndExportsFromIndex(indexFilePath: string, indexFileContent: string, modulePathsToPurge: string[]): string;
+export declare function purgeComponentNgFactoryImportAndUsage(appModuleNgFactoryPath: string, appModuleNgFactoryContent: string, componentFactoryPath: string): string;
+export declare function purgeProviderControllerImportAndUsage(appModuleNgFactoryPath: string, appModuleNgFactoryContent: string, providerPath: string): string;
+export declare function purgeProviderClassNameFromIonicModuleForRoot(indexFileContent: string, providerClassName: string): string;
+export declare function generateWildCardImportRegex(relativeImportPath: string): RegExp;
+export declare function generateRemoveComponentFromConstructorRegex(namedImport: string): RegExp;
+export declare function generateRemoveGetterFromImportRegex(namedImport: string): RegExp;
+export declare function generateRemoveIfStatementRegex(namedImport: string): RegExp;
+export declare function generateIonicModulePurgeProviderRegex(className: string): RegExp;

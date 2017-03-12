@@ -1,0 +1,29 @@
+{
+    "name": "cropperjs",
+    "libraryName": "cropperjs",
+    "sourceRepoURL": "https://www.github.com/DefinitelyTyped/DefinitelyTyped",
+    "data": {
+        "authors": "Stepan Mikhaylyuk <https://github.com/stepancar>",
+        "dependencies": {},
+        "pathMappings": {},
+        "libraryMajorVersion": 0,
+        "libraryMinorVersion": 0,
+        "typeScriptVersion": "2.0",
+        "libraryName": "cropperjs",
+        "typingsPackageName": "cropperjs",
+        "projectName": "https://github.com/fengyuanchen/cropperjs",
+        "sourceRepoURL": "https://www.github.com/DefinitelyTyped/DefinitelyTyped",
+        "globals": [
+            "Cropper"
+        ],
+        "declaredModules": [
+            "cropperjs/."
+        ],
+        "files": [
+            "index.d.ts"
+        ],
+        "hasPackageJson": false,
+        "contentHash": "68c51cade19784706f08a986a3a239b8f021a6d995f3b5d14df668ef72cc4584"
+    },
+    "isLatest": true
+}
