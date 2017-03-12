@@ -7,10 +7,16 @@ export class ShareService {
   
   canDelete: boolean;
   isUploading:boolean;
+  showDresses:boolean;
     constructor() {
        this.canDelete = false;
     }
-  
+    setShowDresses(istrue){
+    this.showDresses = istrue;
+  }
+   getShowDresses() {
+       return this.showDresses;
+    }  
     setCanDelete(can) {
        this.canDelete = can; 
     }
