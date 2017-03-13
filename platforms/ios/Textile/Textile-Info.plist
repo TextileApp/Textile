@@ -86,6 +86,8 @@
     <string/>
     <key>NSPhotoLibraryUsageDescription</key>
     <string/>
+    <key>UIMainStoryboardFile</key>
+    <string>CDVLaunchScreen</string>
     <key>UIRequiresFullScreen</key>
     <true/>
     <key>UISupportedInterfaceOrientations</key>

@@ -2,14 +2,15 @@ import { Component, ViewChild, ViewChildren, QueryList, Inject, OnInit, NgZone, 
 import * as firebase from 'firebase';
 import { LoginPage } from '../login/login';
 import {OutfitsPage} from '../outfits/outfits';
-import { NavController,ModalController,NavParams,ViewController,ToastController,PopoverController,LoadingController } from 'ionic-angular';
+import { NavController,ModalController,NavParams,ViewController,ActionSheetController,ToastController,PopoverController,LoadingController } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service';
 import {ShareService} from '../../providers/ShareService';
-import{ImagePicker, File,Crop} from'ionic-native';
+import{ImagePicker, File,Crop,Camera} from'ionic-native';
 import { ContactPage } from '../contact/contact';
 import { Http } from '@angular/http';
 import { FirebaseApp,FirebaseListObservable,AngularFire } from 'angularfire2';
-
+import Cropper from 'cropperjs';
+import { ImageCropperComponent } from "../cropper/img-cropper";
 import 'rxjs/Rx';
 
 declare var window: any
@@ -651,7 +652,14 @@ var newChildRef = firebase.database().ref(firebase.auth().currentUser.uid+'/outf
   
   
 
-
+function dataURLtoBlob(dataurl) {
+    var arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
+        bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
+    while(n--){
+        u8arr[n] = bstr.charCodeAt(n);
+    }
+    return new Blob([u8arr], {type:mime});
+}
 
 @Component({template: `
 <ion-header>
@@ -666,7 +674,7 @@ var newChildRef = firebase.database().ref(firebase.auth().currentUser.uid+'/outf
       </button>
     </ion-buttons>
      <ion-buttons end>
-        <button ion-button color = "navcolor" icon-only (click)="addPics()">
+        <button ion-button color = "navcolor" icon-only (click)="addPics1()">
   <ion-icon name="add"></ion-icon>
 </button>
  </ion-buttons>
@@ -688,9 +696,10 @@ didSaveThisOutfit:boolean;
   currentImage
  currentUser: any;
  type: string;
- 
+public imgUri: string;
+
  constructor( private params: NavParams,
-    public viewCtrl: ViewController,public popoverCtrl: PopoverController,private ngZone: NgZone,private shareService: ShareService,@Inject(FirebaseApp) firebaseApp: any,) {
+    public viewCtrl: ViewController,public popoverCtrl: PopoverController,private ngZone: NgZone,public modalCtrl: ModalController,public actionSheetCtrl: ActionSheetController,private shareService: ShareService,@Inject(FirebaseApp) firebaseApp: any,) {
      this.storageRef = firebaseApp.storage().ref();
 
    // this.images = this.params.get('images');
@@ -753,7 +762,131 @@ didSaveThisOutfit:boolean;
 
     image.src = img;
   }
-  
+      public presentActionSheet() {
+
+    let actionSheet = this.actionSheetCtrl.create({
+      title: 'Select Image Source',
+      buttons: [
+        {
+          text: 'Load from Library',
+          handler: () => {
+            this.takePicture(0); //Camera.PictureSourceType.PHOTOLIBRARY);
+          }
+        },
+        {
+          text: 'Use Camera',
+          handler: () => {
+            this.takePicture(1);//Camera.PictureSourceType.CAMERA);
+          }
+        },
+        {
+          text: 'Cancel',
+          role: 'cancel'
+        }
+      ]
+    });
+    actionSheet.present();
+  }
+  public presentCropModal(img: string,clothes: string) {
+    
+    let cropModal = this.modalCtrl.create(ImageCropperComponent, {'imgUri': img});
+       
+
+    cropModal.onDidDismiss(data => {
+       if(data){
+       if(this.type == "Hats"){
+        console.log("ITS HATS");
+        clothes = 'Hats';
+       }
+       if(this.type == "'Hats'")
+       {
+    console.log("ITS HATSSjjsjjj");
+       }
+       console.log(clothes);
+       console.log(this.type);
+       console.log("hentai");
+      this.imgUri = data;
+      console.log(this.imgUri);
+            var uuid = generateUUID();
+            var imgBlob: any = dataURLtoBlob(this.imgUri);
+            imgBlob.name = uuid+'.jpg';
+      var uploadTask = this.storageRef.child(this.currentUser+'/'+clothes+'/'+imgBlob.name).put(imgBlob);
+    console.log(this.currentUser+'/'+this.type+'/'+imgBlob.name);
+// Listen for state changes, errors, and completion of the upload.
+uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
+  function(snapshot) {
+    // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+    var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+    console.log('Upload is ' + progress + '% done');
+    switch (snapshot.state) {
+      case firebase.storage.TaskState.PAUSED: // or 'paused'
+        console.log('Upload is paused');
+        break;
+      case firebase.storage.TaskState.RUNNING: // or 'running'
+        console.log('Upload is running');
+        break;
+    }
+  }, function(error) {
+  switch (error.code) {
+    case 'storage/unauthorized':
+      // User doesn't have permission to access the object
+       console.log('NIGGA WE unauthorized IT');
+      break;
+
+    case 'storage/canceled':
+      // User canceled the upload
+             console.log('NIGGA WE CANCELLED IT');
+
+      break;
+
+ 
+    case 'storage/unknown':
+      // Unknown error occurred, inspect error.serverResponse
+                   console.log(error.serverResponse);
+
+      break;
+  }
+}, function() {
+       console.log('NIGGA WE MADE IT');
+  // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+  var downloadURL = uploadTask.snapshot.downloadURL;
+  console.log(downloadURL);
+ 
+     this.db = firebase.database().ref(firebase.auth().currentUser.uid+'/'+clothes);
+var newPostRef = this.db.push();
+newPostRef.set(
+  downloadURL
+);
+});
+         
+
+   
+       }
+    });
+ cropModal.present();
+  }
+
+  public takePicture(sourceType) {
+    // Create options for the Camera Dialog
+    var options = {
+      quality: 50,
+      sourceType: sourceType,
+      // targetWidth: 320,
+      // targetHeight: 320,
+      destinationType: 0, //Camera.DestinationType.DATA_URL,
+      saveToPhotoAlbum: false,
+      correctOrientation: true
+    };
+
+    Camera.getPicture(options).then((imageData) => {
+      // imageData is a base64 encoded string
+      // this.imgData = imageData;
+      this.imgUri = imageData;
+      this.presentCropModal(this.imgUri,this.type);
+    }, (err) => {
+      console.log(err);
+    });
+  }
  addPics()
 {
 var clothes = this.type;
@@ -859,5 +992,9 @@ newPostRef.set(downloadURL);
       console.log("resolveLocalFileSystemURL", err);
       alert(JSON.stringify(err))
     });
+}
+addPics1(){
+    this.presentActionSheet();
+   // this.dismiss();  
 }
 }
