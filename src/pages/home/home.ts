@@ -336,7 +336,18 @@ result1.push(element);
     });
   }
 });
+ this.cards1 = result1;
 
+  firebase.database().ref(this.currentUser+'/Hats/').on('child_removed', function(data) {
+var element = data.val();
+var index = result1.indexOf(element);
+console.log(element);
+if (index > -1) {
+    result1.splice(index, 1);
+}
+
+});
+this.cards1 = result1;
 
 var result2 = [];
 
@@ -364,7 +375,18 @@ firebase.database().ref(this.currentUser+'/Tops/').once('value', function(snapsh
 //loader.dismiss();
   }
 });
-  
+ this.cards2 = result2;
+
+  firebase.database().ref(this.currentUser+'/Tops/').on('child_removed', function(data) {
+var element = data.val();
+var index = result2.indexOf(element);
+console.log(element);
+if (index > -1) {
+    result2.splice(index, 1);
+}
+
+});
+this.cards2 = result2;
   var result3 = [];
 //this.cards3 = [];
 
@@ -393,6 +415,19 @@ var userStorageRef = firebase.storage().ref().child('Icons/pantsIcon.png');
 });
 this.cards3 = result3;
 
+
+
+  firebase.database().ref(this.currentUser+'/Bottoms/').on('child_removed', function(data) {
+var element = data.val();
+var index = result3.indexOf(element);
+console.log(element);
+if (index > -1) {
+    result3.splice(index, 1);
+}
+
+});
+
+this.cards3 = result3;
   //this.grid = Array(Math.ceil(this.items1.length/2));
 
      var result4 = [];
@@ -423,9 +458,20 @@ var userStorageRef = firebase.storage().ref().child('Icons/shoeIcon.png');
 }); 
 this.cards4 = result4;
 
+  firebase.database().ref(this.currentUser+'/Shoes/').on('child_removed', function(data) {
+var element = data.val();
+var index = result4.indexOf(element);
+console.log(element);
+if (index > -1) {
+    result4.splice(index, 1);
+}
+
+});
+this.cards4 = result4;
+
      var result5 = [];
 
-    firebase.database().ref(this.currentUser+'/Dresses/').on('child_added', function(data) {
+firebase.database().ref(this.currentUser+'/Dresses/').on('child_added', function(data) {
 var element = data.val();
 if(element){
 
@@ -449,6 +495,18 @@ var userStorageRef = firebase.storage().ref().child('Icons/dressIcon.png');
   else{
   }
 }); 
+this.cards5 = result5;
+
+  firebase.database().ref(this.currentUser+'/Dresses/').on('child_removed', function(data) {
+var element = data.val();
+var index = result5.indexOf(element);
+console.log(element);
+if (index > -1) {
+    result5.splice(index, 1);
+}
+
+});
+
 this.cards5 = result5;
 }
 voteUp1() {
