@@ -10,17 +10,19 @@ export class ImageCropperComponent {
 
     imageB64: any;
     imageB64Tagged: any;
+    aspectRatio: any;
     cropper: Cropper;
     @ViewChild('imgSrc') input: ElementRef;
 
     constructor(public navCrtl: NavController, public viewCtrl: ViewController, public navParams: NavParams) {
         this.imageB64 = "data:image/jpeg;base64,"+this.navParams.get("imgUri");
+        this.aspectRatio = this.navParams.get("aspectRatio");
         //this.imageB64Tagged = "data:image/jpeg;base64,"+this.imageB64;
     }
 
     imageLoaded() {
         this.cropper = new Cropper(this.input.nativeElement, {
-            aspectRatio: 1 / 1,
+            aspectRatio: this.aspectRatio,
             dragMode: 'crop',
             modal: true,
             guides: true,

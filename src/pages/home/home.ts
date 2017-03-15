@@ -788,9 +788,14 @@ public imgUri: string;
     actionSheet.present();
   }
   public presentCropModal(img: string,clothes: string) {
-    
-    let cropModal = this.modalCtrl.create(ImageCropperComponent, {'imgUri': img});
-       
+     var aspect = 1;
+    if(this.type == "Dresses"){
+ aspect = 2/3; 
+}
+  else{
+    aspect = 1;
+  }       
+    let cropModal = this.modalCtrl.create(ImageCropperComponent, {'imgUri': img,'aspectRatio':aspect});
 
     cropModal.onDidDismiss(data => {
        if(data){
