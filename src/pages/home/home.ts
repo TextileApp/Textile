@@ -49,17 +49,83 @@ export class HomePage implements OnInit{
   @ViewChildren('mycards3') swingCards3: QueryList<SwingCardComponent>;
    @ViewChild('myswing4') swingStack4: SwingStackComponent;
   @ViewChildren('mycards4') swingCards4: QueryList<SwingCardComponent>;
-     @ViewChild('myswing5') swingStack5: SwingStackComponent;
-    @ViewChildren('mycards5') swingCards5: QueryList<SwingCardComponent>;
+   @ViewChild('myswing5') swingStack5: SwingStackComponent;
+  @ViewChildren('mycards5') swingCards5: QueryList<SwingCardComponent>;
+  @ViewChild('myswing6') swingStack6: SwingStackComponent;
+  @ViewChildren('mycards6') swingCards6: QueryList<SwingCardComponent>;
+   @ViewChild('myswing7') swingStack7: SwingStackComponent;
+  @ViewChildren('mycards7') swingCards7: QueryList<SwingCardComponent>;
+   @ViewChild('myswing8') swingStack8: SwingStackComponent;
+  @ViewChildren('mycards8') swingCards8: QueryList<SwingCardComponent>;
+     @ViewChild('myswing9') swingStack9: SwingStackComponent;
+  @ViewChildren('mycards9') swingCards9: QueryList<SwingCardComponent>;
+  @ViewChild('myswing10') swingStack10: SwingStackComponent;
+  @ViewChildren('mycards10') swingCards10: QueryList<SwingCardComponent>;
+   @ViewChild('myswing11') swingStack11: SwingStackComponent;
+  @ViewChildren('mycards11') swingCards11: QueryList<SwingCardComponent>;
+   @ViewChild('myswing12') swingStack12: SwingStackComponent;
+  @ViewChildren('mycards12') swingCards12: QueryList<SwingCardComponent>;
+     //@ViewChild('myswing13') swingStack13: SwingStackComponent;
+   // @ViewChildren('mycards13') swingCards13: QueryList<SwingCardComponent>;
 
+  card1Activated:boolean;
+  showCard1:boolean;
+  showPic1:boolean;
+ showDelete1:boolean;
+  card2Activated:boolean;
+  showCard2:boolean;
+  showPic2:boolean;
+  showDelete2:boolean;
+  card3Activated:boolean;
+  showCard3:boolean;
+  showPic3:boolean;
+ showDelete3:boolean;
+  card4Activated:boolean;
+  showCard4:boolean;
+  showPic4:boolean;
+  showDelete4:boolean;
+  card5Activated:boolean;
+  showCard5:boolean;
+  showPic5:boolean;
+ showDelete5:boolean;
+  card6Activated:boolean;
+  showCard6:boolean;
+  showPic6:boolean;
+  showDelete6:boolean;
+  card7Activated:boolean;
+  showCard7:boolean;
+  showPic7:boolean;
+ showDelete7:boolean;
+  card8Activated:boolean;
+  showCard8:boolean;
+  showPic8:boolean;
+  showDelete8:boolean;
+  card9Activated:boolean;
+  showCard9:boolean;
+  showPic9:boolean;
+  showDelete9:boolean;
+  card10Activated:boolean;
+  showCard10:boolean;
+  showPic10:boolean;
+  showDelete10:boolean;
+  card11Activated:boolean;
+  showCard11:boolean;
+  showPic11:boolean;
+  showDelete11:boolean;
+  card12Activated:boolean;
+  showCard12:boolean;
+  showPic12:boolean;
+  showDelete12:boolean;
+  showDress:boolean;
+  
+  editing:boolean;
   cards1: Array<any>;
-  cards5: Array<any>;
   stackConfig1: StackConfig;
-  stackConfig5: StackConfig;
   recentCard1: string = '';
   cards2: Array<any>;
   didSaveThisOutfit: boolean;
   stackConfig2: StackConfig;
+
   recentCard2: string = '';
    image: string;
   cards3: Array<any>;
@@ -67,8 +133,18 @@ export class HomePage implements OnInit{
   recentCard3: string = '';
   cards4: Array<any>;
   stackConfig4: StackConfig;
-  showDress:boolean;
   recentCard4: string = '';
+    stackConfig5: StackConfig;
+
+  cards5: Array<any>;
+  cards6: Array<any>;
+  cards7: Array<any>;
+  cards8: Array<any>;
+  cards9: Array<any>;
+  cards10: Array<any>;
+  cards11: Array<any>;
+  cards12: Array<any>;
+  //cards13: Array<any>;
   storage = firebase.storage();
   public currentUser: any;
   isEmpty: boolean;
@@ -140,6 +216,52 @@ this.stackConfig1 = {
     // execute the firebase query...
     // .. otherwise
     // show the login modal page
+  this.showCard1 = true;
+  this.showCard2 = true;
+  this.showCard3 = true;
+  this.showCard4 = true;
+  this.showCard5 = true;
+  this.showCard6 = true;
+  this.showCard7 = true;
+  this.showCard8 = true;
+  this.showCard9 = true;
+  this.showCard10 = true;
+  this.showCard11 = true;
+  this.showCard12 = true;
+  this.showPic1 = true;
+  this.showPic2 = true;
+  this.showPic3 = true;
+  this.showPic4 = true;
+  this.showPic5 = true;
+  this.showPic6 = true;
+  this.showPic7 = true;
+  this.showPic8 = true;
+  this.showPic9 = true;
+  this.showPic10 = true;
+  this.showPic11 = true;
+  this.showPic12 = true;
+this.card1Activated = false;
+this.card2Activated = false;
+this.card3Activated = false;
+this.card4Activated = false;
+this.card5Activated = false;
+this.card6Activated = false;
+this.card7Activated = false;
+this.card8Activated = false;
+this.card9Activated = false;
+this.card10Activated = false;
+this.card11Activated = false;
+this.card12Activated = false;
+this.showDelete1 = true;
+this.showDelete2 = true;
+ this.showDelete3 = true;
+ this.showDelete4 = true;
+ this.showDelete5 = true;
+ this.showDelete7 = true;
+this.showDelete8 = true;
+this.showDelete9 = true;
+  this.showDelete10 = true;
+  this.showDelete12 = true;
     this.showDress = true;
     this.didSaveThisOutfit = false;
   const authObserver = this.af.auth.subscribe( user => {
@@ -160,7 +282,7 @@ this.stackConfig1 = {
   }
 ngAfterViewInit() {
     // Either subscribe in controller or set in HTML
-    this.swingStack1.throwout.subscribe((event: DragEvent) => {
+      this.swingStack1.throwout.subscribe((event: DragEvent) => {
     this.swingStack1.stack.getCard(event.target).throwIn(0,0);	
       
     });
@@ -179,11 +301,50 @@ ngAfterViewInit() {
          this.swingStack4.throwout.subscribe((event: DragEvent) => {
     this.swingStack4.stack.getCard(event.target).throwIn(0,0);	
       
-    });
-         this.swingStack5.throwout.subscribe((event: DragEvent) => {
+  });
+
+      this.swingStack5.throwout.subscribe((event: DragEvent) => {
     this.swingStack5.stack.getCard(event.target).throwIn(0,0);	
       
     });
+     
+       this.swingStack6.throwout.subscribe((event: DragEvent) => {
+    this.swingStack6.stack.getCard(event.target).throwIn(0,0);	
+      
+    });
+  
+   
+         this.swingStack7.throwout.subscribe((event: DragEvent) => {
+    this.swingStack7.stack.getCard(event.target).throwIn(0,0);	
+      
+    });
+  
+         this.swingStack8.throwout.subscribe((event: DragEvent) => {
+    this.swingStack8.stack.getCard(event.target).throwIn(0,0);	
+      
+  });
+           this.swingStack9.throwout.subscribe((event: DragEvent) => {
+    this.swingStack9.stack.getCard(event.target).throwIn(0,0);	
+      
+  });
+           this.swingStack10.throwout.subscribe((event: DragEvent) => {
+    this.swingStack10.stack.getCard(event.target).throwIn(0,0);	
+      
+  });
+           this.swingStack11.throwout.subscribe((event: DragEvent) => {
+    this.swingStack11.stack.getCard(event.target).throwIn(0,0);	
+      
+  });
+           this.swingStack12.throwout.subscribe((event: DragEvent) => {
+    this.swingStack12.stack.getCard(event.target).throwIn(0,0);	
+      
+  });
+     //  this.swingStack13.throwout.subscribe((event: DragEvent) => {
+   // this.swingStack12.stack.getCard(event.target).throwIn(0,0);	
+      
+ // });
+
+  
   }
 
 
@@ -217,26 +378,34 @@ addNewCards3(oldcard: string) {
 
 addNewCards4(oldcard: string) {
   this.cards4.push(oldcard);
-
- // this.http.get('https://randomuser.me/api/?results=' + count)
- // .map(data => data.json().results)
- // .subscribe(result => {
-  //  for (let val of result) {
- ///     this.cards1.push(val);
-  //  } 
-  //})
 }
 addNewCards5(oldcard: string) {
   this.cards5.push(oldcard);
-
- // this.http.get('https://randomuser.me/api/?results=' + count)
- // .map(data => data.json().results)
- // .subscribe(result => {
-  //  for (let val of result) {
- ///     this.cards1.push(val);
-  //  } 
-  //})
 }
+addNewCards6(oldcard: string) {
+  this.cards6.push(oldcard);
+}
+addNewCards7(oldcard: string) {
+  this.cards7.push(oldcard);
+}
+addNewCards8(oldcard: string) {
+  this.cards8.push(oldcard);
+}
+addNewCards9(oldcard: string) {
+  this.cards9.push(oldcard);
+}
+addNewCards10(oldcard: string) {
+  this.cards10.push(oldcard);
+}
+addNewCards11(oldcard: string) {
+  this.cards11.push(oldcard);
+}
+addNewCards12(oldcard: string) {
+  this.cards12.push(oldcard);
+}
+//addNewCards13(oldcard: string) {
+ //this.cards12.push(oldcard);
+//}
 goToOtherPage() {
     //push another page onto the history stack
     //causing the nav controller to animate the new page in
@@ -244,7 +413,7 @@ goToOtherPage() {
   }
     openModal1(imagesArray) {
   this.didSaveThisOutfit = false;
-let modal = this.modalCtrl.create(imagePicker,{images:imagesArray,user:this.currentUser,type:"Hats"});
+let modal = this.modalCtrl.create(imagePicker,{images:imagesArray,user:this.currentUser,type:"Jewelry"});
      modal.onDidDismiss(data => {
     if(data){
     this.cards1.unshift(data.image);
@@ -253,69 +422,527 @@ let modal = this.modalCtrl.create(imagePicker,{images:imagesArray,user:this.curr
    });
    modal.present();
  }
+   openModal2(imagesArray) {
+       this.didSaveThisOutfit = false;
 
-    openModal2(imagesArray) {
-  this.didSaveThisOutfit = false;
-let modal = this.modalCtrl.create(imagePicker,{images:imagesArray,user:this.currentUser,type:"Tops"});
+let modal = this.modalCtrl.create(imagePicker, { "images":imagesArray,"user":this.currentUser,"type":"Hats"});
      modal.onDidDismiss(data => {
-    if(data){
+         if(data){
     this.cards2.unshift(data.image);
     this.cards2.pop();
-    }
+         }
    });
    modal.present();
  }
-    openModal3(imagesArray) {
-  this.didSaveThisOutfit = false;
-let modal = this.modalCtrl.create(imagePicker,{images:imagesArray,user:this.currentUser,type:"Bottoms"});
+
+  openModal3(imagesArray) {
+      this.didSaveThisOutfit = false;
+
+let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Neckwear"});
      modal.onDidDismiss(data => {
-    if(data){
+          if(data){
     this.cards3.unshift(data.image);
     this.cards3.pop();
-    }
+          }
    });
    modal.present();
  }
 
-     openModal4(imagesArray) {
-  this.didSaveThisOutfit = false;
-let modal = this.modalCtrl.create(imagePicker,{images:imagesArray,user:this.currentUser,type:"Shoes"});
+  openModal4(imagesArray) {
+      this.didSaveThisOutfit = false;
+
+let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Outerwear"});
      modal.onDidDismiss(data => {
-    if(data){
+          if(data){
     this.cards4.unshift(data.image);
     this.cards4.pop();
-    }
+          }
    });
    modal.present();
  }
-     openModal5(imagesArray) {
-  this.didSaveThisOutfit = false;
-let modal = this.modalCtrl.create(imagePicker,{images:imagesArray,user:this.currentUser,type:"Dresses"});
+   openModal5(imagesArray) {
+      this.didSaveThisOutfit = false;
+
+let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Tops"});
      modal.onDidDismiss(data => {
-    if(data){
+          if(data){
     this.cards5.unshift(data.image);
     this.cards5.pop();
-    }
+          }
+   });
+   modal.present();
+ }
+   openModal6(imagesArray) {
+      this.didSaveThisOutfit = false;
+
+let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Tops"});
+     modal.onDidDismiss(data => {
+          if(data){
+    this.cards6.unshift(data.image);
+    this.cards6.pop();
+          }
+   });
+   modal.present();
+ }
+  openModal7(imagesArray) {
+      this.didSaveThisOutfit = false;
+
+let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Belts"});
+     modal.onDidDismiss(data => {
+          if(data){
+    this.cards7.unshift(data.image);
+    this.cards7.pop();
+          }
+   });
+   modal.present();
+ }
+   openModal8(imagesArray) {
+      this.didSaveThisOutfit = false;
+
+let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Bottoms"});
+     modal.onDidDismiss(data => {
+          if(data){
+    this.cards8.unshift(data.image);
+    this.cards8.pop();
+          }
+   });
+   modal.present();
+ }
+   openModal9(imagesArray) {
+      this.didSaveThisOutfit = false;
+
+let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Accessorys"});
+     modal.onDidDismiss(data => {
+          if(data){
+    this.cards9.unshift(data.image);
+    this.cards9.pop();
+          }
+   });
+   modal.present();
+ }
+   openModal10(imagesArray) {
+      this.didSaveThisOutfit = false;
+
+let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Bags"});
+     modal.onDidDismiss(data => {
+          if(data){
+    this.cards10.unshift(data.image);
+    this.cards10.pop();
+          }
+   });
+   modal.present();
+ }
+   openModal11(imagesArray) {
+      this.didSaveThisOutfit = false;
+
+let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Shoes"});
+     modal.onDidDismiss(data => {
+          if(data){
+    this.cards11.unshift(data.image);
+    this.cards11.pop();
+          }
+   });
+   modal.present();
+ }
+   openModal12(imagesArray) {
+      this.didSaveThisOutfit = false;
+
+let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Bags"});
+     modal.onDidDismiss(data => {
+          if(data){
+    this.cards12.unshift(data.image);
+    this.cards12.pop();
+          }
    });
    modal.present();
  }
 
 
+  startEditing()
+{
+this.showCard1 = true;
+this.showCard2 = true;
+this.showCard3 = true;
+this.showCard4 = true;
+this.showCard5 = true;
+this.showCard6 = true;
+this.showCard7 = true;
+this.showCard8 = true;
+this.showCard9 = true;
+this.showCard10 = true;
+this.showCard11 = true;
+this.showCard12 = true;
+ this.editing = true;
+
+}
+
+ pressEvent($event) {
+   console.log("FUcK THAT BITCH AS SS NIQQQQA");
+   this.startEditing();
+   if(this.showPic1 == true){
+    console.log("yung rich niqqaas two ");
+     this.showDelete1 = true;
+     this.card1Activated = false;
+
+   }
+   else{
+this.showDelete1 = false;
+this.card1Activated = true;
+
+   }
+   if(this.showPic2 == true){
+     this.showDelete2 = true;
+     this.card2Activated = false;
+   }
+   else{
+this.showDelete2 = false;
+this.card2Activated = true;
+   }
+   if(this.showPic3 == true){
+     this.showDelete3 = true;
+     this.card3Activated = false;
+   }
+   else{
+    this.showDelete3 = false;
+    this.card3Activated = true;
+   }
+  if(this.showPic4 == true){
+    this.showDelete4 = true;
+     this.card4Activated = false;
+   }
+   else{
+    this.showDelete4 = false;
+    this.card4Activated = true;
+   }
+    if(this.showPic5 == true){
+    this.showDelete5 = true;
+    this.card5Activated = false;
+   }
+   else{
+    this.showDelete5 = false;
+    this.card5Activated = true;
+   }
+ 
+     if(this.showPic6 == true){
+    this.showDelete6 = true;
+    this.card6Activated = false;
+   }
+   else{
+    this.showDelete6 = false;
+    this.card6Activated = true;
+   }
+     if(this.showPic7 == true){
+    this.showDelete7 = true;
+    this.card7Activated = false;
+   }
+   else{
+    this.showDelete7 = false;
+    this.card7Activated = true;
+   }
+      if(this.showPic8 == true){
+    this.showDelete8 = true;
+    this.card8Activated = false;
+   }
+   else{
+    this.showDelete8 = false;
+    this.card8Activated = true;
+   }
+     if(this.showPic9 == true){
+    this.showDelete9 = true;
+    this.card9Activated = false;
+   }
+   else{
+    this.showDelete9 = false;
+    this.card9Activated = true;
+   }
+     if(this.showPic10 == true){
+    this.showDelete10 = true;
+    this.card10Activated = false;
+   }
+   else{
+    this.showDelete10 = false;
+    this.card10Activated = true;
+   }
+    if(this.showPic11 == true){
+    this.showDelete11 = true;
+    this.card11Activated = false;
+   }
+   else{
+    this.showDelete11 = false;
+    this.card11Activated = true;
+   }
+     if(this.showPic12 == true){
+    this.showDelete12 = true;
+    this.card12Activated = false;
+   }
+   else{
+    this.showDelete12 = false;
+    this.card12Activated = true;
+   }
   
+  }
+  
+  activateCard1(){
+
+  this.showPic1 = true;
+ 
+  this.doneEditing();
+
+}
+activateCard2(){
+  this.showPic2 = true;
+  
+  this.doneEditing();
+}
+ activateCard3(){
+
+  this.showPic3 = true;
+  this.doneEditing();
+
+}
+ activateCard4(){
+
+  this.showPic4 = true;
+  this.doneEditing();
+
+}
+ activateCard5(){
+
+  this.showPic5 = true;
+
+  this.doneEditing();
+
+}
+ activateCard6(){
+
+  this.showPic6 = true;
+  this.doneEditing();
+
+}
+ activateCard7(){
+
+  this.showPic7 = true;
+  this.doneEditing();
+
+}
+ activateCard8(){
+
+  this.showPic8 = true;
+  this.doneEditing();
+
+}
+ activateCard9(){
+
+  this.showPic9 = true;
+  this.doneEditing();
+
+}
+ activateCard10(){
+
+  this.showPic10 = true;
+  this.doneEditing();
+
+}
+ activateCard11(){
+
+  this.showPic11 = true;
+  this.doneEditing();
+
+}
+ activateCard12(){
+
+  this.showPic12 = true;
+  this.card12Activated = true;
+  this.doneEditing();
+
+}
+    doneEditing(){
+  this.showDelete1 = false;
+  this.showDelete2 = false;
+  this.showDelete3 = false;
+  this.showDelete4 = false;
+  this.showDelete5 = false;
+  this.showDelete6 = false;
+  this.showDelete7 = false;
+  this.showDelete8 = false;
+  this.showDelete9 = false;
+  this.showDelete10 = false;
+  this.showDelete11 = false;
+  this.showDelete12 = false;
+  this.card1Activated = false;
+  this.card2Activated = false;
+  this.card3Activated = false;
+  this.card4Activated = false;
+  this.card5Activated = false;
+  this.card6Activated = false;
+  this.card7Activated = false;
+  this.card8Activated = false;
+  this.card9Activated = false;
+  this.card10Activated = false;
+  this.card11Activated = false;
+  this.card12Activated = false;
+
+/** 
+   if(this.card1Activated){
+  this.showCard1 = true;
+}
+else{
+  this.showCard1 = false;
+}
+  if(this.card2Activated){
+  this.showCard2 = true;
+}
+else{
+  this.showCard2 = false;
+}
+if(this.card3Activated){
+  this.showCard3 = true;
+}
+else{
+  this.showCard3 = false;
+}
+if(this.card4Activated){
+  this.showCard4 = true;
+}
+else{
+  this.showCard4 = false;
+}
+if(this.card5Activated){
+  this.showCard5 = true;
+}
+else{
+  this.showCard5 = false;
+}
+if(this.card6Activated){
+  this.showCard6 = true;
+}
+else{
+  this.showCard6 = false;
+}
+if(this.card7Activated){
+  this.showCard7 = true;
+}
+else{
+  this.showCard7 = false;
+}
+if(this.card8Activated){
+  this.showCard8 = true;
+}
+else{
+  this.showCard8 = false;
+}
+if(this.card9Activated){
+  this.showCard9 = true;
+}
+else{
+  this.showCard9 = false;
+}
+if(this.card10Activated){
+  this.showCard10 = true;
+}
+else{
+  this.showCard10 = false;
+}
+if(this.card11Activated){
+  this.showCard11 = true;
+}
+else{
+  this.showCard11 = false;
+}
+if(this.card12Activated){
+  this.showCard12 = true;
+}
+else{
+  this.showCard12 = false;
+}
+*/
+  }
+  removeCard1()
+  {
+    this.card1Activated = false;
+    this.showPic1 = false;
+    this.doneEditing();
+  }
+
+
+
+    removeCard2()
+  {
+    this.card2Activated = false;
+    this.showPic2 = false;
+    this.doneEditing();
+  }
+   removeCard3()
+  {
+    this.card3Activated = false;
+    this.showPic3 = false;
+    this.doneEditing();
+  }
+     removeCard4()
+  {
+    this.card3Activated = false;
+    this.showPic4 = false;
+    this.doneEditing();
+  }
+     removeCard5()
+  {
+    this.card5Activated = false;
+    this.showPic5 = false;
+    this.doneEditing();
+  }
+     removeCard6()
+  {
+    this.card7Activated = false;
+    this.showPic6 = false;
+    this.doneEditing();
+  }
+     removeCard7()
+  {
+    this.card7Activated = false;
+    this.showPic7 = false;
+    this.doneEditing();
+  }
+     removeCard8()
+  {
+    this.card8Activated = false;
+    this.showPic8 = false;
+    this.doneEditing();
+  }
+     removeCard9()
+  {
+    this.card9Activated = false;
+    this.showPic9 = false;
+    this.doneEditing();
+  }
+       removeCard10()
+  {
+    this.card10Activated = false;
+    this.showPic10 = false;
+    this.doneEditing();
+  }
+     removeCard11()
+  {
+    this.card11Activated = false;
+    this.showPic11 = false;
+    this.doneEditing();
+  }
+     removeCard12()
+  {
+    this.card12Activated = false;
+    this.showPic12 = false;
+    this.doneEditing();
+  }
 
 loadData() {
-     let loader = this.loadingCtrl.create({
-    content: "",
-    spinner:'crescent',
-    duration:3000,
-    showBackdrop:false
-    
+
+   let loader = this.loadingCtrl.create({
+    content: ""
   });
   //Show the loading indicator
   loader.present();
     var result1 = [];
 
-firebase.database().ref(this.currentUser+'/Hats/').on('child_added', function(data) {
+firebase.database().ref(this.currentUser+'/Jewelry/').on('child_added', function(data) {
 var element = data.val();
 
 result1.push(element);
@@ -324,9 +951,10 @@ result1.push(element);
 
  this.cards1 = result1;
   //this.grid = Array(Math.ceil(this.items.length/2));
-  firebase.database().ref(this.currentUser+'/Hats/').once('value', function(snapshot) {
+  firebase.database().ref(this.currentUser+'/Jewelry/').once('value', function(snapshot) {
+
   if (!(snapshot.exists())) {
-   var userStorageRef = firebase.storage().ref().child('Icons/hatIcon.png');
+   var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
     userStorageRef.getDownloadURL().then(url => {
        var dupe = url;
          result1.push(dupe);
@@ -337,23 +965,22 @@ result1.push(element);
     });
   }
 });
- this.cards1 = result1;
 
-  firebase.database().ref(this.currentUser+'/Hats/').on('child_removed', function(data) {
+firebase.database().ref(this.currentUser+'/Jewelry/').on('child_removed', function(data) {
 var element = data.val();
+if(element){
 var index = result1.indexOf(element);
-console.log(element);
 if (index > -1) {
     result1.splice(index, 1);
 }
-
+}
 });
-this.cards1 = result1;
 
+this.cards1 = result1;
 var result2 = [];
 
 
-firebase.database().ref(this.currentUser+'/Tops/').on('child_added', function(data) {
+firebase.database().ref(this.currentUser+'/Hats/').on('child_added', function(data) {
 var element = data.val();
 if(element){
 
@@ -361,40 +988,47 @@ result2.push(element);
 }
 });
  this.cards2 = result2;
-firebase.database().ref(this.currentUser+'/Tops/').once('value', function(snapshot) {
+firebase.database().ref(this.currentUser+'/Hats/').once('value', function(snapshot) {
   if (!(snapshot.exists())) {
-  var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
+  var userStorageRef = firebase.storage().ref().child('Icons/hatIcon.png');
     userStorageRef.getDownloadURL().then(url => {
        var dupe = url;
    result2.push(dupe);
          result2.push(url);
    this.cards2 = result2;
 });
-//loader.dismiss();
-}
+  }
   else{
-//loader.dismiss();
+          loader.dismiss();
+
   }
 });
- this.cards2 = result2;
-
-  firebase.database().ref(this.currentUser+'/Tops/').on('child_removed', function(data) {
+  firebase.database().ref(this.currentUser+'/Hats/').on('child_removed', function(data) {
 var element = data.val();
+if(element){
 var index = result2.indexOf(element);
-console.log(element);
 if (index > -1) {
     result2.splice(index, 1);
 }
-
+}
 });
-this.cards2 = result2;
+this.cards3 = result3;
   var result3 = [];
 //this.cards3 = [];
 
- 
+firebase.database().ref(this.currentUser+'/Hats/').on('child_removed', function(data) {
+var element = data.val();
+if(element){
+var index = result3.indexOf(element);
+if (index > -1) {
+    result3.splice(index, 1);
+}
+}
+});
+this.cards3 = result3;
 
 
-firebase.database().ref(this.currentUser+'/Bottoms/').on('child_added', function(data) {
+firebase.database().ref(this.currentUser+'Hats/').on('child_added', function(data) {
 var element = data.val();
 if(element){
 result3.push(element);
@@ -402,38 +1036,25 @@ result3.push(element);
 });
 this.cards3 = result3;
 
-firebase.database().ref(this.currentUser+'/Bottoms/').once('value', function(snapshot) {
+firebase.database().ref(this.currentUser+'Hats/').once('value', function(snapshot) {
   if (!(snapshot.exists())) {
-var userStorageRef = firebase.storage().ref().child('Icons/pantsIcon.png');
+var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
     userStorageRef.getDownloadURL().then(url => {
        var dupe = url;
    result3.push(dupe);
   result3.push(url);
-  
+     
 
     });
   }
 });
 this.cards3 = result3;
 
-
-
-  firebase.database().ref(this.currentUser+'/Bottoms/').on('child_removed', function(data) {
-var element = data.val();
-var index = result3.indexOf(element);
-console.log(element);
-if (index > -1) {
-    result3.splice(index, 1);
-}
-
-});
-
-this.cards3 = result3;
   //this.grid = Array(Math.ceil(this.items1.length/2));
 
      var result4 = [];
 
-    firebase.database().ref(this.currentUser+'/Shoes/').on('child_added', function(data) {
+    firebase.database().ref(this.currentUser+'/Tops/').on('child_added', function(data) {
 var element = data.val();
 if(element){
 
@@ -444,71 +1065,556 @@ result4.push(element);
  this.cards4 = result4;
   // this.grid = Array(Math.ceil(this.items1.length/2));
 
-   firebase.database().ref(this.currentUser+'/Shoes/').once('value', function(snapshot) {
+   firebase.database().ref(this.currentUser+'/Tops/').once('value', function(snapshot) {
+
   if (!(snapshot.exists())) {
-var userStorageRef = firebase.storage().ref().child('Icons/shoeIcon.png');
+var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
     userStorageRef.getDownloadURL().then(url => {
        var dupe = url;
                   result4.push(url);
                   result4.push(dupe);
+                       loader.dismiss();     
+
                   
     });
   }
   else{
+               loader.dismiss();
+
   }
 }); 
 this.cards4 = result4;
 
-  firebase.database().ref(this.currentUser+'/Shoes/').on('child_removed', function(data) {
+firebase.database().ref(this.currentUser+'/Tops/').on('child_removed', function(data) {
 var element = data.val();
+if(element){
 var index = result4.indexOf(element);
-console.log(element);
 if (index > -1) {
     result4.splice(index, 1);
 }
-
+}
 });
 this.cards4 = result4;
-
-     var result5 = [];
-
-firebase.database().ref(this.currentUser+'/Dresses/').on('child_added', function(data) {
+var result5 = [];
+firebase.database().ref(this.currentUser+'/Tops/').on('child_added', function(data) {
 var element = data.val();
-if(element){
 
 result5.push(element);
-}
+
 });
 
  this.cards5 = result5;
-  // this.grid = Array(Math.ceil(this.items1.length/2));
+  //this.grid = Array(Math.ceil(this.items.length/2));
+  firebase.database().ref(this.currentUser+'/Tops/').once('value', function(snapshot) {
 
-   firebase.database().ref(this.currentUser+'/Dresses/').once('value', function(snapshot) {
   if (!(snapshot.exists())) {
-var userStorageRef = firebase.storage().ref().child('Icons/dressIcon.png');
+   var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
     userStorageRef.getDownloadURL().then(url => {
        var dupe = url;
-                  result5.push(url);
-                  result5.push(dupe);
-                  
+         result5.push(dupe);
+         result5.push(url);
+
+      this.cards5 = result5;
+
     });
   }
-  else{
-  }
-}); 
-this.cards5 = result5;
+});
 
-  firebase.database().ref(this.currentUser+'/Dresses/').on('child_removed', function(data) {
+firebase.database().ref(this.currentUser+'/Tops/').on('child_removed', function(data) {
 var element = data.val();
+if(element){
 var index = result5.indexOf(element);
-console.log(element);
 if (index > -1) {
     result5.splice(index, 1);
 }
+}
+});
+this.cards5 = result5;
+
+firebase.database().ref(this.currentUser+'/Tops/').on('child_added', function(data) {
+var element = data.val();
+
+result5.push(element);
 
 });
 
+ this.cards5 = result5;
+  //this.grid = Array(Math.ceil(this.items.length/2));
+  firebase.database().ref(this.currentUser+'/Tops/').once('value', function(snapshot) {
+
+  if (!(snapshot.exists())) {
+   var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
+    userStorageRef.getDownloadURL().then(url => {
+       var dupe = url;
+         result5.push(dupe);
+         result5.push(url);
+
+      this.cards5 = result5;
+
+    });
+  }
+});
+
+firebase.database().ref(this.currentUser+'/Tops/').on('child_removed', function(data) {
+var element = data.val();
+if(element){
+var index = result5.indexOf(element);
+if (index > -1) {
+    result5.splice(index, 1);
+}
+}
+});
 this.cards5 = result5;
+
+var result6 = [];
+firebase.database().ref(this.currentUser+'/Tops/').on('child_added', function(data) {
+var element = data.val();
+
+result1.push(element);
+
+});
+
+ this.cards6 = result6;
+  //this.grid = Array(Math.ceil(this.items.length/2));
+  firebase.database().ref(this.currentUser+'/Tops/').once('value', function(snapshot) {
+
+  if (!(snapshot.exists())) {
+   var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
+    userStorageRef.getDownloadURL().then(url => {
+       var dupe = url;
+         result6.push(dupe);
+         result6.push(url);
+
+      this.cards6 = result6;
+
+    });
+  }
+});
+
+firebase.database().ref(this.currentUser+'/Tops/').on('child_removed', function(data) {
+var element = data.val();
+if(element){
+var index = result6.indexOf(element);
+if (index > -1) {
+    result6.splice(index, 1);
+}
+}
+});
+this.cards6 = result6;
+
+firebase.database().ref(this.currentUser+'/Tops/').on('child_added', function(data) {
+var element = data.val();
+
+result6.push(element);
+
+});
+
+ this.cards6 = result6;
+  //this.grid = Array(Math.ceil(this.items.length/2));
+  firebase.database().ref(this.currentUser+'/Tops/').once('value', function(snapshot) {
+
+  if (!(snapshot.exists())) {
+   var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
+    userStorageRef.getDownloadURL().then(url => {
+       var dupe = url;
+         result6.push(dupe);
+         result6.push(url);
+
+      this.cards6 = result6;
+
+    });
+  }
+});
+
+firebase.database().ref(this.currentUser+'/Tops/').on('child_removed', function(data) {
+var element = data.val();
+if(element){
+var index = result6.indexOf(element);
+if (index > -1) {
+    result6.splice(index, 1);
+}
+}
+});
+this.cards6 = result6;
+
+  var result7 = [];
+  //this.grid = Array(Math.ceil(this.items.length/2));
+  firebase.database().ref(this.currentUser+'/Tops/').once('value', function(snapshot) {
+
+  if (!(snapshot.exists())) {
+   var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
+    userStorageRef.getDownloadURL().then(url => {
+       var dupe = url;
+         result7.push(dupe);
+         result7.push(url);
+
+      this.cards7 = result7;
+
+    });
+  }
+});
+
+firebase.database().ref(this.currentUser+'/Tops/').on('child_removed', function(data) {
+var element = data.val();
+if(element){
+var index = result1.indexOf(element);
+if (index > -1) {
+    result1.splice(index, 1);
+}
+}
+});
+this.cards7 = result7;
+
+firebase.database().ref(this.currentUser+'/Tops/').on('child_added', function(data) {
+var element = data.val();
+
+result7.push(element);
+
+});
+
+ this.cards7 = result7;
+  //this.grid = Array(Math.ceil(this.items.length/2));
+  firebase.database().ref(this.currentUser+'/Tops/').once('value', function(snapshot) {
+
+  if (!(snapshot.exists())) {
+   var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
+    userStorageRef.getDownloadURL().then(url => {
+       var dupe = url;
+         result7.push(dupe);
+         result7.push(url);
+
+      this.cards7 = result7;
+
+    });
+  }
+});
+
+firebase.database().ref(this.currentUser+'/Belts/').on('child_removed', function(data) {
+var element = data.val();
+if(element){
+var index = result7.indexOf(element);
+if (index > -1) {
+    result7.splice(index, 1);
+}
+}
+});
+this.cards7 = result7;
+
+
+
+ var result8 = [];
+  //this.grid = Array(Math.ceil(this.items.length/2));
+  firebase.database().ref(this.currentUser+'/Bottoms/').once('value', function(snapshot) {
+
+  if (!(snapshot.exists())) {
+   var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
+    userStorageRef.getDownloadURL().then(url => {
+       var dupe = url;
+         result8.push(dupe);
+         result8.push(url);
+
+      this.cards8 = result8;
+
+    });
+  }
+});
+
+firebase.database().ref(this.currentUser+'/Bottoms/').on('child_removed', function(data) {
+var element = data.val();
+if(element){
+var index = result1.indexOf(element);
+if (index > -1) {
+    result1.splice(index, 1);
+}
+}
+});
+this.cards8 = result8;
+
+firebase.database().ref(this.currentUser+'/Bottoms/').on('child_added', function(data) {
+var element = data.val();
+
+result8.push(element);
+
+});
+
+ this.cards8 = result8;
+  //this.grid = Array(Math.ceil(this.items.length/2));
+  firebase.database().ref(this.currentUser+'/Bottoms/').once('value', function(snapshot) {
+
+  if (!(snapshot.exists())) {
+   var userStorageRef = firebase.storage().ref().child('Icons/pantsIcon.png');
+    userStorageRef.getDownloadURL().then(url => {
+       var dupe = url;
+         result8.push(dupe);
+         result8.push(url);
+
+      this.cards8 = result8;
+
+    });
+  }
+});
+
+firebase.database().ref(this.currentUser+'/Bottoms/').on('child_removed', function(data) {
+var element = data.val();
+if(element){
+var index = result8.indexOf(element);
+if (index > -1) {
+    result1.splice(index, 1);
+}
+}
+});
+this.cards8 = result8;
+
+ var result9 = [];
+  //this.grid = Array(Math.ceil(this.items.length/2));
+  firebase.database().ref(this.currentUser+'/Accessorys/').once('value', function(snapshot) {
+
+  if (!(snapshot.exists())) {
+   var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
+    userStorageRef.getDownloadURL().then(url => {
+       var dupe = url;
+         result9.push(dupe);
+         result9.push(url);
+
+      this.cards9 = result9;
+
+    });
+  }
+});
+
+firebase.database().ref(this.currentUser+'/Accessorys/').on('child_removed', function(data) {
+var element = data.val();
+if(element){
+var index = result9.indexOf(element);
+if (index > -1) {
+    result9.splice(index, 1);
+}
+}
+});
+this.cards9 = result9;
+
+firebase.database().ref(this.currentUser+'/Tops/').on('child_added', function(data) {
+var element = data.val();
+
+result9.push(element);
+
+});
+
+ this.cards9 = result9;
+  //this.grid = Array(Math.ceil(this.items.length/2));
+  firebase.database().ref(this.currentUser+'/Tops/').once('value', function(snapshot) {
+
+  if (!(snapshot.exists())) {
+   var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
+    userStorageRef.getDownloadURL().then(url => {
+       var dupe = url;
+         result9.push(dupe);
+         result9.push(url);
+
+      this.cards9 = result9;
+
+    });
+  }
+});
+
+firebase.database().ref(this.currentUser+'/Tops/').on('child_removed', function(data) {
+var element = data.val();
+if(element){
+var index = result9.indexOf(element);
+if (index > -1) {
+    result9.splice(index, 1);
+}
+}
+});
+this.cards9 = result9;
+ var result10 = [];
+  //this.grid = Array(Math.ceil(this.items.length/2));
+  firebase.database().ref(this.currentUser+'/Tops/').once('value', function(snapshot) {
+
+  if (!(snapshot.exists())) {
+   var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
+    userStorageRef.getDownloadURL().then(url => {
+       var dupe = url;
+         result10.push(dupe);
+         result10.push(url);
+
+      this.cards10 = result10;
+
+    });
+  }
+});
+
+firebase.database().ref(this.currentUser+'/Tops/').on('child_removed', function(data) {
+var element = data.val();
+if(element){
+var index = result10.indexOf(element);
+if (index > -1) {
+    result10.splice(index, 1);
+}
+}
+});
+this.cards10 = result10;
+
+firebase.database().ref(this.currentUser+'/Tops/').on('child_added', function(data) {
+var element = data.val();
+
+result10.push(element);
+
+});
+
+ this.cards10 = result10;
+  //this.grid = Array(Math.ceil(this.items.length/2));
+  firebase.database().ref(this.currentUser+'/Tops/').once('value', function(snapshot) {
+
+  if (!(snapshot.exists())) {
+   var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
+    userStorageRef.getDownloadURL().then(url => {
+       var dupe = url;
+         result10.push(dupe);
+         result10.push(url);
+
+      this.cards10 = result10;
+
+    });
+  }
+});
+
+firebase.database().ref(this.currentUser+'/Tops/').on('child_removed', function(data) {
+var element = data.val();
+if(element){
+var index = result10.indexOf(element);
+if (index > -1) {
+    result10.splice(index, 1);
+}
+}
+});
+this.cards10 = result10;
+
+ var result11 = [];
+  //this.grid = Array(Math.ceil(this.items.length/2));
+  firebase.database().ref(this.currentUser+'/Shoes/').once('value', function(snapshot) {
+
+  if (!(snapshot.exists())) {
+   var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
+    userStorageRef.getDownloadURL().then(url => {
+       var dupe = url;
+         result11.push(dupe);
+         result11.push(url);
+
+      this.cards11 = result11;
+
+    });
+  }
+});
+
+firebase.database().ref(this.currentUser+'/Shoes/').on('child_removed', function(data) {
+var element = data.val();
+if(element){
+var index = result11.indexOf(element);
+if (index > -1) {
+    result11.splice(index, 1);
+}
+}
+});
+this.cards11 = result11;
+
+firebase.database().ref(this.currentUser+'/Shoes/').on('child_added', function(data) {
+var element = data.val();
+
+result11.push(element);
+
+});
+
+ this.cards11 = result11;
+  //this.grid = Array(Math.ceil(this.items.length/2));
+  firebase.database().ref(this.currentUser+'/Shoes/').once('value', function(snapshot) {
+
+  if (!(snapshot.exists())) {
+   var userStorageRef = firebase.storage().ref().child('Icons/ShoesIcon.png');
+    userStorageRef.getDownloadURL().then(url => {
+       var dupe = url;
+         result11.push(dupe);
+         result11.push(url);
+
+      this.cards11 = result11;
+
+    });
+  }
+});
+
+firebase.database().ref(this.currentUser+'/Shoes/').on('child_removed', function(data) {
+var element = data.val();
+if(element){
+var index = result11.indexOf(element);
+if (index > -1) {
+    result11.splice(index, 1);
+}
+}
+});
+this.cards11 = result11;
+
+ var result12 = [];
+  //this.grid = Array(Math.ceil(this.items.length/2));
+  firebase.database().ref(this.currentUser+'/Tops/').once('value', function(snapshot) {
+
+  if (!(snapshot.exists())) {
+   var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
+    userStorageRef.getDownloadURL().then(url => {
+       var dupe = url;
+         result12.push(dupe);
+         result12.push(url);
+
+      this.cards12 = result12;
+
+    });
+  }
+});
+
+firebase.database().ref(this.currentUser+'/Bags/').on('child_removed', function(data) {
+var element = data.val();
+if(element){
+var index = result12.indexOf(element);
+if (index > -1) {
+    result12.splice(index, 1);
+}
+}
+});
+this.cards12 = result12;
+
+firebase.database().ref(this.currentUser+'/Bags/').on('child_added', function(data) {
+var element = data.val();
+
+result12.push(element);
+
+});
+
+ this.cards12 = result12;
+  //this.grid = Array(Math.ceil(this.items.length/2));
+  firebase.database().ref(this.currentUser+'/Bags/').once('value', function(snapshot) {
+
+  if (!(snapshot.exists())) {
+   var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
+    userStorageRef.getDownloadURL().then(url => {
+       var dupe = url;
+         result12.push(dupe);
+         result12.push(url);
+
+      this.cards12 = result12;
+
+    });
+  }
+});
+
+firebase.database().ref(this.currentUser+'/Bags/').on('child_removed', function(data) {
+var element = data.val();
+if(element){
+var index = result12.indexOf(element);
+if (index > -1) {
+    result12.splice(index, 1);
+}
+}
+});
+this.cards12 = result12;
 }
 voteUp1() {
  let removedCard = this.cards1.shift();
@@ -537,13 +1643,63 @@ voteUp4() {
    this.cards4.push(removedCard);
 
 }
+
 voteUp5() {
  let removedCard = this.cards5.shift();
    this.didSaveThisOutfit = false;
+this.addNewCards5(removedCard);
+}
 
-   this.cards5.push(removedCard);
+voteUp6() {
+ let removedCard = this.cards6.shift();
+   this.didSaveThisOutfit = false;
+this.addNewCards6(removedCard);
+ 
+}
+  voteUp7() {
+let removedCard = this.cards7.shift();
+  this.didSaveThisOutfit = false;
+
+this.addNewCards7(removedCard);
 
 }
+
+voteUp8() {
+ let removedCard = this.cards8.shift();
+   this.didSaveThisOutfit = false;
+
+   this.cards8.push(removedCard);
+
+}
+voteUp9() {
+ let removedCard = this.cards9.shift();
+   this.didSaveThisOutfit = false;
+
+   this.cards9.push(removedCard);
+
+}
+voteUp10() {
+ let removedCard = this.cards10.shift();
+   this.didSaveThisOutfit = false;
+
+   this.cards10.push(removedCard);
+
+}
+voteUp11() {
+ let removedCard = this.cards11.shift();
+   this.didSaveThisOutfit = false;
+
+   this.cards11.push(removedCard);
+
+}
+voteUp12() {
+ let removedCard = this.cards12.shift();
+   this.didSaveThisOutfit = false;
+
+   this.cards12.push(removedCard);
+
+}
+
 trackByCards1(index: number, card1: any){
 return card1;
 }
@@ -557,8 +1713,32 @@ return card3;
 trackByCards4(index: number, card4: any){
 return card4;
 }
-trackByCards5(index: number, card5: any){
-return card5;
+
+trackByCards5(index: number, card1: any){
+return card1;
+}
+trackByCards6(index: number, card2: any){
+return card2;
+}
+
+trackByCards7(index: number, card3: any){
+return card3;
+}
+trackByCards8(index: number, card4: any){
+return card4;
+}
+trackByCards9(index: number, card1: any){
+return card1;
+}
+trackByCards10(index: number, card2: any){
+return card2;
+}
+
+trackByCards11(index: number, card3: any){
+return card3;
+}
+trackByCards12(index: number, card4: any){
+return card4;
 }
 changeToDress(){
   this.showDress = true;
