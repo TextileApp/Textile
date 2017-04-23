@@ -1,3 +1,4 @@
+
 .ion-ios-MYICON:before,
 .ion-ios-MYICON-circle:before,
 .ion-ios-MYICON-circle-outline:before,
@@ -39,50 +40,46 @@
 
 
 }
-.ion-ios-dressicon:before,
-.ion-ios-dressicon-circle:before,
-.ion-ios-dressicon-circle-outline:before,
-.ion-ios-dressicon-outline:before,
-.ion-md-dressicon:before,
-.ion-md-dressicon-circle:before,
-.ion-md-dressicon-circle-outline:before,
-.ion-md-dressicon-outline:before {
-  @extend .ion;
+.firstcol{
+  margin:0;
+
+display:inline-block;
 }
-
-.ion-ios-dressicon:before,
-.ion-ios-dressicon-outline:before,
-.ion-md-dressicon:before,
-.ion-md-dressicon-outline:before {
-  content: url("https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/dressIcon.svg?alt=media&token=9d675185-e558-4f2f-b5db-a51549e41163");
-
-
+.secondcol{
+margin:0;
+height:100%;
+display:inline-block;
 
 }
 .home {
 
+margin:0;
   #card-stack {
-    width: 38%;
-    height: 24%;
-  background: #FEFEFE;
+    width: 32.5%;
+    height: 25%;
+  //background: #FEFEFE;
  //   border: 10px solid #6EFEFE;
     margin: 0px auto 0;
-   
     position: relative;
   }
-  #card-stack.dress {
-    width: 38%;
-    height: 48%;
-  background: #FEFEFE;
- //   border: 10px solid #6EFEFE;
-    margin: 0px auto 0;
-   
-    position: relative;
+  .firstcol{
+
+ 
+
+top:0;
+    margin: 0px;
   }
+    .secondcol{
+  
+          margin: 0px;
+
+top:0;
+
+  }
+
   #card-stack ion-card {
     border-radius: 5px;
     position: absolute;
-    text-align: center;
    
    //top: 20%;
     height: 90%;
@@ -91,49 +88,13 @@
 
   }
 
+  
 
 
 }
 
 
 .butts{
-margin-top:1%;
 margin-left: 46%;
-}
-.leftbut{
-width:100%;
-padding:0px;
-margin-top:1px;
-margin-bottom:1px;
-margin-left:0px;
-margin-right:0px;
-}
-.rightbut{
-width:100%;
-padding:0px;
-margin-top:1px;
-margin-bottom:1px;
-margin-left:0px;
-margin-right:0px;
-}
-/*Footer*/
-#footer {
-  position : absolute;
-  bottom : 0;
-  height : 40px;
-  margin-top : 40px;
-}
-.col{
-background: gray;
-border: thick solid black;
-}
 
-.wrapper {
-     margin: auto;
-    height: 100%;
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center center;
 }

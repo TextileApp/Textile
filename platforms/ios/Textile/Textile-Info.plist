@@ -74,6 +74,11 @@
           <key>NSExceptionAllowsInsecureHTTPLoads</key>
           <true/>
         </dict>
+        <key>10.10.203.163</key>
+        <dict>
+          <key>NSExceptionAllowsInsecureHTTPLoads</key>
+          <true/>
+        </dict>
       </dict>
       <key>NSAllowsArbitraryLoads</key>
       <true/>
@@ -86,8 +91,6 @@
     <string/>
     <key>NSPhotoLibraryUsageDescription</key>
     <string/>
-    <key>UIMainStoryboardFile</key>
-    <string>CDVLaunchScreen</string>
     <key>UIRequiresFullScreen</key>
     <true/>
     <key>UISupportedInterfaceOrientations</key>
