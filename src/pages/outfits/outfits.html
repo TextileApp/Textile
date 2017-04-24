@@ -21,7 +21,7 @@
 <ion-slides [options]="mySlideOptions">
 <ion-slide *ngFor="let f of outfits | async">
    
-     <ion-card no-padding> 
+     <ion-card no-padding style ="height:85%; width:85%; margin:10%;"> 
         
         <div style="position: relative; top:0%; left:0px;">
     <ion-fab right top>
@@ -30,30 +30,57 @@
       </button>
     </ion-fab>
   </div>
+  <ion-grid>
   <ion-row>
-  <ion-col width-33>
+    <ion-col width-33>
     <img *ngIf="f.first"[src]="f.first">
-  <img *ngIf="f.second"[src]="f.second">
-  <img *ngIf="f.third"[src]="f.third">
-   <img *ngIf="f.fourth"[src]="f.fourth">
-  </ion-col>
- <ion-col width-33>
-    <img *ngIf="f.first"[src]="f.first">
-  <img *ngIf="f.second"[src]="f.second">
-  <img *ngIf="f.third"[src]="f.third">
-   <img *ngIf="f.fourth"[src]="f.fourth">
-  </ion-col>
- <ion-col width-33>
-    <img *ngIf="f.first"[src]="f.first">
-  <img *ngIf="f.second"[src]="f.second">
-  <img *ngIf="f.third"[src]="f.third">
-   <img *ngIf="f.fourth"[src]="f.fourth">
-  </ion-col>
+    </ion-col>
+    <ion-col width-33>
+      <img *ngIf="f.second"[src]="f.second">
+    </ion-col>
+     <ion-col width-33>
+      <img *ngIf="f.third"[src]="f.third">
+    </ion-col>
+  </ion-row>
+ <ion-row>
+    <ion-col width-33>
+      <img *ngIf="f.second"[src]="f.second">
+    </ion-col>
+    <ion-col width-33>
+      <img *ngIf="f.second"[src]="f.second">
+    </ion-col>
+     <ion-col width-33>
+       <img *ngIf="f.second"[src]="f.second">
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col width-33>
+     <img *ngIf="f.second"[src]="f.second">
+    </ion-col>
+    <ion-col width-33>
+      <img *ngIf="f.second"[src]="f.second">
+    </ion-col>
+     <ion-col width-33>
+      <img *ngIf="f.second"[src]="f.second">
+    </ion-col>
+  </ion-row>
+   <ion-row>
+    <ion-col width-33>
+     <img *ngIf="f.second"[src]="f.second">
+    </ion-col>
+    <ion-col width-33>
+      <img *ngIf="f.second"[src]="f.second">
+    </ion-col>
+     <ion-col width-33>
+      <img *ngIf="f.second"[src]="f.second">
+    </ion-col>
+  </ion-row>
+</ion-grid>
 
   
+
   
-  </ion-row>
-    <ion-input text-center style = "margin: auto; width: 80%;font-size: 20px;" [(ngModel)]="f.title" (change)="changedTitle(f.$key,f.title)" type="text"></ion-input>
+    <ion-input text-center style = "margin: auto; width: 80%;font-size: 20px;" [(ngModel)]="f.title" placeholder="outfit" (change)="changedTitle(f.$key,f.title)" type="text"></ion-input>
 
 
 
