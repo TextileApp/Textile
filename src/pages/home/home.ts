@@ -412,6 +412,7 @@ goToOtherPage() {
     this.navCtrl.push(ContactPage);
   }
     openModal1(imagesArray) {
+  if(this.card1Activated = false){
   this.didSaveThisOutfit = false;
 let modal = this.modalCtrl.create(imagePicker,{images:imagesArray,user:this.currentUser,type:"Jewelry"});
      modal.onDidDismiss(data => {
@@ -421,8 +422,10 @@ let modal = this.modalCtrl.create(imagePicker,{images:imagesArray,user:this.curr
     }
    });
    modal.present();
+  }
  }
    openModal2(imagesArray) {
+    if(this.card2Activated = false){
        this.didSaveThisOutfit = false;
 
 let modal = this.modalCtrl.create(imagePicker, { "images":imagesArray,"user":this.currentUser,"type":"Hats"});
@@ -433,9 +436,11 @@ let modal = this.modalCtrl.create(imagePicker, { "images":imagesArray,"user":thi
          }
    });
    modal.present();
+    }
  }
 
   openModal3(imagesArray) {
+     if(this.card3Activated = false){
       this.didSaveThisOutfit = false;
 
 let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Neckwear"});
@@ -446,9 +451,11 @@ let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.cu
           }
    });
    modal.present();
+     }
  }
 
   openModal4(imagesArray) {
+     if(this.card4Activated = false){
       this.didSaveThisOutfit = false;
 
 let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Outerwear"});
@@ -459,8 +466,10 @@ let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.cu
           }
    });
    modal.present();
+     }
  }
    openModal5(imagesArray) {
+      if(this.card5Activated = false){
       this.didSaveThisOutfit = false;
 
 let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Tops"});
@@ -471,8 +480,10 @@ let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.cu
           }
    });
    modal.present();
+      }
  }
    openModal6(imagesArray) {
+      if(this.card6Activated = false){
       this.didSaveThisOutfit = false;
 
 let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Tops"});
@@ -483,8 +494,10 @@ let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.cu
           }
    });
    modal.present();
+      }
  }
   openModal7(imagesArray) {
+     if(this.card7Activated = false){
       this.didSaveThisOutfit = false;
 
 let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Belts"});
@@ -495,8 +508,10 @@ let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.cu
           }
    });
    modal.present();
+     }
  }
    openModal8(imagesArray) {
+      if(this.card8Activated = false){
       this.didSaveThisOutfit = false;
 
 let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Bottoms"});
@@ -507,8 +522,10 @@ let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.cu
           }
    });
    modal.present();
+      }
  }
    openModal9(imagesArray) {
+      if(this.card9Activated = false){
       this.didSaveThisOutfit = false;
 
 let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Accessorys"});
@@ -520,7 +537,9 @@ let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.cu
    });
    modal.present();
  }
+   }
    openModal10(imagesArray) {
+      if(this.card10Activated = false){
       this.didSaveThisOutfit = false;
 
 let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Bags"});
@@ -532,7 +551,9 @@ let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.cu
    });
    modal.present();
  }
+   }
    openModal11(imagesArray) {
+      if(this.card11Activated = false){
       this.didSaveThisOutfit = false;
 
 let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Shoes"});
@@ -544,7 +565,9 @@ let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.cu
    });
    modal.present();
  }
+   }
    openModal12(imagesArray) {
+      if(this.card12Activated = false){
       this.didSaveThisOutfit = false;
 
 let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Bags"});
@@ -556,7 +579,7 @@ let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.cu
    });
    modal.present();
  }
-
+   }
 
   startEditing()
 {
@@ -782,80 +805,91 @@ activateCard2(){
   this.card11Activated = false;
   this.card12Activated = false;
 
-/** 
-   if(this.card1Activated){
+   if(this.showPic1 == true){
   this.showCard1 = true;
-}
-else{
+
+   }
+   else{
   this.showCard1 = false;
-}
-  if(this.card2Activated){
+   }
+      if(this.showPic2 == true){
   this.showCard2 = true;
-}
-else{
+
+   }
+   else{
   this.showCard2 = false;
-}
-if(this.card3Activated){
+   }
+   if(this.showPic3 == true){
   this.showCard3 = true;
-}
-else{
+
+   }
+   else{
   this.showCard3 = false;
-}
-if(this.card4Activated){
+   }
+    if(this.showPic4 == true){
   this.showCard4 = true;
-}
-else{
+
+   }
+   else{
   this.showCard4 = false;
-}
-if(this.card5Activated){
+   }
+      if(this.showPic5 == true){
   this.showCard5 = true;
-}
-else{
+
+   }
+   else{
   this.showCard5 = false;
-}
-if(this.card6Activated){
+   }
+ 
+       if(this.showPic6 == true){
   this.showCard6 = true;
-}
-else{
+
+   }
+   else{
   this.showCard6 = false;
-}
-if(this.card7Activated){
+   }
+        if(this.showPic7 == true){
   this.showCard7 = true;
-}
-else{
+
+   }
+   else{
   this.showCard7 = false;
-}
-if(this.card8Activated){
+   }
+        if(this.showPic8 == true){
   this.showCard8 = true;
-}
-else{
+
+   }
+   else{
   this.showCard8 = false;
-}
-if(this.card9Activated){
+   }
+     if(this.showPic9 == true){
   this.showCard9 = true;
-}
-else{
+
+   }
+   else{
   this.showCard9 = false;
-}
-if(this.card10Activated){
+   }
+       if(this.showPic10 == true){
   this.showCard10 = true;
-}
-else{
+
+   }
+   else{
   this.showCard10 = false;
-}
-if(this.card11Activated){
+   }
+      if(this.showPic11 == true){
   this.showCard11 = true;
-}
-else{
+
+   }
+   else{
   this.showCard11 = false;
-}
-if(this.card12Activated){
+   }
+     if(this.showPic12 == true){
   this.showCard12 = true;
-}
-else{
+
+   }
+   else{
   this.showCard12 = false;
-}
-*/
+   }
   }
   removeCard1()
   {

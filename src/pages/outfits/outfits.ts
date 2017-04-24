@@ -3,14 +3,17 @@ import * as firebase from 'firebase';
 import { NavController } from 'ionic-angular';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
 import { AuthService } from '../../providers/auth-service';
-
+import { Slides } from 'ionic-angular';
 @Component({
   selector: 'page-outfits',
   templateUrl: 'outfits.html'
 })
 export class OutfitsPage{
 outfits: FirebaseListObservable<any>;
+ mySlideOptions: any;
 //outfits:Array <any>;
+@ViewChild(Slides) slides: Slides;
+
 myUser: any;
 af: AngularFire;
 isEnabled: boolean;
@@ -24,7 +27,31 @@ isEnabled: boolean;
   
 });
   }
-  /**
+  
+   ngAfterViewInit() {
+   }
+/**
+this.mySlideOptions = {
+    loop: true,
+   
+    onSlideChangeEnd: s => {
+        //this.onDidChange();
+    },
+   
+    effect: 'coverflow',
+    centeredSlides: true,
+    slidesPerView: 1,
+    coverflow: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 4,
+        slideShadows: false
+    }
+};
+
+  }
+  
     ngOnInit() {
       firebase.auth().onAuthStateChanged((_currentUser) => {
 
@@ -75,8 +102,14 @@ return this.isEnabled;
 enableDelete(){
 this.isEnabled = !this.isEnabled;
 }
+changedTitle(outfitkey: string,newtitle: string){
+//firebase.database().ref(this.myUser+'/outfits/'+outfit.key).remove();
+this.outfits.update(outfitkey,{title:newtitle});
+}
 deleteOutfits(outfitkey: string){
 //firebase.database().ref(this.myUser+'/outfits/'+outfit.key).remove();
 this.outfits.remove(outfitkey);
 }
+
+
 }
