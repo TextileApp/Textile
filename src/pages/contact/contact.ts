@@ -126,14 +126,7 @@ af: AngularFire;
 
     cropModal.onDidDismiss(data => {
        if(data){
-       if(this.pet == "Hats"){
-        console.log("ITS HATS");
-        clothes = 'Hats';
-       }
-       if(this.pet == "'Hats'")
-       {
-    console.log("ITS HATSSjjsjjj");
-       }
+   
        console.log(clothes);
        console.log(this.pet);
        console.log("hentai");
@@ -214,7 +207,7 @@ newPostRef.set(
       // imageData is a base64 encoded string
       // this.imgData = imageData;
       this.imgUri = imageData;
-      this.presentCropModal(this.imgUri,this.pet);
+      this.presentCropModal(this.imgUri,this.whichType);
     }, (err) => {
       console.log(err);
     });
@@ -282,7 +275,8 @@ PhotoViewer.show(pic);
     });
   popover.onDidDismiss(() => {
 if(this.shareService.getIsUploading()){
-this.addPics();
+this.presentActionSheet();
+
 this.shareService.setIsUploading(false);
 }
     // Navigate to new page.  Popover should be gone at this point completely
@@ -292,112 +286,7 @@ this.isEnabled = this.shareService.getCanDelete();
   }
 
 
- addPics()
-{
-var clothes = this.whichType;
-  
-  console.log(clothes);
-var options =  {
-          // if no title is passed, the plugin should use a sane default (preferrably the same as it was, so check the old one.. there are screenshots in the marketplace doc)
-          maximumImagesCount: 10,
-          title: 'Select photos',
-        // optional default no helper message above the picker UI
-          // be careful with these options as they require additional processing
-         
-          //             outputType: imagePicker.OutputType.BASE64_STRING
-        }
-     
-ImagePicker.getPictures(options).then((results) => {
-  
-  for (var i = 0; i < results.length; i++) {
-    
-      console.log('Image URI: ' + results[i]);
-        window.resolveLocalFileSystemURL('file:///'+results[i], (fileEntry) => {
-            var uuid = generateUUID();
-            this.doImageResize(results[i], (_data) => {
-        this.ngZone.run(() => {
-          this.currentImage = _data
-        })
-      }, 640)
-                    fileEntry.file((resFile) => {
-
-          var reader = new FileReader();
-          reader.onloadend = (evt: any) => {
-            var imgBlob: any = new Blob([evt.target.result], { type: 'image/jpeg' });
-            imgBlob.name = uuid+'.jpg';
-      var uploadTask = this.storageRef.child(this.currentUser+'/'+clothes+'/'+imgBlob.name).put(imgBlob);
-        console.log(imgBlob.name+'fuck the popopopop');
-       console.log("FUCK MY GERORIIIM");
-
-// Listen for state changes, errors, and completion of the upload.
-uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
-  function(snapshot) {
-    // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-    var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-    console.log('Upload is ' + progress + '% done');
-    switch (snapshot.state) {
-      case firebase.storage.TaskState.PAUSED: // or 'paused'
-        console.log('Upload is paused');
-        break;
-      case firebase.storage.TaskState.RUNNING: // or 'running'
-        console.log('Upload is running');
-        break;
-    }
-  }, function(error) {
-  switch (error.code) {
-    case 'storage/unauthorized':
-      // User doesn't have permission to access the object
-       console.log('NIGGA WE unauthorized IT');
-      break;
-
-    case 'storage/canceled':
-      // User canceled the upload
-             console.log('NIGGA WE CANCELLED IT');
-
-      break;
-
  
-    case 'storage/unknown':
-      // Unknown error occurred, inspect error.serverResponse
-                   console.log(error.serverResponse);
-
-      break;
-  }
-}, function() {
-       console.log('NIGGA WE MADE IT');
-  // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-  var downloadURL = uploadTask.snapshot.downloadURL;
-  console.log(downloadURL);
- 
-     this.db = firebase.database().ref(firebase.auth().currentUser.uid+'/'+clothes);
-var newPostRef = this.db.push();
-
-
-newPostRef.set(downloadURL);
-newPostRef.child.update(imgBlob.name);
-
-});
-
-      
-};
-          reader.onerror = (e) => {
-            console.log("Failed file read: " + e.toString());
-          };
-          reader.readAsArrayBuffer(resFile);
-
-        });
-      }, (err) => {
-        console.log(err);
-        alert(JSON.stringify(err))
-      });
-  
-    }
-}, (err) => {
-      console.log("resolveLocalFileSystemURL", err);
-      alert(JSON.stringify(err))
-    });
-}
-
 isDeleteEnabled()
 {
 return this.shareService.getCanDelete();
