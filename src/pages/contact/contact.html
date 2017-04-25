@@ -6,47 +6,24 @@
 		</button>
 	</ion-buttons>
     <ion-title >
-  <p style="font-size:22px;" >My Closet</p>    </ion-title>
+  <p style="font-size:22px;">{{whichType}}</p></ion-title>
  
  
  <ion-buttons end>
         <button ion-button color = "navcolor" icon-only (click)="openPopover($event)">
-  <ion-icon name="more"></ion-icon>
-</button>
+  <ion-icon name="more"></ion-icon></button>
  </ion-buttons>
       
 
   </ion-navbar>
 
-  <ion-toolbar no-border-top>
-    <ion-segment color="navcolor" [(ngModel)]="pet">
-      <ion-segment-button color="navcolor" value="Hats">
-        Hats
-      </ion-segment-button>
-      <ion-segment-button value="Tops">
-        Tops
-      </ion-segment-button>
-         <ion-segment-button value="Dresses">
-        Dresses
-      </ion-segment-button>
-      <ion-segment-button value="Bottoms">
-        Bottoms
-      </ion-segment-button>
-      <ion-segment-button value="Shoes">
-        Shoes
-      </ion-segment-button>
-    </ion-segment>
-  </ion-toolbar>
 </ion-header>
 <ion-content>
-  
-  <div [ngSwitch]="pet">
-    <div *ngSwitchCase="'Hats'">
    <ion-row wrap>
   <ion-col width-33 *ngFor="let f of items1 | async" (click)="show(f.$value)" >
        <div style="position: relative; top:0%; left:0px;">
     <ion-fab right top>
-      <button *ngIf ="isEnabled"ion-fab mini class="fab-map" mini color="navcolor" (click)="deleteHats(f.$key)">
+      <button *ngIf ="isEnabled"ion-fab mini class="fab-map" mini color="navcolor" (click)="deleteItems(f.$key,f.ref.$value)">
         <ion-icon name="close"></ion-icon>
       </button>
     </ion-fab>
@@ -54,65 +31,6 @@
   <img *ngIf="f.$value"[src]="f.$value">
   </ion-col>
 </ion-row>
-</div>
- 
-    <div *ngSwitchCase="'Tops'">
-   <ion-row wrap>
-    
-  <ion-col width-33 *ngFor="let g of items2 | async" (click)="show(g.$value)">
-       <div style="position: relative; top:0%; left:0px;">
-    <ion-fab right top>
-      <button *ngIf ="isEnabled"ion-fab mini class="fab-map" mini color="navcolor" (click)="deleteTops(g.$key)">
-        <ion-icon name="close"></ion-icon>
-      </button>
-    </ion-fab>
-  </div>
-  <img *ngIf="g.$value"[src]="g.$value">
-  </ion-col>
-</ion-row>
-    </div>
-       <div *ngSwitchCase="'Dresses'">
- <ion-row wrap>
-  <ion-col width-33 *ngFor="let c of items5 | async" (click)="show(c.$value)">
-       <div style="position: relative; top:0%; left:0px;">
-    <ion-fab right top>
-      <button *ngIf ="isEnabled"ion-fab mini class="fab-map" mini color="navcolor" (click)="deleteDresses(c.$key)">
-        <ion-icon name="close"></ion-icon>
-      </button>
-    </ion-fab>
-  </div>
-  <img *ngIf="c.$value"[src]="c.$value">
-  </ion-col>
-</ion-row>
-    </div>
-    <div *ngSwitchCase="'Bottoms'">
- <ion-row wrap>
-  <ion-col width-33 *ngFor="let t of items3 | async" (click)="show(t.$value)">
-      <div style="position: relative; top:0%; left:0px;">
-    <ion-fab right top>
-      <button *ngIf ="isEnabled"ion-fab mini class="fab-map" mini color="navcolor" (click)="deleteBottoms(t.$key)">
-        <ion-icon name="close"></ion-icon>
-      </button>
-    </ion-fab>
-  </div>
-  <img *ngIf="t.$value"[src]="t.$value">
-  </ion-col>
-</ion-row>
-    </div>
-        <div *ngSwitchCase="'Shoes'">
- <ion-row wrap>
-  <ion-col width-33 *ngFor="let c of items4 | async" (click)="show(c.$value)">
-       <div style="position: relative; top:0%; left:0px;">
-    <ion-fab right top>
-      <button *ngIf ="isEnabled"ion-fab mini class="fab-map" mini color="navcolor" (click)="deleteShoes(c.$key)">
-        <ion-icon name="close"></ion-icon>
-      </button>
-    </ion-fab>
-  </div>
-  <img *ngIf="c.$value"[src]="c.$value">
-  </ion-col>
-</ion-row>
-    </div>
-  </div>
+
 </ion-content>
 

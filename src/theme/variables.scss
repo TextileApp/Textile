@@ -28,6 +28,7 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #ffffff,
+    bar:      #f4f4f4,
   dark:       #222,
   navcolor:    #EE6C4D,
   heart: #FF5154
@@ -39,6 +40,8 @@ $colors: (
   src: url("../assets/fonts/BebasNeueRegular.ttf");
  
 }
+$toolbar-ios-active-color:                 #f4f4f4;
+
 $loading-ios-spinner-crescent-color:#EE6C4D;
 $toast-ios-background:rgba(255,255,255,0.95);
 $toast-ios-title-color:#000000;

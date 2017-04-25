@@ -3,6 +3,8 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { OutfitsPage } from '../pages/outfits/outfits';
 import { ContactPage } from '../pages/contact/contact';
+import { closetMenuPage } from '../pages/closetMenu/closetMenu';
+
 import { PopoverContentPage } from '../pages/contact/popover';
 import { HomePage,imagePicker } from '../pages/home/home';
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
@@ -45,6 +47,7 @@ firebase.initializeApp(firebaseConfig);
     RegisterPage,
     ResetpwdPage,
     imagePicker,
+    closetMenuPage,
     ImageCropperComponent,
     PopoverContentPage
     
@@ -65,6 +68,7 @@ firebase.initializeApp(firebaseConfig);
     ContactPage,
     HomePage,
     imagePicker,
+    closetMenuPage,
     LoginPage,
     RegisterPage,
     ResetpwdPage,

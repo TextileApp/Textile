@@ -1,7 +1,7 @@
-import { Component, Inject, NgZone,NgModule,OnInit,ViewChild,ElementRef} from '@angular/core';
+import { Component, Inject, NgZone,NgModule,OnInit} from '@angular/core';
 import { Camera } from 'ionic-native';
 import { PhotoViewer } from 'ionic-native';
-import { NavController,PopoverController,ActionSheetController,ModalController } from 'ionic-angular';
+import { NavController,PopoverController,ActionSheetController,ModalController,NavParams } from 'ionic-angular';
 import { ImagePicker, File} from 'ionic-native';
 import { FirebaseApp,FirebaseListObservable,AngularFire } from 'angularfire2';
 import { PopoverContentPage } from './popover';
@@ -43,48 +43,41 @@ function dataURLtoBlob(dataurl) {
 
 
 export class ContactPage {
+    public imgUri: string;
+
     pet: string = "Hats";
   assetCollection: any;
 isEnabled: boolean;
     selectedItem: any;
   icons: string[];
-    cropper : Cropper;
-  public imgUri: string;
-  showDresses:boolean;
  items1: FirebaseListObservable<any>;
- items2: FirebaseListObservable<any>;
- items3: FirebaseListObservable<any>;
- items4: FirebaseListObservable<any>;
- items5: FirebaseListObservable<any>;
 	options: any;
   db: any;
   uploadType: number = 0;
   public currentUser: any;
   public photoRef:any;
   storageRef: any;
+  whichType:string;
   currentImage
   grid: Array<Array<string>>;
 af: AngularFire;
 
-  @ViewChild('imgSrc') input: ElementRef;
 
-  constructor(public navCtrl: NavController, public actionSheetCtrl: ActionSheetController,public modalCtrl: ModalController , @Inject(FirebaseApp) firebaseApp: any,public events: Events,private ngZone: NgZone,public popoverCtrl: PopoverController,af: AngularFire,private _auth: AuthService,private shareService: ShareService
+
+  constructor(public modalCtrl: ModalController, public actionSheetCtrl: ActionSheetController, private params: NavParams,public navCtrl: NavController,@Inject(FirebaseApp) firebaseApp: any,public events: Events,private ngZone: NgZone,public popoverCtrl: PopoverController,af: AngularFire,private _auth: AuthService,private shareService: ShareService
  ) {
   this.isEnabled = false;
     const authObserver = af.auth.subscribe( user => {
   if (user) {
-    this.showDresses = false;
+    this.whichType = this.params.get("type");
      this.storageRef = firebaseApp.storage().ref();
     this.currentUser = user.uid;
-  this.items1 = af.database.list(this.currentUser+'/Hats');
-  this.items2 = af.database.list(this.currentUser+'/Tops');
-  this.items5 = af.database.list(this.currentUser+'/Dresses/');
-  this.items3 = af.database.list(this.currentUser+'/Bottoms/');
-  this.items4 = af.database.list(this.currentUser+'/Shoes/');
-  console.log(this.items1.forEach);
-    console.log(this.items2.forEach);
-    
-        console.log(this.items4);
+  this.items1 = af.database.list(this.currentUser+'/'+this.whichType);
+  console.log(this.currentUser+'/'+this.whichType);
+  //this.items2 = af.database.list(this.currentUser+'/Tops');
+ // this.items3 = af.database.list(this.currentUser+'/Bottoms/');
+ // this.items4 = af.database.list(this.currentUser+'/Shoes/');
+
   } 
   
 });
@@ -96,7 +89,7 @@ af: AngularFire;
       
 
     }
-      public presentActionSheet() {
+          public presentActionSheet() {
 
     let actionSheet = this.actionSheetCtrl.create({
       title: 'Select Image Source',
@@ -231,6 +224,9 @@ PhotoViewer.show(pic);
 
     }
 
+  
+
+
   ionViewLoaded() {
     
   
@@ -239,7 +235,7 @@ PhotoViewer.show(pic);
     
       
   }
-
+  
   doImageResize(img, callback, MAX_WIDTH: number = 900, MAX_HEIGHT: number = 900) {
     var canvas = document.createElement("canvas");
 
@@ -280,28 +276,25 @@ PhotoViewer.show(pic);
   
 
   openPopover(myEvent) {
-    let popover = this.popoverCtrl.create(PopoverContentPage,{pet:this.pet,user:this.currentUser,items1:this.items1,items2:this.items2,items3:this.items3,items4:this.items4,items5:this.items5,storageRef:this.storageRef});
+    let popover = this.popoverCtrl.create(PopoverContentPage,{pet:this.whichType,user:this.currentUser,items1:this.items1,storageRef:this.storageRef});
     popover.present({
       ev: myEvent
     });
   popover.onDidDismiss(() => {
 if(this.shareService.getIsUploading()){
-//this.addPics(this.pet);
-this.presentActionSheet();
+this.addPics();
 this.shareService.setIsUploading(false);
 }
     // Navigate to new page.  Popover should be gone at this point completely
 this.isEnabled = this.shareService.getCanDelete();
-this.showDresses = this.shareService.getShowDresses();
-console.log(this.showDresses);
 });
   
   }
 
 
-/** addPics(clothes: string)
+ addPics()
 {
-
+var clothes = this.whichType;
   
   console.log(clothes);
 var options =  {
@@ -322,8 +315,9 @@ ImagePicker.getPictures(options).then((results) => {
         window.resolveLocalFileSystemURL('file:///'+results[i], (fileEntry) => {
             var uuid = generateUUID();
             this.doImageResize(results[i], (_data) => {
-      
-      
+        this.ngZone.run(() => {
+          this.currentImage = _data
+        })
       }, 640)
                     fileEntry.file((resFile) => {
 
@@ -377,11 +371,13 @@ uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
  
      this.db = firebase.database().ref(firebase.auth().currentUser.uid+'/'+clothes);
 var newPostRef = this.db.push();
-newPostRef.set(
-  downloadURL
-);
+
+
+newPostRef.set(downloadURL);
+newPostRef.child.update(imgBlob.name);
+
 });
-         
+
       
 };
           reader.onerror = (e) => {
@@ -401,47 +397,24 @@ newPostRef.set(
       alert(JSON.stringify(err))
     });
 }
-*/
+
 isDeleteEnabled()
 {
 return this.shareService.getCanDelete();
 }
-
-
-deleteHats(outfitkey: string){
+deleteItem(outfitkey: string,outfitval: string){
 //firebase.database().ref(this.myUser+'/outfits/'+outfit.key).remove();
-this.items1.remove(outfitkey);
+
+this.storageRef.child(this.currentUser+'/'+this.whichType+'/'+outfitval).delete().then(function() {
+}).catch(function(error) {
+console.log(error);
+});
 this.shareService.setCanDelete(false);
 this.isEnabled = false;
 }
-deleteTops(outfitkey: string){
-//firebase.database().ref(this.myUser+'/outfits/'+outfit.key).remove();
-this.items2.remove(outfitkey);
-this.shareService.setCanDelete(false);
-this.isEnabled = false;
-}
-deleteBottoms(outfitkey: string){
-//firebase.database().ref(this.myUser+'/outfits/'+outfit.key).remove();
-this.items3.remove(outfitkey);
-this.shareService.setCanDelete(false);
-this.isEnabled = false;
 
-}
-deleteDresses(outfitkey: string){
-//firebase.database().ref(this.myUser+'/outfits/'+outfit.key).remove();
-this.items5.remove(outfitkey);
-this.shareService.setCanDelete(false);
-this.isEnabled = false;
 
-}
-deleteShoes(outfitkey: string){
-//firebase.database().ref(this.myUser+'/outfits/'+outfit.key).remove();
-this.items4.remove(outfitkey);
-this.shareService.setCanDelete(false);
-this.isEnabled = false;
 
-}
-  
 
 
 }

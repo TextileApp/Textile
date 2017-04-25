@@ -4,6 +4,7 @@ import { LoginPage } from '../login/login';
 import {OutfitsPage} from '../outfits/outfits';
 import { NavController,ModalController,NavParams,ViewController,ActionSheetController,ToastController,PopoverController,LoadingController } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service';
+import {closetMenuPage} from '../closetMenu/closetMenu';
 import {ShareService} from '../../providers/ShareService';
 import{ImagePicker, File,Crop,Camera} from'ionic-native';
 import { ContactPage } from '../contact/contact';
@@ -409,7 +410,7 @@ addNewCards12(oldcard: string) {
 goToOtherPage() {
     //push another page onto the history stack
     //causing the nav controller to animate the new page in
-    this.navCtrl.push(ContactPage);
+    this.navCtrl.push(closetMenuPage);
   }
     openModal1(imagesArray) {
   if(this.card1Activated = false){
@@ -528,7 +529,7 @@ let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.cu
       if(this.card9Activated = false){
       this.didSaveThisOutfit = false;
 
-let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Accessorys"});
+let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Jewelry"});
      modal.onDidDismiss(data => {
           if(data){
     this.cards9.unshift(data.image);
@@ -988,7 +989,7 @@ result1.push(element);
   firebase.database().ref(this.currentUser+'/Jewelry/').once('value', function(snapshot) {
 
   if (!(snapshot.exists())) {
-   var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
+   var userStorageRef = firebase.storage().ref().child('Icons/Jewelry.png');
     userStorageRef.getDownloadURL().then(url => {
        var dupe = url;
          result1.push(dupe);
@@ -1024,7 +1025,7 @@ result2.push(element);
  this.cards2 = result2;
 firebase.database().ref(this.currentUser+'/Hats/').once('value', function(snapshot) {
   if (!(snapshot.exists())) {
-  var userStorageRef = firebase.storage().ref().child('Icons/hatIcon.png');
+  var userStorageRef = firebase.storage().ref().child('Icons/Hat.png');
     userStorageRef.getDownloadURL().then(url => {
        var dupe = url;
    result2.push(dupe);
@@ -1050,7 +1051,7 @@ this.cards3 = result3;
   var result3 = [];
 //this.cards3 = [];
 
-firebase.database().ref(this.currentUser+'/Hats/').on('child_removed', function(data) {
+firebase.database().ref(this.currentUser+'/Neckwear/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
 var index = result3.indexOf(element);
@@ -1062,7 +1063,7 @@ if (index > -1) {
 this.cards3 = result3;
 
 
-firebase.database().ref(this.currentUser+'Hats/').on('child_added', function(data) {
+firebase.database().ref(this.currentUser+'Neckwear/').on('child_added', function(data) {
 var element = data.val();
 if(element){
 result3.push(element);
@@ -1070,9 +1071,9 @@ result3.push(element);
 });
 this.cards3 = result3;
 
-firebase.database().ref(this.currentUser+'Hats/').once('value', function(snapshot) {
+firebase.database().ref(this.currentUser+'Neckwear/').once('value', function(snapshot) {
   if (!(snapshot.exists())) {
-var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
+var userStorageRef = firebase.storage().ref().child('Icons/Tie.png');
     userStorageRef.getDownloadURL().then(url => {
        var dupe = url;
    result3.push(dupe);
@@ -1088,7 +1089,7 @@ this.cards3 = result3;
 
      var result4 = [];
 
-    firebase.database().ref(this.currentUser+'/Tops/').on('child_added', function(data) {
+    firebase.database().ref(this.currentUser+'/Outerwear/').on('child_added', function(data) {
 var element = data.val();
 if(element){
 
@@ -1099,10 +1100,10 @@ result4.push(element);
  this.cards4 = result4;
   // this.grid = Array(Math.ceil(this.items1.length/2));
 
-   firebase.database().ref(this.currentUser+'/Tops/').once('value', function(snapshot) {
+   firebase.database().ref(this.currentUser+'/Outerwear/').once('value', function(snapshot) {
 
   if (!(snapshot.exists())) {
-var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
+var userStorageRef = firebase.storage().ref().child('Icons/Outerwear.png');
     userStorageRef.getDownloadURL().then(url => {
        var dupe = url;
                   result4.push(url);
@@ -1119,7 +1120,7 @@ var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
 }); 
 this.cards4 = result4;
 
-firebase.database().ref(this.currentUser+'/Tops/').on('child_removed', function(data) {
+firebase.database().ref(this.currentUser+'/Outerwear/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
 var index = result4.indexOf(element);
@@ -1130,7 +1131,7 @@ if (index > -1) {
 });
 this.cards4 = result4;
 var result5 = [];
-firebase.database().ref(this.currentUser+'/Tops/').on('child_added', function(data) {
+firebase.database().ref(this.currentUser+'/Outerwear/').on('child_added', function(data) {
 var element = data.val();
 
 result5.push(element);
@@ -1139,10 +1140,10 @@ result5.push(element);
 
  this.cards5 = result5;
   //this.grid = Array(Math.ceil(this.items.length/2));
-  firebase.database().ref(this.currentUser+'/Tops/').once('value', function(snapshot) {
+  firebase.database().ref(this.currentUser+'/Outerwear/').once('value', function(snapshot) {
 
   if (!(snapshot.exists())) {
-   var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
+   var userStorageRef = firebase.storage().ref().child('Icons/Outerwear.png');
     userStorageRef.getDownloadURL().then(url => {
        var dupe = url;
          result5.push(dupe);
@@ -1213,7 +1214,7 @@ result1.push(element);
   firebase.database().ref(this.currentUser+'/Tops/').once('value', function(snapshot) {
 
   if (!(snapshot.exists())) {
-   var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
+   var userStorageRef = firebase.storage().ref().child('Icons/Shirt2.png');
     userStorageRef.getDownloadURL().then(url => {
        var dupe = url;
          result6.push(dupe);
@@ -1273,10 +1274,10 @@ this.cards6 = result6;
 
   var result7 = [];
   //this.grid = Array(Math.ceil(this.items.length/2));
-  firebase.database().ref(this.currentUser+'/Tops/').once('value', function(snapshot) {
+  firebase.database().ref(this.currentUser+'/Belts/').once('value', function(snapshot) {
 
   if (!(snapshot.exists())) {
-   var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
+   var userStorageRef = firebase.storage().ref().child('Icons/Belt.png');
     userStorageRef.getDownloadURL().then(url => {
        var dupe = url;
          result7.push(dupe);
@@ -1288,7 +1289,7 @@ this.cards6 = result6;
   }
 });
 
-firebase.database().ref(this.currentUser+'/Tops/').on('child_removed', function(data) {
+firebase.database().ref(this.currentUser+'/Belts/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
 var index = result1.indexOf(element);
@@ -1299,7 +1300,7 @@ if (index > -1) {
 });
 this.cards7 = result7;
 
-firebase.database().ref(this.currentUser+'/Tops/').on('child_added', function(data) {
+firebase.database().ref(this.currentUser+'/Belts/').on('child_added', function(data) {
 var element = data.val();
 
 result7.push(element);
@@ -1308,10 +1309,10 @@ result7.push(element);
 
  this.cards7 = result7;
   //this.grid = Array(Math.ceil(this.items.length/2));
-  firebase.database().ref(this.currentUser+'/Tops/').once('value', function(snapshot) {
+  firebase.database().ref(this.currentUser+'/Belts/').once('value', function(snapshot) {
 
   if (!(snapshot.exists())) {
-   var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
+   var userStorageRef = firebase.storage().ref().child('Icons/Belt.png');
     userStorageRef.getDownloadURL().then(url => {
        var dupe = url;
          result7.push(dupe);
@@ -1341,7 +1342,7 @@ this.cards7 = result7;
   firebase.database().ref(this.currentUser+'/Bottoms/').once('value', function(snapshot) {
 
   if (!(snapshot.exists())) {
-   var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
+   var userStorageRef = firebase.storage().ref().child('Icons/pantsIcon.png');
     userStorageRef.getDownloadURL().then(url => {
        var dupe = url;
          result8.push(dupe);
@@ -1401,10 +1402,10 @@ this.cards8 = result8;
 
  var result9 = [];
   //this.grid = Array(Math.ceil(this.items.length/2));
-  firebase.database().ref(this.currentUser+'/Accessorys/').once('value', function(snapshot) {
+  firebase.database().ref(this.currentUser+'/Jewelry/').once('value', function(snapshot) {
 
   if (!(snapshot.exists())) {
-   var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
+   var userStorageRef = firebase.storage().ref().child('Icons/Jewelry.png');
     userStorageRef.getDownloadURL().then(url => {
        var dupe = url;
          result9.push(dupe);
@@ -1416,7 +1417,7 @@ this.cards8 = result8;
   }
 });
 
-firebase.database().ref(this.currentUser+'/Accessorys/').on('child_removed', function(data) {
+firebase.database().ref(this.currentUser+'/Jewelry/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
 var index = result9.indexOf(element);
@@ -1427,7 +1428,7 @@ if (index > -1) {
 });
 this.cards9 = result9;
 
-firebase.database().ref(this.currentUser+'/Tops/').on('child_added', function(data) {
+firebase.database().ref(this.currentUser+'/Jewelry/').on('child_added', function(data) {
 var element = data.val();
 
 result9.push(element);
@@ -1436,10 +1437,10 @@ result9.push(element);
 
  this.cards9 = result9;
   //this.grid = Array(Math.ceil(this.items.length/2));
-  firebase.database().ref(this.currentUser+'/Tops/').once('value', function(snapshot) {
+  firebase.database().ref(this.currentUser+'/Jewelry/').once('value', function(snapshot) {
 
   if (!(snapshot.exists())) {
-   var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
+   var userStorageRef = firebase.storage().ref().child('Icons/Jewelry.png');
     userStorageRef.getDownloadURL().then(url => {
        var dupe = url;
          result9.push(dupe);
@@ -1451,7 +1452,7 @@ result9.push(element);
   }
 });
 
-firebase.database().ref(this.currentUser+'/Tops/').on('child_removed', function(data) {
+firebase.database().ref(this.currentUser+'/Jewelry/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
 var index = result9.indexOf(element);
@@ -1463,10 +1464,10 @@ if (index > -1) {
 this.cards9 = result9;
  var result10 = [];
   //this.grid = Array(Math.ceil(this.items.length/2));
-  firebase.database().ref(this.currentUser+'/Tops/').once('value', function(snapshot) {
+  firebase.database().ref(this.currentUser+'/Bags/').once('value', function(snapshot) {
 
   if (!(snapshot.exists())) {
-   var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
+   var userStorageRef = firebase.storage().ref().child('Icons/Bag2.png');
     userStorageRef.getDownloadURL().then(url => {
        var dupe = url;
          result10.push(dupe);
@@ -1478,7 +1479,7 @@ this.cards9 = result9;
   }
 });
 
-firebase.database().ref(this.currentUser+'/Tops/').on('child_removed', function(data) {
+firebase.database().ref(this.currentUser+'/Bags/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
 var index = result10.indexOf(element);
@@ -1489,7 +1490,7 @@ if (index > -1) {
 });
 this.cards10 = result10;
 
-firebase.database().ref(this.currentUser+'/Tops/').on('child_added', function(data) {
+firebase.database().ref(this.currentUser+'/Bags/').on('child_added', function(data) {
 var element = data.val();
 
 result10.push(element);
@@ -1498,10 +1499,10 @@ result10.push(element);
 
  this.cards10 = result10;
   //this.grid = Array(Math.ceil(this.items.length/2));
-  firebase.database().ref(this.currentUser+'/Tops/').once('value', function(snapshot) {
+  firebase.database().ref(this.currentUser+'/Bags/').once('value', function(snapshot) {
 
   if (!(snapshot.exists())) {
-   var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
+   var userStorageRef = firebase.storage().ref().child('Icons/Bag2.png');
     userStorageRef.getDownloadURL().then(url => {
        var dupe = url;
          result10.push(dupe);
@@ -1513,7 +1514,7 @@ result10.push(element);
   }
 });
 
-firebase.database().ref(this.currentUser+'/Tops/').on('child_removed', function(data) {
+firebase.database().ref(this.currentUser+'/Bags/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
 var index = result10.indexOf(element);
@@ -1529,7 +1530,7 @@ this.cards10 = result10;
   firebase.database().ref(this.currentUser+'/Shoes/').once('value', function(snapshot) {
 
   if (!(snapshot.exists())) {
-   var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
+   var userStorageRef = firebase.storage().ref().child('Icons/shoesIcon.png');
     userStorageRef.getDownloadURL().then(url => {
        var dupe = url;
          result11.push(dupe);
@@ -1589,10 +1590,10 @@ this.cards11 = result11;
 
  var result12 = [];
   //this.grid = Array(Math.ceil(this.items.length/2));
-  firebase.database().ref(this.currentUser+'/Tops/').once('value', function(snapshot) {
+  firebase.database().ref(this.currentUser+'/Bags/').once('value', function(snapshot) {
 
   if (!(snapshot.exists())) {
-   var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
+   var userStorageRef = firebase.storage().ref().child('Icons/Bag1.png');
     userStorageRef.getDownloadURL().then(url => {
        var dupe = url;
          result12.push(dupe);
@@ -1627,7 +1628,7 @@ result12.push(element);
   firebase.database().ref(this.currentUser+'/Bags/').once('value', function(snapshot) {
 
   if (!(snapshot.exists())) {
-   var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
+   var userStorageRef = firebase.storage().ref().child('Icons/Bag1.png');
     userStorageRef.getDownloadURL().then(url => {
        var dupe = url;
          result12.push(dupe);
@@ -1796,15 +1797,85 @@ decimalToHex(d, padding) {
   }
   saveOutfit() {
 if(this.didSaveThisOutfit == false){
-if(this.showDress == true){
+
 var newChildRef = firebase.database().ref(firebase.auth().currentUser.uid+'/outfits/');
 var newPostRef = newChildRef.push();
-var topcard1 = this.cards1[0];
-var topcard2 = this.cards5[0];
-var topcard3 = this.cards4[0];
+var topcard1;
+var topcard2;
+var topcard3;
+var topcard4;
+var topcard5;
+var topcard6;
+var topcard7;
+var topcard8;
+var topcard9;
+var topcard10;
+var topcard11;
+var topcard12;
+if(this.cards1[0])
+{
+   topcard1 = this.cards1[0];
+
+}
+if(this.cards2[0])
+{
+topcard2 = this.cards2[0];
+}
+if(this.cards3[0])
+{
+topcard3 = this.cards3[0];
+}
+if(this.cards4[0])
+{
+topcard4 = this.cards4[0];
+}
+if(this.cards5[0])
+{
+topcard5 = this.cards5[0];
+
+}
+if(this.cards6[0])
+{
+  topcard6 = this.cards6[0];
+
+}
+if(this.cards7[0])
+{
+  topcard7 = this.cards7[0];
+
+}
+if(this.cards8[0])
+{
+  topcard8 = this.cards8[0];
+
+}
+if(this.cards9[0])
+{
+  topcard9 = this.cards9[0];
+
+}
+if(this.cards10[0])
+{
+ topcard10 = this.cards10[0];
+
+}
+if(this.cards11[0])
+{
+ topcard11 = this.cards11[0];
+
+}
+if(this.cards12[0])
+{
+topcard12 = this.cards12[0];
+
+}
+
+
+
+
 
 newPostRef.set(
-  {first:topcard1,second:topcard2,third:topcard3}
+  {first:topcard1,second:topcard2,third:topcard3,fourth:topcard4,fifth:topcard5,sixth:topcard6,seventh:topcard7,eighth:topcard8,ninth:topcard9,tenth:topcard10,eleventh:topcard11,twelth:topcard12}
 );
  let toast = this.toastCtrl.create({
       message: 'Outfit saved successfully ❤️️',
@@ -1814,27 +1885,7 @@ newPostRef.set(
     });
     toast.present();
     this.didSaveThisOutfit = true;
-  }
-  else{
-var newChildRef = firebase.database().ref(firebase.auth().currentUser.uid+'/outfits/');
-var newPostRef = newChildRef.push();
-var topcard1 = this.cards1[0];
-var topcard2 = this.cards2[0];
-var topcard3 = this.cards3[0];
-var topcard4 = this.cards4[0];
-
-newPostRef.set(
-  {first:topcard1,second:topcard2,third:topcard3,fourth:topcard4}
-);
- let toast = this.toastCtrl.create({
-      message: 'Outfit saved successfully ❤️️',
-      duration: 3000,
-      position:"middle"
-    
-    });
-    toast.present();
-    this.didSaveThisOutfit = true;
-  }
+  
 
 
 }
