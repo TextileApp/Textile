@@ -22,6 +22,9 @@
         "cordova-plugin-console": {
             "PACKAGE_NAME": "com.ionicframework.ionic2firebaseemail197311"
         },
+        "cordova-plugin-crop": {
+            "PACKAGE_NAME": "com.ionicframework.ionic2firebaseemail197311"
+        },
         "cordova-plugin-device": {
             "PACKAGE_NAME": "com.ionicframework.ionic2firebaseemail197311"
         },
@@ -37,13 +40,10 @@
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.ionicframework.ionic2firebaseemail197311"
         },
-        "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "com.ionicframework.ionic2firebaseemail197311"
-        },
         "ionic-plugin-deploy": {
             "PACKAGE_NAME": "com.ionicframework.ionic2firebaseemail197311"
         },
-        "cordova-plugin-crop": {
+        "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.ionicframework.ionic2firebaseemail197311"
         }
     },

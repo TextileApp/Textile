@@ -24,7 +24,7 @@ isEnabled: boolean;
   this.outfits = af.database.list(this.myUser+'/outfits/');
   } 
   this.isEnabled = false;
-  
+
 });
   }
   

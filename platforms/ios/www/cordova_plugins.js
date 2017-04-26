@@ -65,6 +65,14 @@ module.exports = [
         ]
     },
     {
+        "id": "cordova-plugin-crop.CropPlugin",
+        "file": "plugins/cordova-plugin-crop/www/crop.js",
+        "pluginId": "cordova-plugin-crop",
+        "clobbers": [
+            "plugins.crop"
+        ]
+    },
+    {
         "id": "cordova-plugin-device.device",
         "file": "plugins/cordova-plugin-device/www/device.js",
         "pluginId": "cordova-plugin-device",
@@ -262,15 +270,6 @@ module.exports = [
         ]
     },
     {
-        "id": "ionic-plugin-keyboard.keyboard",
-        "file": "plugins/ionic-plugin-keyboard/www/ios/keyboard.js",
-        "pluginId": "ionic-plugin-keyboard",
-        "clobbers": [
-            "cordova.plugins.Keyboard"
-        ],
-        "runs": true
-    },
-    {
         "id": "ionic-plugin-deploy.IonicDeploy",
         "file": "plugins/ionic-plugin-deploy/www/ionicdeploy.js",
         "pluginId": "ionic-plugin-deploy",
@@ -279,12 +278,13 @@ module.exports = [
         ]
     },
     {
-        "id": "cordova-plugin-crop.CropPlugin",
-        "file": "plugins/cordova-plugin-crop/www/crop.js",
-        "pluginId": "cordova-plugin-crop",
+        "id": "ionic-plugin-keyboard.keyboard",
+        "file": "plugins/ionic-plugin-keyboard/www/ios/keyboard.js",
+        "pluginId": "ionic-plugin-keyboard",
         "clobbers": [
-            "plugins.crop"
-        ]
+            "cordova.plugins.Keyboard"
+        ],
+        "runs": true
     }
 ];
 module.exports.metadata = 
@@ -295,14 +295,14 @@ module.exports.metadata =
     "cordova-plugin-compat": "1.1.0",
     "cordova-plugin-camera": "2.3.1",
     "cordova-plugin-console": "1.0.5",
+    "cordova-plugin-crop": "0.3.1",
     "cordova-plugin-device": "1.1.4",
     "cordova-plugin-file": "4.3.1",
     "cordova-plugin-splashscreen": "4.0.1",
     "cordova-plugin-statusbar": "2.2.1",
     "cordova-plugin-whitelist": "1.3.1",
-    "ionic-plugin-keyboard": "2.2.1",
     "ionic-plugin-deploy": "0.6.5",
-    "cordova-plugin-crop": "0.3.1"
+    "ionic-plugin-keyboard": "2.2.1"
 };
 // BOTTOM OF METADATA
 });

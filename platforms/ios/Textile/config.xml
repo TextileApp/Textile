@@ -27,6 +27,9 @@
     <feature name="Console">
         <param name="ios-package" value="CDVLogger" />
     </feature>
+    <feature name="CropPlugin">
+        <param name="ios-package" value="CTCrop" />
+    </feature>
     <feature name="Device">
         <param name="ios-package" value="CDVDevice" />
     </feature>
@@ -42,19 +45,16 @@
         <param name="ios-package" value="CDVStatusBar" />
         <param name="onload" value="true" />
     </feature>
-    <feature name="Keyboard">
-        <param name="ios-package" onload="true" value="IonicKeyboard" />
-    </feature>
     <feature name="IonicDeploy">
         <param name="ios-package" onload="true" value="IonicDeploy" />
     </feature>
-    <feature name="CropPlugin">
-        <param name="ios-package" value="CTCrop" />
+    <feature name="Keyboard">
+        <param name="ios-package" onload="true" value="IonicKeyboard" />
     </feature>
     <name>Textile</name>
     <description>The fun way to plan outfits.</description>
     <author email="info@textileapp.co" href="http://textileapp.co">Textile Team</author>
-    <content original-src="index.html" src="http://10.10.203.163:8100" />
+    <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -71,6 +71,7 @@
     <allow-navigation href="http://10.10.203.166:8100" />
     <allow-navigation href="http://10.20.100.154:8100" />
     <allow-navigation href="http://10.10.203.163:8100" />
+    <allow-navigation href="http://153.90.43.81:8100" />
     <icon src="resources/ios/icon/icon-small@3x.png" />
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
@@ -92,6 +93,16 @@
     <icon height="29" src="resources/ios/icon/icon-small.png" width="29" />
     <icon height="58" src="resources/ios/icon/icon-small@2x.png" width="58" />
     <icon height="87" src="resources/ios/icon/icon-small@3x.png" width="87" />
+    <splash height="1136" src="resources/ios/splash/Default-568h@2x~iphone.png" width="640" />
+    <splash height="1334" src="resources/ios/splash/Default-667h.png" width="750" />
+    <splash height="2208" src="resources/ios/splash/Default-736h.png" width="1242" />
+    <splash height="1242" src="resources/ios/splash/Default-Landscape-736h.png" width="2208" />
+    <splash height="1536" src="resources/ios/splash/Default-Landscape@2x~ipad.png" width="2048" />
+    <splash height="768" src="resources/ios/splash/Default-Landscape~ipad.png" width="1024" />
+    <splash height="2048" src="resources/ios/splash/Default-Portrait@2x~ipad.png" width="1536" />
+    <splash height="1024" src="resources/ios/splash/Default-Portrait~ipad.png" width="768" />
+    <splash height="960" src="resources/ios/splash/Default@2x~iphone.png" width="640" />
+    <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320" />
     <preference name="AllowInlineMediaPlayback" value="false" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="DisallowOverscroll" value="true" />

@@ -29,6 +29,10 @@
                             "count": 1
                         },
                         {
+                            "xml": "<feature name=\"CropPlugin\"><param name=\"ios-package\" value=\"CTCrop\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
                             "count": 1
                         },
@@ -53,15 +57,11 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"Keyboard\"><param name=\"ios-package\" onload=\"true\" value=\"IonicKeyboard\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"IonicDeploy\"><param name=\"ios-package\" onload=\"true\" value=\"IonicDeploy\" /></feature>",
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"CropPlugin\"><param name=\"ios-package\" value=\"CTCrop\" /></feature>",
+                            "xml": "<feature name=\"Keyboard\"><param name=\"ios-package\" onload=\"true\" value=\"IonicKeyboard\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -110,6 +110,9 @@
         "cordova-plugin-console": {
             "PACKAGE_NAME": "com.ionicframework.ionic2firebaseemail197311"
         },
+        "cordova-plugin-crop": {
+            "PACKAGE_NAME": "com.ionicframework.ionic2firebaseemail197311"
+        },
         "cordova-plugin-device": {
             "PACKAGE_NAME": "com.ionicframework.ionic2firebaseemail197311"
         },
@@ -125,13 +128,10 @@
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.ionicframework.ionic2firebaseemail197311"
         },
-        "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "com.ionicframework.ionic2firebaseemail197311"
-        },
         "ionic-plugin-deploy": {
             "PACKAGE_NAME": "com.ionicframework.ionic2firebaseemail197311"
         },
-        "cordova-plugin-crop": {
+        "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.ionicframework.ionic2firebaseemail197311"
         }
     },
@@ -199,6 +199,14 @@
             "pluginId": "cordova-plugin-console",
             "clobbers": [
                 "cordova.logger"
+            ]
+        },
+        {
+            "id": "cordova-plugin-crop.CropPlugin",
+            "file": "plugins/cordova-plugin-crop/www/crop.js",
+            "pluginId": "cordova-plugin-crop",
+            "clobbers": [
+                "plugins.crop"
             ]
         },
         {
@@ -399,15 +407,6 @@
             ]
         },
         {
-            "id": "ionic-plugin-keyboard.keyboard",
-            "file": "plugins/ionic-plugin-keyboard/www/ios/keyboard.js",
-            "pluginId": "ionic-plugin-keyboard",
-            "clobbers": [
-                "cordova.plugins.Keyboard"
-            ],
-            "runs": true
-        },
-        {
             "id": "ionic-plugin-deploy.IonicDeploy",
             "file": "plugins/ionic-plugin-deploy/www/ionicdeploy.js",
             "pluginId": "ionic-plugin-deploy",
@@ -416,12 +415,13 @@
             ]
         },
         {
-            "id": "cordova-plugin-crop.CropPlugin",
-            "file": "plugins/cordova-plugin-crop/www/crop.js",
-            "pluginId": "cordova-plugin-crop",
+            "id": "ionic-plugin-keyboard.keyboard",
+            "file": "plugins/ionic-plugin-keyboard/www/ios/keyboard.js",
+            "pluginId": "ionic-plugin-keyboard",
             "clobbers": [
-                "plugins.crop"
-            ]
+                "cordova.plugins.Keyboard"
+            ],
+            "runs": true
         }
     ],
     "plugin_metadata": {
@@ -430,13 +430,13 @@
         "cordova-plugin-compat": "1.1.0",
         "cordova-plugin-camera": "2.3.1",
         "cordova-plugin-console": "1.0.5",
+        "cordova-plugin-crop": "0.3.1",
         "cordova-plugin-device": "1.1.4",
         "cordova-plugin-file": "4.3.1",
         "cordova-plugin-splashscreen": "4.0.1",
         "cordova-plugin-statusbar": "2.2.1",
         "cordova-plugin-whitelist": "1.3.1",
-        "ionic-plugin-keyboard": "2.2.1",
         "ionic-plugin-deploy": "0.6.5",
-        "cordova-plugin-crop": "0.3.1"
+        "ionic-plugin-keyboard": "2.2.1"
     }
 }

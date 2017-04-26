@@ -20,7 +20,7 @@
     <span class="colfirst">
 
     <div  class ="firstcol"swing-stack #myswing1 [stackConfig]="stackConfig1" (throwoutleft)="voteUp1($event)" (throwoutright)="voteUp1($event)" id="card-stack"[style.zIndex]="-1000">
-        <div [hidden]="!showCard1" style="position: relative; top:-11%; left:12%;">
+        <div [hidden]="!showCard1" style="position: relative; top:-6%; left:8%;">
     <ion-fab right top>
       <button [hidden]="!showDelete1" ion-fab mini class="fab-map" mini color="navcolor" (click)="removeCard1()">
         <ion-icon name="close"></ion-icon>
@@ -37,7 +37,7 @@
      </div>
 
    <div class ="firstcol"  swing-stack #myswing2 [stackConfig]="stackConfig2" (throwoutleft)="voteUp2()" (throwoutright)="voteUp2()" id="card-stack"[style.zIndex]="-1000">
-         <div [hidden]="!showCard2" style="position: relative; top:-11%; left:12%;">
+         <div [hidden]="!showCard2" style="position: relative; top:-7%; left:8%;">
 
     <ion-fab right top>
       <button [hidden]="!showDelete2" ion-fab mini class="fab-map" mini color="navcolor" (click)="removeCard2()">
@@ -55,7 +55,7 @@
   </div>
    
      <div class ="firstcol"  swing-stack #myswing3 [stackConfig]="stackConfig3" (throwoutleft)="voteUp3()" (throwoutright)="voteUp3()" id="card-stack"[style.zIndex]="-1000">
-         <div [hidden]="!showCard3" style="position: relative; top:-11%; left:12%;">
+         <div [hidden]="!showCard3" style="position: relative; top:-7%; left:8%;">
 
     <ion-fab right top>
       <button [hidden]="!showDelete3" ion-fab mini class="fab-map" mini color="navcolor" (click)="removeCard3()">
@@ -72,7 +72,7 @@
     
   </div>
       <div class ="firstcol"  swing-stack #myswing4 [stackConfig]="stackConfig4" (throwoutleft)="voteUp4()" (throwoutright)="voteUp4()" id="card-stack"[style.zIndex]="-1000">
-         <div [hidden]="!showCard4" style="position: relative; top:-11%; left:12%;">
+         <div [hidden]="!showCard4" style="position: relative; top:-7%; left:8%;">
 
     <ion-fab right top>
       <button [hidden]="!showDelete4" ion-fab mini class="fab-map" mini color="navcolor" (click)="removeCard4()">
@@ -89,7 +89,7 @@
     
   </div>
       <div class ="firstcol"  swing-stack #myswing5 [stackConfig]="stackConfig4" (throwoutleft)="voteUp5()" (throwoutright)="voteUp5()" id="card-stack"[style.zIndex]="-1000">
-         <div [hidden]="!showCard5" style="position: relative; top:-11%; left:12%;">
+         <div [hidden]="!showCard5" style="position: relative; top:-7%; left:8%;">
 
   </div>
     <ion-card [hidden]="!showCard5"  #mycards5 swing-card (press)="pressEvent($event)" *ngFor="let p of cards5; trackBy:trackByCards5; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal5(cards5)">
@@ -100,7 +100,7 @@
     
   </div>
             <div class ="firstcol"  swing-stack #myswing6 [stackConfig]="stackConfig4" (throwoutleft)="voteUp6()" (throwoutright)="voteUp6()" id="card-stack"[style.zIndex]="-1000">
-         <div [hidden]="!showCard6" style="position: relative; top:-11%; left:12%;">
+         <div [hidden]="!showCard6" style="position: relative; top:-7%; left:8%;">
 
     <ion-fab right top>
       <button [hidden]="!showDelete6" ion-fab mini class="fab-map" mini color="navcolor" (click)="removeCard6()">
@@ -117,7 +117,7 @@
     
   </div>
       <div class ="firstcol"  swing-stack #myswing7 [stackConfig]="stackConfig4" (throwoutleft)="voteUp7()" (throwoutright)="voteUp7()" id="card-stack"[style.zIndex]="-1000">
-         <div [hidden]="!showCard7" style="position: relative; top:-11%; left:12%;">
+         <div [hidden]="!showCard7" style="position: relative; top:-7%; left:8%;">
 
     <ion-fab right top>
       <button [hidden]="!showDelete7" ion-fab mini class="fab-map" mini color="navcolor" (click)="removeCard7()">
@@ -134,7 +134,7 @@
     
   </div>
       <div class ="firstcol"  swing-stack #myswing8 [stackConfig]="stackConfig4" (throwoutleft)="voteUp8()" (throwoutright)="voteUp8()" id="card-stack"[style.zIndex]="-1000">
-         <div [hidden]="!showCard8" style="position: relative; top:-11%; left:12%;">
+         <div [hidden]="!showCard8" style="position: relative; top:-7%; left:8%;">
 
   
   </div>
@@ -146,7 +146,7 @@
     
   </div>
       <div class ="firstcol"  swing-stack #myswing9 [stackConfig]="stackConfig4" (throwoutleft)="voteUp9()" (throwoutright)="voteUp9()" id="card-stack"[style.zIndex]="-1000">
-         <div [hidden]="!showCard9" style="position: relative; top:-11%; left:12%;">
+         <div [hidden]="!showCard9" style="position: relative; top:-7%; left:8%;">
 
     <ion-fab right top>
       <button [hidden]="!showDelete9" ion-fab mini class="fab-map" mini color="navcolor" (click)="removeCard9()">
@@ -166,7 +166,7 @@
   </div>
     
       <div class ="firstcol"  swing-stack #myswing10 [stackConfig]="stackConfig4" (throwoutleft)="voteUp10()" (throwoutright)="voteUp10()" id="card-stack"[style.zIndex]="-1000">
-         <div style="position: relative; top:-11%; left:10%;">
+         <div style="position: relative; top:-7%; left:8%;">
 
     <ion-fab right top>
       <button [hidden]="!showDelete10" ion-fab mini class="fab-map" mini color="navcolor" (click)="removeCard10()">
@@ -183,7 +183,7 @@
     
   </div>
       <div class ="firstcol"  swing-stack #myswing11 [stackConfig]="stackConfig4" (throwoutleft)="voteUp11()" (throwoutright)="voteUp11()" id="card-stack"[style.zIndex]="-1000">
-         <div [hidden]="!showCard11" style="position: relative; top:-11%; left:12%;">
+         <div [hidden]="!showCard11" style="position: relative; top:-7%; left:8%;">
 
   </div>
     <ion-card [hidden]="!showCard11"  #mycards11 swing-card (press)="pressEvent($event)" *ngFor="let p of cards11; trackBy:trackByCards11; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal11(cards11)">
@@ -194,7 +194,7 @@
     
   </div>
       <div class ="firstcol"  swing-stack #myswing12 [stackConfig]="stackConfig4" (throwoutleft)="voteUp12()" (throwoutright)="voteUp12()" id="card-stack"[style.zIndex]="-1000">
-         <div [hidden]="!showCard12" style="position: relative; top:-11%; left:12%;">
+         <div [hidden]="!showCard12" style="position: relative; top:-7%; left:8%;">
 
     <ion-fab right top>
       <button [hidden] ="!showDelete12" ion-fab mini class="fab-map" mini color="navcolor" (click)="removeCard12()">

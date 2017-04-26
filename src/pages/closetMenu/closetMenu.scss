@@ -2,7 +2,9 @@
   height: 100%;
   width:100%;
   padding: 0;
+  margin:0;
   flex-wrap: wrap;
+  
 }
 
 .grid-full ion-col {
@@ -12,6 +14,9 @@
   border: 20px;
 }
 
+.text-on-bottom > .button-inner {
+  flex-direction: column;
+}
 .cell-1 {
  // background-color: #C5DCFC;
 }

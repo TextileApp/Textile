@@ -213,11 +213,11 @@ newPostRef.set(
     });
   }
     show(pic){
+if(this.isDeleteEnabled() == false){
 PhotoViewer.show(pic);
-
+}
     }
 
-  
 
 
   ionViewLoaded() {
@@ -291,18 +291,15 @@ isDeleteEnabled()
 {
 return this.shareService.getCanDelete();
 }
-deleteItem(outfitkey: string,outfitval: string){
-//firebase.database().ref(this.myUser+'/outfits/'+outfit.key).remove();
 
-this.storageRef.child(this.currentUser+'/'+this.whichType+'/'+outfitval).delete().then(function() {
-}).catch(function(error) {
-console.log(error);
-});
+
+deleteItem(outfitkey: string){
+//firebase.database().ref(this.myUser+'/outfits/'+outfit.key).remove();
+this.items1.remove(outfitkey);
 this.shareService.setCanDelete(false);
 this.isEnabled = false;
 }
-
-
+  
 
 
 
