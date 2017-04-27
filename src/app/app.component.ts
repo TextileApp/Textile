@@ -26,7 +26,14 @@ export class MyApp {
   }
 });
       StatusBar.styleDefault();
-      Splashscreen.hide();
-    });
-  }
+    this.hideSplashScreen();
+});
+}
+hideSplashScreen() {
+if (Splashscreen) {
+setTimeout(() => {
+Splashscreen.hide();
+}, 100);
+}
+}
 }

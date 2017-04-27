@@ -1153,15 +1153,15 @@ if (index > -1) {
 }
 });
 this.cards4 = result4;
-var result5 = [];
+var result4 = [];
 firebase.database().ref(this.currentUser+'/Outerwear/').on('child_added', function(data) {
 var element = data.val();
 
-result5.push(element);
+result4.push(element);
 
 });
 
- this.cards5 = result5;
+ this.cards4 = result4;
   //this.grid = Array(Math.ceil(this.items.length/2));
   firebase.database().ref(this.currentUser+'/Outerwear/').once('value', function(snapshot) {
 
@@ -1169,14 +1169,15 @@ result5.push(element);
    var userStorageRef = firebase.storage().ref().child('Icons/Outerwear.png');
     userStorageRef.getDownloadURL().then(url => {
        var dupe = url;
-         result5.push(dupe);
-         result5.push(url);
+         result4.push(dupe);
+         result4.push(url);
 
-      this.cards5 = result5;
+      this.cards4 = result4;
 
     });
   }
 });
+     var result5 = [];
 
 firebase.database().ref(this.currentUser+'/Tops/').on('child_removed', function(data) {
 var element = data.val();
@@ -1553,7 +1554,7 @@ this.cards10 = result10;
   firebase.database().ref(this.currentUser+'/Shoes/').once('value', function(snapshot) {
 
   if (!(snapshot.exists())) {
-   var userStorageRef = firebase.storage().ref().child('Icons/shoesIcon.png');
+   var userStorageRef = firebase.storage().ref().child('Icons/shoeIcon.png');
     userStorageRef.getDownloadURL().then(url => {
        var dupe = url;
          result11.push(dupe);
@@ -1772,31 +1773,31 @@ trackByCards4(index: number, card4: any){
 return card4;
 }
 
-trackByCards5(index: number, card1: any){
-return card1;
+trackByCards5(index: number, card5: any){
+return card5;
 }
-trackByCards6(index: number, card2: any){
-return card2;
-}
-
-trackByCards7(index: number, card3: any){
-return card3;
-}
-trackByCards8(index: number, card4: any){
-return card4;
-}
-trackByCards9(index: number, card1: any){
-return card1;
-}
-trackByCards10(index: number, card2: any){
-return card2;
+trackByCards6(index: number, card6: any){
+return card6;
 }
 
-trackByCards11(index: number, card3: any){
-return card3;
+trackByCards7(index: number, card7: any){
+return card7;
 }
-trackByCards12(index: number, card4: any){
-return card4;
+trackByCards8(index: number, card8: any){
+return card8;
+}
+trackByCards9(index: number, card9: any){
+return card9;
+}
+trackByCards10(index: number, card10: any){
+return card10;
+}
+
+trackByCards11(index: number, card11: any){
+return card11;
+}
+trackByCards12(index: number, card12: any){
+return card12;
 }
 changeToDress(){
   this.showDress = true;
