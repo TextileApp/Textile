@@ -1,6 +1,5 @@
 import { Component,NgZone } from '@angular/core';
 import { ViewController,NavParams } from 'ionic-angular';
-import { ImagePicker, File} from 'ionic-native';
 import {ShareService} from '../../providers/ShareService';
 import { Events } from 'ionic-angular';
 declare var window: any

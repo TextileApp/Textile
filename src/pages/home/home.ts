@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewChildren, QueryList, Inject, OnInit, NgZone, NgModule} from '@angular/core';
+import { Component, ViewChild, ViewChildren, QueryList, Inject, OnInit, NgZone} from '@angular/core';
 import * as firebase from 'firebase';
 import { LoginPage } from '../login/login';
 import {OutfitsPage} from '../outfits/outfits';
@@ -6,11 +6,9 @@ import { NavController,ModalController,NavParams,ViewController,ActionSheetContr
 import { AuthService } from '../../providers/auth-service';
 import {closetMenuPage} from '../closetMenu/closetMenu';
 import {ShareService} from '../../providers/ShareService';
-import{ImagePicker, File,Crop,Camera} from'ionic-native';
-import { ContactPage } from '../contact/contact';
+import{ImagePicker,Camera} from'ionic-native';
 import { Http } from '@angular/http';
-import { FirebaseApp,FirebaseListObservable,AngularFire } from 'angularfire2';
-import Cropper from 'cropperjs';
+import { FirebaseApp,AngularFire } from 'angularfire2';
 import { ImageCropperComponent } from "../cropper/img-cropper";
 import 'rxjs/Rx';
 
@@ -29,9 +27,6 @@ function generateUUID(){
 }
 import {
   StackConfig,
-  Stack,
-  Card,
-  ThrowEvent,
   DragEvent,
   SwingStackComponent,
   SwingCardComponent} from 'angular2-swing';
@@ -1153,7 +1148,6 @@ if (index > -1) {
 }
 });
 this.cards4 = result4;
-var result4 = [];
 firebase.database().ref(this.currentUser+'/Outerwear/').on('child_added', function(data) {
 var element = data.val();
 
@@ -1178,7 +1172,7 @@ result4.push(element);
   }
 });
      var result5 = [];
-
+var result6 = [];
 firebase.database().ref(this.currentUser+'/Tops/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
@@ -1194,21 +1188,32 @@ firebase.database().ref(this.currentUser+'/Tops/').on('child_added', function(da
 var element = data.val();
 
 result5.push(element);
+result6.push(element);
 
-});
-
+}); 
+ this.cards6 = result6;
  this.cards5 = result5;
   //this.grid = Array(Math.ceil(this.items.length/2));
   firebase.database().ref(this.currentUser+'/Tops/').once('value', function(snapshot) {
 
   if (!(snapshot.exists())) {
-   var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
-    userStorageRef.getDownloadURL().then(url => {
+   var userStorageRef1 = firebase.storage().ref().child('Icons/shirtIcon.png');
+   var userStorageRef2 = firebase.storage().ref().child('Icons/Shirt2.png');
+
+    userStorageRef1.getDownloadURL().then(url => {
        var dupe = url;
          result5.push(dupe);
          result5.push(url);
 
       this.cards5 = result5;
+
+    });
+      userStorageRef2.getDownloadURL().then(url => {
+       var dupe = url;
+         result6.push(dupe);
+         result6.push(url);
+
+      this.cards6 = result6;
 
     });
   }
@@ -1220,12 +1225,14 @@ if(element){
 var index = result5.indexOf(element);
 if (index > -1) {
     result5.splice(index, 1);
+    result6.splice(index, 1);
 }
 }
 });
 this.cards5 = result5;
+this.cards6 = result6;
 
-var result6 = [];
+
 firebase.database().ref(this.currentUser+'/Tops/').on('child_added', function(data) {
 var element = data.val();
 
@@ -1269,21 +1276,8 @@ result6.push(element);
 });
 
  this.cards6 = result6;
-  //this.grid = Array(Math.ceil(this.items.length/2));
-  firebase.database().ref(this.currentUser+'/Tops/').once('value', function(snapshot) {
+ 
 
-  if (!(snapshot.exists())) {
-   var userStorageRef = firebase.storage().ref().child('Icons/shirtIcon.png');
-    userStorageRef.getDownloadURL().then(url => {
-       var dupe = url;
-         result6.push(dupe);
-         result6.push(url);
-
-      this.cards6 = result6;
-
-    });
-  }
-});
 
 firebase.database().ref(this.currentUser+'/Tops/').on('child_removed', function(data) {
 var element = data.val();
@@ -1836,9 +1830,9 @@ var topcard9;
 var topcard10;
 var topcard11;
 var topcard12;
-console.log(this.showCard1);
-console.log(this.showCard2);
-console.log(this.showCard3);
+console.log(this.cards1[0]);
+console.log(this.cards2[0]);
+console.log(this.cards3[0]);
 console.log(this.card1Activated);
 console.log(this.card2Activated);
 console.log(this.card3Activated);
@@ -1848,21 +1842,21 @@ if(this.showPic1 == true)
    topcard1 = this.cards1[0];
 
 }else{
-  topcard1 = null;
+  topcard1 = "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe";
 }
 if(this.showPic2 == true)
 {
 topcard2 = this.cards2[0];
 }
 else{
-  topcard2 = null;
+  topcard2 = "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe";
 }
 if(this.showPic3 == true)
 {
 topcard3 = this.cards3[0];
 }
 else{
-  topcard3 = null;
+  topcard3 = "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe";
 }
 
 if(this.showPic4 == true)
@@ -1870,7 +1864,7 @@ if(this.showPic4 == true)
 topcard4 = this.cards4[0];
 }
 else{
-  topcard4 = null;
+  topcard4 = "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe";
 }
 if(this.showPic5 == true)
 {
@@ -1878,7 +1872,7 @@ topcard5 = this.cards5[0];
 
 }
 else{
-  topcard5 = null;
+  topcard5 = "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe";
 }
 if(this.showPic6 == true)
 {
@@ -1886,7 +1880,7 @@ if(this.showPic6 == true)
 
 }
 else{
-  topcard6 = null;
+  topcard6 = "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe";
 }
 if(this.showPic7 == true)
 {
@@ -1894,7 +1888,7 @@ if(this.showPic7 == true)
 
 }
 else{
-  topcard7 = null;
+  topcard7 = "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe";
 }
 if(this.showPic8 == true)
 {
@@ -1902,7 +1896,7 @@ if(this.showPic8 == true)
 
 }
 else{
-  topcard8 = null;
+  topcard8 = "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe";
 }
 if(this.showPic9 == true)
 {
@@ -1910,7 +1904,7 @@ if(this.showPic9 == true)
 
 }
 else{
-  topcard9 = null;
+  topcard9 = "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe";
 }
 if(this.showPic10 == true)
 {
@@ -1918,7 +1912,7 @@ if(this.showPic10 == true)
 
 }
 else{
-  topcard10 = null;
+  topcard10 = "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe";
 }
 if(this.showPic11 == true)
 {
@@ -1926,7 +1920,7 @@ if(this.showPic11 == true)
 
 }
 else{
-  topcard11 = null;
+  topcard11 = "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe";
 }
 if(this.showPic12 == true)
 {
@@ -1934,7 +1928,7 @@ topcard12 = this.cards12[0];
 
 }
 else{
-  topcard12 = null;
+  topcard12 = "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe";
 }
 
 

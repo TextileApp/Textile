@@ -1,14 +1,12 @@
-import { Component, Inject, NgZone,NgModule,OnInit} from '@angular/core';
+import { Component, Inject, NgZone} from '@angular/core';
 import { Camera } from 'ionic-native';
 import { PhotoViewer } from 'ionic-native';
 import { NavController,PopoverController,ActionSheetController,ModalController,NavParams } from 'ionic-angular';
-import { ImagePicker, File} from 'ionic-native';
 import { FirebaseApp,FirebaseListObservable,AngularFire } from 'angularfire2';
 import { PopoverContentPage } from './popover';
 import { AuthService } from '../../providers/auth-service';
 import {ShareService} from '../../providers/ShareService';
 import { Events } from 'ionic-angular';
-import Cropper from 'cropperjs';
 import { ImageCropperComponent } from "../cropper/img-cropper";
 
 import * as firebase from 'firebase';

@@ -86,7 +86,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		5q9n7XxLuIeffzQJ11eeW5EwJyc=
+		R94wahS+F/798SQo20tzcH2ncoQ=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -94,7 +94,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		8HXoXbf3IeNc2/MDDNCRyHCmTjE=
+		WPssRm4Ffa8SUttt8XtRugrkNFk=
 		</data>
 		<key>GMEmptyFolder@1x.png</key>
 		<data>
@@ -122,7 +122,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		oTlLHO66S0FLqiVgV21dPvb48wc=
+		vlaEdZ+In1LhlJ8OQTV/8cwJBCU=
 		</data>
 		<key>LaunchImage-568h@2x.png</key>
 		<data>
@@ -131,6 +131,22 @@
 		<key>LaunchImage-700-568h@2x.png</key>
 		<data>
 		wxoZ3lqGitOojCy//ZgXxnYLM5g=
+		</data>
+		<key>LaunchImage-700-Landscape@2x~ipad.png</key>
+		<data>
+		0J1knzL0Th2Lq/Ir/npHetBGkQM=
+		</data>
+		<key>LaunchImage-700-Landscape~ipad.png</key>
+		<data>
+		t7EVYy24g1rofOfw1dc5059SXhA=
+		</data>
+		<key>LaunchImage-700-Portrait@2x~ipad.png</key>
+		<data>
+		TR3QM/ciHJTXp8qgfpkcDZw+r8I=
+		</data>
+		<key>LaunchImage-700-Portrait~ipad.png</key>
+		<data>
+		NSvifOxnRQ9nCQU74dUUvSXJ52I=
 		</data>
 		<key>LaunchImage-700@2x.png</key>
 		<data>
@@ -148,6 +164,14 @@
 		<data>
 		J0m5x1q69gRRE+wg+25mbwP1h5I=
 		</data>
+		<key>LaunchImage-Portrait@2x~ipad.png</key>
+		<data>
+		TR3QM/ciHJTXp8qgfpkcDZw+r8I=
+		</data>
+		<key>LaunchImage-Portrait~ipad.png</key>
+		<data>
+		NSvifOxnRQ9nCQU74dUUvSXJ52I=
+		</data>
 		<key>LaunchImage.png</key>
 		<data>
 		fzKMqeT4IYsaTMBZBfJ0g5lyct8=
@@ -158,7 +182,7 @@
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		S6+BzRXbWeJim/yOkuXT5YSIUFo=
+		2fyXzIeXulIKVkfbTrn+/DFwcgU=
 		</data>
 		<key>PEPhotoCropEditor.bundle/PEPhotoCropEditorBorder.png</key>
 		<data>
@@ -205,7 +229,7 @@
 		</dict>
 		<key>config.xml</key>
 		<data>
-		yEuANn///i0bmBYMNFdVRVvvM7Y=
+		t9d76zHcRimt3899bo7BvR9yZng=
 		</data>
 		<key>de.lproj/GMImagePicker.strings</key>
 		<dict>
@@ -407,11 +431,11 @@
 		</data>
 		<key>www/build/main.js</key>
 		<data>
-		/BrgYPDU+1Care2Mpx4/FvXrO8U=
+		0rdwk0B36rpDJC+F7ErruT8B3iE=
 		</data>
 		<key>www/build/main.js.map</key>
 		<data>
-		NPkex4d/IMWy/EojpXZzbbkmRQA=
+		iAbm3cXWm74cOq0N29rNDrFDPXA=
 		</data>
 		<key>www/build/polyfills.js</key>
 		<data>
@@ -816,11 +840,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			5q9n7XxLuIeffzQJ11eeW5EwJyc=
+			R94wahS+F/798SQo20tzcH2ncoQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			7En38aJ/m+kjmbxjNUFuhNh+kS8vES1c0qY6256EHrg=
+			rogc8QFajaPFav21p67g/DoSsKrlkZcj9ejXhW/83UM=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -838,11 +862,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			8HXoXbf3IeNc2/MDDNCRyHCmTjE=
+			WPssRm4Ffa8SUttt8XtRugrkNFk=
 			</data>
 			<key>hash2</key>
 			<data>
-			F3F6yQNX8h/tWuZ6SMuGv8hTWaEorT4uOkQDZ8T0JjI=
+			XK8m0b4IjpWdVjr3dh+e177M+HFUidO+sEnUhMfTkIQ=
 			</data>
 		</dict>
 		<key>GMEmptyFolder@1x.png</key>
@@ -933,6 +957,50 @@
 			zydyJ6ZtjaMqtFC7Trzb0IoFaYr5OvMhhjbpsq9NdYg=
 			</data>
 		</dict>
+		<key>LaunchImage-700-Landscape@2x~ipad.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			0J1knzL0Th2Lq/Ir/npHetBGkQM=
+			</data>
+			<key>hash2</key>
+			<data>
+			/4U8U816IAf6aMoQ9+HL7tcsCYeqLi43GvFkNOJtQ3A=
+			</data>
+		</dict>
+		<key>LaunchImage-700-Landscape~ipad.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			t7EVYy24g1rofOfw1dc5059SXhA=
+			</data>
+			<key>hash2</key>
+			<data>
+			fiPl/yFqa9Y/lH4QItSN1oQZJyv9eI/RGJsJOd3P0kQ=
+			</data>
+		</dict>
+		<key>LaunchImage-700-Portrait@2x~ipad.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			TR3QM/ciHJTXp8qgfpkcDZw+r8I=
+			</data>
+			<key>hash2</key>
+			<data>
+			JqM2YKzWrw2GcfygspWLncqJtaENEJjYW3dJTqCncQg=
+			</data>
+		</dict>
+		<key>LaunchImage-700-Portrait~ipad.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			NSvifOxnRQ9nCQU74dUUvSXJ52I=
+			</data>
+			<key>hash2</key>
+			<data>
+			EkS0MvWydqlKpa3PrHB8y62+HR5//V5WCg+2Z4aX1yw=
+			</data>
+		</dict>
 		<key>LaunchImage-700@2x.png</key>
 		<dict>
 			<key>hash</key>
@@ -977,6 +1045,28 @@
 			obrKCZCi45lu2aarFIDxk7m5DXNuZNCSkiKQFprZd5s=
 			</data>
 		</dict>
+		<key>LaunchImage-Portrait@2x~ipad.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			TR3QM/ciHJTXp8qgfpkcDZw+r8I=
+			</data>
+			<key>hash2</key>
+			<data>
+			JqM2YKzWrw2GcfygspWLncqJtaENEJjYW3dJTqCncQg=
+			</data>
+		</dict>
+		<key>LaunchImage-Portrait~ipad.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			NSvifOxnRQ9nCQU74dUUvSXJ52I=
+			</data>
+			<key>hash2</key>
+			<data>
+			EkS0MvWydqlKpa3PrHB8y62+HR5//V5WCg+2Z4aX1yw=
+			</data>
+		</dict>
 		<key>LaunchImage.png</key>
 		<dict>
 			<key>hash</key>
@@ -1003,11 +1093,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			S6+BzRXbWeJim/yOkuXT5YSIUFo=
+			2fyXzIeXulIKVkfbTrn+/DFwcgU=
 			</data>
 			<key>hash2</key>
 			<data>
-			eO8WSbn7oSCQR+mC5CQaxa/EM4wo3VtpbUQWCJ6Y2cA=
+			K1z7FQvQe+Am/7+xBBjFq1sgnXUOEVkUM4sWVaLAAPA=
 			</data>
 		</dict>
 		<key>PEPhotoCropEditor.bundle/PEPhotoCropEditorBorder.png</key>
@@ -1086,11 +1176,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			yEuANn///i0bmBYMNFdVRVvvM7Y=
+			t9d76zHcRimt3899bo7BvR9yZng=
 			</data>
 			<key>hash2</key>
 			<data>
-			YDcMxw79QI63GruoKjgp5SRZIEK79ud5nzyO2jyLrwI=
+			EZAn+uNMUF7IyCNoWWww6kaQZJQthK18/eNk0erYEcE=
 			</data>
 		</dict>
 		<key>de.lproj/GMImagePicker.strings</key>
@@ -1571,22 +1661,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/BrgYPDU+1Care2Mpx4/FvXrO8U=
+			0rdwk0B36rpDJC+F7ErruT8B3iE=
 			</data>
 			<key>hash2</key>
 			<data>
-			fnG1RtC16bFsFvwB17Y4Zf8AKdfF10HjdT4mM0haOVI=
+			6FgcWSgSVTO9+RXLrmbC6WgQ+0Na4E1XQKt6x5TXwq4=
 			</data>
 		</dict>
 		<key>www/build/main.js.map</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			NPkex4d/IMWy/EojpXZzbbkmRQA=
+			iAbm3cXWm74cOq0N29rNDrFDPXA=
 			</data>
 			<key>hash2</key>
 			<data>
-			blwkD/EmjNAVA/3HOptl0mfVD+sHEYEv09QgBv6fm0I=
+			DIO1F2ldUjEZFLT4JqSoGSdaSlPHqXxhaBS5ngsVR2U=
 			</data>
 		</dict>
 		<key>www/build/polyfills.js</key>
