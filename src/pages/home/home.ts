@@ -11,7 +11,8 @@ import { Http } from '@angular/http';
 import { FirebaseApp,AngularFire } from 'angularfire2';
 import { ImageCropperComponent } from "../cropper/img-cropper";
 import 'rxjs/Rx';
-
+const ShopStyle = require('shopstyle-sdk');
+const shopstyle = new ShopStyle('uid8976-38160824-19');
 declare var window: any
 function generateUUID(){
     var d = new Date().getTime();
@@ -212,6 +213,7 @@ this.stackConfig1 = {
     // execute the firebase query...
     // .. otherwise
     // show the login modal page
+  this.editing = false;
   this.showCard1 = true;
   this.showCard2 = true;
   this.showCard3 = true;
@@ -413,9 +415,10 @@ goToOtherPage() {
   this.didSaveThisOutfit = false;
 let modal = this.modalCtrl.create(imagePicker,{images:imagesArray,user:this.currentUser,type:"Jewelry"});
      modal.onDidDismiss(data => {
-    if(data){
+       var index = this.cards1.indexOf(data.image);
+   if(data && index > -1){
+    this.cards1.splice(index, 1);
     this.cards1.unshift(data.image);
-    this.cards1.pop();
     }
    });
    modal.present();
@@ -427,10 +430,14 @@ let modal = this.modalCtrl.create(imagePicker,{images:imagesArray,user:this.curr
 
 let modal = this.modalCtrl.create(imagePicker, { "images":imagesArray,"user":this.currentUser,"type":"Hats"});
      modal.onDidDismiss(data => {
-         if(data){
+        
+   var index = this.cards2.indexOf(data.image);
+   if(data && index > -1){
+    this.cards2.splice(index, 1);
     this.cards2.unshift(data.image);
-    this.cards2.pop();
-         }
+    }
+   
+         
    });
    modal.present();
     }
@@ -442,10 +449,14 @@ let modal = this.modalCtrl.create(imagePicker, { "images":imagesArray,"user":thi
 
 let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Neckwear"});
      modal.onDidDismiss(data => {
-          if(data){
+        
+    var index = this.cards3.indexOf(data.image);
+   if(data && index > -1){
+    this.cards3.splice(index, 1);
     this.cards3.unshift(data.image);
-    this.cards3.pop();
-          }
+    }
+   
+          
    });
    modal.present();
      }
@@ -457,10 +468,13 @@ let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.cu
 
 let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Outerwear"});
      modal.onDidDismiss(data => {
-          if(data){
+       
+   var index = this.cards4.indexOf(data.image);
+   if(data && index > -1){
+    this.cards4.splice(index, 1);
     this.cards4.unshift(data.image);
-    this.cards4.pop();
-          }
+    }
+          
    });
    modal.present();
      }
@@ -471,10 +485,13 @@ let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.cu
 
 let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Tops"});
      modal.onDidDismiss(data => {
-          if(data){
+    
+   var index = this.cards5.indexOf(data.image);
+   if(data && index > -1){
+    this.cards5.splice(index, 1);
     this.cards5.unshift(data.image);
-    this.cards5.pop();
-          }
+    }
+          
    });
    modal.present();
       }
@@ -485,10 +502,14 @@ let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.cu
 
 let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Tops"});
      modal.onDidDismiss(data => {
-          if(data){
+       
+         
+   var index = this.cards6.indexOf(data.image);
+   if(data && index > -1){
+    this.cards6.splice(index, 1);
     this.cards6.unshift(data.image);
-    this.cards6.pop();
-          }
+    }
+       
    });
    modal.present();
       }
@@ -499,9 +520,15 @@ let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.cu
 
 let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Belts"});
      modal.onDidDismiss(data => {
+    var index = this.cards7.indexOf(data);
           if(data){
+
+    var index = this.cards7.indexOf(data.image);
+   if(data && index > -1){
+    this.cards7.splice(index, 1);
     this.cards7.unshift(data.image);
-    this.cards7.pop();
+    }
+    
           }
    });
    modal.present();
@@ -513,7 +540,8 @@ let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.cu
 
 let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Bottoms"});
      modal.onDidDismiss(data => {
-          if(data){
+            var index = this.cards8.indexOf(data);
+          if(data && index > 1){
     this.cards8.unshift(data.image);
     this.cards8.pop();
           }
@@ -527,7 +555,8 @@ let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.cu
 
 let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Jewelry"});
      modal.onDidDismiss(data => {
-          if(data){
+    var index = this.cards9.indexOf(data.image);
+          if(data && index > 1){
     this.cards9.unshift(data.image);
     this.cards9.pop();
           }
@@ -541,7 +570,8 @@ let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.cu
 
 let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Bags"});
      modal.onDidDismiss(data => {
-          if(data){
+     var index = this.cards10.indexOf(data.image);
+          if(data && index > 1){
     this.cards10.unshift(data.image);
     this.cards10.pop();
           }
@@ -555,7 +585,8 @@ let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.cu
 
 let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Shoes"});
      modal.onDidDismiss(data => {
-          if(data){
+       var index = this.cards11.indexOf(data.image);
+          if(data && index > 1){
     this.cards11.unshift(data.image);
     this.cards11.pop();
           }
@@ -569,7 +600,8 @@ let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.cu
 
 let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Bags"});
      modal.onDidDismiss(data => {
-          if(data){
+          var index = this.cards12.indexOf(data.image);
+          if(data && index > 1){
     this.cards12.unshift(data.image);
     this.cards12.pop();
           }
@@ -580,6 +612,7 @@ let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.cu
 
   startEditing()
 {
+
 this.showCard1 = true;
 this.showCard2 = true;
 this.showCard3 = true;
@@ -592,11 +625,13 @@ this.showCard9 = true;
 this.showCard10 = true;
 this.showCard11 = true;
 this.showCard12 = true;
- this.editing = true;
 
 }
 
+
+
  pressEvent($event) {
+   if(this.editing == false){
    this.startEditing();
    if(this.showPic1 == true){
      this.showDelete1 = true;
@@ -697,7 +732,11 @@ this.card2Activated = true;
     this.showDelete12 = false;
     this.card12Activated = true;
    }
-  
+   this.editing = true;
+}
+  else{
+this.doneEditing();
+}
   }
   
   activateCard1(){
@@ -897,6 +936,7 @@ activateCard2(){
    else{
   this.showCard12 = false;
    }
+   this.editing = false;
   }
   removeCard1()
   {
@@ -1171,18 +1211,11 @@ result4.push(element);
     });
   }
 });
-     var result5 = [];
+
+var result5 = [];
 var result6 = [];
-firebase.database().ref(this.currentUser+'/Tops/').on('child_removed', function(data) {
-var element = data.val();
-if(element){
-var index = result5.indexOf(element);
-if (index > -1) {
-    result5.splice(index, 1);
-}
-}
-});
-this.cards5 = result5;
+
+
 
 firebase.database().ref(this.currentUser+'/Tops/').on('child_added', function(data) {
 var element = data.val();
@@ -1228,67 +1261,14 @@ if (index > -1) {
     result6.splice(index, 1);
 }
 }
-});
 this.cards5 = result5;
 this.cards6 = result6;
-
-
-firebase.database().ref(this.currentUser+'/Tops/').on('child_added', function(data) {
-var element = data.val();
-
-result6.push(element);
-
 });
 
- this.cards6 = result6;
-  //this.grid = Array(Math.ceil(this.items.length/2));
-  firebase.database().ref(this.currentUser+'/Tops/').once('value', function(snapshot) {
-
-  if (!(snapshot.exists())) {
-   var userStorageRef = firebase.storage().ref().child('Icons/Shirt2.png');
-    userStorageRef.getDownloadURL().then(url => {
-       var dupe = url;
-         result6.push(dupe);
-         result6.push(url);
-
-      this.cards6 = result6;
-
-    });
-  }
-});
-
-firebase.database().ref(this.currentUser+'/Tops/').on('child_removed', function(data) {
-var element = data.val();
-if(element){
-var index = result6.indexOf(element);
-if (index > -1) {
-    result6.splice(index, 1);
-}
-}
-});
-this.cards6 = result6;
-
-firebase.database().ref(this.currentUser+'/Tops/').on('child_added', function(data) {
-var element = data.val();
-
-result6.push(element);
-
-});
-
- this.cards6 = result6;
- 
 
 
-firebase.database().ref(this.currentUser+'/Tops/').on('child_removed', function(data) {
-var element = data.val();
-if(element){
-var index = result6.indexOf(element);
-if (index > -1) {
-    result6.splice(index, 1);
-}
-}
-});
-this.cards6 = result6;
+
+
 
   var result7 = [];
   //this.grid = Array(Math.ceil(this.items.length/2));
@@ -1793,12 +1773,7 @@ return card11;
 trackByCards12(index: number, card12: any){
 return card12;
 }
-changeToDress(){
-  this.showDress = true;
-}
-changeToShirt(){
-  this.showDress = false;
-}
+
 // http://stackoverflow.com/questions/57803/how-to-convert-decimal-to-hex-in-javascript
 decimalToHex(d, padding) {
   var hex = Number(d).toString(16);

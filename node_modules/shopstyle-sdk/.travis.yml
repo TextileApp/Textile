@@ -1,0 +1,5 @@
+language: node_js
+node_js:
+  - "6"
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -t f64ad238-4e6b-4c1b-a781-df81b3d952ea

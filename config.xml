@@ -9,8 +9,20 @@
   <allow-intent href="https://*/*"/>
   <allow-intent href="tel:*"/>
   <allow-intent href="sms:*"/>
+  <allow-intent href="*"/>
   <allow-intent href="mailto:*"/>
   <allow-intent href="geo:*"/>
+  <allow-navigation href="*"/>
+  <allow-navigation href="http://10.0.0.10:8100"/>
+  <allow-navigation href="http://10.10.203.116:8100"/>
+  <allow-navigation href="http://10.10.203.159:8100"/>
+  <allow-navigation href="http://10.10.203.168:8100"/>
+  <allow-navigation href="http://10.10.203.67:8100"/>
+  <allow-navigation href="http://153.90.41.106:8100"/>
+  <allow-navigation href="http://10.10.203.166:8100"/>
+  <allow-navigation href="http://10.20.100.154:8100"/>
+  <allow-navigation href="http://10.10.203.163:8100"/>
+  <allow-navigation href="http://153.90.43.81:8100"/>
   <platform name="android">
     <allow-intent href="market:*"/>
   </platform>
@@ -69,15 +81,5 @@
   <plugin name="cordova-plugin-device" spec="1.1.4"/>
   <plugin name="ionic-plugin-deploy" spec="~0.6.5"/>
   <plugin name="cordova-plugin-crop" spec="~0.3.1"/>
-  <allow-navigation href="http://10.0.0.10:8100"/>
-  <allow-navigation href="http://10.10.203.116:8100"/>
-  <allow-navigation href="http://10.10.203.159:8100"/>
-  <allow-navigation href="http://10.10.203.168:8100"/>
-  <allow-navigation href="http://10.10.203.67:8100"/>
-  <allow-navigation href="http://153.90.41.106:8100"/>
-  <allow-navigation href="http://10.10.203.166:8100"/>
-  <allow-navigation href="http://10.20.100.154:8100"/>
-  <allow-navigation href="http://10.10.203.163:8100"/>
-  <allow-navigation href="http://153.90.43.81:8100"/>
   <icon src="resources/ios/icon/icon-small@3x.png"/>
 </widget>

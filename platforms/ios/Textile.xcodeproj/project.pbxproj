@@ -5,102 +5,103 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
+		00C9C624F4F2458BBDD27CC9 /* gzclose.c in Sources */ = {isa = PBXBuildFile; fileRef = 3013DDCEBC39405D818CE029 /* gzclose.c */; };
 		0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0207DA571B56EA530066E2B4 /* Images.xcassets */; };
-		0573F27A760147919913AE82 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 4099317E6827487FA05FE29E /* unzip.c */; };
-		05A52CB90DDB49A38CB341A3 /* fr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 84459D02988141D7922292D2 /* fr.lproj */; };
-		07A50BE00A9944168F55694C /* GMGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E36AD23C343D9ADB3772E /* GMGridViewCell.m */; };
-		0DB7B6C65590472083AFADA4 /* GMVideoIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B2C4C5FFB444356A35208D6 /* GMVideoIcon@2x.png */; };
-		0ED57BFB8EAC4678B3BDF2F1 /* ca.lproj in Resources */ = {isa = PBXBuildFile; fileRef = BBD4D5C5DB5D4463BF7F5647 /* ca.lproj */; };
-		1169155A1821481FA94E34DF /* GMPHAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F28D26C48C648979DA88076 /* GMPHAsset.m */; };
-		11A5B53642A54D68A9834AE9 /* UNIHTTPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BFC5FDD71C4DCC9CA192D4 /* UNIHTTPResponse.m */; };
-		11CC08AF88294CF0A27069D0 /* gzlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 1EFAF6DD9ECF48948FC54EAF /* gzlib.c */; };
-		1752C37C399E41BE934F6A82 /* PECropView.m in Sources */ = {isa = PBXBuildFile; fileRef = E63493C45FE2445BBE92C63F /* PECropView.m */; };
-		175959F2A400487985F56522 /* PSYBlockTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3501DF7BB6BC4D92990C30B5 /* PSYBlockTimer.m */; };
-		1B2BCC1ACC1940478BBDB8E6 /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = E73EDD37363B4821BA20F67F /* SSZipArchive.m */; };
-		1B9DFC02937B4E49865300B6 /* PEResizeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = BB723DA03DB148B19BE588E9 /* PEResizeControl.m */; };
-		1C08DE5CBC354E97A347C393 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1F23EC70E54C43BCF5A7B3 /* QuartzCore.framework */; };
-		1D1B83803874409B916A3118 /* UNIHTTPBinaryResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B4A53802A44C25AB537D14 /* UNIHTTPBinaryResponse.m */; };
+		02AD55861DC64A0BAA7E7854 /* PEResizeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6346CFAE9FD54396A3D0BEF4 /* PEResizeControl.m */; };
+		03ECC83AB900471082081B31 /* UNIHTTPRequestWithBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E10654C09CD463184B2B1FF /* UNIHTTPRequestWithBody.m */; };
+		0756A4399F9A491DBE826749 /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C15F489063C4DDE9E046A6F /* CDVStatusBar.m */; };
+		0863155016724090B90C8E0D /* GMGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6548357532E4955B8621313 /* GMGridViewController.m */; };
+		08F5FA8CEE3F4ECDA35A1897 /* es.lproj in Resources */ = {isa = PBXBuildFile; fileRef = B256AD9F36904527977F7CC5 /* es.lproj */; };
+		10CFF3E4B27B46A9B8CFEF9B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C37946B99273464A95CE4054 /* AVFoundation.framework */; };
+		10FE944D1A21426AAFCD623F /* UNIBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FC59013066894852955161F4 /* UNIBaseRequest.m */; };
+		12756C51F1944073812B76ED /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E4AC0EB9526A41A0B5EE33B5 /* en.lproj */; };
+		13F3B405D54F464C9AA7C7CD /* CTCrop.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F76955CA0A04E2DB40EA821 /* CTCrop.m */; };
+		18696C56192F4DD8961F9D07 /* uncompr.c in Sources */ = {isa = PBXBuildFile; fileRef = DD60667FBE3D4EBBB7EADBB6 /* uncompr.c */; };
+		1A3DEAF86CD64AC888BC7EAF /* CDVViewController+SplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD7EDDBE7D9493899FEA24F /* CDVViewController+SplashScreen.m */; };
+		1A6B07D1B94040A58355415D /* deflate.c in Sources */ = {isa = PBXBuildFile; fileRef = AB175ABDE43C45E081D64455 /* deflate.c */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
-		1DA69BD1B032486DAC93F298 /* uncompr.c in Sources */ = {isa = PBXBuildFile; fileRef = 2B6090F28DCC4837B0EB2686 /* uncompr.c */; };
-		261B9C1C8BD0475CB28014D1 /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5918BCCEF2894C5C8637760E /* DownloadManager.m */; };
-		270E832DEAFF420EBC616F62 /* GMSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90FE8D3B7B46422F9C7DC842 /* GMSelected@2x.png */; };
-		27B29CD8884B4FDEAB435140 /* UNIRest.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D91E10872F42E5874123FB /* UNIRest.m */; };
-		28EBDE07964B46B0A372FED3 /* IonicDeploy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD14CE4331C42A5982DB5B4 /* IonicDeploy.m */; };
-		28F6556A7B19455A85D96050 /* CDVJpegHeaderWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 297C4B0C06A2485FB5BA8BD0 /* CDVJpegHeaderWriter.m */; };
-		2A030C7F3FF34AECA6B6F30E /* PEPhotoCropEditor.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1F5911752FC54F58AF6EF20F /* PEPhotoCropEditor.bundle */; };
-		2BC5B8511B5942C1B8C7E2B8 /* PECropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7223BDA418440987FAF7E0 /* PECropViewController.m */; };
-		2EAE39C68C6F441DA4786C15 /* CDVFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 331BE0D59F7941AFBA695298 /* CDVFile.m */; };
-		2F4CDCAF637D4E799364BD50 /* inffast.c in Sources */ = {isa = PBXBuildFile; fileRef = E39A62BDE9A7493B92C3050E /* inffast.c */; };
+		221246FA3B5B494FAB676853 /* UIImage+PECrop.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E791B718F804511B6AD9EE4 /* UIImage+PECrop.m */; };
+		2C479C2FC1C04E3B87BEBE06 /* IonicDeploy.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D69CA993464923BB9959E0 /* IonicDeploy.m */; };
+		2CBF90151C3441F2B2FD9B57 /* zutil.c in Sources */ = {isa = PBXBuildFile; fileRef = 0E32A951EAAC4BDC993CB14A /* zutil.c */; };
+		2D44A5DC42A844B0B3ECC00D /* CDVJpegHeaderWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = C27C4385F43843FA8640767E /* CDVJpegHeaderWriter.m */; };
 		301BF552109A68D80062928A /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 301BF535109A57CC0062928A /* libCordova.a */; };
 		302D95F114D2391D003F00A1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302D95EF14D2391D003F00A1 /* MainViewController.m */; };
 		302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302D95F014D2391D003F00A1 /* MainViewController.xib */; };
-		31A69DDE679147808533F834 /* SOSPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC38E1F5F6C4FFD81BAECFF /* SOSPicker.m */; };
-		3424E5CD8FBF4A659B93D7FF /* GMEmptyFolder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 981E4474028047268A481681 /* GMEmptyFolder@2x.png */; };
-		3B7B846451F442868E83C58F /* de.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 881139F3119143079E518FCD /* de.lproj */; };
-		40F446EFA5A44AA29D2AC038 /* UNIHTTPStringResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDA15AF053741688BE8CF1E /* UNIHTTPStringResponse.m */; };
-		4313A803972E4002BCF94049 /* gzread.c in Sources */ = {isa = PBXBuildFile; fileRef = 6765F7E641D84D77A019A5C6 /* gzread.c */; };
-		456D9F6851BB4506B2442D1E /* pt.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 24D7BCEA3CFD4E6989393D20 /* pt.lproj */; };
-		45ECE6F5B742466C8F98872D /* CDVAssetLibraryFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCE007516764997BCA9197C /* CDVAssetLibraryFilesystem.m */; };
-		466ECD17225746F4B6BE8501 /* GMEmptyFolder@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 35F21CA19611412F8D36AEC6 /* GMEmptyFolder@1x.png */; };
-		48A1F0CF0B864FE2AC017CA8 /* IonicConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = F17B012C61EA4F6AA4058EAF /* IonicConstant.m */; };
-		4D6A72A47333455EBDF5FB51 /* UNIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAD518F867947779D6FB6C1 /* UNIHTTPRequest.m */; };
-		4F2CD8B1536144E28B1AFC00 /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = C17EBDFF7CDF4CFAB5E3D28D /* CDVSplashScreen.m */; };
-		5C660C9D1D894B8AB27542EA /* GMVideoIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = A979F8D51CC842DAB7476D8D /* GMVideoIcon.png */; };
-		5C91195330654322A8F027A7 /* infback.c in Sources */ = {isa = PBXBuildFile; fileRef = 3ED0532C18DD4A03B46E73FB /* infback.c */; };
-		684FCD8E5EC246FA8C7FDBA5 /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = BB326F3901FC419A8DE394B8 /* CDVLogger.m */; };
+		350D1130F2614A7194DD5684 /* UNISimpleRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BF10139110524A24A8CDB003 /* UNISimpleRequest.m */; };
+		375D0A315E5F42F0B7372953 /* gzwrite.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E3A209E894B433AA58D8B1C /* gzwrite.c */; };
+		37BAD787EF654193B4404E58 /* CDVFile.m in Sources */ = {isa = PBXBuildFile; fileRef = E564EC7BDA044AEB9E410EC9 /* CDVFile.m */; };
+		47F51DD0E55040A9BF8BABFA /* GMSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1190D88D30774EB69BD04E98 /* GMSelected@2x.png */; };
+		482110C126DA4934B9A27655 /* GMGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F83719C0582149C6BEA5685A /* GMGridViewCell.m */; };
+		4FD8CC247D88456299032276 /* UNIBodyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 162EDD24DD2E4F9BB5AF6681 /* UNIBodyRequest.m */; };
+		532893D802EB4F778385B577 /* Download.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B118B4B18BF4259B3B79A3C /* Download.m */; };
+		569FC0CFA20D409A88BE7DEF /* UNIJsonNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7319DDA079774273A77AC56F /* UNIJsonNode.m */; };
+		56E2BB6D98174ABAAEE1C588 /* GMVideoIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6581AB69FEA24AD68E33F54B /* GMVideoIcon@2x.png */; };
+		57B4BB6F969942D2B6F778EC /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E240E437D371495DA7DC54D3 /* CDVLogger.m */; };
+		5C7A2E91592E411B8E5BF621 /* trees.c in Sources */ = {isa = PBXBuildFile; fileRef = 44DAD1B8ABF74C74A63A8ADF /* trees.c */; };
+		5C7E846AB1FF4594AA2A06CC /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047D73D79F624873B265E7C9 /* ImageIO.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		5E3811E7C6E94DCEB0097F3A /* gzlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 0D0132A1D6B04496A6EDF98E /* gzlib.c */; };
+		616B62773ECF47A9B5F3D37F /* UNIHTTPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB7C2A0AF0417793C849A4 /* UNIHTTPResponse.m */; };
+		674611A97A8249CFAF780B2A /* GMVideoIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E377471C0F04B1F9E07905F /* GMVideoIcon.png */; };
+		6941BBF0EACE40E4902DED60 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 6EE5CFF37AA7444998D1A374 /* unzip.c */; };
 		6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */; };
-		6B314CB96A214A759AF9AA04 /* deflate.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F1C83DD6A1946FB8C255DB0 /* deflate.c */; };
-		6C36C6F4B7F545AD8ECC6D9D /* it.lproj in Resources */ = {isa = PBXBuildFile; fileRef = A27C018BC7AA44D38D1BAC4B /* it.lproj */; };
-		6C3C71062CF842CF996E9146 /* trees.c in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA62935EF8472586C4D9B8 /* trees.c */; };
-		6E6D35A9701A4F96BC2F0A2F /* zutil.c in Sources */ = {isa = PBXBuildFile; fileRef = 5183F8FF3A384DD3A2792C8B /* zutil.c */; };
-		6EDEC649FA5E4FFB83917D5D /* crc32.c in Sources */ = {isa = PBXBuildFile; fileRef = C7712157D8C0473FAA80F935 /* crc32.c */; };
-		72B708601EE7492A8EA8DD29 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4503D063DD0A45BD8D24BDF2 /* SystemConfiguration.framework */; };
-		74040FEDF2C1414494C652ED /* UIImage+fixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA98224454F459B948356D5 /* UIImage+fixOrientation.m */; };
-		7625C9936D5F469DA9625F56 /* UNIHTTPClientHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 515038217E1644A1AE80ADF4 /* UNIHTTPClientHelper.m */; };
-		7C68450E8EB540E3B4479131 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECB43D3903C44EEAB33DFA1 /* Base64.m */; };
-		80C505509CFF4EB297E9F3AD /* PhotoViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = C6043312C70F442EB46C41AF /* PhotoViewer.m */; };
-		8832655D51FC4CBEB70371A5 /* IonicKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B330AD824F6487BB0301B36 /* IonicKeyboard.m */; };
-		8AF1A7CA4A4A4311ACCB572E /* UNIBodyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F60AB580C34FBDA990161D /* UNIBodyRequest.m */; };
-		8E80B3305C4C49869D436FB2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A3D0733CF44F3C89DBB594 /* Security.framework */; };
-		8FF0D4B61F2A44F9A35A228F /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08E0932E424C08A63979D2 /* CDVDevice.m */; };
-		9223F0AE0C9A49048E98C1C1 /* UNIBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E9F3AE45FC476591F2B30E /* UNIBaseRequest.m */; };
-		969D10580E8B4918BF6E06D7 /* UNIJsonNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E7943F5342404DB1164F44 /* UNIJsonNode.m */; };
-		99B5D5C0D76C468EA86D1135 /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A9919BF021404D833A0A1D /* CDVStatusBar.m */; };
-		A04475E2832346CD8E3B33EA /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56325FCED6B49D2BB8BF3C8 /* Accelerate.framework */; };
-		A34DC8F30F2247A38049CC33 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7589E088EBD94432B0E28A2D /* ImageIO.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		A3BB3A12718B492D811CF6F1 /* GMSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ABA0650D6124282AA069E46 /* GMSelected.png */; };
-		A865B1AD75514AC9ACCE10CC /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 4B05A9BBBF4041EFBB83A13D /* en.lproj */; };
-		A9B752F1E04D43159976C5AA /* UNISimpleRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 559D6BB761E0435B80FBCAC2 /* UNISimpleRequest.m */; };
-		AF613416B6A64C57B0C96E3B /* CDVCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFBA8158663454BACFD92B6 /* CDVCamera.m */; };
-		B3ED8AB6407C4A4D88069F0A /* PECropRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B3267C571C498496E78EA0 /* PECropRectView.m */; };
-		B61976603F90467E9CC42980 /* es.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 46596B49DABC412B8F3F9BB6 /* es.lproj */; };
-		B7656A8C0C3D49C894BB204B /* compress.c in Sources */ = {isa = PBXBuildFile; fileRef = 4D9AFBDC573F40D7B777EC3B /* compress.c */; };
-		B8B7FDF3C1D24274B8BA3596 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = A03078CF348B47C5940C1D2F /* ioapi.c */; };
-		BCE6D437FA6E45239E87A341 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B04356E5B5748588034C373 /* CoreLocation.framework */; };
-		C419D9990B1641C7925571CE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A187564493BE4125BDE26C68 /* AVFoundation.framework */; };
-		C4DB824ABCBE4438802D8695 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACD9C557F9E4A249C0FBB5B /* Photos.framework */; };
-		C52288F63F1F4851AC766319 /* UNIHTTPRequestWithBody.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D1E2147AA344268CFB73F4 /* UNIHTTPRequestWithBody.m */; };
-		C537875BEA43448FB4E05F98 /* inflate.c in Sources */ = {isa = PBXBuildFile; fileRef = B2F40F96D2CF43A5A2F96C24 /* inflate.c */; };
-		C68B6BE84FB94B3B8FBC8C2D /* CDVViewController+SplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAAD126E7194D3BBCAAA34F /* CDVViewController+SplashScreen.m */; };
-		D02FB51E12D94029A41AF3BE /* adler32.c in Sources */ = {isa = PBXBuildFile; fileRef = BC941D0E9C084CD3A98127C7 /* adler32.c */; };
-		D039FA3CB0344503BA56405C /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 8416DD1AA6E040B895162EA6 /* zip.c */; };
-		D0B5B46F9F6C4E36866A45B7 /* UIImage+CropScaleOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C74E4CD01D45F58C5E7BBB /* UIImage+CropScaleOrientation.m */; };
-		D2850529EFBF4CA5B2F262A9 /* CDVLocalFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF0DBC86E8E4B9AA12CDCC1 /* CDVLocalFilesystem.m */; };
-		D663EDFE7DF0422FB820FD36 /* gzwrite.c in Sources */ = {isa = PBXBuildFile; fileRef = 9BA0BD59F232491E8AE9F146 /* gzwrite.c */; };
-		D882E45CD7F745489ABD6623 /* inftrees.c in Sources */ = {isa = PBXBuildFile; fileRef = E084A80416FC427FA547B7D3 /* inftrees.c */; };
-		D8935F1AE1C94D9B8421CE14 /* gzclose.c in Sources */ = {isa = PBXBuildFile; fileRef = FC0525D17918438CAAFFB014 /* gzclose.c */; };
-		E567DB66B652441AAF17D5F9 /* GMGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DF94769B2664F5B99940F7E /* GMGridViewController.m */; };
-		E63340DED6034848A8271953 /* GMImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4320AF37D004EC09C7C0FED /* GMImagePickerController.m */; };
-		E9FEC12724214BA0B5BD8F3F /* CTCrop.m in Sources */ = {isa = PBXBuildFile; fileRef = F27422C4AAE24D36B47C1B06 /* CTCrop.m */; };
-		ED2A7220EA494599B6902B1C /* UNIHTTPJsonResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E40E53F6F8042D092FE81DA /* UNIHTTPJsonResponse.m */; };
-		EE0977B06532498992C2BA80 /* GMAlbumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A38E353F7BE4886B366AAB6 /* GMAlbumsViewController.m */; };
-		F21F28BCDBD5451EB3C9A678 /* GMAlbumsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4917D5004E47C38AAD3758 /* GMAlbumsViewCell.m */; };
-		F397B1D6EEAB46089595DC3A /* UNIUrlConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = AF5F038D0D0E425F89C39A30 /* UNIUrlConnection.m */; };
-		F66728D37CD04EA588007683 /* UIImage+PECrop.m in Sources */ = {isa = PBXBuildFile; fileRef = 024C46658D8149788BE7EE0D /* UIImage+PECrop.m */; };
-		F718DCB5D2F245D29093FA07 /* GMFetchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A6082222C450444F98187A7B /* GMFetchItem.m */; };
-		FFFA6A6DFF2A468682185DF3 /* Download.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D8AC6BE4A8496C8FA97F12 /* Download.m */; };
+		6B64D517F43E4CF5A68328B0 /* UIImage+fixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 973B07FE7098442C9D121A73 /* UIImage+fixOrientation.m */; };
+		7771C98DC1614A37BAE1E5F4 /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD9D29D931F43229B8B4C9D /* CDVDevice.m */; };
+		782450A8362F4E77868FEC78 /* PECropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 570C64E3A2EA43828F0AF1DB /* PECropViewController.m */; };
+		78A1D739EBE04CC4B8321D9D /* GMFetchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A3DD93E679406F9A91BF37 /* GMFetchItem.m */; };
+		7A14026B306C4E589B22CA88 /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 278D372F4B3C4CDDBD2890DB /* DownloadManager.m */; };
+		7B95020E8EBB421FAFC6D3AB /* SOSPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 319AC0A5138E4F9FB7A72E8F /* SOSPicker.m */; };
+		7EAF65CE19FB44F38EE4CB17 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = AFE39445103D4248959A8579 /* zip.c */; };
+		7EF833F7589941118BFB87B1 /* GMEmptyFolder@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 72AE4C72958A42E0B7F1E3AF /* GMEmptyFolder@1x.png */; };
+		83897B95E507493EA929E70C /* inffast.c in Sources */ = {isa = PBXBuildFile; fileRef = 573421C7A25541AAAED8DD64 /* inffast.c */; };
+		86E330813950442DA534D7DE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6852D1F1A6E4D3AB76D16EC /* Security.framework */; };
+		8B94AC950BFB454293A79FE5 /* IonicKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 08267FF8517242F6807BC8FA /* IonicKeyboard.m */; };
+		8C1AFEC0409B457DB1FC03CE /* UIImage+CropScaleOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = E03CCDD00D7B4FF58B558204 /* UIImage+CropScaleOrientation.m */; };
+		8C62BBCCBE564B6B9F5F9DC6 /* gzread.c in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D6DD59DA547779C99CF63 /* gzread.c */; };
+		8C8353637D0D43F38C466AB2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C1A4A87A4E47F1AFC44CFF /* QuartzCore.framework */; };
+		8D6BEE9ED3464A59B5C9676F /* GMAlbumsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F5B2A5575D4951A2BCFBD4 /* GMAlbumsViewCell.m */; };
+		8F907934FAD0467DA1430425 /* compress.c in Sources */ = {isa = PBXBuildFile; fileRef = D1F4CB55F2904ABA93796C52 /* compress.c */; };
+		97A498C76E834EFBB33E13C4 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = C565CFA5B89E4E80963EEFBA /* ioapi.c */; };
+		981BF1218DE04E6DB3490D39 /* ca.lproj in Resources */ = {isa = PBXBuildFile; fileRef = FE609DBEAE244EB1B5DDF3BB /* ca.lproj */; };
+		98ADF6EC96474243B4EEF15B /* UNIRest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1F2200E52B400395E01A1B /* UNIRest.m */; };
+		9F12DB606BC14537BEB53158 /* IonicConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF54D20E32948DB8D79A6CB /* IonicConstant.m */; };
+		A379E0F3CD364366BEF64E21 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9A3C362350F4808BB805ACC /* Photos.framework */; };
+		A4105CB9B0CA445B8C1D4FD4 /* UNIHTTPClientHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4755883F284BC980A28979 /* UNIHTTPClientHelper.m */; };
+		A9FC14A355C14D819A3349AE /* CDVAssetLibraryFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7411333466484A71B258A480 /* CDVAssetLibraryFilesystem.m */; };
+		AE2808C617D24DCD8455BC11 /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DB9136612643CCBA5BE071 /* SSZipArchive.m */; };
+		B361BEEE60A8467BA0E8D8EC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 569608A4AC78498C8B62A4B8 /* SystemConfiguration.framework */; };
+		B5E601249EFF46ABB6D5CC59 /* UNIUrlConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC2E3561F2645FCA329BA6E /* UNIUrlConnection.m */; };
+		B76CF91DFA5B4D038E274D8F /* fr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = A7DD48F3C782409AA68CEB75 /* fr.lproj */; };
+		B8A6759FB1E0468AB392CEEB /* UNIHTTPBinaryResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 777CC54C0C76498D9FE89D24 /* UNIHTTPBinaryResponse.m */; };
+		BB1501E99EF649C9A8639141 /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3BA430081542058C9E4056 /* CDVSplashScreen.m */; };
+		BC55719B6C87422EA1E5E690 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E4932B5CA614A56BAD177AF /* Accelerate.framework */; };
+		BDBB1B50ED16425383C3C167 /* CDVCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2DABD277854B29ABFBCE03 /* CDVCamera.m */; };
+		BF14BB0640EA469B9B26C170 /* UNIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 690D3E97E4CF41D0B88BA6A0 /* UNIHTTPRequest.m */; };
+		C786374F09D641A896615EDA /* UNIHTTPJsonResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = F3036A5B7DA94CA49D9271B5 /* UNIHTTPJsonResponse.m */; };
+		D076ABA4F54144D49307A1E0 /* it.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 003B7A6E53004FFCA9631221 /* it.lproj */; };
+		D27147AA92FE43E496E30D84 /* GMSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = A7E70823C36B49638F673A8D /* GMSelected.png */; };
+		D4E8AD03C3BD41809A66D032 /* PEPhotoCropEditor.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A5CE3E20176C4E669B60B0A0 /* PEPhotoCropEditor.bundle */; };
+		D573CB3DD8FA4A438D39073F /* GMImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6768B9AF394B87A25EC6CA /* GMImagePickerController.m */; };
+		D5F20844C6564F9793623E86 /* crc32.c in Sources */ = {isa = PBXBuildFile; fileRef = 30572BDB90E245AE917D1984 /* crc32.c */; };
+		D6B4E81881F14DDBBAD2B090 /* inftrees.c in Sources */ = {isa = PBXBuildFile; fileRef = 79F0DA07C20C40A0BEAAB12F /* inftrees.c */; };
+		D959C1FF9AC54E60B2D00C81 /* GMAlbumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A307EE4127EE458ABA91ED7F /* GMAlbumsViewController.m */; };
+		D95E4B4186434D21BDB403E5 /* de.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 42B82C8D971E4492AFAC3BBE /* de.lproj */; };
+		DE44F4BCDAD74101BF16600E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0732287F2740C9ACC74D0F /* CoreLocation.framework */; };
+		E4A98D87E05245ADB2A42712 /* PECropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 721C849450E14355BB3C7FE9 /* PECropView.m */; };
+		E555623F6F6E4E3282DC83B9 /* GMPHAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDD011833D84A8AA277D223 /* GMPHAsset.m */; };
+		E68AC833BEC3405A9E4E6805 /* inflate.c in Sources */ = {isa = PBXBuildFile; fileRef = DC429F0D731D4BA489182E27 /* inflate.c */; };
+		E70182F4EA7D46FBB4398A8B /* PhotoViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFE5335719C4B07988F117D /* PhotoViewer.m */; };
+		E9E4D882C7734099ADFF915F /* PECropRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EC36FBC2EC442CAFCF3728 /* PECropRectView.m */; };
+		EA58AF909C1B408AAF95DB33 /* pt.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 1CE65849B0E14AD79D30EB25 /* pt.lproj */; };
+		EAA723969917458B8760023C /* PSYBlockTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = AA76A6C4E4ED4A99BED2FE3E /* PSYBlockTimer.m */; };
+		F543F05B2B574B49912AD87A /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B4E72DC396403DB878803A /* Base64.m */; };
+		F933AE329BF54DD0ACE02F1B /* UNIHTTPStringResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E6539320943740FC8AF33D89 /* UNIHTTPStringResponse.m */; };
+		FA88C59B381B4139B9B1830D /* GMEmptyFolder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C7411C8A408414A9C51A8C9 /* GMEmptyFolder@2x.png */; };
+		FBA0CFB072A94AF789D5BA9D /* adler32.c in Sources */ = {isa = PBXBuildFile; fileRef = A1CA7DFC6D38451C9765426D /* adler32.c */; };
+		FC9E36BC006F40E891B6D47E /* infback.c in Sources */ = {isa = PBXBuildFile; fileRef = FDA151FD833049829F74A99B /* infback.c */; };
+		FF2C5DAAE30F4DB291928B29 /* CDVLocalFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B4651D8B2E43F9BD029E3D /* CDVLocalFilesystem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,36 +122,36 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00A9919BF021404D833A0A1D /* CDVStatusBar.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVStatusBar.m; path = "cordova-plugin-statusbar/CDVStatusBar.m"; sourceTree = "<group>"; };
+		003B7A6E53004FFCA9631221 /* it.lproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = it.lproj; sourceTree = "<group>"; };
+		00D31CFFEC1C4BE39ED6EE03 /* CDVSplashScreen.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVSplashScreen.h; path = "cordova-plugin-splashscreen/CDVSplashScreen.h"; sourceTree = "<group>"; };
 		0207DA571B56EA530066E2B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Textile/Images.xcassets; sourceTree = SOURCE_ROOT; };
-		024C46658D8149788BE7EE0D /* UIImage+PECrop.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = "UIImage+PECrop.m"; path = "cordova-plugin-crop/UIImage+PECrop.m"; sourceTree = "<group>"; };
-		054CFC48026947019F6F14EA /* PSYBlockTimer.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = PSYBlockTimer.h; path = com.synconset.imagepicker/PSYBlockTimer.h; sourceTree = "<group>"; };
-		09B4A53802A44C25AB537D14 /* UNIHTTPBinaryResponse.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = UNIHTTPBinaryResponse.m; path = "ionic-plugin-deploy/UNIHTTPBinaryResponse.m"; sourceTree = "<group>"; };
-		09FF442AE4644A318E0C05FD /* GMImagePickerController.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = GMImagePickerController.h; path = com.synconset.imagepicker/GMImagePickerController.h; sourceTree = "<group>"; };
-		0BCA62935EF8472586C4D9B8 /* trees.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = trees.c; path = "ionic-plugin-deploy/trees.c"; sourceTree = "<group>"; };
-		0F2140A16B094A0A9717B445 /* CDVLocalFilesystem.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVLocalFilesystem.h; path = "cordova-plugin-file/CDVLocalFilesystem.h"; sourceTree = "<group>"; };
-		114440B4978847699739D373 /* GMGridViewCell.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = GMGridViewCell.h; path = com.synconset.imagepicker/GMGridViewCell.h; sourceTree = "<group>"; };
-		11CD128C14F04852A8854E8B /* GMGridViewController.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = GMGridViewController.h; path = com.synconset.imagepicker/GMGridViewController.h; sourceTree = "<group>"; };
-		19B6FE1BCD5B422793E87F82 /* UIImage+PECrop.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "UIImage+PECrop.h"; path = "cordova-plugin-crop/UIImage+PECrop.h"; sourceTree = "<group>"; };
+		02C9C82E83BF42EF971F604E /* deflate.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = deflate.h; path = "ionic-plugin-deploy/deflate.h"; sourceTree = "<group>"; };
+		02D5DA3DD4254CD686093E4D /* CDVCamera.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVCamera.h; path = "cordova-plugin-camera/CDVCamera.h"; sourceTree = "<group>"; };
+		03EF5465C03848ECAD72F038 /* inffast.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = inffast.h; path = "ionic-plugin-deploy/inffast.h"; sourceTree = "<group>"; };
+		047D73D79F624873B265E7C9 /* ImageIO.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		07DB9136612643CCBA5BE071 /* SSZipArchive.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = SSZipArchive.m; path = "ionic-plugin-deploy/SSZipArchive.m"; sourceTree = "<group>"; };
+		08267FF8517242F6807BC8FA /* IonicKeyboard.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = IonicKeyboard.m; path = "ionic-plugin-keyboard/IonicKeyboard.m"; sourceTree = "<group>"; };
+		086D4F6B108B4B668BA1A69A /* CDVJpegHeaderWriter.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVJpegHeaderWriter.h; path = "cordova-plugin-camera/CDVJpegHeaderWriter.h"; sourceTree = "<group>"; };
+		0AF54D20E32948DB8D79A6CB /* IonicConstant.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = IonicConstant.m; path = "ionic-plugin-deploy/IonicConstant.m"; sourceTree = "<group>"; };
+		0D0132A1D6B04496A6EDF98E /* gzlib.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = gzlib.c; path = "ionic-plugin-deploy/gzlib.c"; sourceTree = "<group>"; };
+		0D2DABD277854B29ABFBCE03 /* CDVCamera.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVCamera.m; path = "cordova-plugin-camera/CDVCamera.m"; sourceTree = "<group>"; };
+		0E32A951EAAC4BDC993CB14A /* zutil.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = zutil.c; path = "ionic-plugin-deploy/zutil.c"; sourceTree = "<group>"; };
+		0EE0999B3F304F06B4826982 /* UNIHTTPRequestWithBody.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = UNIHTTPRequestWithBody.h; path = "ionic-plugin-deploy/UNIHTTPRequestWithBody.h"; sourceTree = "<group>"; };
+		1190D88D30774EB69BD04E98 /* GMSelected@2x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = "GMSelected@2x.png"; sourceTree = "<group>"; };
+		13CEA13A4CFB46CB864F7172 /* CDVExif.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVExif.h; path = "cordova-plugin-camera/CDVExif.h"; sourceTree = "<group>"; };
+		14F27C01734D418B83E7F4A1 /* crc32.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = crc32.h; path = "ionic-plugin-deploy/crc32.h"; sourceTree = "<group>"; };
+		162EDD24DD2E4F9BB5AF6681 /* UNIBodyRequest.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = UNIBodyRequest.m; path = "ionic-plugin-deploy/UNIBodyRequest.m"; sourceTree = "<group>"; };
+		1B118B4B18BF4259B3B79A3C /* Download.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = Download.m; path = "ionic-plugin-deploy/Download.m"; sourceTree = "<group>"; };
+		1C6C46FFB204449FBFE32FD5 /* IonicKeyboard.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = IonicKeyboard.h; path = "ionic-plugin-keyboard/IonicKeyboard.h"; sourceTree = "<group>"; };
+		1CE65849B0E14AD79D30EB25 /* pt.lproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = pt.lproj; sourceTree = "<group>"; };
 		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* Textile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Textile.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1E0178E5DB9E4FE4AAD233FF /* unzip.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = unzip.h; path = "ionic-plugin-deploy/unzip.h"; sourceTree = "<group>"; };
-		1EFAF6DD9ECF48948FC54EAF /* gzlib.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = gzlib.c; path = "ionic-plugin-deploy/gzlib.c"; sourceTree = "<group>"; };
-		1F5911752FC54F58AF6EF20F /* PEPhotoCropEditor.bundle */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.plug-in"; path = PEPhotoCropEditor.bundle; sourceTree = "<group>"; };
-		22D91E10872F42E5874123FB /* UNIRest.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = UNIRest.m; path = "ionic-plugin-deploy/UNIRest.m"; sourceTree = "<group>"; };
-		24D7BCEA3CFD4E6989393D20 /* pt.lproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = pt.lproj; sourceTree = "<group>"; };
-		28EB4BFB96984D78BFE44E1A /* UNIBaseRequest.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = UNIBaseRequest.h; path = "ionic-plugin-deploy/UNIBaseRequest.h"; sourceTree = "<group>"; };
-		28F250310FC14FC5A827573C /* zconf.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = zconf.h; path = "ionic-plugin-deploy/zconf.h"; sourceTree = "<group>"; };
-		29265B850310491FAB16E2F9 /* UNIHTTPRequestWithBody.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = UNIHTTPRequestWithBody.h; path = "ionic-plugin-deploy/UNIHTTPRequestWithBody.h"; sourceTree = "<group>"; };
-		297C4B0C06A2485FB5BA8BD0 /* CDVJpegHeaderWriter.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVJpegHeaderWriter.m; path = "cordova-plugin-camera/CDVJpegHeaderWriter.m"; sourceTree = "<group>"; };
+		26E60C97F601468490782B3B /* GMGridViewCell.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = GMGridViewCell.h; path = com.synconset.imagepicker/GMGridViewCell.h; sourceTree = "<group>"; };
+		278D372F4B3C4CDDBD2890DB /* DownloadManager.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = DownloadManager.m; path = "ionic-plugin-deploy/DownloadManager.m"; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2A38E353F7BE4886B366AAB6 /* GMAlbumsViewController.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = GMAlbumsViewController.m; path = com.synconset.imagepicker/GMAlbumsViewController.m; sourceTree = "<group>"; };
-		2AFBA8158663454BACFD92B6 /* CDVCamera.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVCamera.m; path = "cordova-plugin-camera/CDVCamera.m"; sourceTree = "<group>"; };
-		2B6090F28DCC4837B0EB2686 /* uncompr.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = uncompr.c; path = "ionic-plugin-deploy/uncompr.c"; sourceTree = "<group>"; };
-		2CAAD126E7194D3BBCAAA34F /* CDVViewController+SplashScreen.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = "CDVViewController+SplashScreen.m"; path = "cordova-plugin-splashscreen/CDVViewController+SplashScreen.m"; sourceTree = "<group>"; };
-		2D58DE9C342842149A7171EB /* Unirest-Prefix.pch */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "Unirest-Prefix.pch"; path = "ionic-plugin-deploy/Unirest-Prefix.pch"; sourceTree = "<group>"; };
-		2DF0DBC86E8E4B9AA12CDCC1 /* CDVLocalFilesystem.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVLocalFilesystem.m; path = "cordova-plugin-file/CDVLocalFilesystem.m"; sourceTree = "<group>"; };
+		2C7411C8A408414A9C51A8C9 /* GMEmptyFolder@2x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = "GMEmptyFolder@2x.png"; sourceTree = "<group>"; };
+		3013DDCEBC39405D818CE029 /* gzclose.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = gzclose.c; path = "ionic-plugin-deploy/gzclose.c"; sourceTree = "<group>"; };
 		301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CordovaLib.xcodeproj; path = CordovaLib/CordovaLib.xcodeproj; sourceTree = "<group>"; };
 		301BF56E109A69640062928A /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = SOURCE_ROOT; };
 		302D95EE14D2391D003F00A1 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -159,141 +160,141 @@
 		3047A50F1AB8059700498E2A /* build-debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "build-debug.xcconfig"; path = "cordova/build-debug.xcconfig"; sourceTree = SOURCE_ROOT; };
 		3047A5101AB8059700498E2A /* build-release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "build-release.xcconfig"; path = "cordova/build-release.xcconfig"; sourceTree = SOURCE_ROOT; };
 		3047A5111AB8059700498E2A /* build.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = build.xcconfig; path = cordova/build.xcconfig; sourceTree = SOURCE_ROOT; };
-		30D7DEFBAAE7464BA62E3A3F /* UNIHTTPJsonResponse.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = UNIHTTPJsonResponse.h; path = "ionic-plugin-deploy/UNIHTTPJsonResponse.h"; sourceTree = "<group>"; };
-		30FAA17FB186459DB7339323 /* SSZipArchive.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = SSZipArchive.h; path = "ionic-plugin-deploy/SSZipArchive.h"; sourceTree = "<group>"; };
+		3055AC6DF28949C580518B70 /* PECropRectView.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = PECropRectView.h; path = "cordova-plugin-crop/PECropRectView.h"; sourceTree = "<group>"; };
+		30572BDB90E245AE917D1984 /* crc32.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = crc32.c; path = "ionic-plugin-deploy/crc32.c"; sourceTree = "<group>"; };
+		30E31363DF934C78A87BF7E4 /* crypt.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = crypt.h; path = "ionic-plugin-deploy/crypt.h"; sourceTree = "<group>"; };
+		310AE97F1DBB43C7A4FD2E5B /* UNIHTTPBinaryResponse.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = UNIHTTPBinaryResponse.h; path = "ionic-plugin-deploy/UNIHTTPBinaryResponse.h"; sourceTree = "<group>"; };
+		319AC0A5138E4F9FB7A72E8F /* SOSPicker.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = SOSPicker.m; path = com.synconset.imagepicker/SOSPicker.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Textile-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Textile-Prefix.pch"; sourceTree = "<group>"; };
-		331BE0D59F7941AFBA695298 /* CDVFile.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVFile.m; path = "cordova-plugin-file/CDVFile.m"; sourceTree = "<group>"; };
-		3501DF7BB6BC4D92990C30B5 /* PSYBlockTimer.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = PSYBlockTimer.m; path = com.synconset.imagepicker/PSYBlockTimer.m; sourceTree = "<group>"; };
-		35F21CA19611412F8D36AEC6 /* GMEmptyFolder@1x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = "GMEmptyFolder@1x.png"; sourceTree = "<group>"; };
-		3E3F04C8CCB4474FA0DF9015 /* crypt.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = crypt.h; path = "ionic-plugin-deploy/crypt.h"; sourceTree = "<group>"; };
-		3EC38E1F5F6C4FFD81BAECFF /* SOSPicker.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = SOSPicker.m; path = com.synconset.imagepicker/SOSPicker.m; sourceTree = "<group>"; };
-		3ED0532C18DD4A03B46E73FB /* infback.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = infback.c; path = "ionic-plugin-deploy/infback.c"; sourceTree = "<group>"; };
-		3F28D26C48C648979DA88076 /* GMPHAsset.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = GMPHAsset.m; path = com.synconset.imagepicker/GMPHAsset.m; sourceTree = "<group>"; };
-		4099317E6827487FA05FE29E /* unzip.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = unzip.c; path = "ionic-plugin-deploy/unzip.c"; sourceTree = "<group>"; };
-		42F60AB580C34FBDA990161D /* UNIBodyRequest.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = UNIBodyRequest.m; path = "ionic-plugin-deploy/UNIBodyRequest.m"; sourceTree = "<group>"; };
-		43470B9F93654812ADB5259D /* CDVSplashScreen.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVSplashScreen.h; path = "cordova-plugin-splashscreen/CDVSplashScreen.h"; sourceTree = "<group>"; };
-		43639319FE844E45A8625C8D /* inffixed.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = inffixed.h; path = "ionic-plugin-deploy/inffixed.h"; sourceTree = "<group>"; };
-		43BFC5FDD71C4DCC9CA192D4 /* UNIHTTPResponse.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = UNIHTTPResponse.m; path = "ionic-plugin-deploy/UNIHTTPResponse.m"; sourceTree = "<group>"; };
-		43E7943F5342404DB1164F44 /* UNIJsonNode.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = UNIJsonNode.m; path = "ionic-plugin-deploy/UNIJsonNode.m"; sourceTree = "<group>"; };
-		4503D063DD0A45BD8D24BDF2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		459E8C04A2AB41DA8927A368 /* UNIHTTPStringResponse.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = UNIHTTPStringResponse.h; path = "ionic-plugin-deploy/UNIHTTPStringResponse.h"; sourceTree = "<group>"; };
-		46596B49DABC412B8F3F9BB6 /* es.lproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = es.lproj; sourceTree = "<group>"; };
-		46E0B773AA8A45FDA0B6FE91 /* UNIHTTPResponse.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = UNIHTTPResponse.h; path = "ionic-plugin-deploy/UNIHTTPResponse.h"; sourceTree = "<group>"; };
-		4B05A9BBBF4041EFBB83A13D /* en.lproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = en.lproj; sourceTree = "<group>"; };
-		4BAD518F867947779D6FB6C1 /* UNIHTTPRequest.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = UNIHTTPRequest.m; path = "ionic-plugin-deploy/UNIHTTPRequest.m"; sourceTree = "<group>"; };
-		4BE48D643646402EA97A3CC7 /* UNIHTTPBinaryResponse.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = UNIHTTPBinaryResponse.h; path = "ionic-plugin-deploy/UNIHTTPBinaryResponse.h"; sourceTree = "<group>"; };
-		4D9AFBDC573F40D7B777EC3B /* compress.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = compress.c; path = "ionic-plugin-deploy/compress.c"; sourceTree = "<group>"; };
-		5065AC976FE54E4DB16EEB18 /* zlib.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = zlib.h; path = "ionic-plugin-deploy/zlib.h"; sourceTree = "<group>"; };
-		515038217E1644A1AE80ADF4 /* UNIHTTPClientHelper.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = UNIHTTPClientHelper.m; path = "ionic-plugin-deploy/UNIHTTPClientHelper.m"; sourceTree = "<group>"; };
-		5183F8FF3A384DD3A2792C8B /* zutil.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = zutil.c; path = "ionic-plugin-deploy/zutil.c"; sourceTree = "<group>"; };
-		551DF84972114685B86694A9 /* inffast.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = inffast.h; path = "ionic-plugin-deploy/inffast.h"; sourceTree = "<group>"; };
-		555DF32AB65F40D6ABA69444 /* CDVAssetLibraryFilesystem.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVAssetLibraryFilesystem.h; path = "cordova-plugin-file/CDVAssetLibraryFilesystem.h"; sourceTree = "<group>"; };
-		559D6BB761E0435B80FBCAC2 /* UNISimpleRequest.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = UNISimpleRequest.m; path = "ionic-plugin-deploy/UNISimpleRequest.m"; sourceTree = "<group>"; };
-		58171D9D10934EE896339741 /* CTCrop.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CTCrop.h; path = "cordova-plugin-crop/CTCrop.h"; sourceTree = "<group>"; };
-		5918BCCEF2894C5C8637760E /* DownloadManager.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = DownloadManager.m; path = "ionic-plugin-deploy/DownloadManager.m"; sourceTree = "<group>"; };
-		5A7223BDA418440987FAF7E0 /* PECropViewController.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = PECropViewController.m; path = "cordova-plugin-crop/PECropViewController.m"; sourceTree = "<group>"; };
-		5CD14CE4331C42A5982DB5B4 /* IonicDeploy.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = IonicDeploy.m; path = "ionic-plugin-deploy/IonicDeploy.m"; sourceTree = "<group>"; };
-		5ECB43D3903C44EEAB33DFA1 /* Base64.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = Base64.m; path = "ionic-plugin-deploy/Base64.m"; sourceTree = "<group>"; };
-		60D8AC6BE4A8496C8FA97F12 /* Download.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = Download.m; path = "ionic-plugin-deploy/Download.m"; sourceTree = "<group>"; };
-		6274636DB5D54CC7A0817AED /* ioapi.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = ioapi.h; path = "ionic-plugin-deploy/ioapi.h"; sourceTree = "<group>"; };
-		66E9F3AE45FC476591F2B30E /* UNIBaseRequest.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = UNIBaseRequest.m; path = "ionic-plugin-deploy/UNIBaseRequest.m"; sourceTree = "<group>"; };
-		6765F7E641D84D77A019A5C6 /* gzread.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = gzread.c; path = "ionic-plugin-deploy/gzread.c"; sourceTree = "<group>"; };
-		68C816AAAC30405DB80F2235 /* GMPHAsset.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = GMPHAsset.h; path = com.synconset.imagepicker/GMPHAsset.h; sourceTree = "<group>"; };
+		33D69CA993464923BB9959E0 /* IonicDeploy.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = IonicDeploy.m; path = "ionic-plugin-deploy/IonicDeploy.m"; sourceTree = "<group>"; };
+		343D8857ABFE46AF81901030 /* PEResizeControl.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = PEResizeControl.h; path = "cordova-plugin-crop/PEResizeControl.h"; sourceTree = "<group>"; };
+		348D25B3FD0A4AB28FBFC50E /* trees.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = trees.h; path = "ionic-plugin-deploy/trees.h"; sourceTree = "<group>"; };
+		34CFC3B0A8F34CACA5B37AEF /* zutil.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = zutil.h; path = "ionic-plugin-deploy/zutil.h"; sourceTree = "<group>"; };
+		34E23BF2522841E0A414D59B /* UNIRest.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = UNIRest.h; path = "ionic-plugin-deploy/UNIRest.h"; sourceTree = "<group>"; };
+		35AB6DFA4E0D40FC9B68633A /* UNIHTTPStringResponse.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = UNIHTTPStringResponse.h; path = "ionic-plugin-deploy/UNIHTTPStringResponse.h"; sourceTree = "<group>"; };
+		3B23CD36029C48F9BBEFA512 /* DownloadManager.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = DownloadManager.h; path = "ionic-plugin-deploy/DownloadManager.h"; sourceTree = "<group>"; };
+		3BD9D29D931F43229B8B4C9D /* CDVDevice.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVDevice.m; path = "cordova-plugin-device/CDVDevice.m"; sourceTree = "<group>"; };
+		3D0541120FD34A19BEEAD8F8 /* Download.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = Download.h; path = "ionic-plugin-deploy/Download.h"; sourceTree = "<group>"; };
+		3D4755883F284BC980A28979 /* UNIHTTPClientHelper.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = UNIHTTPClientHelper.m; path = "ionic-plugin-deploy/UNIHTTPClientHelper.m"; sourceTree = "<group>"; };
+		3E10654C09CD463184B2B1FF /* UNIHTTPRequestWithBody.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = UNIHTTPRequestWithBody.m; path = "ionic-plugin-deploy/UNIHTTPRequestWithBody.m"; sourceTree = "<group>"; };
+		3FD7EDDBE7D9493899FEA24F /* CDVViewController+SplashScreen.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = "CDVViewController+SplashScreen.m"; path = "cordova-plugin-splashscreen/CDVViewController+SplashScreen.m"; sourceTree = "<group>"; };
+		42B82C8D971E4492AFAC3BBE /* de.lproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = de.lproj; sourceTree = "<group>"; };
+		44DAD1B8ABF74C74A63A8ADF /* trees.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = trees.c; path = "ionic-plugin-deploy/trees.c"; sourceTree = "<group>"; };
+		493C17519C084B088B41527F /* gzguts.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = gzguts.h; path = "ionic-plugin-deploy/gzguts.h"; sourceTree = "<group>"; };
+		4A53F80F511D4187A2C6AC88 /* UNIJsonNode.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = UNIJsonNode.h; path = "ionic-plugin-deploy/UNIJsonNode.h"; sourceTree = "<group>"; };
+		4C15F489063C4DDE9E046A6F /* CDVStatusBar.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVStatusBar.m; path = "cordova-plugin-statusbar/CDVStatusBar.m"; sourceTree = "<group>"; };
+		4C7D6DD59DA547779C99CF63 /* gzread.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = gzread.c; path = "ionic-plugin-deploy/gzread.c"; sourceTree = "<group>"; };
+		4CA7199194C942D4A0EAC8D0 /* zconf.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = zconf.h; path = "ionic-plugin-deploy/zconf.h"; sourceTree = "<group>"; };
+		4D14FA8B09954C2794678CA5 /* UIImage+CropScaleOrientation.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "UIImage+CropScaleOrientation.h"; path = "cordova-plugin-camera/UIImage+CropScaleOrientation.h"; sourceTree = "<group>"; };
+		4E377471C0F04B1F9E07905F /* GMVideoIcon.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = GMVideoIcon.png; sourceTree = "<group>"; };
+		4E3A209E894B433AA58D8B1C /* gzwrite.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = gzwrite.c; path = "ionic-plugin-deploy/gzwrite.c"; sourceTree = "<group>"; };
+		4FCB7C2A0AF0417793C849A4 /* UNIHTTPResponse.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = UNIHTTPResponse.m; path = "ionic-plugin-deploy/UNIHTTPResponse.m"; sourceTree = "<group>"; };
+		569608A4AC78498C8B62A4B8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		570C64E3A2EA43828F0AF1DB /* PECropViewController.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = PECropViewController.m; path = "cordova-plugin-crop/PECropViewController.m"; sourceTree = "<group>"; };
+		573421C7A25541AAAED8DD64 /* inffast.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = inffast.c; path = "ionic-plugin-deploy/inffast.c"; sourceTree = "<group>"; };
+		5D0732287F2740C9ACC74D0F /* CoreLocation.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		5DB5F05C5F13479183FB847A /* UNISimpleRequest.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = UNISimpleRequest.h; path = "ionic-plugin-deploy/UNISimpleRequest.h"; sourceTree = "<group>"; };
+		5E791B718F804511B6AD9EE4 /* UIImage+PECrop.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = "UIImage+PECrop.m"; path = "cordova-plugin-crop/UIImage+PECrop.m"; sourceTree = "<group>"; };
+		6346CFAE9FD54396A3D0BEF4 /* PEResizeControl.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = PEResizeControl.m; path = "cordova-plugin-crop/PEResizeControl.m"; sourceTree = "<group>"; };
+		6581AB69FEA24AD68E33F54B /* GMVideoIcon@2x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = "GMVideoIcon@2x.png"; sourceTree = "<group>"; };
+		690D3E97E4CF41D0B88BA6A0 /* UNIHTTPRequest.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = UNIHTTPRequest.m; path = "ionic-plugin-deploy/UNIHTTPRequest.m"; sourceTree = "<group>"; };
 		6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CDVLaunchScreen.storyboard; path = Textile/CDVLaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
-		6B04356E5B5748588034C373 /* CoreLocation.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		6B330AD824F6487BB0301B36 /* IonicKeyboard.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = IonicKeyboard.m; path = "ionic-plugin-keyboard/IonicKeyboard.m"; sourceTree = "<group>"; };
-		6E40E53F6F8042D092FE81DA /* UNIHTTPJsonResponse.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = UNIHTTPJsonResponse.m; path = "ionic-plugin-deploy/UNIHTTPJsonResponse.m"; sourceTree = "<group>"; };
-		6F1C83DD6A1946FB8C255DB0 /* deflate.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = deflate.c; path = "ionic-plugin-deploy/deflate.c"; sourceTree = "<group>"; };
-		74353166880F45D9A60CB928 /* crc32.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = crc32.h; path = "ionic-plugin-deploy/crc32.h"; sourceTree = "<group>"; };
-		754FDE20347B4E2A84E07163 /* GMAlbumsViewCell.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = GMAlbumsViewCell.h; path = com.synconset.imagepicker/GMAlbumsViewCell.h; sourceTree = "<group>"; };
-		7589E088EBD94432B0E28A2D /* ImageIO.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		7975DECC265641CF915A201B /* PECropViewController.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = PECropViewController.h; path = "cordova-plugin-crop/PECropViewController.h"; sourceTree = "<group>"; };
-		7DD05B282E97437896A3C023 /* GMAlbumsViewController.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = GMAlbumsViewController.h; path = com.synconset.imagepicker/GMAlbumsViewController.h; sourceTree = "<group>"; };
-		7F38DD434D8D4084AF577A46 /* ARCHelper.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = ARCHelper.h; path = "ionic-plugin-deploy/ARCHelper.h"; sourceTree = "<group>"; };
-		7FB99F22FFD343AFB8F4D5C7 /* PEResizeControl.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = PEResizeControl.h; path = "cordova-plugin-crop/PEResizeControl.h"; sourceTree = "<group>"; };
-		813D3BF10B464E449F7DD659 /* UIImage+CropScaleOrientation.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "UIImage+CropScaleOrientation.h"; path = "cordova-plugin-camera/UIImage+CropScaleOrientation.h"; sourceTree = "<group>"; };
-		81B8739A340A4A6CA445D6E7 /* UNIHTTPClientHelper.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = UNIHTTPClientHelper.h; path = "ionic-plugin-deploy/UNIHTTPClientHelper.h"; sourceTree = "<group>"; };
-		83CD2393D7994C498CF517AB /* CDVLogger.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVLogger.h; path = "cordova-plugin-console/CDVLogger.h"; sourceTree = "<group>"; };
-		8416DD1AA6E040B895162EA6 /* zip.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = zip.c; path = "ionic-plugin-deploy/zip.c"; sourceTree = "<group>"; };
-		84459D02988141D7922292D2 /* fr.lproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = fr.lproj; sourceTree = "<group>"; };
-		8565580FBDDD4F069530508E /* DownloadManager.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = DownloadManager.h; path = "ionic-plugin-deploy/DownloadManager.h"; sourceTree = "<group>"; };
-		859C71C91F1546E687450CEA /* GMFetchItem.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = GMFetchItem.h; path = com.synconset.imagepicker/GMFetchItem.h; sourceTree = "<group>"; };
-		881139F3119143079E518FCD /* de.lproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = de.lproj; sourceTree = "<group>"; };
+		6EE5CFF37AA7444998D1A374 /* unzip.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = unzip.c; path = "ionic-plugin-deploy/unzip.c"; sourceTree = "<group>"; };
+		719EF4241CFA49F0A711DBE0 /* CDVLogger.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVLogger.h; path = "cordova-plugin-console/CDVLogger.h"; sourceTree = "<group>"; };
+		721C849450E14355BB3C7FE9 /* PECropView.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = PECropView.m; path = "cordova-plugin-crop/PECropView.m"; sourceTree = "<group>"; };
+		72AE4C72958A42E0B7F1E3AF /* GMEmptyFolder@1x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = "GMEmptyFolder@1x.png"; sourceTree = "<group>"; };
+		7319DDA079774273A77AC56F /* UNIJsonNode.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = UNIJsonNode.m; path = "ionic-plugin-deploy/UNIJsonNode.m"; sourceTree = "<group>"; };
+		7411333466484A71B258A480 /* CDVAssetLibraryFilesystem.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVAssetLibraryFilesystem.m; path = "cordova-plugin-file/CDVAssetLibraryFilesystem.m"; sourceTree = "<group>"; };
+		777CC54C0C76498D9FE89D24 /* UNIHTTPBinaryResponse.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = UNIHTTPBinaryResponse.m; path = "ionic-plugin-deploy/UNIHTTPBinaryResponse.m"; sourceTree = "<group>"; };
+		78B4E72DC396403DB878803A /* Base64.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = Base64.m; path = "ionic-plugin-deploy/Base64.m"; sourceTree = "<group>"; };
+		79F0DA07C20C40A0BEAAB12F /* inftrees.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = inftrees.c; path = "ionic-plugin-deploy/inftrees.c"; sourceTree = "<group>"; };
+		7CFE5335719C4B07988F117D /* PhotoViewer.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = PhotoViewer.m; path = "com-sarriaroman-photoviewer/PhotoViewer.m"; sourceTree = "<group>"; };
+		7DCA13E7FED940C8BF7B8C26 /* Base64.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = Base64.h; path = "ionic-plugin-deploy/Base64.h"; sourceTree = "<group>"; };
+		7E1F2200E52B400395E01A1B /* UNIRest.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = UNIRest.m; path = "ionic-plugin-deploy/UNIRest.m"; sourceTree = "<group>"; };
+		80EC36FBC2EC442CAFCF3728 /* PECropRectView.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = PECropRectView.m; path = "cordova-plugin-crop/PECropRectView.m"; sourceTree = "<group>"; };
+		83651095965A426894865083 /* ioapi.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = ioapi.h; path = "ionic-plugin-deploy/ioapi.h"; sourceTree = "<group>"; };
+		8392A55E5E964D5B867D571A /* CDVAssetLibraryFilesystem.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVAssetLibraryFilesystem.h; path = "cordova-plugin-file/CDVAssetLibraryFilesystem.h"; sourceTree = "<group>"; };
+		8610647131E04D938402FD64 /* IonicDeploy.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = IonicDeploy.h; path = "ionic-plugin-deploy/IonicDeploy.h"; sourceTree = "<group>"; };
+		88D5C59605B545FABF605F3D /* SOSPicker.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = SOSPicker.h; path = com.synconset.imagepicker/SOSPicker.h; sourceTree = "<group>"; };
+		89B4651D8B2E43F9BD029E3D /* CDVLocalFilesystem.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVLocalFilesystem.m; path = "cordova-plugin-file/CDVLocalFilesystem.m"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Textile-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Textile-Info.plist"; path = "Textile/Textile-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = SOURCE_ROOT; };
-		90FE8D3B7B46422F9C7DC842 /* GMSelected@2x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = "GMSelected@2x.png"; sourceTree = "<group>"; };
-		981E4474028047268A481681 /* GMEmptyFolder@2x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = "GMEmptyFolder@2x.png"; sourceTree = "<group>"; };
-		9952212711664A8583436EEA /* CDVFile.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVFile.h; path = "cordova-plugin-file/CDVFile.h"; sourceTree = "<group>"; };
-		99C18563A80E4185B23B2DF8 /* CDVJpegHeaderWriter.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVJpegHeaderWriter.h; path = "cordova-plugin-camera/CDVJpegHeaderWriter.h"; sourceTree = "<group>"; };
-		9AA4E436AE854A919767F602 /* UNIRest.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = UNIRest.h; path = "ionic-plugin-deploy/UNIRest.h"; sourceTree = "<group>"; };
-		9ABA0650D6124282AA069E46 /* GMSelected.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = GMSelected.png; sourceTree = "<group>"; };
-		9B2C4C5FFB444356A35208D6 /* GMVideoIcon@2x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = "GMVideoIcon@2x.png"; sourceTree = "<group>"; };
-		9BA0BD59F232491E8AE9F146 /* gzwrite.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = gzwrite.c; path = "ionic-plugin-deploy/gzwrite.c"; sourceTree = "<group>"; };
-		9C5E36AD23C343D9ADB3772E /* GMGridViewCell.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = GMGridViewCell.m; path = com.synconset.imagepicker/GMGridViewCell.m; sourceTree = "<group>"; };
-		9CD87BF8AC3F4CE6B1F272F2 /* IonicKeyboard.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = IonicKeyboard.h; path = "ionic-plugin-keyboard/IonicKeyboard.h"; sourceTree = "<group>"; };
-		9DF94769B2664F5B99940F7E /* GMGridViewController.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = GMGridViewController.m; path = com.synconset.imagepicker/GMGridViewController.m; sourceTree = "<group>"; };
-		9F6DFEDA14434D04BD1F9419 /* CDVCamera.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVCamera.h; path = "cordova-plugin-camera/CDVCamera.h"; sourceTree = "<group>"; };
-		A03078CF348B47C5940C1D2F /* ioapi.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = ioapi.c; path = "ionic-plugin-deploy/ioapi.c"; sourceTree = "<group>"; };
-		A187564493BE4125BDE26C68 /* AVFoundation.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		A27C018BC7AA44D38D1BAC4B /* it.lproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = it.lproj; sourceTree = "<group>"; };
-		A2A3D0733CF44F3C89DBB594 /* Security.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		A3380D06F2E84EE791673E30 /* zip.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = zip.h; path = "ionic-plugin-deploy/zip.h"; sourceTree = "<group>"; };
-		A6082222C450444F98187A7B /* GMFetchItem.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = GMFetchItem.m; path = com.synconset.imagepicker/GMFetchItem.m; sourceTree = "<group>"; };
-		A979F8D51CC842DAB7476D8D /* GMVideoIcon.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = GMVideoIcon.png; sourceTree = "<group>"; };
-		AF5F038D0D0E425F89C39A30 /* UNIUrlConnection.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = UNIUrlConnection.m; path = "ionic-plugin-deploy/UNIUrlConnection.m"; sourceTree = "<group>"; };
-		B1CCC4ABDFA94F0DA3A2B33E /* Base64.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = Base64.h; path = "ionic-plugin-deploy/Base64.h"; sourceTree = "<group>"; };
-		B2E3C948CC264F1695BECBE6 /* SOSPicker.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = SOSPicker.h; path = com.synconset.imagepicker/SOSPicker.h; sourceTree = "<group>"; };
-		B2F40F96D2CF43A5A2F96C24 /* inflate.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = inflate.c; path = "ionic-plugin-deploy/inflate.c"; sourceTree = "<group>"; };
-		B4C74E4CD01D45F58C5E7BBB /* UIImage+CropScaleOrientation.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = "UIImage+CropScaleOrientation.m"; path = "cordova-plugin-camera/UIImage+CropScaleOrientation.m"; sourceTree = "<group>"; };
-		B9120FD988064720A66AF604 /* IonicConstant.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = IonicConstant.h; path = "ionic-plugin-deploy/IonicConstant.h"; sourceTree = "<group>"; };
-		BB326F3901FC419A8DE394B8 /* CDVLogger.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVLogger.m; path = "cordova-plugin-console/CDVLogger.m"; sourceTree = "<group>"; };
-		BB723DA03DB148B19BE588E9 /* PEResizeControl.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = PEResizeControl.m; path = "cordova-plugin-crop/PEResizeControl.m"; sourceTree = "<group>"; };
-		BBD4D5C5DB5D4463BF7F5647 /* ca.lproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = ca.lproj; sourceTree = "<group>"; };
-		BC41811121CA490F8577A3E2 /* UIImage+fixOrientation.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "UIImage+fixOrientation.h"; path = "com.synconset.imagepicker/UIImage+fixOrientation.h"; sourceTree = "<group>"; };
-		BC941D0E9C084CD3A98127C7 /* adler32.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = adler32.c; path = "ionic-plugin-deploy/adler32.c"; sourceTree = "<group>"; };
-		BD20DC85BF9C4E4C89420B4A /* UNIJsonNode.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = UNIJsonNode.h; path = "ionic-plugin-deploy/UNIJsonNode.h"; sourceTree = "<group>"; };
-		BF738382D61E4C8689499094 /* PECropView.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = PECropView.h; path = "cordova-plugin-crop/PECropView.h"; sourceTree = "<group>"; };
-		BFDA15AF053741688BE8CF1E /* UNIHTTPStringResponse.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = UNIHTTPStringResponse.m; path = "ionic-plugin-deploy/UNIHTTPStringResponse.m"; sourceTree = "<group>"; };
-		C034CD29250041C1B4BF36EF /* Download.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = Download.h; path = "ionic-plugin-deploy/Download.h"; sourceTree = "<group>"; };
-		C0C1D09FE709486B9B4B73B2 /* inflate.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = inflate.h; path = "ionic-plugin-deploy/inflate.h"; sourceTree = "<group>"; };
-		C17EBDFF7CDF4CFAB5E3D28D /* CDVSplashScreen.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVSplashScreen.m; path = "cordova-plugin-splashscreen/CDVSplashScreen.m"; sourceTree = "<group>"; };
-		C1D1E2147AA344268CFB73F4 /* UNIHTTPRequestWithBody.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = UNIHTTPRequestWithBody.m; path = "ionic-plugin-deploy/UNIHTTPRequestWithBody.m"; sourceTree = "<group>"; };
-		C2B6185FF59D4D05ADEF0DB6 /* UNIBodyRequest.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = UNIBodyRequest.h; path = "ionic-plugin-deploy/UNIBodyRequest.h"; sourceTree = "<group>"; };
-		C3B3267C571C498496E78EA0 /* PECropRectView.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = PECropRectView.m; path = "cordova-plugin-crop/PECropRectView.m"; sourceTree = "<group>"; };
-		C49E2EF7FC00476894076CCB /* zutil.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = zutil.h; path = "ionic-plugin-deploy/zutil.h"; sourceTree = "<group>"; };
-		C5FEC4C883F4452591FAA008 /* CDVStatusBar.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVStatusBar.h; path = "cordova-plugin-statusbar/CDVStatusBar.h"; sourceTree = "<group>"; };
-		C6043312C70F442EB46C41AF /* PhotoViewer.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = PhotoViewer.m; path = "com-sarriaroman-photoviewer/PhotoViewer.m"; sourceTree = "<group>"; };
-		C7712157D8C0473FAA80F935 /* crc32.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = crc32.c; path = "ionic-plugin-deploy/crc32.c"; sourceTree = "<group>"; };
-		C8B026F83F984A27B9DBD818 /* inftrees.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = inftrees.h; path = "ionic-plugin-deploy/inftrees.h"; sourceTree = "<group>"; };
-		CB1F23EC70E54C43BCF5A7B3 /* QuartzCore.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		D0D2DE7A469543D086784F13 /* trees.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = trees.h; path = "ionic-plugin-deploy/trees.h"; sourceTree = "<group>"; };
-		D393EE1FBD4446B9A0DF9F2C /* UNIHTTPRequest.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = UNIHTTPRequest.h; path = "ionic-plugin-deploy/UNIHTTPRequest.h"; sourceTree = "<group>"; };
-		D4320AF37D004EC09C7C0FED /* GMImagePickerController.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = GMImagePickerController.m; path = com.synconset.imagepicker/GMImagePickerController.m; sourceTree = "<group>"; };
-		D56325FCED6B49D2BB8BF3C8 /* Accelerate.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		DA08E0932E424C08A63979D2 /* CDVDevice.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVDevice.m; path = "cordova-plugin-device/CDVDevice.m"; sourceTree = "<group>"; };
-		DAA98224454F459B948356D5 /* UIImage+fixOrientation.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = "UIImage+fixOrientation.m"; path = "com.synconset.imagepicker/UIImage+fixOrientation.m"; sourceTree = "<group>"; };
-		DACD9C557F9E4A249C0FBB5B /* Photos.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
-		DC46CBF03D074994BB82E8CB /* IonicDeploy.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = IonicDeploy.h; path = "ionic-plugin-deploy/IonicDeploy.h"; sourceTree = "<group>"; };
-		DCCE007516764997BCA9197C /* CDVAssetLibraryFilesystem.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVAssetLibraryFilesystem.m; path = "cordova-plugin-file/CDVAssetLibraryFilesystem.m"; sourceTree = "<group>"; };
-		DE4917D5004E47C38AAD3758 /* GMAlbumsViewCell.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = GMAlbumsViewCell.m; path = com.synconset.imagepicker/GMAlbumsViewCell.m; sourceTree = "<group>"; };
-		E084A80416FC427FA547B7D3 /* inftrees.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = inftrees.c; path = "ionic-plugin-deploy/inftrees.c"; sourceTree = "<group>"; };
-		E28590FE50DC44B5BECC613D /* PECropRectView.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = PECropRectView.h; path = "cordova-plugin-crop/PECropRectView.h"; sourceTree = "<group>"; };
-		E39A62BDE9A7493B92C3050E /* inffast.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = inffast.c; path = "ionic-plugin-deploy/inffast.c"; sourceTree = "<group>"; };
-		E63493C45FE2445BBE92C63F /* PECropView.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = PECropView.m; path = "cordova-plugin-crop/PECropView.m"; sourceTree = "<group>"; };
-		E73EDD37363B4821BA20F67F /* SSZipArchive.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = SSZipArchive.m; path = "ionic-plugin-deploy/SSZipArchive.m"; sourceTree = "<group>"; };
-		EB1136535BA64D54BBF4C2A9 /* deflate.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = deflate.h; path = "ionic-plugin-deploy/deflate.h"; sourceTree = "<group>"; };
+		8F76955CA0A04E2DB40EA821 /* CTCrop.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CTCrop.m; path = "cordova-plugin-crop/CTCrop.m"; sourceTree = "<group>"; };
+		9079CF48418945F79C9F9B4E /* UNIUrlConnection.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = UNIUrlConnection.h; path = "ionic-plugin-deploy/UNIUrlConnection.h"; sourceTree = "<group>"; };
+		96A02A0BD9514B299B422822 /* Unirest-Prefix.pch */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "Unirest-Prefix.pch"; path = "ionic-plugin-deploy/Unirest-Prefix.pch"; sourceTree = "<group>"; };
+		973B07FE7098442C9D121A73 /* UIImage+fixOrientation.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = "UIImage+fixOrientation.m"; path = "com.synconset.imagepicker/UIImage+fixOrientation.m"; sourceTree = "<group>"; };
+		978EA3B6C19B464BAF8AD9CD /* CDVDevice.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVDevice.h; path = "cordova-plugin-device/CDVDevice.h"; sourceTree = "<group>"; };
+		98D81820199649E79274BC70 /* zlib.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = zlib.h; path = "ionic-plugin-deploy/zlib.h"; sourceTree = "<group>"; };
+		9E4932B5CA614A56BAD177AF /* Accelerate.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		A055330C359C4B8EA1A9C588 /* GMAlbumsViewController.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = GMAlbumsViewController.h; path = com.synconset.imagepicker/GMAlbumsViewController.h; sourceTree = "<group>"; };
+		A1CA7DFC6D38451C9765426D /* adler32.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = adler32.c; path = "ionic-plugin-deploy/adler32.c"; sourceTree = "<group>"; };
+		A2A3DD93E679406F9A91BF37 /* GMFetchItem.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = GMFetchItem.m; path = com.synconset.imagepicker/GMFetchItem.m; sourceTree = "<group>"; };
+		A2C1A4A87A4E47F1AFC44CFF /* QuartzCore.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A307EE4127EE458ABA91ED7F /* GMAlbumsViewController.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = GMAlbumsViewController.m; path = com.synconset.imagepicker/GMAlbumsViewController.m; sourceTree = "<group>"; };
+		A3D29D9E320B4858A16CBF55 /* SSZipArchive.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = SSZipArchive.h; path = "ionic-plugin-deploy/SSZipArchive.h"; sourceTree = "<group>"; };
+		A5BD6CF25AFA49C0BB567335 /* PECropView.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = PECropView.h; path = "cordova-plugin-crop/PECropView.h"; sourceTree = "<group>"; };
+		A5CE3E20176C4E669B60B0A0 /* PEPhotoCropEditor.bundle */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.plug-in"; path = PEPhotoCropEditor.bundle; sourceTree = "<group>"; };
+		A5FA3E91C45D47BC82ABEF2A /* ARCHelper.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = ARCHelper.h; path = "ionic-plugin-deploy/ARCHelper.h"; sourceTree = "<group>"; };
+		A616A137F0A84FB7A515B499 /* inftrees.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = inftrees.h; path = "ionic-plugin-deploy/inftrees.h"; sourceTree = "<group>"; };
+		A73FCA1642A140EBA20EB7AB /* UNIHTTPResponse.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = UNIHTTPResponse.h; path = "ionic-plugin-deploy/UNIHTTPResponse.h"; sourceTree = "<group>"; };
+		A7DD48F3C782409AA68CEB75 /* fr.lproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = fr.lproj; sourceTree = "<group>"; };
+		A7E70823C36B49638F673A8D /* GMSelected.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = GMSelected.png; sourceTree = "<group>"; };
+		AA76A6C4E4ED4A99BED2FE3E /* PSYBlockTimer.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = PSYBlockTimer.m; path = com.synconset.imagepicker/PSYBlockTimer.m; sourceTree = "<group>"; };
+		AB175ABDE43C45E081D64455 /* deflate.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = deflate.c; path = "ionic-plugin-deploy/deflate.c"; sourceTree = "<group>"; };
+		ABC2E3561F2645FCA329BA6E /* UNIUrlConnection.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = UNIUrlConnection.m; path = "ionic-plugin-deploy/UNIUrlConnection.m"; sourceTree = "<group>"; };
+		AC992BAF78254FEC937BAC6D /* unzip.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = unzip.h; path = "ionic-plugin-deploy/unzip.h"; sourceTree = "<group>"; };
+		AEBEFFC685394F5B8F888E40 /* UNIHTTPClientHelper.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = UNIHTTPClientHelper.h; path = "ionic-plugin-deploy/UNIHTTPClientHelper.h"; sourceTree = "<group>"; };
+		AFE39445103D4248959A8579 /* zip.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = zip.c; path = "ionic-plugin-deploy/zip.c"; sourceTree = "<group>"; };
+		B256AD9F36904527977F7CC5 /* es.lproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = es.lproj; sourceTree = "<group>"; };
+		B286DE3C8D2644E496C284B9 /* UNIHTTPRequest.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = UNIHTTPRequest.h; path = "ionic-plugin-deploy/UNIHTTPRequest.h"; sourceTree = "<group>"; };
+		B4B485AC78954D7FA145B203 /* GMFetchItem.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = GMFetchItem.h; path = com.synconset.imagepicker/GMFetchItem.h; sourceTree = "<group>"; };
+		B4F5B2A5575D4951A2BCFBD4 /* GMAlbumsViewCell.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = GMAlbumsViewCell.m; path = com.synconset.imagepicker/GMAlbumsViewCell.m; sourceTree = "<group>"; };
+		B6548357532E4955B8621313 /* GMGridViewController.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = GMGridViewController.m; path = com.synconset.imagepicker/GMGridViewController.m; sourceTree = "<group>"; };
+		B8A0E1D1D33C473DA038A4A1 /* GMGridViewController.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = GMGridViewController.h; path = com.synconset.imagepicker/GMGridViewController.h; sourceTree = "<group>"; };
+		BDBA079D818C41C7BBCFFDA7 /* UNIBodyRequest.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = UNIBodyRequest.h; path = "ionic-plugin-deploy/UNIBodyRequest.h"; sourceTree = "<group>"; };
+		BF10139110524A24A8CDB003 /* UNISimpleRequest.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = UNISimpleRequest.m; path = "ionic-plugin-deploy/UNISimpleRequest.m"; sourceTree = "<group>"; };
+		C27C4385F43843FA8640767E /* CDVJpegHeaderWriter.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVJpegHeaderWriter.m; path = "cordova-plugin-camera/CDVJpegHeaderWriter.m"; sourceTree = "<group>"; };
+		C2A6CE4130994E2CB5A29213 /* CDVFile.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVFile.h; path = "cordova-plugin-file/CDVFile.h"; sourceTree = "<group>"; };
+		C367951E3339416BAF524C1C /* CDVStatusBar.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVStatusBar.h; path = "cordova-plugin-statusbar/CDVStatusBar.h"; sourceTree = "<group>"; };
+		C37946B99273464A95CE4054 /* AVFoundation.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		C565CFA5B89E4E80963EEFBA /* ioapi.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = ioapi.c; path = "ionic-plugin-deploy/ioapi.c"; sourceTree = "<group>"; };
+		C9759044527C40869E2627FD /* CTCrop.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CTCrop.h; path = "cordova-plugin-crop/CTCrop.h"; sourceTree = "<group>"; };
+		C9D9A6AEB4AF4215BFD4F67A /* GMPHAsset.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = GMPHAsset.h; path = com.synconset.imagepicker/GMPHAsset.h; sourceTree = "<group>"; };
+		CAC50FA4EEBF42A0A17C5220 /* CDVLocalFilesystem.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVLocalFilesystem.h; path = "cordova-plugin-file/CDVLocalFilesystem.h"; sourceTree = "<group>"; };
+		D1F4CB55F2904ABA93796C52 /* compress.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = compress.c; path = "ionic-plugin-deploy/compress.c"; sourceTree = "<group>"; };
+		D59C723FCDE9426F96186A6B /* zip.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = zip.h; path = "ionic-plugin-deploy/zip.h"; sourceTree = "<group>"; };
+		D6852D1F1A6E4D3AB76D16EC /* Security.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		DA06773A5EB7487AA8E34ACB /* UNIHTTPJsonResponse.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = UNIHTTPJsonResponse.h; path = "ionic-plugin-deploy/UNIHTTPJsonResponse.h"; sourceTree = "<group>"; };
+		DB22C211FE464ADCBF984FCA /* inffixed.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = inffixed.h; path = "ionic-plugin-deploy/inffixed.h"; sourceTree = "<group>"; };
+		DC3BA430081542058C9E4056 /* CDVSplashScreen.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVSplashScreen.m; path = "cordova-plugin-splashscreen/CDVSplashScreen.m"; sourceTree = "<group>"; };
+		DC429F0D731D4BA489182E27 /* inflate.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = inflate.c; path = "ionic-plugin-deploy/inflate.c"; sourceTree = "<group>"; };
+		DD60667FBE3D4EBBB7EADBB6 /* uncompr.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = uncompr.c; path = "ionic-plugin-deploy/uncompr.c"; sourceTree = "<group>"; };
+		E03CCDD00D7B4FF58B558204 /* UIImage+CropScaleOrientation.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = "UIImage+CropScaleOrientation.m"; path = "cordova-plugin-camera/UIImage+CropScaleOrientation.m"; sourceTree = "<group>"; };
+		E0F58AF8C7184CFDAE4A4C27 /* IonicConstant.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = IonicConstant.h; path = "ionic-plugin-deploy/IonicConstant.h"; sourceTree = "<group>"; };
+		E1D8CBD5934345019A2898F3 /* UIImage+fixOrientation.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "UIImage+fixOrientation.h"; path = "com.synconset.imagepicker/UIImage+fixOrientation.h"; sourceTree = "<group>"; };
+		E240E437D371495DA7DC54D3 /* CDVLogger.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVLogger.m; path = "cordova-plugin-console/CDVLogger.m"; sourceTree = "<group>"; };
+		E2F1133C44D64952B95DE2BA /* CDVViewController+SplashScreen.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "CDVViewController+SplashScreen.h"; path = "cordova-plugin-splashscreen/CDVViewController+SplashScreen.h"; sourceTree = "<group>"; };
+		E4AC0EB9526A41A0B5EE33B5 /* en.lproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = en.lproj; sourceTree = "<group>"; };
+		E564EC7BDA044AEB9E410EC9 /* CDVFile.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVFile.m; path = "cordova-plugin-file/CDVFile.m"; sourceTree = "<group>"; };
+		E6539320943740FC8AF33D89 /* UNIHTTPStringResponse.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = UNIHTTPStringResponse.m; path = "ionic-plugin-deploy/UNIHTTPStringResponse.m"; sourceTree = "<group>"; };
+		E75ABAF5B6904245866C0A51 /* UNIBaseRequest.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = UNIBaseRequest.h; path = "ionic-plugin-deploy/UNIBaseRequest.h"; sourceTree = "<group>"; };
+		E9A3C362350F4808BB805ACC /* Photos.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		EB87FDF31871DA8E0020F90C /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../www; sourceTree = "<group>"; };
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
-		EBF7980A5305466A803516ED /* UNISimpleRequest.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = UNISimpleRequest.h; path = "ionic-plugin-deploy/UNISimpleRequest.h"; sourceTree = "<group>"; };
+		EC6768B9AF394B87A25EC6CA /* GMImagePickerController.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = GMImagePickerController.m; path = com.synconset.imagepicker/GMImagePickerController.m; sourceTree = "<group>"; };
 		ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		EF1829EE141E427392A193CB /* UNIUrlConnection.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = UNIUrlConnection.h; path = "ionic-plugin-deploy/UNIUrlConnection.h"; sourceTree = "<group>"; };
-		EF8218755B9946D787F7E3A3 /* CDVViewController+SplashScreen.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "CDVViewController+SplashScreen.h"; path = "cordova-plugin-splashscreen/CDVViewController+SplashScreen.h"; sourceTree = "<group>"; };
-		F17B012C61EA4F6AA4058EAF /* IonicConstant.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = IonicConstant.m; path = "ionic-plugin-deploy/IonicConstant.m"; sourceTree = "<group>"; };
-		F27422C4AAE24D36B47C1B06 /* CTCrop.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CTCrop.m; path = "cordova-plugin-crop/CTCrop.m"; sourceTree = "<group>"; };
-		F2D2A6E2DBDF47849F8BCEE4 /* gzguts.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = gzguts.h; path = "ionic-plugin-deploy/gzguts.h"; sourceTree = "<group>"; };
-		F4BAD4ED5D964E4AA90387B4 /* CDVDevice.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVDevice.h; path = "cordova-plugin-device/CDVDevice.h"; sourceTree = "<group>"; };
+		ED6E53B537754A15BE757370 /* GMAlbumsViewCell.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = GMAlbumsViewCell.h; path = com.synconset.imagepicker/GMAlbumsViewCell.h; sourceTree = "<group>"; };
+		EDF1DC13DE4849609BE928C0 /* GMImagePickerController.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = GMImagePickerController.h; path = com.synconset.imagepicker/GMImagePickerController.h; sourceTree = "<group>"; };
+		EEDD011833D84A8AA277D223 /* GMPHAsset.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = GMPHAsset.m; path = com.synconset.imagepicker/GMPHAsset.m; sourceTree = "<group>"; };
+		F11FC75FE2554ACFA9E165FD /* UIImage+PECrop.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "UIImage+PECrop.h"; path = "cordova-plugin-crop/UIImage+PECrop.h"; sourceTree = "<group>"; };
+		F19312E5AB404F258029B100 /* PECropViewController.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = PECropViewController.h; path = "cordova-plugin-crop/PECropViewController.h"; sourceTree = "<group>"; };
+		F1EC4E0B4A974EC59FD9FE98 /* PSYBlockTimer.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = PSYBlockTimer.h; path = com.synconset.imagepicker/PSYBlockTimer.h; sourceTree = "<group>"; };
+		F3036A5B7DA94CA49D9271B5 /* UNIHTTPJsonResponse.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = UNIHTTPJsonResponse.m; path = "ionic-plugin-deploy/UNIHTTPJsonResponse.m"; sourceTree = "<group>"; };
+		F4FEF1459E0245B29FF098FC /* inflate.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = inflate.h; path = "ionic-plugin-deploy/inflate.h"; sourceTree = "<group>"; };
+		F83719C0582149C6BEA5685A /* GMGridViewCell.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = GMGridViewCell.m; path = com.synconset.imagepicker/GMGridViewCell.m; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = Textile/config.xml; sourceTree = "<group>"; };
-		FC0525D17918438CAAFFB014 /* gzclose.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = gzclose.c; path = "ionic-plugin-deploy/gzclose.c"; sourceTree = "<group>"; };
-		FCAEDC4590B8416EAD7904A6 /* CDVExif.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVExif.h; path = "cordova-plugin-camera/CDVExif.h"; sourceTree = "<group>"; };
+		FC59013066894852955161F4 /* UNIBaseRequest.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = UNIBaseRequest.m; path = "ionic-plugin-deploy/UNIBaseRequest.m"; sourceTree = "<group>"; };
+		FDA151FD833049829F74A99B /* infback.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = infback.c; path = "ionic-plugin-deploy/infback.c"; sourceTree = "<group>"; };
+		FE609DBEAE244EB1B5DDF3BB /* ca.lproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = ca.lproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,14 +303,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
-				A04475E2832346CD8E3B33EA /* Accelerate.framework in Frameworks */,
-				8E80B3305C4C49869D436FB2 /* Security.framework in Frameworks */,
-				C4DB824ABCBE4438802D8695 /* Photos.framework in Frameworks */,
-				72B708601EE7492A8EA8DD29 /* SystemConfiguration.framework in Frameworks */,
-				1C08DE5CBC354E97A347C393 /* QuartzCore.framework in Frameworks */,
-				A34DC8F30F2247A38049CC33 /* ImageIO.framework in Frameworks */,
-				BCE6D437FA6E45239E87A341 /* CoreLocation.framework in Frameworks */,
-				C419D9990B1641C7925571CE /* AVFoundation.framework in Frameworks */,
+				BC55719B6C87422EA1E5E690 /* Accelerate.framework in Frameworks */,
+				86E330813950442DA534D7DE /* Security.framework in Frameworks */,
+				A379E0F3CD364366BEF64E21 /* Photos.framework in Frameworks */,
+				B361BEEE60A8467BA0E8D8EC /* SystemConfiguration.framework in Frameworks */,
+				8C8353637D0D43F38C466AB2 /* QuartzCore.framework in Frameworks */,
+				5C7E846AB1FF4594AA2A06CC /* ImageIO.framework in Frameworks */,
+				DE44F4BCDAD74101BF16600E /* CoreLocation.framework in Frameworks */,
+				10CFF3E4B27B46A9B8CFEF9B /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,20 +373,20 @@
 				3047A50E1AB8057F00498E2A /* config */,
 				8D1107310486CEB800E47090 /* Textile-Info.plist */,
 				6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */,
-				35F21CA19611412F8D36AEC6 /* GMEmptyFolder@1x.png */,
-				981E4474028047268A481681 /* GMEmptyFolder@2x.png */,
-				9ABA0650D6124282AA069E46 /* GMSelected.png */,
-				90FE8D3B7B46422F9C7DC842 /* GMSelected@2x.png */,
-				A979F8D51CC842DAB7476D8D /* GMVideoIcon.png */,
-				9B2C4C5FFB444356A35208D6 /* GMVideoIcon@2x.png */,
-				BBD4D5C5DB5D4463BF7F5647 /* ca.lproj */,
-				881139F3119143079E518FCD /* de.lproj */,
-				4B05A9BBBF4041EFBB83A13D /* en.lproj */,
-				46596B49DABC412B8F3F9BB6 /* es.lproj */,
-				84459D02988141D7922292D2 /* fr.lproj */,
-				A27C018BC7AA44D38D1BAC4B /* it.lproj */,
-				24D7BCEA3CFD4E6989393D20 /* pt.lproj */,
-				1F5911752FC54F58AF6EF20F /* PEPhotoCropEditor.bundle */,
+				72AE4C72958A42E0B7F1E3AF /* GMEmptyFolder@1x.png */,
+				2C7411C8A408414A9C51A8C9 /* GMEmptyFolder@2x.png */,
+				A7E70823C36B49638F673A8D /* GMSelected.png */,
+				1190D88D30774EB69BD04E98 /* GMSelected@2x.png */,
+				4E377471C0F04B1F9E07905F /* GMVideoIcon.png */,
+				6581AB69FEA24AD68E33F54B /* GMVideoIcon@2x.png */,
+				FE609DBEAE244EB1B5DDF3BB /* ca.lproj */,
+				42B82C8D971E4492AFAC3BBE /* de.lproj */,
+				E4AC0EB9526A41A0B5EE33B5 /* en.lproj */,
+				B256AD9F36904527977F7CC5 /* es.lproj */,
+				A7DD48F3C782409AA68CEB75 /* fr.lproj */,
+				003B7A6E53004FFCA9631221 /* it.lproj */,
+				1CE65849B0E14AD79D30EB25 /* pt.lproj */,
+				A5CE3E20176C4E669B60B0A0 /* PEPhotoCropEditor.bundle */,
 			);
 			name = Resources;
 			path = Textile/Resources;
@@ -394,14 +395,14 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D56325FCED6B49D2BB8BF3C8 /* Accelerate.framework */,
-				A2A3D0733CF44F3C89DBB594 /* Security.framework */,
-				DACD9C557F9E4A249C0FBB5B /* Photos.framework */,
-				4503D063DD0A45BD8D24BDF2 /* SystemConfiguration.framework */,
-				CB1F23EC70E54C43BCF5A7B3 /* QuartzCore.framework */,
-				7589E088EBD94432B0E28A2D /* ImageIO.framework */,
-				6B04356E5B5748588034C373 /* CoreLocation.framework */,
-				A187564493BE4125BDE26C68 /* AVFoundation.framework */,
+				9E4932B5CA614A56BAD177AF /* Accelerate.framework */,
+				D6852D1F1A6E4D3AB76D16EC /* Security.framework */,
+				E9A3C362350F4808BB805ACC /* Photos.framework */,
+				569608A4AC78498C8B62A4B8 /* SystemConfiguration.framework */,
+				A2C1A4A87A4E47F1AFC44CFF /* QuartzCore.framework */,
+				047D73D79F624873B265E7C9 /* ImageIO.framework */,
+				5D0732287F2740C9ACC74D0F /* CoreLocation.framework */,
+				C37946B99273464A95CE4054 /* AVFoundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -427,137 +428,137 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
-				C6043312C70F442EB46C41AF /* PhotoViewer.m */,
-				3EC38E1F5F6C4FFD81BAECFF /* SOSPicker.m */,
-				DAA98224454F459B948356D5 /* UIImage+fixOrientation.m */,
-				DE4917D5004E47C38AAD3758 /* GMAlbumsViewCell.m */,
-				2A38E353F7BE4886B366AAB6 /* GMAlbumsViewController.m */,
-				A6082222C450444F98187A7B /* GMFetchItem.m */,
-				9C5E36AD23C343D9ADB3772E /* GMGridViewCell.m */,
-				9DF94769B2664F5B99940F7E /* GMGridViewController.m */,
-				D4320AF37D004EC09C7C0FED /* GMImagePickerController.m */,
-				3501DF7BB6BC4D92990C30B5 /* PSYBlockTimer.m */,
-				3F28D26C48C648979DA88076 /* GMPHAsset.m */,
-				B2E3C948CC264F1695BECBE6 /* SOSPicker.h */,
-				BC41811121CA490F8577A3E2 /* UIImage+fixOrientation.h */,
-				754FDE20347B4E2A84E07163 /* GMAlbumsViewCell.h */,
-				7DD05B282E97437896A3C023 /* GMAlbumsViewController.h */,
-				859C71C91F1546E687450CEA /* GMFetchItem.h */,
-				114440B4978847699739D373 /* GMGridViewCell.h */,
-				11CD128C14F04852A8854E8B /* GMGridViewController.h */,
-				09FF442AE4644A318E0C05FD /* GMImagePickerController.h */,
-				054CFC48026947019F6F14EA /* PSYBlockTimer.h */,
-				68C816AAAC30405DB80F2235 /* GMPHAsset.h */,
-				B4C74E4CD01D45F58C5E7BBB /* UIImage+CropScaleOrientation.m */,
-				2AFBA8158663454BACFD92B6 /* CDVCamera.m */,
-				297C4B0C06A2485FB5BA8BD0 /* CDVJpegHeaderWriter.m */,
-				813D3BF10B464E449F7DD659 /* UIImage+CropScaleOrientation.h */,
-				9F6DFEDA14434D04BD1F9419 /* CDVCamera.h */,
-				99C18563A80E4185B23B2DF8 /* CDVJpegHeaderWriter.h */,
-				FCAEDC4590B8416EAD7904A6 /* CDVExif.h */,
-				BB326F3901FC419A8DE394B8 /* CDVLogger.m */,
-				83CD2393D7994C498CF517AB /* CDVLogger.h */,
-				F27422C4AAE24D36B47C1B06 /* CTCrop.m */,
-				C3B3267C571C498496E78EA0 /* PECropRectView.m */,
-				E63493C45FE2445BBE92C63F /* PECropView.m */,
-				5A7223BDA418440987FAF7E0 /* PECropViewController.m */,
-				BB723DA03DB148B19BE588E9 /* PEResizeControl.m */,
-				024C46658D8149788BE7EE0D /* UIImage+PECrop.m */,
-				58171D9D10934EE896339741 /* CTCrop.h */,
-				E28590FE50DC44B5BECC613D /* PECropRectView.h */,
-				BF738382D61E4C8689499094 /* PECropView.h */,
-				7975DECC265641CF915A201B /* PECropViewController.h */,
-				7FB99F22FFD343AFB8F4D5C7 /* PEResizeControl.h */,
-				19B6FE1BCD5B422793E87F82 /* UIImage+PECrop.h */,
-				DA08E0932E424C08A63979D2 /* CDVDevice.m */,
-				F4BAD4ED5D964E4AA90387B4 /* CDVDevice.h */,
-				331BE0D59F7941AFBA695298 /* CDVFile.m */,
-				2DF0DBC86E8E4B9AA12CDCC1 /* CDVLocalFilesystem.m */,
-				DCCE007516764997BCA9197C /* CDVAssetLibraryFilesystem.m */,
-				9952212711664A8583436EEA /* CDVFile.h */,
-				0F2140A16B094A0A9717B445 /* CDVLocalFilesystem.h */,
-				555DF32AB65F40D6ABA69444 /* CDVAssetLibraryFilesystem.h */,
-				C17EBDFF7CDF4CFAB5E3D28D /* CDVSplashScreen.m */,
-				2CAAD126E7194D3BBCAAA34F /* CDVViewController+SplashScreen.m */,
-				43470B9F93654812ADB5259D /* CDVSplashScreen.h */,
-				EF8218755B9946D787F7E3A3 /* CDVViewController+SplashScreen.h */,
-				00A9919BF021404D833A0A1D /* CDVStatusBar.m */,
-				C5FEC4C883F4452591FAA008 /* CDVStatusBar.h */,
-				F17B012C61EA4F6AA4058EAF /* IonicConstant.m */,
-				5CD14CE4331C42A5982DB5B4 /* IonicDeploy.m */,
-				60D8AC6BE4A8496C8FA97F12 /* Download.m */,
-				5918BCCEF2894C5C8637760E /* DownloadManager.m */,
-				E73EDD37363B4821BA20F67F /* SSZipArchive.m */,
-				A03078CF348B47C5940C1D2F /* ioapi.c */,
-				4099317E6827487FA05FE29E /* unzip.c */,
-				8416DD1AA6E040B895162EA6 /* zip.c */,
-				BC941D0E9C084CD3A98127C7 /* adler32.c */,
-				4D9AFBDC573F40D7B777EC3B /* compress.c */,
-				C7712157D8C0473FAA80F935 /* crc32.c */,
-				6F1C83DD6A1946FB8C255DB0 /* deflate.c */,
-				FC0525D17918438CAAFFB014 /* gzclose.c */,
-				1EFAF6DD9ECF48948FC54EAF /* gzlib.c */,
-				6765F7E641D84D77A019A5C6 /* gzread.c */,
-				9BA0BD59F232491E8AE9F146 /* gzwrite.c */,
-				3ED0532C18DD4A03B46E73FB /* infback.c */,
-				E39A62BDE9A7493B92C3050E /* inffast.c */,
-				B2F40F96D2CF43A5A2F96C24 /* inflate.c */,
-				E084A80416FC427FA547B7D3 /* inftrees.c */,
-				0BCA62935EF8472586C4D9B8 /* trees.c */,
-				2B6090F28DCC4837B0EB2686 /* uncompr.c */,
-				5183F8FF3A384DD3A2792C8B /* zutil.c */,
-				5ECB43D3903C44EEAB33DFA1 /* Base64.m */,
-				515038217E1644A1AE80ADF4 /* UNIHTTPClientHelper.m */,
-				4BAD518F867947779D6FB6C1 /* UNIHTTPRequest.m */,
-				C1D1E2147AA344268CFB73F4 /* UNIHTTPRequestWithBody.m */,
-				22D91E10872F42E5874123FB /* UNIRest.m */,
-				AF5F038D0D0E425F89C39A30 /* UNIUrlConnection.m */,
-				66E9F3AE45FC476591F2B30E /* UNIBaseRequest.m */,
-				42F60AB580C34FBDA990161D /* UNIBodyRequest.m */,
-				559D6BB761E0435B80FBCAC2 /* UNISimpleRequest.m */,
-				09B4A53802A44C25AB537D14 /* UNIHTTPBinaryResponse.m */,
-				6E40E53F6F8042D092FE81DA /* UNIHTTPJsonResponse.m */,
-				43BFC5FDD71C4DCC9CA192D4 /* UNIHTTPResponse.m */,
-				BFDA15AF053741688BE8CF1E /* UNIHTTPStringResponse.m */,
-				43E7943F5342404DB1164F44 /* UNIJsonNode.m */,
-				B9120FD988064720A66AF604 /* IonicConstant.h */,
-				DC46CBF03D074994BB82E8CB /* IonicDeploy.h */,
-				C034CD29250041C1B4BF36EF /* Download.h */,
-				8565580FBDDD4F069530508E /* DownloadManager.h */,
-				30FAA17FB186459DB7339323 /* SSZipArchive.h */,
-				7F38DD434D8D4084AF577A46 /* ARCHelper.h */,
-				3E3F04C8CCB4474FA0DF9015 /* crypt.h */,
-				6274636DB5D54CC7A0817AED /* ioapi.h */,
-				1E0178E5DB9E4FE4AAD233FF /* unzip.h */,
-				A3380D06F2E84EE791673E30 /* zip.h */,
-				74353166880F45D9A60CB928 /* crc32.h */,
-				EB1136535BA64D54BBF4C2A9 /* deflate.h */,
-				F2D2A6E2DBDF47849F8BCEE4 /* gzguts.h */,
-				551DF84972114685B86694A9 /* inffast.h */,
-				43639319FE844E45A8625C8D /* inffixed.h */,
-				C0C1D09FE709486B9B4B73B2 /* inflate.h */,
-				C8B026F83F984A27B9DBD818 /* inftrees.h */,
-				D0D2DE7A469543D086784F13 /* trees.h */,
-				28F250310FC14FC5A827573C /* zconf.h */,
-				5065AC976FE54E4DB16EEB18 /* zlib.h */,
-				C49E2EF7FC00476894076CCB /* zutil.h */,
-				B1CCC4ABDFA94F0DA3A2B33E /* Base64.h */,
-				81B8739A340A4A6CA445D6E7 /* UNIHTTPClientHelper.h */,
-				D393EE1FBD4446B9A0DF9F2C /* UNIHTTPRequest.h */,
-				29265B850310491FAB16E2F9 /* UNIHTTPRequestWithBody.h */,
-				2D58DE9C342842149A7171EB /* Unirest-Prefix.pch */,
-				9AA4E436AE854A919767F602 /* UNIRest.h */,
-				EF1829EE141E427392A193CB /* UNIUrlConnection.h */,
-				28EB4BFB96984D78BFE44E1A /* UNIBaseRequest.h */,
-				C2B6185FF59D4D05ADEF0DB6 /* UNIBodyRequest.h */,
-				EBF7980A5305466A803516ED /* UNISimpleRequest.h */,
-				4BE48D643646402EA97A3CC7 /* UNIHTTPBinaryResponse.h */,
-				30D7DEFBAAE7464BA62E3A3F /* UNIHTTPJsonResponse.h */,
-				46E0B773AA8A45FDA0B6FE91 /* UNIHTTPResponse.h */,
-				459E8C04A2AB41DA8927A368 /* UNIHTTPStringResponse.h */,
-				BD20DC85BF9C4E4C89420B4A /* UNIJsonNode.h */,
-				6B330AD824F6487BB0301B36 /* IonicKeyboard.m */,
-				9CD87BF8AC3F4CE6B1F272F2 /* IonicKeyboard.h */,
+				7CFE5335719C4B07988F117D /* PhotoViewer.m */,
+				319AC0A5138E4F9FB7A72E8F /* SOSPicker.m */,
+				973B07FE7098442C9D121A73 /* UIImage+fixOrientation.m */,
+				B4F5B2A5575D4951A2BCFBD4 /* GMAlbumsViewCell.m */,
+				A307EE4127EE458ABA91ED7F /* GMAlbumsViewController.m */,
+				A2A3DD93E679406F9A91BF37 /* GMFetchItem.m */,
+				F83719C0582149C6BEA5685A /* GMGridViewCell.m */,
+				B6548357532E4955B8621313 /* GMGridViewController.m */,
+				EC6768B9AF394B87A25EC6CA /* GMImagePickerController.m */,
+				AA76A6C4E4ED4A99BED2FE3E /* PSYBlockTimer.m */,
+				EEDD011833D84A8AA277D223 /* GMPHAsset.m */,
+				88D5C59605B545FABF605F3D /* SOSPicker.h */,
+				E1D8CBD5934345019A2898F3 /* UIImage+fixOrientation.h */,
+				ED6E53B537754A15BE757370 /* GMAlbumsViewCell.h */,
+				A055330C359C4B8EA1A9C588 /* GMAlbumsViewController.h */,
+				B4B485AC78954D7FA145B203 /* GMFetchItem.h */,
+				26E60C97F601468490782B3B /* GMGridViewCell.h */,
+				B8A0E1D1D33C473DA038A4A1 /* GMGridViewController.h */,
+				EDF1DC13DE4849609BE928C0 /* GMImagePickerController.h */,
+				F1EC4E0B4A974EC59FD9FE98 /* PSYBlockTimer.h */,
+				C9D9A6AEB4AF4215BFD4F67A /* GMPHAsset.h */,
+				E03CCDD00D7B4FF58B558204 /* UIImage+CropScaleOrientation.m */,
+				0D2DABD277854B29ABFBCE03 /* CDVCamera.m */,
+				C27C4385F43843FA8640767E /* CDVJpegHeaderWriter.m */,
+				4D14FA8B09954C2794678CA5 /* UIImage+CropScaleOrientation.h */,
+				02D5DA3DD4254CD686093E4D /* CDVCamera.h */,
+				086D4F6B108B4B668BA1A69A /* CDVJpegHeaderWriter.h */,
+				13CEA13A4CFB46CB864F7172 /* CDVExif.h */,
+				E240E437D371495DA7DC54D3 /* CDVLogger.m */,
+				719EF4241CFA49F0A711DBE0 /* CDVLogger.h */,
+				8F76955CA0A04E2DB40EA821 /* CTCrop.m */,
+				80EC36FBC2EC442CAFCF3728 /* PECropRectView.m */,
+				721C849450E14355BB3C7FE9 /* PECropView.m */,
+				570C64E3A2EA43828F0AF1DB /* PECropViewController.m */,
+				6346CFAE9FD54396A3D0BEF4 /* PEResizeControl.m */,
+				5E791B718F804511B6AD9EE4 /* UIImage+PECrop.m */,
+				C9759044527C40869E2627FD /* CTCrop.h */,
+				3055AC6DF28949C580518B70 /* PECropRectView.h */,
+				A5BD6CF25AFA49C0BB567335 /* PECropView.h */,
+				F19312E5AB404F258029B100 /* PECropViewController.h */,
+				343D8857ABFE46AF81901030 /* PEResizeControl.h */,
+				F11FC75FE2554ACFA9E165FD /* UIImage+PECrop.h */,
+				3BD9D29D931F43229B8B4C9D /* CDVDevice.m */,
+				978EA3B6C19B464BAF8AD9CD /* CDVDevice.h */,
+				E564EC7BDA044AEB9E410EC9 /* CDVFile.m */,
+				89B4651D8B2E43F9BD029E3D /* CDVLocalFilesystem.m */,
+				7411333466484A71B258A480 /* CDVAssetLibraryFilesystem.m */,
+				C2A6CE4130994E2CB5A29213 /* CDVFile.h */,
+				CAC50FA4EEBF42A0A17C5220 /* CDVLocalFilesystem.h */,
+				8392A55E5E964D5B867D571A /* CDVAssetLibraryFilesystem.h */,
+				DC3BA430081542058C9E4056 /* CDVSplashScreen.m */,
+				3FD7EDDBE7D9493899FEA24F /* CDVViewController+SplashScreen.m */,
+				00D31CFFEC1C4BE39ED6EE03 /* CDVSplashScreen.h */,
+				E2F1133C44D64952B95DE2BA /* CDVViewController+SplashScreen.h */,
+				4C15F489063C4DDE9E046A6F /* CDVStatusBar.m */,
+				C367951E3339416BAF524C1C /* CDVStatusBar.h */,
+				0AF54D20E32948DB8D79A6CB /* IonicConstant.m */,
+				33D69CA993464923BB9959E0 /* IonicDeploy.m */,
+				1B118B4B18BF4259B3B79A3C /* Download.m */,
+				278D372F4B3C4CDDBD2890DB /* DownloadManager.m */,
+				07DB9136612643CCBA5BE071 /* SSZipArchive.m */,
+				C565CFA5B89E4E80963EEFBA /* ioapi.c */,
+				6EE5CFF37AA7444998D1A374 /* unzip.c */,
+				AFE39445103D4248959A8579 /* zip.c */,
+				A1CA7DFC6D38451C9765426D /* adler32.c */,
+				D1F4CB55F2904ABA93796C52 /* compress.c */,
+				30572BDB90E245AE917D1984 /* crc32.c */,
+				AB175ABDE43C45E081D64455 /* deflate.c */,
+				3013DDCEBC39405D818CE029 /* gzclose.c */,
+				0D0132A1D6B04496A6EDF98E /* gzlib.c */,
+				4C7D6DD59DA547779C99CF63 /* gzread.c */,
+				4E3A209E894B433AA58D8B1C /* gzwrite.c */,
+				FDA151FD833049829F74A99B /* infback.c */,
+				573421C7A25541AAAED8DD64 /* inffast.c */,
+				DC429F0D731D4BA489182E27 /* inflate.c */,
+				79F0DA07C20C40A0BEAAB12F /* inftrees.c */,
+				44DAD1B8ABF74C74A63A8ADF /* trees.c */,
+				DD60667FBE3D4EBBB7EADBB6 /* uncompr.c */,
+				0E32A951EAAC4BDC993CB14A /* zutil.c */,
+				78B4E72DC396403DB878803A /* Base64.m */,
+				3D4755883F284BC980A28979 /* UNIHTTPClientHelper.m */,
+				690D3E97E4CF41D0B88BA6A0 /* UNIHTTPRequest.m */,
+				3E10654C09CD463184B2B1FF /* UNIHTTPRequestWithBody.m */,
+				7E1F2200E52B400395E01A1B /* UNIRest.m */,
+				ABC2E3561F2645FCA329BA6E /* UNIUrlConnection.m */,
+				FC59013066894852955161F4 /* UNIBaseRequest.m */,
+				162EDD24DD2E4F9BB5AF6681 /* UNIBodyRequest.m */,
+				BF10139110524A24A8CDB003 /* UNISimpleRequest.m */,
+				777CC54C0C76498D9FE89D24 /* UNIHTTPBinaryResponse.m */,
+				F3036A5B7DA94CA49D9271B5 /* UNIHTTPJsonResponse.m */,
+				4FCB7C2A0AF0417793C849A4 /* UNIHTTPResponse.m */,
+				E6539320943740FC8AF33D89 /* UNIHTTPStringResponse.m */,
+				7319DDA079774273A77AC56F /* UNIJsonNode.m */,
+				E0F58AF8C7184CFDAE4A4C27 /* IonicConstant.h */,
+				8610647131E04D938402FD64 /* IonicDeploy.h */,
+				3D0541120FD34A19BEEAD8F8 /* Download.h */,
+				3B23CD36029C48F9BBEFA512 /* DownloadManager.h */,
+				A3D29D9E320B4858A16CBF55 /* SSZipArchive.h */,
+				A5FA3E91C45D47BC82ABEF2A /* ARCHelper.h */,
+				30E31363DF934C78A87BF7E4 /* crypt.h */,
+				83651095965A426894865083 /* ioapi.h */,
+				AC992BAF78254FEC937BAC6D /* unzip.h */,
+				D59C723FCDE9426F96186A6B /* zip.h */,
+				14F27C01734D418B83E7F4A1 /* crc32.h */,
+				02C9C82E83BF42EF971F604E /* deflate.h */,
+				493C17519C084B088B41527F /* gzguts.h */,
+				03EF5465C03848ECAD72F038 /* inffast.h */,
+				DB22C211FE464ADCBF984FCA /* inffixed.h */,
+				F4FEF1459E0245B29FF098FC /* inflate.h */,
+				A616A137F0A84FB7A515B499 /* inftrees.h */,
+				348D25B3FD0A4AB28FBFC50E /* trees.h */,
+				4CA7199194C942D4A0EAC8D0 /* zconf.h */,
+				98D81820199649E79274BC70 /* zlib.h */,
+				34CFC3B0A8F34CACA5B37AEF /* zutil.h */,
+				7DCA13E7FED940C8BF7B8C26 /* Base64.h */,
+				AEBEFFC685394F5B8F888E40 /* UNIHTTPClientHelper.h */,
+				B286DE3C8D2644E496C284B9 /* UNIHTTPRequest.h */,
+				0EE0999B3F304F06B4826982 /* UNIHTTPRequestWithBody.h */,
+				96A02A0BD9514B299B422822 /* Unirest-Prefix.pch */,
+				34E23BF2522841E0A414D59B /* UNIRest.h */,
+				9079CF48418945F79C9F9B4E /* UNIUrlConnection.h */,
+				E75ABAF5B6904245866C0A51 /* UNIBaseRequest.h */,
+				BDBA079D818C41C7BBCFFDA7 /* UNIBodyRequest.h */,
+				5DB5F05C5F13479183FB847A /* UNISimpleRequest.h */,
+				310AE97F1DBB43C7A4FD2E5B /* UNIHTTPBinaryResponse.h */,
+				DA06773A5EB7487AA8E34ACB /* UNIHTTPJsonResponse.h */,
+				A73FCA1642A140EBA20EB7AB /* UNIHTTPResponse.h */,
+				35AB6DFA4E0D40FC9B68633A /* UNIHTTPStringResponse.h */,
+				4A53F80F511D4187A2C6AC88 /* UNIJsonNode.h */,
+				08267FF8517242F6807BC8FA /* IonicKeyboard.m */,
+				1C6C46FFB204449FBFE32FD5 /* IonicKeyboard.h */,
 			);
 			name = Plugins;
 			path = Textile/Plugins;
@@ -600,10 +601,11 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 510;
+				LastUpgradeCheck = 820;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = F9U27V33AC;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -647,20 +649,20 @@
 				302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */,
 				0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */,
 				6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */,
-				466ECD17225746F4B6BE8501 /* GMEmptyFolder@1x.png in Resources */,
-				3424E5CD8FBF4A659B93D7FF /* GMEmptyFolder@2x.png in Resources */,
-				A3BB3A12718B492D811CF6F1 /* GMSelected.png in Resources */,
-				270E832DEAFF420EBC616F62 /* GMSelected@2x.png in Resources */,
-				5C660C9D1D894B8AB27542EA /* GMVideoIcon.png in Resources */,
-				0DB7B6C65590472083AFADA4 /* GMVideoIcon@2x.png in Resources */,
-				0ED57BFB8EAC4678B3BDF2F1 /* ca.lproj in Resources */,
-				3B7B846451F442868E83C58F /* de.lproj in Resources */,
-				A865B1AD75514AC9ACCE10CC /* en.lproj in Resources */,
-				B61976603F90467E9CC42980 /* es.lproj in Resources */,
-				05A52CB90DDB49A38CB341A3 /* fr.lproj in Resources */,
-				6C36C6F4B7F545AD8ECC6D9D /* it.lproj in Resources */,
-				456D9F6851BB4506B2442D1E /* pt.lproj in Resources */,
-				2A030C7F3FF34AECA6B6F30E /* PEPhotoCropEditor.bundle in Resources */,
+				7EF833F7589941118BFB87B1 /* GMEmptyFolder@1x.png in Resources */,
+				FA88C59B381B4139B9B1830D /* GMEmptyFolder@2x.png in Resources */,
+				D27147AA92FE43E496E30D84 /* GMSelected.png in Resources */,
+				47F51DD0E55040A9BF8BABFA /* GMSelected@2x.png in Resources */,
+				674611A97A8249CFAF780B2A /* GMVideoIcon.png in Resources */,
+				56E2BB6D98174ABAAEE1C588 /* GMVideoIcon@2x.png in Resources */,
+				981BF1218DE04E6DB3490D39 /* ca.lproj in Resources */,
+				D95E4B4186434D21BDB403E5 /* de.lproj in Resources */,
+				12756C51F1944073812B76ED /* en.lproj in Resources */,
+				08F5FA8CEE3F4ECDA35A1897 /* es.lproj in Resources */,
+				B76CF91DFA5B4D038E274D8F /* fr.lproj in Resources */,
+				D076ABA4F54144D49307A1E0 /* it.lproj in Resources */,
+				EA58AF909C1B408AAF95DB33 /* pt.lproj in Resources */,
+				D4E8AD03C3BD41809A66D032 /* PEPhotoCropEditor.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -692,72 +694,72 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
-				80C505509CFF4EB297E9F3AD /* PhotoViewer.m in Sources */,
-				31A69DDE679147808533F834 /* SOSPicker.m in Sources */,
-				74040FEDF2C1414494C652ED /* UIImage+fixOrientation.m in Sources */,
-				F21F28BCDBD5451EB3C9A678 /* GMAlbumsViewCell.m in Sources */,
-				EE0977B06532498992C2BA80 /* GMAlbumsViewController.m in Sources */,
-				F718DCB5D2F245D29093FA07 /* GMFetchItem.m in Sources */,
-				07A50BE00A9944168F55694C /* GMGridViewCell.m in Sources */,
-				E567DB66B652441AAF17D5F9 /* GMGridViewController.m in Sources */,
-				E63340DED6034848A8271953 /* GMImagePickerController.m in Sources */,
-				175959F2A400487985F56522 /* PSYBlockTimer.m in Sources */,
-				1169155A1821481FA94E34DF /* GMPHAsset.m in Sources */,
-				D0B5B46F9F6C4E36866A45B7 /* UIImage+CropScaleOrientation.m in Sources */,
-				AF613416B6A64C57B0C96E3B /* CDVCamera.m in Sources */,
-				28F6556A7B19455A85D96050 /* CDVJpegHeaderWriter.m in Sources */,
-				684FCD8E5EC246FA8C7FDBA5 /* CDVLogger.m in Sources */,
-				E9FEC12724214BA0B5BD8F3F /* CTCrop.m in Sources */,
-				B3ED8AB6407C4A4D88069F0A /* PECropRectView.m in Sources */,
-				1752C37C399E41BE934F6A82 /* PECropView.m in Sources */,
-				2BC5B8511B5942C1B8C7E2B8 /* PECropViewController.m in Sources */,
-				1B9DFC02937B4E49865300B6 /* PEResizeControl.m in Sources */,
-				F66728D37CD04EA588007683 /* UIImage+PECrop.m in Sources */,
-				8FF0D4B61F2A44F9A35A228F /* CDVDevice.m in Sources */,
-				2EAE39C68C6F441DA4786C15 /* CDVFile.m in Sources */,
-				D2850529EFBF4CA5B2F262A9 /* CDVLocalFilesystem.m in Sources */,
-				45ECE6F5B742466C8F98872D /* CDVAssetLibraryFilesystem.m in Sources */,
-				4F2CD8B1536144E28B1AFC00 /* CDVSplashScreen.m in Sources */,
-				C68B6BE84FB94B3B8FBC8C2D /* CDVViewController+SplashScreen.m in Sources */,
-				99B5D5C0D76C468EA86D1135 /* CDVStatusBar.m in Sources */,
-				48A1F0CF0B864FE2AC017CA8 /* IonicConstant.m in Sources */,
-				28EBDE07964B46B0A372FED3 /* IonicDeploy.m in Sources */,
-				FFFA6A6DFF2A468682185DF3 /* Download.m in Sources */,
-				261B9C1C8BD0475CB28014D1 /* DownloadManager.m in Sources */,
-				1B2BCC1ACC1940478BBDB8E6 /* SSZipArchive.m in Sources */,
-				B8B7FDF3C1D24274B8BA3596 /* ioapi.c in Sources */,
-				0573F27A760147919913AE82 /* unzip.c in Sources */,
-				D039FA3CB0344503BA56405C /* zip.c in Sources */,
-				D02FB51E12D94029A41AF3BE /* adler32.c in Sources */,
-				B7656A8C0C3D49C894BB204B /* compress.c in Sources */,
-				6EDEC649FA5E4FFB83917D5D /* crc32.c in Sources */,
-				6B314CB96A214A759AF9AA04 /* deflate.c in Sources */,
-				D8935F1AE1C94D9B8421CE14 /* gzclose.c in Sources */,
-				11CC08AF88294CF0A27069D0 /* gzlib.c in Sources */,
-				4313A803972E4002BCF94049 /* gzread.c in Sources */,
-				D663EDFE7DF0422FB820FD36 /* gzwrite.c in Sources */,
-				5C91195330654322A8F027A7 /* infback.c in Sources */,
-				2F4CDCAF637D4E799364BD50 /* inffast.c in Sources */,
-				C537875BEA43448FB4E05F98 /* inflate.c in Sources */,
-				D882E45CD7F745489ABD6623 /* inftrees.c in Sources */,
-				6C3C71062CF842CF996E9146 /* trees.c in Sources */,
-				1DA69BD1B032486DAC93F298 /* uncompr.c in Sources */,
-				6E6D35A9701A4F96BC2F0A2F /* zutil.c in Sources */,
-				7C68450E8EB540E3B4479131 /* Base64.m in Sources */,
-				7625C9936D5F469DA9625F56 /* UNIHTTPClientHelper.m in Sources */,
-				4D6A72A47333455EBDF5FB51 /* UNIHTTPRequest.m in Sources */,
-				C52288F63F1F4851AC766319 /* UNIHTTPRequestWithBody.m in Sources */,
-				27B29CD8884B4FDEAB435140 /* UNIRest.m in Sources */,
-				F397B1D6EEAB46089595DC3A /* UNIUrlConnection.m in Sources */,
-				9223F0AE0C9A49048E98C1C1 /* UNIBaseRequest.m in Sources */,
-				8AF1A7CA4A4A4311ACCB572E /* UNIBodyRequest.m in Sources */,
-				A9B752F1E04D43159976C5AA /* UNISimpleRequest.m in Sources */,
-				1D1B83803874409B916A3118 /* UNIHTTPBinaryResponse.m in Sources */,
-				ED2A7220EA494599B6902B1C /* UNIHTTPJsonResponse.m in Sources */,
-				11A5B53642A54D68A9834AE9 /* UNIHTTPResponse.m in Sources */,
-				40F446EFA5A44AA29D2AC038 /* UNIHTTPStringResponse.m in Sources */,
-				969D10580E8B4918BF6E06D7 /* UNIJsonNode.m in Sources */,
-				8832655D51FC4CBEB70371A5 /* IonicKeyboard.m in Sources */,
+				E70182F4EA7D46FBB4398A8B /* PhotoViewer.m in Sources */,
+				7B95020E8EBB421FAFC6D3AB /* SOSPicker.m in Sources */,
+				6B64D517F43E4CF5A68328B0 /* UIImage+fixOrientation.m in Sources */,
+				8D6BEE9ED3464A59B5C9676F /* GMAlbumsViewCell.m in Sources */,
+				D959C1FF9AC54E60B2D00C81 /* GMAlbumsViewController.m in Sources */,
+				78A1D739EBE04CC4B8321D9D /* GMFetchItem.m in Sources */,
+				482110C126DA4934B9A27655 /* GMGridViewCell.m in Sources */,
+				0863155016724090B90C8E0D /* GMGridViewController.m in Sources */,
+				D573CB3DD8FA4A438D39073F /* GMImagePickerController.m in Sources */,
+				EAA723969917458B8760023C /* PSYBlockTimer.m in Sources */,
+				E555623F6F6E4E3282DC83B9 /* GMPHAsset.m in Sources */,
+				8C1AFEC0409B457DB1FC03CE /* UIImage+CropScaleOrientation.m in Sources */,
+				BDBB1B50ED16425383C3C167 /* CDVCamera.m in Sources */,
+				2D44A5DC42A844B0B3ECC00D /* CDVJpegHeaderWriter.m in Sources */,
+				57B4BB6F969942D2B6F778EC /* CDVLogger.m in Sources */,
+				13F3B405D54F464C9AA7C7CD /* CTCrop.m in Sources */,
+				E9E4D882C7734099ADFF915F /* PECropRectView.m in Sources */,
+				E4A98D87E05245ADB2A42712 /* PECropView.m in Sources */,
+				782450A8362F4E77868FEC78 /* PECropViewController.m in Sources */,
+				02AD55861DC64A0BAA7E7854 /* PEResizeControl.m in Sources */,
+				221246FA3B5B494FAB676853 /* UIImage+PECrop.m in Sources */,
+				7771C98DC1614A37BAE1E5F4 /* CDVDevice.m in Sources */,
+				37BAD787EF654193B4404E58 /* CDVFile.m in Sources */,
+				FF2C5DAAE30F4DB291928B29 /* CDVLocalFilesystem.m in Sources */,
+				A9FC14A355C14D819A3349AE /* CDVAssetLibraryFilesystem.m in Sources */,
+				BB1501E99EF649C9A8639141 /* CDVSplashScreen.m in Sources */,
+				1A3DEAF86CD64AC888BC7EAF /* CDVViewController+SplashScreen.m in Sources */,
+				0756A4399F9A491DBE826749 /* CDVStatusBar.m in Sources */,
+				9F12DB606BC14537BEB53158 /* IonicConstant.m in Sources */,
+				2C479C2FC1C04E3B87BEBE06 /* IonicDeploy.m in Sources */,
+				532893D802EB4F778385B577 /* Download.m in Sources */,
+				7A14026B306C4E589B22CA88 /* DownloadManager.m in Sources */,
+				AE2808C617D24DCD8455BC11 /* SSZipArchive.m in Sources */,
+				97A498C76E834EFBB33E13C4 /* ioapi.c in Sources */,
+				6941BBF0EACE40E4902DED60 /* unzip.c in Sources */,
+				7EAF65CE19FB44F38EE4CB17 /* zip.c in Sources */,
+				FBA0CFB072A94AF789D5BA9D /* adler32.c in Sources */,
+				8F907934FAD0467DA1430425 /* compress.c in Sources */,
+				D5F20844C6564F9793623E86 /* crc32.c in Sources */,
+				1A6B07D1B94040A58355415D /* deflate.c in Sources */,
+				00C9C624F4F2458BBDD27CC9 /* gzclose.c in Sources */,
+				5E3811E7C6E94DCEB0097F3A /* gzlib.c in Sources */,
+				8C62BBCCBE564B6B9F5F9DC6 /* gzread.c in Sources */,
+				375D0A315E5F42F0B7372953 /* gzwrite.c in Sources */,
+				FC9E36BC006F40E891B6D47E /* infback.c in Sources */,
+				83897B95E507493EA929E70C /* inffast.c in Sources */,
+				E68AC833BEC3405A9E4E6805 /* inflate.c in Sources */,
+				D6B4E81881F14DDBBAD2B090 /* inftrees.c in Sources */,
+				5C7A2E91592E411B8E5BF621 /* trees.c in Sources */,
+				18696C56192F4DD8961F9D07 /* uncompr.c in Sources */,
+				2CBF90151C3441F2B2FD9B57 /* zutil.c in Sources */,
+				F543F05B2B574B49912AD87A /* Base64.m in Sources */,
+				A4105CB9B0CA445B8C1D4FD4 /* UNIHTTPClientHelper.m in Sources */,
+				BF14BB0640EA469B9B26C170 /* UNIHTTPRequest.m in Sources */,
+				03ECC83AB900471082081B31 /* UNIHTTPRequestWithBody.m in Sources */,
+				98ADF6EC96474243B4EEF15B /* UNIRest.m in Sources */,
+				B5E601249EFF46ABB6D5CC59 /* UNIUrlConnection.m in Sources */,
+				10FE944D1A21426AAFCD623F /* UNIBaseRequest.m in Sources */,
+				4FD8CC247D88456299032276 /* UNIBodyRequest.m in Sources */,
+				350D1130F2614A7194DD5684 /* UNISimpleRequest.m in Sources */,
+				B8A6759FB1E0468AB392CEEB /* UNIHTTPBinaryResponse.m in Sources */,
+				C786374F09D641A896615EDA /* UNIHTTPJsonResponse.m in Sources */,
+				616B62773ECF47A9B5F3D37F /* UNIHTTPResponse.m in Sources */,
+				F933AE329BF54DD0ACE02F1B /* UNIHTTPStringResponse.m in Sources */,
+				569FC0CFA20D409A88BE7DEF /* UNIJsonNode.m in Sources */,
+				8B94AC950BFB454293A79FE5 /* IonicKeyboard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -781,8 +783,9 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = F9U27V33AC;
+				DEVELOPMENT_TEAM = "";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -792,8 +795,11 @@
 				INFOPLIST_FILE = "Textile/Textile-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ionicframework.ionic2firebaseemail197311;
 				PRODUCT_NAME = Textile;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -806,8 +812,9 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
-				DEVELOPMENT_TEAM = F9U27V33AC;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Textile/Textile-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
@@ -815,8 +822,11 @@
 				INFOPLIST_FILE = "Textile/Textile-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ionicframework.ionic2firebaseemail197311;
 				PRODUCT_NAME = Textile;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -831,11 +841,18 @@
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -858,11 +875,17 @@
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;

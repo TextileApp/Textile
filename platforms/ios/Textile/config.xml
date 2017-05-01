@@ -60,8 +60,10 @@
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
     <allow-intent href="sms:*" />
+    <allow-intent href="*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <allow-navigation href="*" />
     <allow-navigation href="http://10.0.0.10:8100" />
     <allow-navigation href="http://10.10.203.116:8100" />
     <allow-navigation href="http://10.10.203.159:8100" />
