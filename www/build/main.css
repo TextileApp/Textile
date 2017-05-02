@@ -30208,6 +30208,28 @@ sub {
   cursor: not-allowed;
 }
 
+ion-icon[class*="appname-"] {
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-position: 50% 50%;
+  mask-position: 50% 50%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  background: #EE6C4D;
+  width: 1em;
+  height: 1em;
+}
+
+ion-icon[class*="appname-closet"] {
+  -webkit-mask-image: url(../assets/img/closet.svg);
+  mask-image: url(../assets/img/closet.svg);
+}
+
+ion-icon[class*="appname-hanger"] {
+  -webkit-mask-image: url(../assets/img/hanger.svg);
+  mask-image: url(../assets/img/hanger.svg);
+}
+
 .grid-full ion-row {
   height: 100%;
   width: 100%;
@@ -30256,14 +30278,14 @@ ion-col {
 .ion-ios-MYICON-outline:before,
 .ion-md-MYICON:before,
 .ion-md-MYICON-outline:before {
-  content: url("https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/closet.svg?alt=media&token=0882026e-51a8-48ee-a795-1dbf33399b01");
+  content: url("data:image/svg+xml;base64,assets/img/closet.svg");
 }
 
 .ion-ios-CLOSETICON:before,
 .ion-ios-CLOSETICON-outline:before,
 .ion-md-CLOSETICON:before,
 .ion-md-CLOSETICON-outline:before {
-  content: url("https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fhanger.svg?alt=media&token=acf7f853-8a8b-4858-9568-a6addcef65c2");
+  content: url("data:image/svg+xml;base64,assets/img/hanger.svg");
 }
 
 .firstcol {

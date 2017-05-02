@@ -332,3 +332,26 @@
 .cropper-disabled .cropper-point {
   cursor: not-allowed;
 }
+
+// Custom icons
+// Overriding the ion-icon behavior
+// All custom icons will start with "appname-" prefix
+ion-icon {
+    &[class*="appname-"] {
+        // Instead of using the font-based icons
+        // We're applying SVG masks
+        mask-size: contain;
+        mask-position: 50% 50%;
+        mask-repeat: no-repeat;
+        background: #EE6C4D;
+        width: 1em;
+        height: 1em;
+    }
+    // custom icons
+    &[class*="appname-closet"] {
+        mask-image: url(../assets/img/closet.svg);
+    }
+    &[class*="appname-hanger"] {
+        mask-image: url(../assets/img/hanger.svg);
+    }
+}
