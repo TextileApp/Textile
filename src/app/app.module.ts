@@ -4,6 +4,7 @@ import { MyApp } from './app.component';
 import { OutfitsPage } from '../pages/outfits/outfits';
 import { ContactPage } from '../pages/contact/contact';
 import { closetMenuPage } from '../pages/closetMenu/closetMenu';
+import { brandsPage } from '../pages/brands/brands';
 import { PopoverContentPage } from '../pages/contact/popover';
 import { HomePage,imagePicker } from '../pages/home/home';
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
@@ -47,6 +48,7 @@ firebase.initializeApp(firebaseConfig);
     ResetpwdPage,
     imagePicker,
     closetMenuPage,
+    brandsPage,
     ImageCropperComponent,
     PopoverContentPage
     
@@ -69,6 +71,7 @@ firebase.initializeApp(firebaseConfig);
     HomePage,
     imagePicker,
     closetMenuPage,
+    brandsPage,
     LoginPage,
     RegisterPage,
     ResetpwdPage,

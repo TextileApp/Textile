@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-buttons >
+		<button color="navcolor" ion-button navPop icon-only>
+			<ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+		</button>
+	</ion-buttons>
+    <ion-title >
+  <p style="font-size:22px;">{{whichType}}</p></ion-title>
+ 
+ 
+ <ion-buttons end>
+        <button ion-button color = "navcolor" icon-only (click)="openPopover($event)">
+  <ion-icon name="more"></ion-icon></button>
+ </ion-buttons>
+      
+
+  </ion-navbar>
+
+</ion-header>
+<ion-content>
+   <ion-row wrap>
+  <ion-col width-33 *ngFor="let f of items1 | async" (click)="show(f.$value)" >
+       <div style="position: relative; top:0%; left:0px;">
+    <ion-fab right top>
+      <button *ngIf ="isEnabled"ion-fab mini class="fab-map" mini color="navcolor" (click)="deleteItem(f.$key)">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-fab>
+  </div>
+  <img *ngIf="f.$value"[src]="f.$value">
+  </ion-col>
+</ion-row>
+
+</ion-content>
+

@@ -1,6 +1,7 @@
 import { Component, ViewChild, ViewChildren, QueryList, Inject, OnInit, NgZone} from '@angular/core';
 import * as firebase from 'firebase';
 import { LoginPage } from '../login/login';
+import { brandsPage } from '../brands/brands';
 import {OutfitsPage} from '../outfits/outfits';
 import { NavController,ModalController,NavParams,ViewController,ActionSheetController,ToastController,PopoverController,LoadingController } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service';
@@ -141,6 +142,7 @@ export class HomePage implements OnInit{
   cards10: Array<any>;
   cards11: Array<any>;
   cards12: Array<any>;
+  brands: Array<any>;
   //cards13: Array<any>;
   storage = firebase.storage();
   public currentUser: any;
@@ -262,6 +264,8 @@ this.showDelete9 = false;
   this.showDelete12 = false;
     this.showDress = true;
     this.didSaveThisOutfit = false;
+  
+ 
   const authObserver = this.af.auth.subscribe( user => {
       this.ngZone.run(() => {
         if (user) {
@@ -341,15 +345,19 @@ ngAfterViewInit() {
    // this.swingStack12.stack.getCard(event.target).throwIn(0,0);	
       
  // });
+shopstyle.brands(null).then(response => {
+    for (let val of response) {
+      this.brands.push(val);
+     console.log(val);
+    }
+  });
 
-  
   }
 
 
 
 addNewCards1(oldcard: string) {
   this.cards1.push(oldcard);
-
 }
 
 
@@ -409,18 +417,20 @@ goToOtherPage() {
     //causing the nav controller to animate the new page in
     this.navCtrl.push(closetMenuPage);
   }
+ 
     openModal1(imagesArray) {
     console.log(this.card1Activated);
   if(this.card1Activated == false){
   this.didSaveThisOutfit = false;
 let modal = this.modalCtrl.create(imagePicker,{images:imagesArray,user:this.currentUser,type:"Jewelry"});
      modal.onDidDismiss(data => {
+       if(data){
        var index = this.cards1.indexOf(data.image);
    if(data && index > -1){
     this.cards1.splice(index, 1);
     this.cards1.unshift(data.image);
     }
-   });
+       }  });
    modal.present();
   }
  }
@@ -449,7 +459,7 @@ let modal = this.modalCtrl.create(imagePicker, { "images":imagesArray,"user":thi
 
 let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Neckwear"});
      modal.onDidDismiss(data => {
-        
+        if(data){
     var index = this.cards3.indexOf(data.image);
    if(data && index > -1){
     this.cards3.splice(index, 1);
@@ -457,7 +467,7 @@ let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.cu
     }
    
           
-   });
+       }  });
    modal.present();
      }
  }
@@ -468,14 +478,14 @@ let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.cu
 
 let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Outerwear"});
      modal.onDidDismiss(data => {
-       
+       if(data){
    var index = this.cards4.indexOf(data.image);
    if(data && index > -1){
     this.cards4.splice(index, 1);
     this.cards4.unshift(data.image);
     }
           
-   });
+       }  });
    modal.present();
      }
  }
@@ -485,14 +495,14 @@ let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.cu
 
 let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Tops"});
      modal.onDidDismiss(data => {
-    
+    if(data){
    var index = this.cards5.indexOf(data.image);
    if(data && index > -1){
     this.cards5.splice(index, 1);
     this.cards5.unshift(data.image);
     }
           
-   });
+      } });
    modal.present();
       }
  }
@@ -502,7 +512,7 @@ let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.cu
 
 let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Tops"});
      modal.onDidDismiss(data => {
-       
+       if(data){
          
    var index = this.cards6.indexOf(data.image);
    if(data && index > -1){
@@ -510,7 +520,7 @@ let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.cu
     this.cards6.unshift(data.image);
     }
        
-   });
+       }  });
    modal.present();
       }
  }
@@ -540,12 +550,13 @@ let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.cu
 
 let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Bottoms"});
      modal.onDidDismiss(data => {
+       if(data){
             var index = this.cards8.indexOf(data);
           if(data && index > 1){
     this.cards8.unshift(data.image);
     this.cards8.pop();
           }
-   });
+   }});
    modal.present();
       }
  }
@@ -555,12 +566,13 @@ let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.cu
 
 let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Jewelry"});
      modal.onDidDismiss(data => {
+    if(data){
     var index = this.cards9.indexOf(data.image);
           if(data && index > 1){
     this.cards9.unshift(data.image);
     this.cards9.pop();
           }
-   });
+   }});
    modal.present();
  }
    }
@@ -570,12 +582,13 @@ let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.cu
 
 let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Bags"});
      modal.onDidDismiss(data => {
+      if(data){
      var index = this.cards10.indexOf(data.image);
           if(data && index > 1){
     this.cards10.unshift(data.image);
     this.cards10.pop();
           }
-   });
+      } });
    modal.present();
  }
    }
@@ -585,12 +598,13 @@ let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.cu
 
 let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Shoes"});
      modal.onDidDismiss(data => {
+       if(data){
        var index = this.cards11.indexOf(data.image);
           if(data && index > 1){
     this.cards11.unshift(data.image);
     this.cards11.pop();
           }
-   });
+   }});
    modal.present();
  }
    }
@@ -600,12 +614,13 @@ let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.cu
 
 let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Bags"});
      modal.onDidDismiss(data => {
+       if(data){
           var index = this.cards12.indexOf(data.image);
           if(data && index > 1){
     this.cards12.unshift(data.image);
     this.cards12.pop();
           }
-   });
+   }});
    modal.present();
  }
    }
@@ -1805,12 +1820,7 @@ var topcard9;
 var topcard10;
 var topcard11;
 var topcard12;
-console.log(this.cards1[0]);
-console.log(this.cards2[0]);
-console.log(this.cards3[0]);
-console.log(this.card1Activated);
-console.log(this.card2Activated);
-console.log(this.card3Activated);
+
 
 if(this.showPic1 == true)
 {
@@ -2000,9 +2010,9 @@ didSaveThisOutfit:boolean;
 public imgUri: string;
 
  constructor( private params: NavParams,
-    public viewCtrl: ViewController,public popoverCtrl: PopoverController,private ngZone: NgZone,public modalCtrl: ModalController,public actionSheetCtrl: ActionSheetController,private shareService: ShareService,@Inject(FirebaseApp) firebaseApp: any,) {
+    public viewCtrl: ViewController,public popoverCtrl: PopoverController,private ngZone: NgZone,public modalCtrl: ModalController,public actionSheetCtrl: ActionSheetController,private shareService: ShareService,@Inject(FirebaseApp) firebaseApp: any,public navCtrl:NavController) {
      this.storageRef = firebaseApp.storage().ref();
-
+    navCtrl.setRoot(self);
    // this.images = this.params.get('images');
   this.currentUser = this.params.get("user");
   this.images = this.params.get("images");
@@ -2021,12 +2031,15 @@ public imgUri: string;
     this.viewCtrl.dismiss();  
    }
  }
-
+openBrands() {
+        this.navCtrl.push(brandsPage);
+    }
   chooseImage(tapimage) {
     this.pickedImage = tapimage;
     
     this.dismiss();
 }
+ 
   doImageResize(img, callback, MAX_WIDTH: number = 900, MAX_HEIGHT: number = 900) {
     var canvas = document.createElement("canvas");
 
@@ -2066,8 +2079,14 @@ public imgUri: string;
       public presentActionSheet() {
 
     let actionSheet = this.actionSheetCtrl.create({
-      title: 'Select Image Source',
+      title: 'Select Source',
       buttons: [
+         {
+          text: 'Database',
+          handler: () => {
+          this.openBrands();
+          }
+        },
         {
           text: 'Load from Library',
           handler: () => {

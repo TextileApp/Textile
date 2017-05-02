@@ -30253,6 +30253,29 @@ ion-icon[class*="appname-hanger"] {
   flex-direction: column;
 }
 
+.grid-full ion-row {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.grid-full ion-col {
+  text-align: center;
+  padding: 5px 5px 5px 5px;
+  margin-top: 0px;
+  border: 20px;
+}
+
+.text-on-bottom > .button-inner {
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .fab[mini] {
   margin: 0px;
   width: 11px;
