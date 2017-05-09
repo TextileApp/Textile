@@ -4,6 +4,7 @@ import { PhotoViewer } from 'ionic-native';
 import { NavController,PopoverController,ActionSheetController,ModalController,NavParams } from 'ionic-angular';
 import { FirebaseApp,FirebaseListObservable,AngularFire } from 'angularfire2';
 import { PopoverContentPage } from './popover';
+import { brandsPage } from '../brands/brands';
 import { AuthService } from '../../providers/auth-service';
 import {ShareService} from '../../providers/ShareService';
 import { Events } from 'ionic-angular';
@@ -92,6 +93,12 @@ af: AngularFire;
     let actionSheet = this.actionSheetCtrl.create({
       title: 'Select Image Source',
       buttons: [
+          {
+          text: 'Database',
+          handler: () => {
+           this.openBrands(); //Camera.PictureSourceType.PHOTOLIBRARY);
+          }
+        },
         {
           text: 'Load from Library',
           handler: () => {
@@ -188,7 +195,9 @@ newPostRef.set(
     });
  cropModal.present();
   }
-
+openBrands() {
+        this.navCtrl.push(brandsPage);
+    }
   public takePicture(sourceType) {
     // Create options for the Camera Dialog
     var options = {

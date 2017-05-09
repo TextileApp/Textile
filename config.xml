@@ -23,6 +23,7 @@
   <allow-navigation href="http://10.20.100.154:8100"/>
   <allow-navigation href="http://10.10.203.163:8100"/>
   <allow-navigation href="http://153.90.43.81:8100"/>
+  <allow-navigation href="http://10.0.0.28:8100"/>
   <platform name="android">
     <allow-intent href="market:*"/>
   </platform>

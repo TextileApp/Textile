@@ -1,8 +1,9 @@
 import { Component, NgZone} from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController,NavParams } from 'ionic-angular';
 import {AngularFire} from 'angularfire2';
 import { ContactPage } from '../contact/contact';
 import { AuthService } from '../../providers/auth-service';
+import {productsPage} from '../products/products';
 const ShopStyle = require('shopstyle-sdk');
 const shopstyle = new ShopStyle('uid8976-38160824-19');
 @Component({
@@ -12,37 +13,70 @@ const shopstyle = new ShopStyle('uid8976-38160824-19');
 export class brandsPage {
 
 //outfits:Array <any>;
-myUser: any;
-af: AngularFire;
-isEnabled: boolean;
-brands: Array<any>;
-raw: Array<any>;
-  constructor(public navCtrl: NavController,private ngZone: NgZone,af: AngularFire,private _auth: AuthService) {
-    const authObserver = af.auth.subscribe( user => {
-  if (user) {
-    this.myUser = user.uid;
-  } 
-  this.isEnabled = false;
 
-});
+brands: Array<any>;
+brandsID: Array<any>;
+type: any;
+category: any;
+  constructor(public navCtrl: NavController,private ngZone: NgZone,af: AngularFire,private _auth: AuthService,private navParams:NavParams) {
+
+ this.type = this.navParams.get("type");
+ if(this.type == "Jewelry"){
+  this.category = "Watches & Jewelry";
+ }
+ else if(this.type == "Hats")
+ {
+   this.category = "Hats";
+ }
+ else if(this.type == "Neckwear")
+ {
+   this.category = "Scarves & Wraps";
+ }
+  else if(this.type == "Outerwear")
+ {
+   this.category = "Outerwear";
+ }
+   else if(this.type == "Tops")
+ {
+   this.category = "Shirts";
+ }
+ else if(this.type == "Belts")
+ {
+   this.category = "Belts";
+ }
+  else if(this.type == "Bottoms")
+ {
+   this.category = "Pants";
+ }
+  else if(this.type == "Bags")
+ {
+   this.category = "Bags";
+ }
+ else if(this.type == "Shoes")
+ {
+   this.category = "Shoes";
+ }
   }
  ngAfterViewInit() {
-   const options = {
 
-  
-  limit:100
-
-};
      var result1 = [];
-     shopstyle.brands({limit:50}).then(response => {
+     var result2 = [];
+     shopstyle.brands({limit:100}).then(response => {
        var x;
      for (x in response.brands) {
       result1.push(response.brands[x].name);
+      result2.push("b"+response.brands[x].id);
     }
   });
   this.brands = result1;
+  this.brandsID = result2;
   console.log(this.brands);
     console.log(result1);
+
+ }
+ itemSelected(item){
+   var id = this.brandsID[this.brands.indexOf(item)];
+this.navCtrl.push(productsPage,{"type":this.category,"brand":item,"brandID":id});
 
  }
 }

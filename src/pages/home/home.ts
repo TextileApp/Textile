@@ -424,13 +424,13 @@ goToOtherPage() {
   this.didSaveThisOutfit = false;
 let modal = this.modalCtrl.create(imagePicker,{images:imagesArray,user:this.currentUser,type:"Jewelry"});
      modal.onDidDismiss(data => {
-       if(data){
+ 
        var index = this.cards1.indexOf(data.image);
    if(data && index > -1){
     this.cards1.splice(index, 1);
     this.cards1.unshift(data.image);
     }
-       }  });
+        });
    modal.present();
   }
  }
@@ -1788,7 +1788,9 @@ return card11;
 trackByCards12(index: number, card12: any){
 return card12;
 }
-
+openBrands() {
+        this.navCtrl.push(brandsPage);
+    }
 // http://stackoverflow.com/questions/57803/how-to-convert-decimal-to-hex-in-javascript
 decimalToHex(d, padding) {
   var hex = Number(d).toString(16);
@@ -2010,9 +2012,9 @@ didSaveThisOutfit:boolean;
 public imgUri: string;
 
  constructor( private params: NavParams,
-    public viewCtrl: ViewController,public popoverCtrl: PopoverController,private ngZone: NgZone,public modalCtrl: ModalController,public actionSheetCtrl: ActionSheetController,private shareService: ShareService,@Inject(FirebaseApp) firebaseApp: any,public navCtrl:NavController) {
+    public viewCtrl: ViewController,public popoverCtrl: PopoverController,private ngZone: NgZone,public modalCtrl: ModalController,public actionSheetCtrl: ActionSheetController,private shareService: ShareService,@Inject(FirebaseApp) firebaseApp: any,public navctrl:NavController) {
      this.storageRef = firebaseApp.storage().ref();
-    navCtrl.setRoot(self);
+
    // this.images = this.params.get('images');
   this.currentUser = this.params.get("user");
   this.images = this.params.get("images");
@@ -2031,14 +2033,7 @@ public imgUri: string;
     this.viewCtrl.dismiss();  
    }
  }
-openBrands() {
-        this.navCtrl.push(brandsPage);
-    }
-  chooseImage(tapimage) {
-    this.pickedImage = tapimage;
-    
-    this.dismiss();
-}
+
  
   doImageResize(img, callback, MAX_WIDTH: number = 900, MAX_HEIGHT: number = 900) {
     var canvas = document.createElement("canvas");
@@ -2190,7 +2185,14 @@ newPostRef.set(
     });
  cropModal.present();
   }
-
+openBrands() {
+        this.navctrl.push(brandsPage,{"type":this.type});
+    }
+  chooseImage(tapimage) {
+    this.pickedImage = tapimage;
+    
+    this.dismiss();
+}
   public takePicture(sourceType) {
     // Create options for the Camera Dialog
     var options = {
