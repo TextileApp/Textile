@@ -40,7 +40,7 @@ function dataURLtoBlob(dataurl) {
 
 
 export class productsPage {
-    public imgUri: string;
+  
 
     pet: string = "Hats";
   assetCollection: any;
@@ -91,6 +91,25 @@ this.ionViewLoaded();
 
     }
 
+  selectPiece(item){
+  if(item["selected"] != null)
+  {
+if(item["selected"] == true)
+{
+item["selected"] = false;
+}
+else if(item["selected"] == false)
+{
+item["selected"] = true;
+}
+
+  }
+  else
+  {
+   item["selected"] = true;
+  }
+
+  }
 
   ionViewLoaded() {
     
@@ -120,7 +139,6 @@ shopstyle.products(options).then(response => {
 
 
 });
-    
       
 
       

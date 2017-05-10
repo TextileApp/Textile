@@ -21,12 +21,12 @@
 <ion-content>
    <ion-row wrap>
   
-  <ion-col width-33 *ngFor="let f of items1" (click)="show(f.$value)" >
-     <ion-card>
-  <img *ngIf="f.image"[src]="f.image">
+  <ion-col  width-33 *ngFor="let f of items1" (tap)="selectPiece(f)" >
+  
+  <img [ngClass]="{'imagi':f.selected }" *ngIf="f.image" [src]="f.image">
   <ion-label>{{f.name}}</ion-label>
 
-    </ion-card>
+    
   </ion-col>
 </ion-row>
 </ion-content>
