@@ -103,12 +103,15 @@ this.ionViewLoaded();
   sort: 'Popularity',
 };
        var result1 = [];
+       var result2 = [];
 shopstyle.products(options).then(response => {
 
  var x;
      for (x in response.products) {
-      result1.push(response.products[x].image.sizes.Best.url);
-      console.log(response.products[x].image.sizes.Best.url);
+      result1.push({'image': response.products[x].image.sizes.Large.url,'name':response.products[x].unbrandedName});
+      
+      console.log(response.products[x].image.sizes.Large.url);
+     
       console.log(response.products[x].image.sizes);
 
     }

@@ -19,10 +19,11 @@ brandsID: Array<any>;
 type: any;
 category: any;
   constructor(public navCtrl: NavController,private ngZone: NgZone,af: AngularFire,private _auth: AuthService,private navParams:NavParams) {
+    
 
  this.type = this.navParams.get("type");
  if(this.type == "Jewelry"){
-  this.category = "Watches & Jewelry";
+  this.category = "Jewelry";
  }
  else if(this.type == "Hats")
  {
@@ -72,6 +73,10 @@ category: any;
   this.brandsID = result2;
   console.log(this.brands);
     console.log(result1);
+    
+    shopstyle.categories(null)
+  .then(result => console.log(result.categories[0]));
+
 
  }
  itemSelected(item){

@@ -20,10 +20,25 @@
 </ion-header>
 <ion-content>
    <ion-row wrap>
+  
   <ion-col width-33 *ngFor="let f of items1" (click)="show(f.$value)" >
-  <img *ngIf="f"[src]="f">
+     <ion-card>
+  <img *ngIf="f.image"[src]="f.image">
+  <ion-label>{{f.name}}</ion-label>
+
+    </ion-card>
   </ion-col>
 </ion-row>
-
 </ion-content>
 
+<ion-footer>
+  <ion-toolbar>
+    
+    <ion-buttons end>
+      <button ion-button icon-right color="navcolor">
+        Save to closet
+        <ion-icon name="basket"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
