@@ -97,21 +97,20 @@ this.ionViewLoaded();
 saveToCloset()
 {
   console.log("WE SAVING CLOSETS MF");
- this.db = firebase.database().ref(firebase.auth().currentUser.uid+'/'+this.internalType);
   var item;
   for(var i = 0; i< this.items1.length; i++)
   {
+     this.db = firebase.database().ref(firebase.auth().currentUser.uid+'/'+this.internalType+'/'+this.items1[i].name);
+
     console.log("NOICE MATE");
 if(this.items1[i].selected == true)
 {
 //this.selectedItems.push(item);
     console.log("killa MATE");
 
-var newPostRef = this.db.push();
-newPostRef.set(
+this.db.set(
   this.items1[i].image
 );
-
 };
 }
 this.navCtrl.popToRoot();
@@ -139,7 +138,9 @@ item.selected = true;
 
 
   ionViewLoaded() {
-    
+    console.log("MY NAME IDS +_--------");
+    console.log(this.whichType);
+
   const options = {
   cat:this.whichType
   ,
@@ -156,7 +157,7 @@ shopstyle.products(options).then(response => {
      for (x in response.products) {
       result1.push({'image': response.products[x].image.sizes.Large.url,'name':response.products[x].unbrandedName});
       
-      console.log(response.products[x].image.sizes.Large.url);
+      console.log(response.products[x]);
      
       console.log(response.products[x].image.sizes);
 

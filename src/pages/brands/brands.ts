@@ -27,35 +27,35 @@ category: any;
  }
  else if(this.type == "Hats")
  {
-   this.category = "Hats";
+   this.category = "hats";
  }
  else if(this.type == "Neckwear")
  {
-   this.category = "Scarves & Wraps";
+   this.category = "scarves";
  }
   else if(this.type == "Outerwear")
  {
-   this.category = "Outerwear";
+   this.category = "outerwear";
  }
    else if(this.type == "Tops")
  {
-   this.category = "Shirts";
+   this.category = "shirts";
  }
  else if(this.type == "Belts")
  {
-   this.category = "Belts";
+   this.category = "belts";
  }
   else if(this.type == "Bottoms")
  {
-   this.category = "Pants";
+   this.category = "pants";
  }
   else if(this.type == "Bags")
  {
-   this.category = "Bags";
+   this.category = "bags";
  }
  else if(this.type == "Shoes")
  {
-   this.category = "Shoes";
+   this.category = "shoes";
  }
   }
  ngAfterViewInit() {
