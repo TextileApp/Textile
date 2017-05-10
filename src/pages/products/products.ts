@@ -3,6 +3,7 @@ import { Camera } from 'ionic-native';
 import { PhotoViewer } from 'ionic-native';
 import { NavController,PopoverController,ActionSheetController,ModalController,NavParams } from 'ionic-angular';
 import { FirebaseApp,FirebaseListObservable,AngularFire } from 'angularfire2';
+import * as firebase from 'firebase';
 import { PopoverContentPage } from './popover';
 import { AuthService } from '../../providers/auth-service';
 import {ShareService} from '../../providers/ShareService';
@@ -49,6 +50,7 @@ isDeleteEnabled: boolean;
     selectedItem: any;
   icons: string[];
  items1: Array<any>;
+ selectedItems:Array<any>;
 	options: any;
   db: any;
   uploadType: number = 0;
@@ -58,6 +60,7 @@ isDeleteEnabled: boolean;
   brand: any;
   brandID: any;
   whichType:string;
+  internalType:string;
   currentImage
   grid: Array<Array<string>>;
 af: AngularFire;
@@ -75,6 +78,7 @@ af: AngularFire;
     console.log(this.brand);
     this.brandID = this.params.get("brandID");
     console.log(this.brandID);
+    this.internalType = this.params.get("internaltype");
   //this.items2 = af.database.list(this.currentUser+'/Tops');
  // this.items3 = af.database.list(this.currentUser+'/Bottoms/');
  // this.items4 = af.database.list(this.currentUser+'/Shoes/');
@@ -90,26 +94,49 @@ this.ionViewLoaded();
       
 
     }
-
-  selectPiece(item){
-  if(item["selected"] != null)
+saveToCloset()
+{
+  console.log("WE SAVING CLOSETS MF");
+ this.db = firebase.database().ref(firebase.auth().currentUser.uid+'/'+this.whichType);
+  var item;
+  for(var i = 0; i< this.items1.length; i++)
   {
-if(item["selected"] == true)
+    console.log("NOICE MATE");
+if(this.items1[i].selected == true)
 {
-item["selected"] = false;
+//this.selectedItems.push(item);
+    console.log("killa MATE");
+
+var newPostRef = this.db.push();
+newPostRef.set(
+  this.items1[i].image
+);
+
+};
 }
-else if(item["selected"] == false)
+
+  }
+  selectPiece(item){
+  if(item.selected != null)
+  {
+if(item.selected == true)
 {
-item["selected"] = true;
+item.selected = false;
+}
+else if(item.selected == false)
+{
+item.selected = true;
 }
 
   }
   else
   {
-   item["selected"] = true;
+   item.selected = true;
   }
 
-  }
+}
+
+
 
   ionViewLoaded() {
     

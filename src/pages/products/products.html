@@ -23,7 +23,7 @@
   
   <ion-col  width-33 *ngFor="let f of items1" (tap)="selectPiece(f)" >
   
-  <img [ngClass]="{'imagi':f.selected }" *ngIf="f.image" [src]="f.image">
+  <img [ngClass]="{'imagi':f.selected}" *ngIf="f.image" [src]="f.image">
   <ion-label>{{f.name}}</ion-label>
 
     
@@ -35,7 +35,7 @@
   <ion-toolbar>
     
     <ion-buttons end>
-      <button ion-button icon-right color="navcolor">
+      <button ion-button icon-right color="navcolor" (click)="saveToCloset()" >
         Save to closet
         <ion-icon name="basket"></ion-icon>
       </button>

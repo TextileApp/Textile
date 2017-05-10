@@ -81,7 +81,7 @@ category: any;
  }
  itemSelected(item){
    var id = this.brandsID[this.brands.indexOf(item)];
-this.navCtrl.push(productsPage,{"type":this.category,"brand":item,"brandID":id});
+this.navCtrl.push(productsPage,{"type":this.category,"internaltype":this.type,"brand":item,"brandID":id});
 
  }
 }
