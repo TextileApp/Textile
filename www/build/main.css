@@ -33435,11 +33435,22 @@ ion-col {
   margin-top: 6%;
 }
 
+.home .pics {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  padding-left: 3%;
+  padding-top: 3%;
+  padding-right: 3%;
+  padding-bottom: 3%;
+}
+
 .home #card-stack {
   width: 32%;
   height: 22.5%;
-  margin: 0px auto 0;
   position: relative;
+  margin: auto;
 }
 
 .home .firstcol {

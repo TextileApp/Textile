@@ -424,13 +424,13 @@ goToOtherPage() {
   this.didSaveThisOutfit = false;
 let modal = this.modalCtrl.create(imagePicker,{images:imagesArray,user:this.currentUser,type:"Jewelry"});
      modal.onDidDismiss(data => {
- 
+ if(data){
        var index = this.cards1.indexOf(data.image);
    if(data && index > -1){
     this.cards1.splice(index, 1);
     this.cards1.unshift(data.image);
     }
-        });
+        }});
    modal.present();
   }
  }
@@ -440,7 +440,7 @@ let modal = this.modalCtrl.create(imagePicker,{images:imagesArray,user:this.curr
 
 let modal = this.modalCtrl.create(imagePicker, { "images":imagesArray,"user":this.currentUser,"type":"Hats"});
      modal.onDidDismiss(data => {
-        
+    if(data){     
    var index = this.cards2.indexOf(data.image);
    if(data && index > -1){
     this.cards2.splice(index, 1);
@@ -448,7 +448,7 @@ let modal = this.modalCtrl.create(imagePicker, { "images":imagesArray,"user":thi
     }
    
          
-   });
+   }});
    modal.present();
     }
  }
@@ -2026,6 +2026,7 @@ public imgUri: string;
 }
  dismiss() {
    if(this.pickedImage){
+  
    let data = { image:this.pickedImage };
       this.viewCtrl.dismiss(data);
    }

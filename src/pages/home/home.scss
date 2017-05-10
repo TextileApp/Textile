@@ -54,14 +54,25 @@ display:inline-block;
 .home {
 margin:0;
 margin-top:6%;
-
+.pics{
+    position:absolute;
+    top:0;
+    bottom:0; 
+    margin:auto;
+    padding-left:3%;
+    padding-top:3%;
+    padding-right:3%;
+    padding-bottom:3%;
+}
   #card-stack {
     width: 32%;
     height: 22.5%;
   //background: #FEFEFE;
  //   border: 10px solid #6EFEFE;
-    margin: 0px auto 0;
+    //margin: 0px auto 0;
     position: relative;
+    margin: auto;
+    
   }
   .firstcol{
 

@@ -31,7 +31,7 @@
     <ion-card [hidden]="!showCard1"  (press)="pressEvent($event)" #mycards1 swing-card *ngFor="let c of cards1; trackBy:trackByCards1 let t=index;"[style.zIndex]="-1*t" [style.marginTop]="t === 0 ? '0px':'0px'"(tap)="openModal1(cards1)">
                                         <button style= "width:100%; height:100%; top:-6.80%; right:2.85%;"[hidden]="!card1Activated"(click)="activateCard1()" color = "light"  ion-button icon-only><ion-icon color="navcolor" name="add"></ion-icon></button>
 
-          <img [hidden]="!showPic1" *ngIf="c"[src]="c"id="image">
+          <img class ="pics" [hidden]="!showPic1" *ngIf="c"[src]="c"id="image">
   
     </ion-card>
      </div>
@@ -49,7 +49,7 @@
     <ion-card [hidden]="!showCard2"  #mycards2 swing-card (press)="pressEvent($event)" *ngFor="let p of cards2; trackBy:trackByCards2; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal2(cards2)">
                                         <button style= "width:100%; height:100%; top:-6.80%; right:2.85%;"[hidden]="!card2Activated"(click)="activateCard2()" color = "light"  ion-button icon-only><ion-icon color="navcolor" name="add"></ion-icon></button>
 
-          <img [hidden]= "!showPic2" *ngIf="p"[src]="p"id="image">
+          <img class ="pics" [hidden]= "!showPic2" *ngIf="p"[src]="p"id="image">
     </ion-card>
     
   </div>
@@ -67,7 +67,7 @@
     <ion-card [hidden]="!showCard3"  #mycards3 swing-card (press)="pressEvent($event)" *ngFor="let p of cards3; trackBy:trackByCards3; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal3(cards3)">
                                         <button style= "width:100%; height:100%; top:-6.80%; right:2.85%;"[hidden]="!card3Activated"(click)="activateCard3()" color = "light"  ion-button icon-only><ion-icon color="navcolor" name="add"></ion-icon></button>
 
-          <img [hidden]= "!showPic3" *ngIf="p"[src]="p"id="image">
+          <img class ="pics" [hidden]= "!showPic3" *ngIf="p"[src]="p"id="image">
     </ion-card>
     
   </div>
@@ -84,7 +84,7 @@
     <ion-card [hidden]="!showCard4"  #mycards4 swing-card (press)="pressEvent($event)" *ngFor="let p of cards4; trackBy:trackByCards4; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal4(cards4)">
                                         <button style= "width:100%; height:100%; top:-6.80%; right:2.85%;"[hidden]="!card4Activated"(click)="activateCard4()" color = "light"  ion-button icon-only><ion-icon color="navcolor" name="add"></ion-icon></button>
 
-          <img [hidden]= "!showPic4" *ngIf="p"[src]="p"id="image">
+          <img class ="pics" [hidden]= "!showPic4" *ngIf="p"[src]="p"id="image">
     </ion-card>
     
   </div>
@@ -95,7 +95,7 @@
     <ion-card [hidden]="!showCard5"  #mycards5 swing-card (press)="pressEvent($event)" *ngFor="let p of cards5; trackBy:trackByCards5; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal5(cards5)">
     <button style= "width:100%; height:100%; top:-6.80%; right:2.85%;"[hidden]="!card5Activated"(click)="activateCard5()" color = "light"  ion-button icon-only><ion-icon color="navcolor" name="add"></ion-icon></button>
 
-          <img [hidden]= "!showPic5" *ngIf="p"[src]="p"id="image">
+          <img class ="pics" [hidden]= "!showPic5" *ngIf="p"[src]="p"id="image">
     </ion-card>
     
   </div>
@@ -112,7 +112,7 @@
     <ion-card [hidden]="!showCard6"  #mycards6 swing-card (press)="pressEvent($event)" *ngFor="let p of cards6; trackBy:trackByCards6; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal6(cards6)">
         <button style= "width:100%; height:100%; top:-6.80%; right:2.85%;"[hidden]="!card6Activated"(click)="activateCard6()" color = "light"  ion-button icon-only><ion-icon color="navcolor" name="add"></ion-icon></button>
 
-          <img [hidden]= "!showPic6" *ngIf="p"[src]="p"id="image">
+          <img class ="pics" [hidden]= "!showPic6" *ngIf="p"[src]="p"id="image">
     </ion-card>
     
   </div>
@@ -129,7 +129,7 @@
     <ion-card [hidden]="!showCard7"  #mycards7 swing-card (press)="pressEvent($event)" *ngFor="let p of cards7; trackBy:trackByCards7; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal7(cards7)">
               <button style= "width:100%; height:100%; top:-6.80%; right:2.85%;"[hidden]="!card7Activated"(click)="activateCard7()" color = "light"  ion-button icon-only><ion-icon color="navcolor" name="add"></ion-icon></button>
 
-          <img [hidden]= "!showPic7" *ngIf="p"[src]="p"id="image">
+          <img class ="pics" [hidden]= "!showPic7" *ngIf="p"[src]="p"id="image">
     </ion-card>
     
   </div>
@@ -141,7 +141,7 @@
     <ion-card [hidden]="!showCard8"  #mycards8 swing-card (press)="pressEvent($event)" *ngFor="let p of cards8; trackBy:trackByCards8; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal8(cards8)">
                                         <button style= "width:100%; height:100%; top:-6.80%; right:2.85%;"[hidden]="!card8Activated"(click)="activateCard8()" color = "light"  ion-button icon-only><ion-icon color="navcolor" name="add"></ion-icon></button>
 
-          <img [hidden]= "!showPic8" *ngIf="p"[src]="p"id="image">
+          <img class ="pics" [hidden]= "!showPic8" *ngIf="p"[src]="p"id="image">
     </ion-card>
     
   </div>
@@ -160,7 +160,7 @@
     <ion-card [hidden]="!showCard9"  #mycards9 swing-card (press)="pressEvent($event)" *ngFor="let p of cards9; trackBy:trackByCards9; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal9(cards9)">
                                  <button style= "width:100%; height:100%; top:-6.80%; right:2.85%;"[hidden]="!card9Activated"(click)="activateCard9()" color = "light"  ion-button icon-only><ion-icon color="navcolor" name="add"></ion-icon></button>
 
-          <img [hidden]= "!showPic9" *ngIf="p"[src]="p"id="image">
+          <img class ="pics" [hidden]= "!showPic9" *ngIf="p"[src]="p"id="image">
     </ion-card>
     
   </div>
@@ -178,7 +178,7 @@
     <ion-card [hidden]="!showCard10"  #mycards10 swing-card (press)="pressEvent($event)" *ngFor="let p of cards10; trackBy:trackByCards10; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal10(cards10)">
    <button style= "width:100%; height:100%; top:-6.80%; right:2.85%;"[hidden]="!card10Activated"(click)="activateCard10()" color = "light"  ion-button icon-only><ion-icon color="navcolor" name="add"></ion-icon></button>
 
-          <img [hidden]= "!showPic10" *ngIf="p"[src]="p"id="image">
+          <img class ="pics" [hidden]= "!showPic10" *ngIf="p"[src]="p"id="image">
     </ion-card>
     
   </div>
@@ -189,7 +189,7 @@
     <ion-card [hidden]="!showCard11"  #mycards11 swing-card (press)="pressEvent($event)" *ngFor="let p of cards11; trackBy:trackByCards11; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal11(cards11)">
     <button style= "width:100%; height:100%; top:-6.80%; right:2.85%;"[hidden]="!card11Activated"(click)="activateCard11()" color = "light"  ion-button icon-only><ion-icon color="navcolor" name="add"></ion-icon></button>
 
-          <img [hidden]= "!showPic11" *ngIf="p"[src]="p"id="image">
+          <img class ="pics" [hidden]= "!showPic11" *ngIf="p"[src]="p"id="image">
     </ion-card>
     
   </div>
@@ -206,7 +206,7 @@
     <ion-card [hidden]="!showCard12"  #mycards12 swing-card (press)="pressEvent($event)" *ngFor="let p of cards12; trackBy:trackByCards12; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal12(cards12)">
         <button style= "width:100%; height:100%; top:-6.80%; right:2.85%;"[hidden]="!card12Activated"(click)="activateCard12()" color = "light"  ion-button icon-only><ion-icon color="navcolor" name="add"></ion-icon></button>
 
-          <img [hidden]= "!showPic12" *ngIf="p"[src]="p"id="image">
+          <img class ="pics" [hidden]= "!showPic12" *ngIf="p"[src]="p"id="image">
     </ion-card>
     
   </div>

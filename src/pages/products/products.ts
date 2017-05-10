@@ -97,7 +97,7 @@ this.ionViewLoaded();
 saveToCloset()
 {
   console.log("WE SAVING CLOSETS MF");
- this.db = firebase.database().ref(firebase.auth().currentUser.uid+'/'+this.whichType);
+ this.db = firebase.database().ref(firebase.auth().currentUser.uid+'/'+this.internalType);
   var item;
   for(var i = 0; i< this.items1.length; i++)
   {
@@ -114,7 +114,7 @@ newPostRef.set(
 
 };
 }
-
+this.navCtrl.popToRoot();
   }
   selectPiece(item){
   if(item.selected != null)
