@@ -1979,7 +1979,7 @@ function dataURLtoBlob(dataurl) {
 
   <ion-toolbar>
     <ion-title>
-      Choose a photo
+      Choose a item
     </ion-title>
       <ion-buttons start>
     <button icon-only ion-button (click)="dismiss()">

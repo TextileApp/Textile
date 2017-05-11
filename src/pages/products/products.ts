@@ -144,7 +144,6 @@ item.selected = true;
   const options = {
   cat:this.whichType
   ,
-  offset: 50,
   limit: 50,
   fl: this.brandID,
   sort: 'Popularity',
