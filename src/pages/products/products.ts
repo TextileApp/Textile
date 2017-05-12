@@ -138,8 +138,7 @@ item.selected = true;
 
 
   ionViewLoaded() {
-    console.log("MY NAME IDS +_--------");
-    console.log(this.whichType);
+
 
   const options = {
   cat:this.whichType
@@ -153,6 +152,7 @@ item.selected = true;
 shopstyle.products(options).then(response => {
 
  var x;
+ if(response != null){
      for (x in response.products) {
       result1.push({'image': response.products[x].image.sizes.Large.url,'name':response.products[x].unbrandedName});
       
@@ -161,8 +161,9 @@ shopstyle.products(options).then(response => {
       console.log(response.products[x].image.sizes);
 
     }
+    
   this.items1 = result1;
-
+ }
 
 
 });
