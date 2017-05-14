@@ -3,7 +3,7 @@ import * as firebase from 'firebase';
 import { LoginPage } from '../login/login';
 import { brandsPage } from '../brands/brands';
 import {OutfitsPage} from '../outfits/outfits';
-import { NavController,ModalController,NavParams,ViewController,ActionSheetController,ToastController,PopoverController,LoadingController } from 'ionic-angular';
+import { NavController,ModalController,NavParams,ViewController,ActionSheetController,ToastController,PopoverController,LoadingController,Events } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service';
 import {closetMenuPage} from '../closetMenu/closetMenu';
 import {ShareService} from '../../providers/ShareService';
@@ -152,7 +152,8 @@ export class HomePage implements OnInit{
   allPants: Array<any>;
   allShoes: Array<any>;
   
-  constructor( public popoverCtrl: PopoverController,public navCtrl: NavController,public af:AngularFire,public loadingCtrl: LoadingController, public authService: AuthService,private http: Http, private ngZone: NgZone,public modalCtrl: ModalController,public toastCtrl: ToastController) {
+  constructor( public popoverCtrl: PopoverController,public navCtrl: NavController,public af:AngularFire,public loadingCtrl: LoadingController, public authService: AuthService,private http: Http, private ngZone: NgZone,public modalCtrl: ModalController,public toastCtrl: ToastController,public events:Events
+  ) {
            
        const authObserver = af.auth.subscribe( user => {
   if (!user) {
@@ -208,7 +209,106 @@ this.stackConfig1 = {
     };
       }
     });
-  }
+      events.subscribe('image:picked', (image,type) => {
+if(type == "Jewelry"){
+var index = this.cards1.indexOf(image);
+   if(image && index > -1){
+    this.cards1.splice(index, 1);
+    this.cards1.unshift(image);
+    }
+
+ }
+ else if(type == "Hats")
+ {
+var index = this.cards2.indexOf(image);
+   if(image && index > -1){
+    this.cards2.splice(index, 1);
+    this.cards2.unshift(image);
+    }
+ }
+ else if(type == "Neckwear")
+ {
+var index = this.cards3.indexOf(image);
+   if(image && index > -1){
+    this.cards3.splice(index, 1);
+    this.cards3.unshift(image);
+    }
+ }
+  else if(type == "Outerwear")
+ {
+  var index = this.cards4.indexOf(image);
+   if(image && index > -1){
+    this.cards4.splice(index, 1);
+    this.cards4.unshift(image);
+    }
+ }
+   else if(type == "Tops")
+ {
+  var index = this.cards5.indexOf(image);
+   if(image && index > -1){
+    this.cards5.splice(index, 1);
+    this.cards5.unshift(image);
+    }
+ }
+ else if(type == "Tops2")
+ {
+  var index = this.cards6.indexOf(image);
+   if(image && index > -1){
+    this.cards6.splice(index, 1);
+    this.cards6.unshift(image);
+    }
+ else if(type == "Belts")
+ {
+var index = this.cards7.indexOf(image);
+   if(image && index > -1){
+    this.cards7.splice(index, 1);
+    this.cards7.unshift(image);
+    }
+ }
+  else if(type == "Bottoms")
+ {
+var index = this.cards8.indexOf(image);
+   if(image && index > -1){
+    this.cards8.splice(index, 1);
+    this.cards8.unshift(image);
+    }
+ }
+ if(type == "Jewelry2"){
+var index = this.cards9.indexOf(image);
+   if(image && index > -1){
+    this.cards9.splice(index, 1);
+    this.cards9.unshift(image);
+    }
+
+ }
+  else if(type == "Bags")
+ {
+var index = this.cards10.indexOf(image);
+   if(image && index > -1){
+    this.cards10.splice(index, 1);
+    this.cards10.unshift(image);
+    }
+ }
+ else if(type == "Shoes")
+ {
+  var index = this.cards11.indexOf(image);
+   if(image && index > -1){
+    this.cards11.splice(index, 1);
+    this.cards11.unshift(image);
+    }
+ } 
+  else if(type == "Bags2")
+ {
+var index = this.cards12.indexOf(image);
+   if(image && index > -1){
+    this.cards12.splice(index, 1);
+    this.cards12.unshift(image);
+    }
+ }
+ }
+  });
+      }
+  
   ngOnInit() {
     // subscribe to the auth object to check for the login status
     // of the user, if logged in, save some user information and
@@ -422,208 +522,103 @@ goToOtherPage() {
     console.log(this.card1Activated);
   if(this.card1Activated == false){
   this.didSaveThisOutfit = false;
-let modal = this.modalCtrl.create(imagePicker,{images:imagesArray,user:this.currentUser,type:"Jewelry"});
-     modal.onDidDismiss(data => {
- if(data){
-       var index = this.cards1.indexOf(data.image);
-   if(data && index > -1){
-    this.cards1.splice(index, 1);
-    this.cards1.unshift(data.image);
-    }
-        }});
-   modal.present();
+
+let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Jewelry"})
+
   }
  }
-   openModal2(imagesArray) {
-    if(this.card2Activated == false){
-       this.didSaveThisOutfit = false;
+     openModal2(imagesArray) {
 
-let modal = this.modalCtrl.create(imagePicker, { "images":imagesArray,"user":this.currentUser,"type":"Hats"});
-     modal.onDidDismiss(data => {
-    if(data){     
-   var index = this.cards2.indexOf(data.image);
-   if(data && index > -1){
-    this.cards2.splice(index, 1);
-    this.cards2.unshift(data.image);
-    }
-   
-         
-   }});
-   modal.present();
-    }
- }
+  if(this.card2Activated == false){
+  this.didSaveThisOutfit = false;
 
-  openModal3(imagesArray) {
-     if(this.card3Activated == false){
-      this.didSaveThisOutfit = false;
+let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Hats"})
 
-let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Neckwear"});
-     modal.onDidDismiss(data => {
-        if(data){
-    var index = this.cards3.indexOf(data.image);
-   if(data && index > -1){
-    this.cards3.splice(index, 1);
-    this.cards3.unshift(data.image);
-    }
-   
+  }}
+
+    openModal3(imagesArray) {
+
+  if(this.card3Activated == false){
+  this.didSaveThisOutfit = false;
+
+let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Neckwear"})
+
+  }}
           
-       }  });
-   modal.present();
-     }
- }
 
-  openModal4(imagesArray) {
-     if(this.card4Activated == false){
-      this.didSaveThisOutfit = false;
 
-let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Outerwear"});
-     modal.onDidDismiss(data => {
-       if(data){
-   var index = this.cards4.indexOf(data.image);
-   if(data && index > -1){
-    this.cards4.splice(index, 1);
-    this.cards4.unshift(data.image);
-    }
-          
-       }  });
-   modal.present();
-     }
- }
-   openModal5(imagesArray) {
-      if(this.card5Activated == false){
-      this.didSaveThisOutfit = false;
+      openModal4(imagesArray) {
 
-let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Tops"});
-     modal.onDidDismiss(data => {
-    if(data){
-   var index = this.cards5.indexOf(data.image);
-   if(data && index > -1){
-    this.cards5.splice(index, 1);
-    this.cards5.unshift(data.image);
-    }
-          
-      } });
-   modal.present();
-      }
- }
-   openModal6(imagesArray) {
-      if(this.card6Activated == false){
-      this.didSaveThisOutfit = false;
+  if(this.card4Activated == false){
+  this.didSaveThisOutfit = false;
 
-let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Tops"});
-     modal.onDidDismiss(data => {
-       if(data){
-         
-   var index = this.cards6.indexOf(data.image);
-   if(data && index > -1){
-    this.cards6.splice(index, 1);
-    this.cards6.unshift(data.image);
-    }
-       
-       }  });
-   modal.present();
-      }
- }
-  openModal7(imagesArray) {
-     if(this.card7Activated == false){
-      this.didSaveThisOutfit = false;
+let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Outerwear"})
 
-let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Belts"});
-     modal.onDidDismiss(data => {
-    var index = this.cards7.indexOf(data);
-          if(data){
+  }}
+      openModal5(imagesArray) {
 
-    var index = this.cards7.indexOf(data.image);
-   if(data && index > -1){
-    this.cards7.splice(index, 1);
-    this.cards7.unshift(data.image);
-    }
-    
-          }
-   });
-   modal.present();
-     }
- }
-   openModal8(imagesArray) {
-      if(this.card8Activated == false){
-      this.didSaveThisOutfit = false;
+  if(this.card5Activated == false){
+  this.didSaveThisOutfit = false;
 
-let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Bottoms"});
-     modal.onDidDismiss(data => {
-       if(data){
-            var index = this.cards8.indexOf(data);
-          if(data && index > 1){
-    this.cards8.unshift(data.image);
-    this.cards8.pop();
-          }
-   }});
-   modal.present();
-      }
- }
-   openModal9(imagesArray) {
-      if(this.card9Activated == false){
-      this.didSaveThisOutfit = false;
+let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Tops"})
 
-let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Jewelry"});
-     modal.onDidDismiss(data => {
-    if(data){
-    var index = this.cards9.indexOf(data.image);
-          if(data && index > 1){
-    this.cards9.unshift(data.image);
-    this.cards9.pop();
-          }
-   }});
-   modal.present();
- }
-   }
-   openModal10(imagesArray) {
-      if(this.card10Activated == false){
-      this.didSaveThisOutfit = false;
+  }}
+    openModal6(imagesArray) {
 
-let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Bags"});
-     modal.onDidDismiss(data => {
-      if(data){
-     var index = this.cards10.indexOf(data.image);
-          if(data && index > 1){
-    this.cards10.unshift(data.image);
-    this.cards10.pop();
-          }
-      } });
-   modal.present();
- }
-   }
-   openModal11(imagesArray) {
-      if(this.card11Activated == false){
-      this.didSaveThisOutfit = false;
+  if(this.card6Activated == false){
+  this.didSaveThisOutfit = false;
 
-let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Shoes"});
-     modal.onDidDismiss(data => {
-       if(data){
-       var index = this.cards11.indexOf(data.image);
-          if(data && index > 1){
-    this.cards11.unshift(data.image);
-    this.cards11.pop();
-          }
-   }});
-   modal.present();
- }
-   }
-   openModal12(imagesArray) {
-      if(this.card12Activated == false){
-      this.didSaveThisOutfit = false;
+let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Tops2"})
 
-let modal = this.modalCtrl.create(imagePicker, { images:imagesArray,user:this.currentUser,type:"Bags"});
-     modal.onDidDismiss(data => {
-       if(data){
-          var index = this.cards12.indexOf(data.image);
-          if(data && index > 1){
-    this.cards12.unshift(data.image);
-    this.cards12.pop();
-          }
-   }});
-   modal.present();
- }
-   }
+  }}
+      openModal7(imagesArray) {
+
+  if(this.card7Activated == false){
+  this.didSaveThisOutfit = false;
+
+let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Belts"})
+
+  }}
+       openModal8(imagesArray) {
+
+  if(this.card8Activated == false){
+  this.didSaveThisOutfit = false;
+
+let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Bottoms"})
+
+  }}
+    openModal9(imagesArray) {
+
+  if(this.card9Activated == false){
+  this.didSaveThisOutfit = false;
+
+let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Jewelry2"})
+
+  }}
+    openModal10(imagesArray) {
+
+  if(this.card10Activated == false){
+  this.didSaveThisOutfit = false;
+
+let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Bags"})
+
+  }}
+      openModal11(imagesArray) {
+
+  if(this.card11Activated == false){
+  this.didSaveThisOutfit = false;
+
+let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Shoes"})
+
+  }}
+    openModal12(imagesArray) {
+
+  if(this.card12Activated == false){
+  this.didSaveThisOutfit = false;
+
+let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Bags2"})
+
+  }}
 
   startEditing()
 {
@@ -2009,33 +2004,47 @@ didSaveThisOutfit:boolean;
   currentImage
  currentUser: any;
  type: string;
+ rawType: string;
 public imgUri: string;
 
  constructor( private params: NavParams,
-    public viewCtrl: ViewController,public popoverCtrl: PopoverController,private ngZone: NgZone,public modalCtrl: ModalController,public actionSheetCtrl: ActionSheetController,private shareService: ShareService,@Inject(FirebaseApp) firebaseApp: any,public navctrl:NavController) {
+    public viewCtrl: ViewController,public popoverCtrl: PopoverController,private ngZone: NgZone,public modalCtrl: ModalController,public actionSheetCtrl: ActionSheetController,private shareService: ShareService,@Inject(FirebaseApp) firebaseApp: any,public navctrl:NavController,public events:Events) {
      this.storageRef = firebaseApp.storage().ref();
-
+     
    // this.images = this.params.get('images');
   this.currentUser = this.params.get("user");
   this.images = this.params.get("images");
+
  for (let entry of this.images) {
     console.log(entry); // 1, "string", false
 } 
   this.type = this.params.get("type");
-
+this.rawType = this.params.get("type");
+if(this.rawType == "Bags2")
+{
+this.rawType = "Bags";
 }
- dismiss() {
-   if(this.pickedImage){
-  
-   let data = { image:this.pickedImage };
-      this.viewCtrl.dismiss(data);
+else if(this.rawType == "Jewelry2")
+{
+this.rawType = "Jewelry";
+}
+else if(this.rawType == "Tops2")
+{
+this.rawType = "Tops";
+}
+}
+ionViewWillLeave() {
+if(this.pickedImage){ 
+       this.events.publish('image:Picked', this.pickedImage,this.type);
    }
    else{
-    this.viewCtrl.dismiss();  
+   
    }
- }
+  }
 
- 
+ dismiss(){
+   this.navctrl.pop();
+ }
   doImageResize(img, callback, MAX_WIDTH: number = 900, MAX_HEIGHT: number = 900) {
     var canvas = document.createElement("canvas");
 
@@ -2132,7 +2141,7 @@ public imgUri: string;
             var imgBlob: any = dataURLtoBlob(this.imgUri);
             imgBlob.name = uuid+'.jpg';
       var uploadTask = this.storageRef.child(this.currentUser+'/'+clothes+'/'+imgBlob.name).put(imgBlob);
-    console.log(this.currentUser+'/'+this.type+'/'+imgBlob.name);
+    console.log(this.currentUser+'/'+this.rawType+'/'+imgBlob.name);
 // Listen for state changes, errors, and completion of the upload.
 uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
   function(snapshot) {
@@ -2187,12 +2196,10 @@ newPostRef.set(
  cropModal.present();
   }
 openBrands() {
-        this.navctrl.push(brandsPage,{"type":this.type});
+        this.navctrl.push(brandsPage,{"type":this.rawType});
     }
   chooseImage(tapimage) {
     this.pickedImage = tapimage;
-    
-    this.dismiss();
 }
   public takePicture(sourceType) {
     // Create options for the Camera Dialog
@@ -2210,14 +2217,14 @@ openBrands() {
       // imageData is a base64 encoded string
       // this.imgData = imageData;
       this.imgUri = imageData;
-      this.presentCropModal(this.imgUri,this.type);
+      this.presentCropModal(this.imgUri,this.rawType);
     }, (err) => {
       console.log(err);
     });
   }
  addPics()
 {
-var clothes = this.type;
+var clothes = this.rawType;
   
   console.log(clothes);
 var options =  {

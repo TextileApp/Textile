@@ -46,6 +46,7 @@ export class productsPage {
     pet: string = "Hats";
   assetCollection: any;
 isEnabled: boolean;
+noProducts: boolean;
 isDeleteEnabled: boolean;
     selectedItem: any;
   icons: string[];
@@ -71,7 +72,7 @@ af: AngularFire;
  ) {
   this.isEnabled = false;
     const authObserver = af.auth.subscribe( user => {
-
+    this.noProducts = false;
     this.whichType = this.params.get("type");
     console.log(this.whichType);
     this.brand = this.params.get("brand");
@@ -152,7 +153,8 @@ item.selected = true;
 shopstyle.products(options).then(response => {
 
  var x;
- if(response != null){
+ if(response.products.length > 0){
+   this.noProducts = true;
      for (x in response.products) {
       result1.push({'image': response.products[x].image.sizes.Large.url,'name':response.products[x].unbrandedName});
       
@@ -163,6 +165,9 @@ shopstyle.products(options).then(response => {
     }
     
   this.items1 = result1;
+ }
+ else{
+this.noProducts = false;
  }
 
 

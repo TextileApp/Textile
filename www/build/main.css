@@ -33539,6 +33539,15 @@ button[fab].fab-map {
   filter: opacity(0.2);
 }
 
+.noProducts {
+  padding-top: 50%;
+  padding-left: 25%;
+  padding-bottom: 25%;
+  padding-right: 25%;
+  font-size: 28px;
+  text-align: center;
+}
+
 page-register h2 {
   text-align: center;
   margin: 10px;

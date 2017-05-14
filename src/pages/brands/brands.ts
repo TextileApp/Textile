@@ -36,7 +36,7 @@ this.ionViewLoaded();
  this.type = this.navParams.get("type");
  if(this.type == "Jewelry"){
 
-  this.category = "clothes";
+  this.category = "jewelry";
  }
  else if(this.type == "Hats")
  {
