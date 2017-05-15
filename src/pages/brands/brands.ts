@@ -25,6 +25,8 @@ mostPopList: Array<any>;
   if (user) {
   
 
+ this.type = this.navParams.get("type");
+ console.log(this.type);
 this.ionViewLoaded();
 
 
@@ -33,43 +35,7 @@ this.ionViewLoaded();
 
 });
 
- this.type = this.navParams.get("type");
- if(this.type == "Jewelry"){
 
-  this.category = "jewelry";
- }
- else if(this.type == "Hats")
- {
-   this.category = "hats";
- }
- else if(this.type == "Neckwear")
- {
-   this.category = "scarves";
- }
-  else if(this.type == "Outerwear")
- {
-   this.category = "outerwear";
- }
-   else if(this.type == "Tops")
- {
-   this.category = "shirts";
- }
- else if(this.type == "Belts")
- {
-   this.category = "belts";
- }
-  else if(this.type == "Bottoms")
- {
-   this.category = "pants";
- }
-  else if(this.type == "Bags")
- {
-   this.category = "bags";
- }
- else if(this.type == "Shoes")
- {
-   this.category = "shoes";
- }
 
 
   }
@@ -100,32 +66,25 @@ this.ionViewLoaded();
    ionViewLoaded() {
  var tempBrands = [];
 var tempBrandsID = [];
-for(var i = 0; i<= 233; i++){
-firebase.database().ref().child('Brands/'+i+'/name').on('value', function(data) {
+
+firebase.database().ref().child('Brands/').on('value', function(data) {
 var element = data.val();
 if(element){
+console.log(element);
 tempBrands.push(element);
 console.log(element);
 }
 });
-  }
-  for(var i = 0; i<= 233; i++){
-firebase.database().ref('Brands/'+i+'/id').on('value', function(data) {
-var element = data.val();
-if(element){
-console.log(element);
-tempBrandsID.push(element);
-}
-});
-  }
+  
+
 
 this.brands = tempBrands;
 this.brandsID = tempBrandsID;
    }
  itemSelected(item){
-   var id = "b"+this.brandsID[this.brands.indexOf(item)];
+
  
-this.navCtrl.push(productsPage,{"type":this.category,"internaltype":this.type,"brand":item,"brandID":id});
+this.navCtrl.push(productsPage,{"type":this.type,"brand":item});
 
  }
 }

@@ -14,7 +14,7 @@
 <ion-content>
 
 <ion-list>
-  <button ion-item *ngFor="let item of brands" (click)="itemSelected(item)">
+  <button ion-item *ngFor="let item of brands" (tap)="itemSelected(item)">
     {{ item }}
   </button>  
 </ion-list>
