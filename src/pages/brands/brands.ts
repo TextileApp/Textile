@@ -36,7 +36,7 @@ this.ionViewLoaded();
  this.type = this.navParams.get("type");
  if(this.type == "Jewelry"){
 
-  this.category = "jewelry";
+  this.category = "mens-watches-and-jewelry";
  }
  else if(this.type == "Hats")
  {
@@ -44,31 +44,31 @@ this.ionViewLoaded();
  }
  else if(this.type == "Neckwear")
  {
-   this.category = "scarves";
+   this.category = "mens-scarves";
  }
   else if(this.type == "Outerwear")
  {
-   this.category = "outerwear";
+   this.category = "mens-outerwear";
  }
    else if(this.type == "Tops")
  {
-   this.category = "shirts";
+   this.category = "mens-shirts";
  }
  else if(this.type == "Belts")
  {
-   this.category = "belts";
+   this.category = "mens-belts";
  }
   else if(this.type == "Bottoms")
  {
-   this.category = "pants";
+   this.category = "mens-pants";
  }
   else if(this.type == "Bags")
  {
-   this.category = "bags";
+   this.category = "mens-bags";
  }
  else if(this.type == "Shoes")
  {
-   this.category = "shoes";
+   this.category = "mens-shoes";
  }
 
 

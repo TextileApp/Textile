@@ -1,7 +1,7 @@
-import { Component, Inject, NgZone} from '@angular/core';
+import { Component, Inject, NgZone,ViewChild} from '@angular/core';
 import { Camera } from 'ionic-native';
 import { PhotoViewer } from 'ionic-native';
-import { NavController,PopoverController,ActionSheetController,ModalController,NavParams } from 'ionic-angular';
+import { NavController,PopoverController,ActionSheetController,ModalController,NavParams,Content } from 'ionic-angular';
 import { FirebaseApp,FirebaseListObservable,AngularFire } from 'angularfire2';
 import * as firebase from 'firebase';
 import { PopoverContentPage } from './popover';
@@ -42,6 +42,7 @@ function dataURLtoBlob(dataurl) {
 
 export class productsPage {
   
+  @ViewChild(Content) content: Content;
 
     pet: string = "Hats";
   assetCollection: any;
@@ -84,7 +85,7 @@ af: AngularFire;
  // this.items3 = af.database.list(this.currentUser+'/Bottoms/');
  // this.items4 = af.database.list(this.currentUser+'/Shoes/');
 this.ionViewLoaded();
-  
+
   
 });
 
@@ -142,12 +143,13 @@ item.selected = true;
 
 
   const options = {
-  cat:this.whichType
-  ,
+  cat:this.whichType,
+ 
   limit: 50,
   fl: this.brandID,
   sort: 'Popularity',
 };
+
        var result1 = [];
        var result2 = [];
 shopstyle.products(options).then(response => {
@@ -157,14 +159,11 @@ shopstyle.products(options).then(response => {
    this.noProducts = true;
      for (x in response.products) {
       result1.push({'image': response.products[x].image.sizes.Large.url,'name':response.products[x].unbrandedName});
-      
-      console.log(response.products[x]);
-     
-      console.log(response.products[x].image.sizes);
-
-    }
     
+    }
+
   this.items1 = result1;
+  this.getAnotherFifty(1);
  }
  else{
 this.noProducts = false;
@@ -172,18 +171,56 @@ this.noProducts = false;
 
 
 });
-      
+
 
       
   }
   
+ngAfterViewInit() {
 
+  
+    
+}
 
+getAnotherFifty(timesRan)
+{
+var offset = timesRan*50;
+if(timesRan < 8){
+ const options = {
+  cat:this.whichType
+  ,
+  offset:offset 
+  ,
+  limit: 50,
+  fl: this.brandID,
+  sort: 'Popularity',
+};
+       
+shopstyle.products(options).then(response => {
 
- 
+ var x;
+ if(response.products.length > 0){
+   this.noProducts = true;
+     for (x in response.products) {
+      this.items1.push({'image': response.products[x].image.sizes.Large.url,'name':response.products[x].unbrandedName});
+      console.log("ADDING IMAGES");
+    
 
+    }
 
+  
 
+  } 
+
+});
+
+      
+timesRan++;
+this.getAnotherFifty(timesRan);
+}
+}
+
+      
 
 
 
