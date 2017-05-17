@@ -36,6 +36,43 @@ this.ionViewLoaded();
 });
 
 
+<<<<<<< HEAD
+=======
+  this.category = "mens-watches-and-jewelry";
+ }
+ else if(this.type == "Hats")
+ {
+   this.category = "hats";
+ }
+ else if(this.type == "Neckwear")
+ {
+   this.category = "mens-scarves";
+ }
+  else if(this.type == "Outerwear")
+ {
+   this.category = "mens-outerwear";
+ }
+   else if(this.type == "Tops")
+ {
+   this.category = "mens-shirts";
+ }
+ else if(this.type == "Belts")
+ {
+   this.category = "mens-belts";
+ }
+  else if(this.type == "Bottoms")
+ {
+   this.category = "mens-pants";
+ }
+  else if(this.type == "Bags")
+ {
+   this.category = "mens-bags";
+ }
+ else if(this.type == "Shoes")
+ {
+   this.category = "mens-shoes";
+ }
+>>>>>>> HEAD@{1}
 
 
   }

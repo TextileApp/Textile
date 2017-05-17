@@ -1,7 +1,7 @@
-import { Component, Inject, NgZone} from '@angular/core';
+import { Component, Inject, NgZone,ViewChild} from '@angular/core';
 import { Camera } from 'ionic-native';
 import { PhotoViewer } from 'ionic-native';
-import { NavController,PopoverController,ActionSheetController,ModalController,NavParams } from 'ionic-angular';
+import { NavController,PopoverController,ActionSheetController,ModalController,NavParams,Content } from 'ionic-angular';
 import { FirebaseApp,FirebaseListObservable,AngularFire } from 'angularfire2';
 import * as firebase from 'firebase';
 import { PopoverContentPage } from './popover';
@@ -23,6 +23,7 @@ const shopstyle = new ShopStyle('uid8976-38160824-19');
 
 export class productsPage {
   
+  @ViewChild(Content) content: Content;
 
     pet: string = "Hats";
   assetCollection: any;
@@ -59,11 +60,23 @@ af: AngularFire;
     console.log(this.whichType);
     this.brand = this.params.get("brand");
     console.log(this.brand);
+<<<<<<< HEAD
  this.items1 = af.database.list('Database/'+this.whichType+'/'+this.brand);
 
 
  
         } 
+=======
+    this.brandID = this.params.get("brandID");
+    console.log(this.brandID);
+    this.internalType = this.params.get("internaltype");
+  //this.items2 = af.database.list(this.currentUser+'/Tops');
+ // this.items3 = af.database.list(this.currentUser+'/Bottoms/');
+ // this.items4 = af.database.list(this.currentUser+'/Shoes/');
+this.ionViewLoaded();
+
+  
+>>>>>>> HEAD@{1}
 });
 
      //this.grid = Array(Math.ceil(this.items.length/2));
@@ -100,12 +113,91 @@ item.selected = true;
 
 
 
+<<<<<<< HEAD
+=======
+  ionViewLoaded() {
 
 
+  const options = {
+  cat:this.whichType,
  
+  limit: 50,
+  fl: this.brandID,
+  sort: 'Popularity',
+};
+
+       var result1 = [];
+       var result2 = [];
+shopstyle.products(options).then(response => {
+
+ var x;
+ if(response.products.length > 0){
+   this.noProducts = true;
+     for (x in response.products) {
+      result1.push({'image': response.products[x].image.sizes.Large.url,'name':response.products[x].unbrandedName});
+    
+    }
+
+  this.items1 = result1;
+  this.getAnotherFifty(1);
+ }
+ else{
+this.noProducts = false;
+ }
 
 
+});
 
+
+      
+  }
+  
+ngAfterViewInit() {
+
+  
+    
+}
+>>>>>>> HEAD@{1}
+
+getAnotherFifty(timesRan)
+{
+var offset = timesRan*50;
+if(timesRan < 8){
+ const options = {
+  cat:this.whichType
+  ,
+  offset:offset 
+  ,
+  limit: 50,
+  fl: this.brandID,
+  sort: 'Popularity',
+};
+       
+shopstyle.products(options).then(response => {
+
+ var x;
+ if(response.products.length > 0){
+   this.noProducts = true;
+     for (x in response.products) {
+      this.items1.push({'image': response.products[x].image.sizes.Large.url,'name':response.products[x].unbrandedName});
+      console.log("ADDING IMAGES");
+    
+
+    }
+
+  
+
+  } 
+
+});
+
+      
+timesRan++;
+this.getAnotherFifty(timesRan);
+}
+}
+
+      
 
 
 
