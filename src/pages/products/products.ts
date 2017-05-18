@@ -32,7 +32,7 @@ noProducts: boolean;
 isDeleteEnabled: boolean;
     selectedItem: any;
   icons: string[];
- items1: FirebaseListObservable<any>;
+ items1: Array<any>;
  selectedItems:Array<any>;
 	options: any;
   db: any;
@@ -60,13 +60,12 @@ af: AngularFire;
     console.log(this.whichType);
     this.brand = this.params.get("brand");
     console.log(this.brand);
-<<<<<<< HEAD
- this.items1 = af.database.list('Database/'+this.whichType+'/'+this.brand);
+
 
 
  
         } 
-=======
+
     this.brandID = this.params.get("brandID");
     console.log(this.brandID);
     this.internalType = this.params.get("internaltype");
@@ -76,7 +75,7 @@ af: AngularFire;
 this.ionViewLoaded();
 
   
->>>>>>> HEAD@{1}
+
 });
 
      //this.grid = Array(Math.ceil(this.items.length/2));
@@ -88,7 +87,23 @@ this.ionViewLoaded();
     }
 saveToCloset()
 {
-  
+  console.log("WE SAVING CLOSETS MF");
+  var item;
+  for(var i = 0; i< this.items1.length; i++)
+  {
+     this.db = firebase.database().ref(firebase.auth().currentUser.uid+'/'+this.internalType+'/'+this.items1[i].name);
+
+    console.log("NOICE MATE");
+if(this.items1[i].selected == true)
+{
+//this.selectedItems.push(item);
+    console.log("killa MATE");
+
+this.db.set(
+  this.items1[i].image
+);
+};
+}
 this.navCtrl.popToRoot();
   }
   selectPiece(item){
@@ -113,8 +128,8 @@ item.selected = true;
 
 
 
-<<<<<<< HEAD
-=======
+
+
   ionViewLoaded() {
 
 
@@ -157,7 +172,7 @@ ngAfterViewInit() {
   
     
 }
->>>>>>> HEAD@{1}
+
 
 getAnotherFifty(timesRan)
 {

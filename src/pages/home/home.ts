@@ -2033,14 +2033,7 @@ else if(this.rawType == "Tops2")
 this.rawType = "Tops";
 }
 }
-ionViewWillLeave() {
-if(this.pickedImage){ 
-       this.events.publish('image:Picked', this.pickedImage,this.type);
-   }
-   else{
-   
-   }
-  }
+
 
  dismiss(){
    this.navctrl.pop();
@@ -2200,6 +2193,8 @@ openBrands() {
     }
   chooseImage(tapimage) {
     this.pickedImage = tapimage;
+       this.events.publish('image:picked', this.pickedImage,this.type);
+    this.navctrl.pop();
 }
   public takePicture(sourceType) {
     // Create options for the Camera Dialog
