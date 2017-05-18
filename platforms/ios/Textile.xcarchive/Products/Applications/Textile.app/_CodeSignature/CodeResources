@@ -86,7 +86,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		9MNDonK5bXVz4tOv6lZNxrqLCh8=
+		c78GWsFDErY65JKoYeE6/DdNJLA=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -94,7 +94,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		Jch306mNGGv6CUHwvL2GmIaY63M=
+		UFtCh0SeR79bhMRgKKFXpJV/ufs=
 		</data>
 		<key>GMEmptyFolder@1x.png</key>
 		<data>
@@ -122,7 +122,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		TabnGujla+kbw66kqYEDFPsjYi0=
+		lJIIxKlelarlDcWmCWurgGAv74M=
 		</data>
 		<key>LaunchImage-568h@2x.png</key>
 		<data>
@@ -158,7 +158,7 @@
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		5faAAKqJAS8St1+c9zsZ2D+CRA8=
+		gEqmxHTRncfn5uCIHWYOLPc1mTI=
 		</data>
 		<key>PEPhotoCropEditor.bundle/PEPhotoCropEditorBorder.png</key>
 		<data>
@@ -205,7 +205,7 @@
 		</dict>
 		<key>config.xml</key>
 		<data>
-		goH0XyZkmFmwdVizuC81MCgR8YE=
+		c4LI+eNcOJMPniyXefOCKvAd7+Y=
 		</data>
 		<key>de.lproj/GMImagePicker.strings</key>
 		<dict>
@@ -411,15 +411,15 @@
 		</data>
 		<key>www/build/main.css</key>
 		<data>
-		u9WPuAE67OJdmBPHZkzv54WYQjE=
+		9NkhTygx0nXVi+QSkRK+qRwpbaU=
 		</data>
 		<key>www/build/main.js</key>
 		<data>
-		/O5KyqhTWfQW1gE0UuzCn/iVnSc=
+		8AYCsLF1U+/g2ZHPHmr0jSPpY6Q=
 		</data>
 		<key>www/build/main.js.map</key>
 		<data>
-		w0aVH3fdJTg6L0IQTHoVJS+lZ3c=
+		rYFy574MCH5+VGhfBLYMhAlfjdo=
 		</data>
 		<key>www/build/polyfills.js</key>
 		<data>
@@ -824,11 +824,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			9MNDonK5bXVz4tOv6lZNxrqLCh8=
+			c78GWsFDErY65JKoYeE6/DdNJLA=
 			</data>
 			<key>hash2</key>
 			<data>
-			wIzP8EolnHngJ8fcHGJ3kqpzzY8oOABqorM60kxsvSc=
+			zGLnDMrMTop2pHwbDALxQY1dS+gbMRAXLZisRRj1EUY=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -846,11 +846,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Jch306mNGGv6CUHwvL2GmIaY63M=
+			UFtCh0SeR79bhMRgKKFXpJV/ufs=
 			</data>
 			<key>hash2</key>
 			<data>
-			ogth2qPh3RNEzrs413++yHefI2TX174Jph4EPRn27bo=
+			0hlCeqLXuvLRqJoV3VSG5p6cMu4LseaqwDhMScoIuv8=
 			</data>
 		</dict>
 		<key>GMEmptyFolder@1x.png</key>
@@ -1011,11 +1011,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			5faAAKqJAS8St1+c9zsZ2D+CRA8=
+			gEqmxHTRncfn5uCIHWYOLPc1mTI=
 			</data>
 			<key>hash2</key>
 			<data>
-			l8xtKATXpx0IdsmyU/6S1bVCvqjoZL64z5kse+FbR2w=
+			pjcFMPPB93bgLqvTxwhwSpj7Gl7+slAgvNDj178dMys=
 			</data>
 		</dict>
 		<key>PEPhotoCropEditor.bundle/PEPhotoCropEditorBorder.png</key>
@@ -1094,11 +1094,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			goH0XyZkmFmwdVizuC81MCgR8YE=
+			c4LI+eNcOJMPniyXefOCKvAd7+Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			F6rDwr1oLu9Ob5TUGMwIkskrP1nLfuY9e0Mg3bBACKY=
+			8z5tox8i1zgTf0wspbEzX+8aAHSy50ZSIYJUmYtm+kw=
 			</data>
 		</dict>
 		<key>de.lproj/GMImagePicker.strings</key>
@@ -1590,33 +1590,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			u9WPuAE67OJdmBPHZkzv54WYQjE=
+			9NkhTygx0nXVi+QSkRK+qRwpbaU=
 			</data>
 			<key>hash2</key>
 			<data>
-			2rlKCc7NHH6t6Yv6a6cAgyMEF1S3vYcKRlLEIm82d4k=
+			X9B/hHO+IEB5Xhmm7I6h1336hlDo9hWRUNkxxhQMhfc=
 			</data>
 		</dict>
 		<key>www/build/main.js</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/O5KyqhTWfQW1gE0UuzCn/iVnSc=
+			8AYCsLF1U+/g2ZHPHmr0jSPpY6Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			Mc+PiDLyjbVZT0YkCUKip2RjtwVu0wfNid+daZnRQkY=
+			eJhVnYeE/N5xTT4cY0oZkSTYGt9z4J4NVutPc0Xq4X0=
 			</data>
 		</dict>
 		<key>www/build/main.js.map</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			w0aVH3fdJTg6L0IQTHoVJS+lZ3c=
+			rYFy574MCH5+VGhfBLYMhAlfjdo=
 			</data>
 			<key>hash2</key>
 			<data>
-			ELDZYrilpP3Ony6zkJyCNdiRP4lqKvn+ZRgxON4a4Jc=
+			ZBJn/xqw0G1L4zq/FdwRRRKTAghiEU2LLtKqgpLPpnY=
 			</data>
 		</dict>
 		<key>www/build/polyfills.js</key>

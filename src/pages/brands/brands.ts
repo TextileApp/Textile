@@ -18,12 +18,58 @@ export class brandsPage {
 brands: Array<any>;
 brandsID: Array<any>;
 type: any;
+brandsList: any;
 category: any;
 mostPopList: Array<any>;
   constructor(public navCtrl: NavController,private ngZone: NgZone,af: AngularFire,private _auth: AuthService,private navParams:NavParams) {
         const authObserver = af.auth.subscribe( user => {
   if (user) {
-  
+this.type = this.navParams.get("type");
+ if(this.type == "Jewelry"){
+this.brandsList = "JewelryBrands";
+  this.category = "mens-watches-and-jewelry";
+ }
+ else if(this.type == "Hats")
+ {
+   this.brandsList = "Brands";
+   this.category = "hats";
+ }
+ else if(this.type == "Neckwear")
+ {
+   this.brandsList = "Brands";
+   this.category = "mens-scarves";
+ }
+  else if(this.type == "Outerwear")
+ {
+   this.brandsList = "Brands";
+   this.category = "mens-outerwear";
+ }
+   else if(this.type == "Tops")
+ {
+   this.brandsList = "Brands";
+   this.category = "mens-shirts";
+ }
+ else if(this.type == "Belts")
+ {
+   this.brandsList = "Brands";
+   this.category = "mens-belts";
+ }
+  else if(this.type == "Bottoms")
+ {
+   this.brandsList = "Brands";
+   this.category = "mens-pants";
+ }
+  else if(this.type == "Bags")
+ {
+   this.brandsList = "Brands";
+   this.category = "mens-bags";
+ }
+ else if(this.type == "Shoes")
+ {
+   this.brandsList = "Brands";
+   this.category = "mens-shoes";
+ }
+
 
 this.ionViewLoaded();
 
@@ -33,44 +79,7 @@ this.ionViewLoaded();
 
 });
 
- this.type = this.navParams.get("type");
- if(this.type == "Jewelry"){
-
-  this.category = "mens-watches-and-jewelry";
- }
- else if(this.type == "Hats")
- {
-   this.category = "hats";
- }
- else if(this.type == "Neckwear")
- {
-   this.category = "mens-scarves";
- }
-  else if(this.type == "Outerwear")
- {
-   this.category = "mens-outerwear";
- }
-   else if(this.type == "Tops")
- {
-   this.category = "mens-shirts";
- }
- else if(this.type == "Belts")
- {
-   this.category = "mens-belts";
- }
-  else if(this.type == "Bottoms")
- {
-   this.category = "mens-pants";
- }
-  else if(this.type == "Bags")
- {
-   this.category = "mens-bags";
- }
- else if(this.type == "Shoes")
- {
-   this.category = "mens-shoes";
- }
-
+ 
 
   }
  ngAfterViewInit() {
@@ -100,20 +109,28 @@ this.ionViewLoaded();
    ionViewLoaded() {
  var tempBrands = [];
 var tempBrandsID = [];
-for(var i = 0; i<= 233; i++){
-firebase.database().ref().child('Brands/'+i+'/name').on('value', function(data) {
+var length = 233;
+if(this.brandsList == "JewelryBrands")
+{
+length = 98;
+}
+if(this.brandsList == "Brands")
+{
+length = 233;
+}
+for(var i = 0; i<= length; i++){
+firebase.database().ref().child(this.brandsList+'/'+i+'/name').on('value', function(data) {
 var element = data.val();
 if(element){
 tempBrands.push(element);
-console.log(element);
+
 }
 });
   }
-  for(var i = 0; i<= 233; i++){
-firebase.database().ref('Brands/'+i+'/id').on('value', function(data) {
+  for(var i = 0; i<= length; i++){
+firebase.database().ref(this.brandsList+'/'+i+'/id').on('value', function(data) {
 var element = data.val();
 if(element){
-console.log(element);
 tempBrandsID.push(element);
 }
 });
@@ -128,4 +145,6 @@ this.brandsID = tempBrandsID;
 this.navCtrl.push(productsPage,{"type":this.category,"internaltype":this.type,"brand":item,"brandID":id});
 
  }
+
+
 }

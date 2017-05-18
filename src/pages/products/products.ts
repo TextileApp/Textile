@@ -146,7 +146,7 @@ item.selected = true;
 shopstyle.products(options).then(response => {
 
  var x;
- if(response.products.length > 0){
+
    this.noProducts = true;
      for (x in response.products) {
       result1.push({'image': response.products[x].image.sizes.Large.url,'name':response.products[x].unbrandedName});
@@ -155,10 +155,8 @@ shopstyle.products(options).then(response => {
 
   this.items1 = result1;
   this.getAnotherFifty(1);
- }
- else{
-this.noProducts = false;
- }
+ 
+
 
 
 });

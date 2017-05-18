@@ -33446,6 +33446,17 @@ ion-col {
   padding-bottom: 4%;
 }
 
+.home .jewelrypics {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  padding-left: 25%;
+  padding-top: 25%;
+  padding-right: 25%;
+  padding-bottom: 25%;
+}
+
 .home #card-stack {
   width: 32%;
   height: 22.5%;
