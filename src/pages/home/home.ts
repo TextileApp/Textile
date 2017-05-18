@@ -218,7 +218,7 @@ var index = this.cards1.indexOf(image);
     }
 
  }
- else if(type == "Hats")
+if(type == "Hats")
  {
 var index = this.cards2.indexOf(image);
    if(image && index > -1){
@@ -226,7 +226,7 @@ var index = this.cards2.indexOf(image);
     this.cards2.unshift(image);
     }
  }
- else if(type == "Neckwear")
+if(type == "Neckwear")
  {
 var index = this.cards3.indexOf(image);
    if(image && index > -1){
@@ -234,7 +234,7 @@ var index = this.cards3.indexOf(image);
     this.cards3.unshift(image);
     }
  }
-  else if(type == "Outerwear")
+if(type == "Outerwear")
  {
   var index = this.cards4.indexOf(image);
    if(image && index > -1){
@@ -242,7 +242,7 @@ var index = this.cards3.indexOf(image);
     this.cards4.unshift(image);
     }
  }
-   else if(type == "Tops")
+if(type == "Tops")
  {
   var index = this.cards5.indexOf(image);
    if(image && index > -1){
@@ -250,14 +250,15 @@ var index = this.cards3.indexOf(image);
     this.cards5.unshift(image);
     }
  }
- else if(type == "Tops2")
+if(type == "Tops2")
  {
   var index = this.cards6.indexOf(image);
    if(image && index > -1){
     this.cards6.splice(index, 1);
     this.cards6.unshift(image);
-    }
- else if(type == "Belts")
+  }
+ }
+if(type == "Belts")
  {
 var index = this.cards7.indexOf(image);
    if(image && index > -1){
@@ -265,7 +266,7 @@ var index = this.cards7.indexOf(image);
     this.cards7.unshift(image);
     }
  }
-  else if(type == "Bottoms")
+if(type == "Bottoms")
  {
 var index = this.cards8.indexOf(image);
    if(image && index > -1){
@@ -273,7 +274,8 @@ var index = this.cards8.indexOf(image);
     this.cards8.unshift(image);
     }
  }
- if(type == "Jewelry2"){
+ if(type == "Jewelry2")
+ {
 var index = this.cards9.indexOf(image);
    if(image && index > -1){
     this.cards9.splice(index, 1);
@@ -281,7 +283,7 @@ var index = this.cards9.indexOf(image);
     }
 
  }
-  else if(type == "Bags")
+if(type == "Bags")
  {
 var index = this.cards10.indexOf(image);
    if(image && index > -1){
@@ -289,7 +291,7 @@ var index = this.cards10.indexOf(image);
     this.cards10.unshift(image);
     }
  }
- else if(type == "Shoes")
+if(type == "Shoes")
  {
   var index = this.cards11.indexOf(image);
    if(image && index > -1){
@@ -297,7 +299,7 @@ var index = this.cards10.indexOf(image);
     this.cards11.unshift(image);
     }
  } 
-  else if(type == "Bags2")
+if(type == "Bags2")
  {
 var index = this.cards12.indexOf(image);
    if(image && index > -1){
@@ -305,7 +307,7 @@ var index = this.cards12.indexOf(image);
     this.cards12.unshift(image);
     }
  }
- }
+ 
   });
       }
   
