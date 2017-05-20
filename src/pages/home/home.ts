@@ -133,7 +133,7 @@ export class HomePage implements OnInit{
   stackConfig4: StackConfig;
   recentCard4: string = '';
     stackConfig5: StackConfig;
-
+lastSavedFitRef: any;
   cards5: Array<any>;
   cards6: Array<any>;
   cards7: Array<any>;
@@ -1803,10 +1803,11 @@ decimalToHex(d, padding) {
     this.navCtrl.push(OutfitsPage);
   }
   saveOutfit() {
+
 if(this.didSaveThisOutfit == false){
 
 var newChildRef = firebase.database().ref(firebase.auth().currentUser.uid+'/outfits/');
-var newPostRef = newChildRef.push();
+this.lastSavedFitRef = newChildRef.push();
 var topcard1;
 var topcard2;
 var topcard3;
@@ -1919,7 +1920,7 @@ else{
 
 
 
-newPostRef.set(
+this.lastSavedFitRef.set(
   {first:topcard1,second:topcard2,third:topcard3,fourth:topcard4,fifth:topcard5,sixth:topcard6,seventh:topcard7,eighth:topcard8,ninth:topcard9,tenth:topcard10,eleventh:topcard11,twelth:topcard12}
 );
  let toast = this.toastCtrl.create({
@@ -1936,7 +1937,7 @@ newPostRef.set(
 }
 
   else if(this.didSaveThisOutfit == true){
-var newChildRef = firebase.database().ref(firebase.auth().currentUser.uid+'/outfits/');
+var newChildRef = firebase.database().ref(firebase.auth().currentUser.uid+'/outfits/'+this.lastSavedFitRef.key);
   newChildRef.remove(function(error) {
 
 
@@ -2179,6 +2180,7 @@ uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
  
      this.db = firebase.database().ref(firebase.auth().currentUser.uid+'/'+clothes);
 var newPostRef = this.db.push();
+
 newPostRef.set(
   downloadURL
 );

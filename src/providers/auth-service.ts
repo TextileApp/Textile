@@ -46,4 +46,11 @@ export class AuthService {
       return '';
     }
   }
+    userEmail(): string {
+    if (this.authState != null) {
+      return this.authState.auth.email;
+    } else {
+      return '';
+    }
+  }
 }

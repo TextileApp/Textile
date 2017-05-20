@@ -16,10 +16,14 @@ outfits: FirebaseListObservable<any>;
 myUser: any;
 af: AngularFire;
 isEnabled: boolean;
+userName: any;
+tempUsername: string;
   constructor(public navCtrl: NavController,private ngZone: NgZone,af: AngularFire,private _auth: AuthService) {
     const authObserver = af.auth.subscribe( user => {
   if (user) {
+    this.tempUsername = _auth.userEmail();
     this.myUser = user.uid;
+    this.userName = this.tempUsername.substr(0, this.tempUsername.indexOf('@'));
   this.outfits = af.database.list(this.myUser+'/outfits/');
   } 
   this.isEnabled = false;
@@ -107,6 +111,7 @@ this.outfits.update(outfitkey,{title:newtitle});
 }
 deleteOutfits(outfitkey: string){
 //firebase.database().ref(this.myUser+'/outfits/'+outfit.key).remove();
+console.log(outfitkey);
 this.outfits.remove(outfitkey);
 }
 
