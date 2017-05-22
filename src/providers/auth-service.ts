@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AuthProviders, AngularFireAuth, FirebaseAuthState, AuthMethods } from 'angularfire2';
-
+import * as firebase from 'firebase';
 @Injectable()
 export class AuthService {
   private authState: FirebaseAuthState;
@@ -53,22 +53,15 @@ export class AuthService {
       return '';
     }
   }
-  setDisplayname(newName):any
-  {
-// Updates the user attributes:
-this.authState.auth.updateProfile({
-  displayName: newName,
-  photoURL: null
-}).then(function() {
-  // Profile updated successfully!
-  // "Jane Q. User"
-  var displayName = this.authState.auth.displayName;
-  var photoURL = null;
-  return "Profile updated successfully!";
-}, function(error) {
-  return "error";
-  // An error happened.
-});
+  updatePassword(newPass){
 
+this.authState.auth.updatePassword(newPass).then(function() {
+
+   
+  
+}, function(error) {
+
+   });
   }
-}
+  }
+

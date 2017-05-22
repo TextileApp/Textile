@@ -14,17 +14,18 @@
 <ion-content>
 
 <ion-list>
-    <ion-input text-center style = "margin: auto; width: 80%;font-size: 20px;" [(ngModel)]="f.title" placeholder="outfit" (change)="changedTitle(f.$key,f.title)" type="text"></ion-input>
-
   <ion-item>
     <ion-label fixed>Username</ion-label>
-    <ion-input type="text" [(ngModel)]="usernameText" (change)="setDisplayName(usernameText)"></ion-input>
-    <button clear item-right>save</button>
+    <ion-input type="text" [(ngModel)]="usernameText" ></ion-input>
+    <button clear item-right (tap) = "setDisplayname(usernameText)" >save</button>
   </ion-item>
-  <ion-item>
+  <ion-item [formGroup]="passwordForm">
     <ion-label fixed>Password</ion-label>
-    <ion-input type="password"></ion-input>
-  </ion-item>
+    <ion-input placeholder="•••••••"    #password formControlName="password" type="password" (change)="elementChanged(password)"[(ngModel)]="newPassword" [class.invalid]="!passwordForm.controls.password.valid && (passwordChanged || submitAttempt)"></ion-input>
+    <button clear item-right (tap) = "changePassword(newPassword)">save</button>
 
+  </ion-item>
+  
 </ion-list>
+
 </ion-content>

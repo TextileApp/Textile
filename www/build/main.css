@@ -12645,9 +12645,9 @@ ion-input[disabled] .input-cover {
 }
 
 .text-input-ios {
-  margin: 11px 8px 11px 0;
+  margin: 11px 0px 11px 0;
   padding: 0;
-  width: calc(100% - 8px);
+  width: calc(100% - 0px);
 }
 
 .input-ios .inset-input {
@@ -12660,7 +12660,7 @@ ion-input[disabled] .input-cover {
   margin-top: 8px;
   margin-bottom: 8px;
   margin-left: 0;
-  width: calc(100% - 8px);
+  width: calc(100% - 0px);
 }
 
 .item-ios.item-label-stacked .label-ios + .input + .cloned-input,

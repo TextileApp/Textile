@@ -1,6 +1,7 @@
 import { Component, ViewChild, NgZone} from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController,ToastController } from 'ionic-angular';
 import {settingsPage} from '../settings/settings';
+import * as firebase from 'firebase';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
 import { AuthService } from '../../providers/auth-service';
 import { Slides } from 'ionic-angular';
@@ -19,18 +20,21 @@ af: AngularFire;
 isEnabled: boolean;
 userName: any;
 tempUsername: string;
-  constructor(public navCtrl: NavController,private ngZone: NgZone,af: AngularFire,private _auth: AuthService) {
+  constructor(public navCtrl: NavController,private ngZone: NgZone,af: AngularFire,private _auth: AuthService,public toastCtrl: ToastController) {
     const authObserver = af.auth.subscribe( user => {
   if (user) {
-  var username;
+      var username;
 var tempUsername;
-var ref = firebase.database().ref('https://streetwear-3906e.firebaseio.com'+user.uid+'/username');
+    this.myUser = user.uid;
+     tempUsername = user.auth.email;
+
+var ref = firebase.database().ref(user.uid+'/username');
 ref.once('value', function(snapshot) {
   if (snapshot.val() === null) {
-    tempUsername = _auth.userEmail();
-    this.myUser = user.uid;
-    username = this.tempUsername.substr(0, this.tempUsername.indexOf('@'));
-     var db = firebase.database().ref('https://streetwear-3906e.firebaseio.com'+user.uid+'/username');
+   
+    
+    username = tempUsername.substr(0, tempUsername.indexOf('@'));
+     var db = firebase.database().ref(user.uid+'/username');
 
 db.set(
  username
