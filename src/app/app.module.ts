@@ -13,6 +13,7 @@ import { productsPage } from '../pages/products/products';
 import { RegisterPage } from '../pages/register/register';
 import { ResetpwdPage } from '../pages/resetpwd/resetpwd';
 import { AuthService } from '../providers/auth-service';
+import { settingsPage } from '../pages/settings/settings';
 import * as firebase from 'firebase';
 import { ShareService } from '../providers/ShareService';
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
@@ -51,6 +52,7 @@ firebase.initializeApp(firebaseConfig);
     closetMenuPage,
     brandsPage,
     productsPage,
+    settingsPage,
     ImageCropperComponent,
     PopoverContentPage
     
@@ -75,6 +77,7 @@ firebase.initializeApp(firebaseConfig);
     closetMenuPage,
     brandsPage,
     productsPage,
+    settingsPage,
     LoginPage,
     RegisterPage,
     ResetpwdPage,

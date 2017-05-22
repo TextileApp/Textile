@@ -1,5 +1,6 @@
 import { Component, ViewChild, NgZone} from '@angular/core';
 import { NavController } from 'ionic-angular';
+import {settingsPage} from '../settings/settings';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
 import { AuthService } from '../../providers/auth-service';
 import { Slides } from 'ionic-angular';
@@ -21,9 +22,23 @@ tempUsername: string;
   constructor(public navCtrl: NavController,private ngZone: NgZone,af: AngularFire,private _auth: AuthService) {
     const authObserver = af.auth.subscribe( user => {
   if (user) {
-    this.tempUsername = _auth.userEmail();
+  var username;
+var tempUsername;
+var ref = firebase.database().ref('https://streetwear-3906e.firebaseio.com'+user.uid+'/username');
+ref.once('value', function(snapshot) {
+  if (snapshot.val() === null) {
+    tempUsername = _auth.userEmail();
     this.myUser = user.uid;
-    this.userName = this.tempUsername.substr(0, this.tempUsername.indexOf('@'));
+    username = this.tempUsername.substr(0, this.tempUsername.indexOf('@'));
+     var db = firebase.database().ref('https://streetwear-3906e.firebaseio.com'+user.uid+'/username');
+
+db.set(
+ username
+);
+  } else {
+    // username already exists, ask user for a different name
+  }
+});
   this.outfits = af.database.list(this.myUser+'/outfits/');
   } 
   this.isEnabled = false;
@@ -103,7 +118,7 @@ return this.isEnabled;
 }
 
 enableDelete(){
-this.isEnabled = !this.isEnabled;
+this.navCtrl.push(settingsPage);
 }
 changedTitle(outfitkey: string,newtitle: string){
 //firebase.database().ref(this.myUser+'/outfits/'+outfit.key).remove();

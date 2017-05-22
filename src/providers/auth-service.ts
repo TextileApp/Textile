@@ -41,7 +41,7 @@ export class AuthService {
   }
   displayName(): string {
     if (this.authState != null) {
-      return this.authState.facebook.displayName;
+      return this.authState.auth.displayName;
     } else {
       return '';
     }
@@ -52,5 +52,23 @@ export class AuthService {
     } else {
       return '';
     }
+  }
+  setDisplayname(newName):any
+  {
+// Updates the user attributes:
+this.authState.auth.updateProfile({
+  displayName: newName,
+  photoURL: null
+}).then(function() {
+  // Profile updated successfully!
+  // "Jane Q. User"
+  var displayName = this.authState.auth.displayName;
+  var photoURL = null;
+  return "Profile updated successfully!";
+}, function(error) {
+  return "error";
+  // An error happened.
+});
+
   }
 }

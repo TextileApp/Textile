@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-buttons>
+		<button color="navcolor" ion-button navPop icon-only>
+			<ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+		</button>
+	</ion-buttons>
+
+    <ion-title>
+     <p style="font-size:22px;">Settings</p>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+
+<ion-list>
+    <ion-input text-center style = "margin: auto; width: 80%;font-size: 20px;" [(ngModel)]="f.title" placeholder="outfit" (change)="changedTitle(f.$key,f.title)" type="text"></ion-input>
+
+  <ion-item>
+    <ion-label fixed>Username</ion-label>
+    <ion-input type="text" [(ngModel)]="usernameText" (change)="setDisplayName(usernameText)"></ion-input>
+    <button clear item-right>save</button>
+  </ion-item>
+  <ion-item>
+    <ion-label fixed>Password</ion-label>
+    <ion-input type="password"></ion-input>
+  </ion-item>
+
+</ion-list>
+</ion-content>
