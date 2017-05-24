@@ -3,7 +3,8 @@ import * as firebase from 'firebase';
 import { LoginPage } from '../login/login';
 import { brandsPage } from '../brands/brands';
 import {OutfitsPage} from '../outfits/outfits';
-import { NavController,ModalController,NavParams,ViewController,ActionSheetController,ToastController,PopoverController,LoadingController,Events } from 'ionic-angular';
+import {feedPage} from '../feed/feed';
+import { NavController,ModalController,NavParams,ViewController,ActionSheetController,ToastController,PopoverController,LoadingController,Events,AlertController } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service';
 import {closetMenuPage} from '../closetMenu/closetMenu';
 import {ShareService} from '../../providers/ShareService';
@@ -65,7 +66,9 @@ export class HomePage implements OnInit{
   @ViewChildren('mycards12') swingCards12: QueryList<SwingCardComponent>;
      //@ViewChild('myswing13') swingStack13: SwingStackComponent;
    // @ViewChildren('mycards13') swingCards13: QueryList<SwingCardComponent>;
-
+  genderPref: any;
+  userName: any;
+  testRadioOpen: boolean;
   card1Activated:boolean;
   showCard1:boolean;
   showPic1:boolean;
@@ -152,7 +155,7 @@ lastSavedFitRef: any;
   allPants: Array<any>;
   allShoes: Array<any>;
   
-  constructor( public popoverCtrl: PopoverController,public navCtrl: NavController,public af:AngularFire,public loadingCtrl: LoadingController, public authService: AuthService,private http: Http, private ngZone: NgZone,public modalCtrl: ModalController,public toastCtrl: ToastController,public events:Events
+  constructor( public popoverCtrl: PopoverController,public navCtrl: NavController,public af:AngularFire,public loadingCtrl: LoadingController, public authService: AuthService,private http: Http, private ngZone: NgZone,public modalCtrl: ModalController,public toastCtrl: ToastController,public events:Events,public alertCtrl: AlertController
   ) {
            
        const authObserver = af.auth.subscribe( user => {
@@ -457,7 +460,27 @@ shopstyle.brands(null).then(response => {
   }
 
 
+  showRadio() {
+    let alert = this.alertCtrl.create();
+    alert.setTitle('Clothes Preference');
 
+    alert.addInput({
+      type: 'radio',
+      label: 'Male',
+      value: 'Female',
+      checked: true
+    });
+
+    alert.addButton('Cancel');
+    alert.addButton({
+      text: 'OK',
+      handler: data => {
+        this.testRadioOpen = false;
+        this.genderPref = data;
+      }
+    });
+    alert.present();
+  }
 addNewCards1(oldcard: string) {
   this.cards1.push(oldcard);
 }
@@ -1044,8 +1067,29 @@ loadData() {
     content: ""
   });
   //Show the loading indicator
+
+  var ref = firebase.database().ref(this.currentUser+'/username');
+ref.once('value', (snapshot) => {
+
+ if (snapshot.val() === null) {
+   
+var username;
+var tempUsername;
+    username = tempUsername.substr(0, tempUsername.indexOf('@'));
+     var db = firebase.database().ref(this.currentUser+'/username');
+
+db.set(
+ username
+);
+  this.userName = username;
+  }else{
+   this.userName = snapshot.val();
+  }
+});
+
   loader.present();
     var result1 = [];
+
 
 firebase.database().ref(this.currentUser+'/Jewelry/').on('child_added', function(data) {
 var element = data.val();
@@ -1802,12 +1846,16 @@ decimalToHex(d, padding) {
   goToSaved() {
     this.navCtrl.push(OutfitsPage);
   }
+   goToFeed() {
+    this.navCtrl.push(feedPage);
+  }
   saveOutfit() {
 
 if(this.didSaveThisOutfit == false){
 
 var newChildRef = firebase.database().ref(firebase.auth().currentUser.uid+'/outfits/');
 this.lastSavedFitRef = newChildRef.push();
+
 var topcard1;
 var topcard2;
 var topcard3;
@@ -1921,7 +1969,7 @@ else{
 
 
 this.lastSavedFitRef.set(
-  {first:topcard1,second:topcard2,third:topcard3,fourth:topcard4,fifth:topcard5,sixth:topcard6,seventh:topcard7,eighth:topcard8,ninth:topcard9,tenth:topcard10,eleventh:topcard11,twelth:topcard12}
+  {first:topcard1,second:topcard2,third:topcard3,fourth:topcard4,fifth:topcard5,sixth:topcard6,seventh:topcard7,eighth:topcard8,ninth:topcard9,tenth:topcard10,eleventh:topcard11,twelth:topcard12,timestamp:firebase.database.ServerValue.TIMESTAMP}
 );
  let toast = this.toastCtrl.create({
       message: 'Outfit saved successfully ❤️️',
@@ -1931,9 +1979,8 @@ this.lastSavedFitRef.set(
     });
     toast.present();
     this.didSaveThisOutfit = true;
-  
-
-
+  var allOutfits = firebase.database().ref('/outfits/'+this.lastSavedFitRef.key);
+allOutfits.set({first:topcard1,second:topcard2,third:topcard3,fourth:topcard4,fifth:topcard5,sixth:topcard6,seventh:topcard7,eighth:topcard8,ninth:topcard9,tenth:topcard10,eleventh:topcard11,twelth:topcard12,timestamp:firebase.database.ServerValue.TIMESTAMP,user:firebase.auth().currentUser.uid,username:this.userName});
 }
 
   else if(this.didSaveThisOutfit == true){
@@ -1942,6 +1989,10 @@ var newChildRef = firebase.database().ref(firebase.auth().currentUser.uid+'/outf
 
 
   });
+var allOutfits =firebase.database().ref('/outfits/'+this.lastSavedFitRef.key);
+allOutfits.remove(function(error){
+
+});
 
  let toast = this.toastCtrl.create({
       message: 'Outfit removed successfully 💔',

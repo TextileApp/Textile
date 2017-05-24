@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-buttons>
+		<button color="navcolor" ion-button navPop icon-only>
+			<ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+		</button>
+	</ion-buttons>
+
+    <ion-title>
+     <p style="font-size:22px;">Feed</p>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+
+
+
+        <ion-card *ngFor="let f of posts" no-padding> 
+  <ion-grid>
+  <ion-row>
+    <ion-col width-33>
+    <img *ngIf="f.first"[src]="f.first">
+    </ion-col>
+    <ion-col width-33>
+      <img *ngIf="f.second"[src]="f.second">
+    </ion-col>
+     <ion-col width-33>
+      <img *ngIf="f.third"[src]="f.third">
+    </ion-col>
+  </ion-row>
+ <ion-row>
+    <ion-col width-33>
+      <img *ngIf="f.fourth"[src]="f.fourth">
+    </ion-col>
+    <ion-col width-33>
+      <img *ngIf="f.fifth"[src]="f.fifth">
+    </ion-col>
+     <ion-col width-33>
+       <img *ngIf="f.sixth"[src]="f.sixth">
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col width-33>
+     <img *ngIf="f.seventh"[src]="f.seventh">
+    </ion-col>
+    <ion-col width-33>
+      <img *ngIf="f.eighth"[src]="f.eighth">
+    </ion-col>
+     <ion-col width-33>
+      <img *ngIf="f.ninth"[src]="f.ninth">
+    </ion-col>
+  </ion-row>
+   <ion-row>
+    <ion-col width-33>
+     <img *ngIf="f.tenth"[src]="f.tenth">
+    </ion-col>
+    <ion-col width-33>
+      <img *ngIf="f.eleventh"[src]="f.eleventh">
+    </ion-col>
+     <ion-col width-33>
+      <img *ngIf="f.twelth"[src]="f.twelth">
+    </ion-col>
+  </ion-row>
+    <ion-row>
+    <ion-col>
+      <button ion-button small clear>
+        <div>{{f.username}}</div>
+      </button>
+    </ion-col>
+    <ion-col>
+        <button ion-button icon-left clear small>
+        <ion-icon color="heart" name="heart"></ion-icon>
+        <div style="text-color:">12 Likes</div>
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+      <ion-note>
+        11h ago
+      </ion-note>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+    </ion-card>
+
+
+
+</ion-content>

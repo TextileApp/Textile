@@ -36,7 +36,10 @@ tempUsername: string;
   
    ngAfterViewInit() {
    }
-
+ionViewWillEnter()
+{
+  this.update();
+}
 update()
 {
 var ref = firebase.database().ref(this.myUser+'/username');

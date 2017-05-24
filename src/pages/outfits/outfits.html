@@ -21,15 +21,14 @@
 
 <p class ="title">{{userName}}</p>
 <br>
-<span style ="align-content:center; padding-left:36%; padding-right:40%;font-size:16px; padding-bottom:0%; margin-bottom:0%;">
-  <ion-icon color ="navcolor" name="flame" item-left></ion-icon>
- <span style="padding-right:1%; padding-left:2%;"> fit score</span>
-  <ion-badge style="font-size:16px;">260k</ion-badge>
+<span style ="align-content:center; padding-left:40%; padding-right:40%;font-size:16px; padding-bottom:0%; margin-bottom:0%;">
+  <ion-icon color ="heart" name="heart" item-left></ion-icon>
+  <p style="font-size:18px;padding-left:1%; display:inline-block; text-align:center;">563</p>
 </span>
 <ion-slides style = "padding-top:0%; padding-bottom:0%; margin-top:0%; margin-bottom:0%;"[options]="mySlideOptions">
 <ion-slide  *ngFor="let f of outfits | async">
    
-     <ion-card no-padding style ="height:50%; width:90%; margin:auto; margin-top:0%; margin-bottom:20%;"> 
+     <ion-card (press)="pressEvent($event)" no-padding style ="height:50%; width:90%; margin:auto; margin-top:0%; margin-bottom:20%;"> 
         
         <div style="position: relative; top:0%; left:0px;">
     <ion-fab right top>
@@ -84,14 +83,7 @@
     </ion-col>
   </ion-row>
 </ion-grid>
-
-  
-
-  
     <ion-input text-center style = "margin: auto; width: 80%;font-size: 20px;" [(ngModel)]="f.title" placeholder="outfit" (change)="changedTitle(f.$key,f.title)" type="text"></ion-input>
-
-
-
     </ion-card>
   </ion-slide>
   </ion-slides>
