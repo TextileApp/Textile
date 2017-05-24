@@ -63,12 +63,19 @@ console.log(snapshot.val());
 });
   
 }
+ pressEvent($event) {
 
+  this.realEnableDelete();
+
+   }
 isDeleteEnabled()
 {
 return this.isEnabled;
 }
 
+realEnableDelete(){
+ this.isEnabled = true;
+}
 enableDelete(){
 this.navCtrl.push(settingsPage);
 }
