@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title ><p style="font-size:30px;"color="navcolor">Textile</p></ion-title>
+    <ion-title ><p style="font-size:30px;" (tap) = "goToFeed()"color="navcolor">Textile</p></ion-title>
  <ion-buttons left>
       <button ion-button icon-only (click)="goToOtherPage()" >
        <ion-icon name="appname-closet"></ion-icon>
@@ -8,9 +8,7 @@
     </ion-buttons>
     
     <ion-buttons end>
-       <button ion-button icon-only color="primary" (click)="goToFeed()">
-      <ion-icon color = "navcolor" ios="ios-albums-outline" md="md-albums"></ion-icon>
-      </button>
+  
       <button ion-button icon-only color="primary" (click)="goToSaved()">
         <ion-icon color="navcolor" name="appname-hanger"></ion-icon>
       </button>

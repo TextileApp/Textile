@@ -10,6 +10,7 @@ import { PopoverContentPage } from '../pages/contact/popover';
 import { HomePage,imagePicker } from '../pages/home/home';
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 import { LoginPage } from '../pages/login/login';
+import {profilePage} from '../pages/profile/profile';
 import { productsPage } from '../pages/products/products';
 import { RegisterPage } from '../pages/register/register';
 import { ResetpwdPage } from '../pages/resetpwd/resetpwd';
@@ -51,6 +52,7 @@ firebase.initializeApp(firebaseConfig);
     ResetpwdPage,
     imagePicker,
     closetMenuPage,
+    profilePage,
     brandsPage,
     productsPage,
     feedPage,
@@ -79,8 +81,10 @@ firebase.initializeApp(firebaseConfig);
     closetMenuPage,
     brandsPage,
     productsPage,
+    profilePage,
     feedPage,
     settingsPage,
+    
     LoginPage,
     RegisterPage,
     ResetpwdPage,

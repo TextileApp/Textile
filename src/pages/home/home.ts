@@ -1980,7 +1980,7 @@ this.lastSavedFitRef.set(
     toast.present();
     this.didSaveThisOutfit = true;
   var allOutfits = firebase.database().ref('/outfits/'+this.lastSavedFitRef.key);
-allOutfits.set({first:topcard1,second:topcard2,third:topcard3,fourth:topcard4,fifth:topcard5,sixth:topcard6,seventh:topcard7,eighth:topcard8,ninth:topcard9,tenth:topcard10,eleventh:topcard11,twelth:topcard12,timestamp:firebase.database.ServerValue.TIMESTAMP,user:firebase.auth().currentUser.uid,username:this.userName});
+allOutfits.set({first:topcard1,second:topcard2,third:topcard3,fourth:topcard4,fifth:topcard5,sixth:topcard6,seventh:topcard7,eighth:topcard8,ninth:topcard9,tenth:topcard10,eleventh:topcard11,twelth:topcard12,timestamp:firebase.database.ServerValue.TIMESTAMP,user:firebase.auth().currentUser.uid,username:this.userName,likeCount:0});
 }
 
   else if(this.didSaveThisOutfit == true){

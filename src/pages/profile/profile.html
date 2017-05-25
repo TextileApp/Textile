@@ -1,0 +1,80 @@
+
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-buttons>
+
+		<button color="navcolor" ion-button navPop icon-only>
+			<ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+		</button>
+	</ion-buttons>
+
+    <ion-title>
+     <p style="font-size:22px;">Profile</p>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+
+<p class ="title">{{userName}}</p>
+<br>
+<span style ="align-content:center; padding-left:45%; padding-right:40%;font-size:16px; padding-bottom:0%; margin-bottom:0%;">
+  <ion-icon color ="heart" name="heart" item-left></ion-icon>
+  <p style="font-size:18px;padding-left:1%; display:inline-block; text-align:center;">{{totalLikes}}</p>
+</span>
+<ion-slides style = "padding-top:0%; padding-bottom:0%; margin-top:0%; margin-bottom:0%;"[options]="mySlideOptions">
+<ion-slide  *ngFor="let f of outfits | async">
+   
+     <ion-card no-padding style ="height:50%; width:90%; margin:auto; margin-top:0%; margin-bottom:20%;"> 
+
+ 
+  <ion-grid>
+  <ion-row>
+    <ion-col width-33>
+    <img *ngIf="f.first"[src]="f.first">
+    </ion-col>
+    <ion-col width-33>
+      <img *ngIf="f.second"[src]="f.second">
+    </ion-col>
+     <ion-col width-33>
+      <img *ngIf="f.third"[src]="f.third">
+    </ion-col>
+  </ion-row>
+ <ion-row>
+    <ion-col width-33>
+      <img *ngIf="f.fourth"[src]="f.fourth">
+    </ion-col>
+    <ion-col width-33>
+      <img *ngIf="f.fifth"[src]="f.fifth">
+    </ion-col>
+     <ion-col width-33>
+       <img *ngIf="f.sixth"[src]="f.sixth">
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col width-33>
+     <img *ngIf="f.seventh"[src]="f.seventh">
+    </ion-col>
+    <ion-col width-33>
+      <img *ngIf="f.eighth"[src]="f.eighth">
+    </ion-col>
+     <ion-col width-33>
+      <img *ngIf="f.ninth"[src]="f.ninth">
+    </ion-col>
+  </ion-row>
+   <ion-row>
+    <ion-col width-33>
+     <img *ngIf="f.tenth"[src]="f.tenth">
+    </ion-col>
+    <ion-col width-33>
+      <img *ngIf="f.eleventh"[src]="f.eleventh">
+    </ion-col>
+     <ion-col width-33>
+      <img *ngIf="f.twelth"[src]="f.twelth">
+    </ion-col>
+  </ion-row>
+</ion-grid>
+    </ion-card>
+  </ion-slide>
+  </ion-slides>
+
+</ion-content>

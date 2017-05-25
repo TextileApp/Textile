@@ -19,6 +19,7 @@ myUser: any;
 af: AngularFire;
 isEnabled: boolean;
 userName: any;
+totalLikes: any;
 
 tempUsername: string;
   constructor(public navCtrl: NavController,private ngZone: NgZone,af: AngularFire,private _auth: AuthService,) {
@@ -39,6 +40,7 @@ tempUsername: string;
 ionViewWillEnter()
 {
   this.update();
+  this.getLikes();
 }
 update()
 {
@@ -63,6 +65,12 @@ console.log(snapshot.val());
 });
   
 }
+getLikes(){
+  var ref = firebase.database().ref(this.myUser+'/totalLikes');
+ref.once('value', (snapshot) => {
+this.totalLikes = snapshot.val();
+}
+)}
  pressEvent($event) {
 
   this.realEnableDelete();
@@ -84,6 +92,11 @@ changedTitle(outfitkey: string,newtitle: string){
 this.outfits.update(outfitkey,{title:newtitle});
 }
 deleteOutfits(outfitkey: string){
+var allOutfits =firebase.database().ref('/outfits/'+outfitkey);
+allOutfits.remove(function(error){
+
+});
+
 //firebase.database().ref(this.myUser+'/outfits/'+outfit.key).remove();
 console.log(outfitkey);
 this.outfits.remove(outfitkey);

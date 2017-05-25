@@ -15,7 +15,7 @@
 
 
 
-        <ion-card *ngFor="let f of posts" no-padding> 
+        <ion-card *ngFor="let f of posts | async" no-padding> 
   <ion-grid>
   <ion-row>
     <ion-col width-33>
@@ -63,19 +63,20 @@
   </ion-row>
     <ion-row>
     <ion-col>
-      <button ion-button small clear>
+      <button (tap)="goToProfile(f.user)" ion-button small clear>
         <div>{{f.username}}</div>
       </button>
     </ion-col>
     <ion-col>
-        <button ion-button icon-left clear small>
-        <ion-icon color="heart" name="heart"></ion-icon>
-        <div style="text-color:">12 Likes</div>
+        <button (tap)= "toggleLike(f,f.$key)"ion-button icon-left clear small>
+        <ion-icon style ="padding-bottom:5%;" color="heart" name="heart"></ion-icon>
+        <div *ngIf="f.likeCount > 0" >{{f.likeCount}} Likes</div>
+        <div *ngIf="f.likeCount <= 0" >no Likes</div>
       </button>
     </ion-col>
     <ion-col center text-center>
       <ion-note>
-        11h ago
+       {{f.time}}
       </ion-note>
     </ion-col>
   </ion-row>

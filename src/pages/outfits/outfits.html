@@ -21,9 +21,9 @@
 
 <p class ="title">{{userName}}</p>
 <br>
-<span style ="align-content:center; padding-left:40%; padding-right:40%;font-size:16px; padding-bottom:0%; margin-bottom:0%;">
+<span style ="align-content:center; padding-left:45%; padding-right:40%;font-size:16px; padding-bottom:0%; margin-bottom:0%;">
   <ion-icon color ="heart" name="heart" item-left></ion-icon>
-  <p style="font-size:18px;padding-left:1%; display:inline-block; text-align:center;">563</p>
+  <p style="font-size:18px;padding-left:1%; display:inline-block; text-align:center;">{{totalLikes}}</p>
 </span>
 <ion-slides style = "padding-top:0%; padding-bottom:0%; margin-top:0%; margin-bottom:0%;"[options]="mySlideOptions">
 <ion-slide  *ngFor="let f of outfits | async">
