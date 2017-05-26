@@ -378,7 +378,7 @@ this.showDelete9 = false;
           this.currentUser = user.uid;
 
           this.loadData();
-
+          this.getUserGender();
         } else {
           this.currentUser = null
         }
@@ -387,6 +387,8 @@ this.showDelete9 = false;
 
     })
   }
+ 
+
 ngAfterViewInit() {
     // Either subscribe in controller or set in HTML
       this.swingStack1.throwout.subscribe((event: DragEvent) => {
@@ -462,25 +464,53 @@ shopstyle.brands(null).then(response => {
 
   showRadio() {
     let alert = this.alertCtrl.create();
-    alert.setTitle('Clothes Preference');
+    alert.setTitle('Clothes Gender Preference');
 
     alert.addInput({
       type: 'radio',
       label: 'Male',
-      value: 'Female',
+      value: 'male',
       checked: true
+    });
+        alert.addInput({
+      type: 'radio',
+      label: 'Female',
+      value: 'female',
+      checked: false
     });
 
     alert.addButton('Cancel');
     alert.addButton({
       text: 'OK',
       handler: data => {
-        this.testRadioOpen = false;
         this.genderPref = data;
+        this.testRadioOpen = false;
+ var db = firebase.database().ref(this.currentUser+'/gender');
+
+db.set(
+this.genderPref
+);
+  
+  
+
+      
       }
     });
     alert.present();
   }
+
+getUserGender(){
+var ref = firebase.database().ref(this.currentUser+'/gender');
+ref.once('value', (snapshot) => {
+
+ if (snapshot.val() != null) {
+  this.genderPref = snapshot.val();
+}
+else{
+  this.showRadio();
+}
+});
+}
 addNewCards1(oldcard: string) {
   this.cards1.push(oldcard);
 }
@@ -548,7 +578,7 @@ goToOtherPage() {
   if(this.card1Activated == false){
   this.didSaveThisOutfit = false;
 
-let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Jewelry"})
+let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Jewelry",gender:this.genderPref})
 
   }
  }
@@ -557,7 +587,7 @@ let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUs
   if(this.card2Activated == false){
   this.didSaveThisOutfit = false;
 
-let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Hats"})
+let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Hats",gender:this.genderPref})
 
   }}
 
@@ -566,7 +596,7 @@ let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUs
   if(this.card3Activated == false){
   this.didSaveThisOutfit = false;
 
-let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Neckwear"})
+let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Neckwear",gender:this.genderPref})
 
   }}
           
@@ -577,7 +607,7 @@ let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUs
   if(this.card4Activated == false){
   this.didSaveThisOutfit = false;
 
-let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Outerwear"})
+let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Outerwear",gender:this.genderPref})
 
   }}
       openModal5(imagesArray) {
@@ -585,7 +615,7 @@ let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUs
   if(this.card5Activated == false){
   this.didSaveThisOutfit = false;
 
-let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Tops"})
+let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Tops",gender:this.genderPref})
 
   }}
     openModal6(imagesArray) {
@@ -593,7 +623,7 @@ let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUs
   if(this.card6Activated == false){
   this.didSaveThisOutfit = false;
 
-let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Tops2"})
+let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Tops2",gender:this.genderPref})
 
   }}
       openModal7(imagesArray) {
@@ -601,7 +631,7 @@ let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUs
   if(this.card7Activated == false){
   this.didSaveThisOutfit = false;
 
-let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Belts"})
+let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Belts",gender:this.genderPref})
 
   }}
        openModal8(imagesArray) {
@@ -609,7 +639,7 @@ let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUs
   if(this.card8Activated == false){
   this.didSaveThisOutfit = false;
 
-let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Bottoms"})
+let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Bottoms",gender:this.genderPref})
 
   }}
     openModal9(imagesArray) {
@@ -617,7 +647,7 @@ let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUs
   if(this.card9Activated == false){
   this.didSaveThisOutfit = false;
 
-let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Jewelry2"})
+let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Jewelry2",gender:this.genderPref})
 
   }}
     openModal10(imagesArray) {
@@ -625,7 +655,7 @@ let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUs
   if(this.card10Activated == false){
   this.didSaveThisOutfit = false;
 
-let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Bags"})
+let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Bags",gender:this.genderPref})
 
   }}
       openModal11(imagesArray) {
@@ -633,7 +663,7 @@ let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUs
   if(this.card11Activated == false){
   this.didSaveThisOutfit = false;
 
-let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Shoes"})
+let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Shoes",gender:this.genderPref})
 
   }}
     openModal12(imagesArray) {
@@ -641,7 +671,7 @@ let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUs
   if(this.card12Activated == false){
   this.didSaveThisOutfit = false;
 
-let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Bags2"})
+let page = this.navCtrl.push(imagePicker,{images:imagesArray,user:this.currentUser,type:"Bags2",gender:this.genderPref})
 
   }}
 
@@ -2059,6 +2089,7 @@ didSaveThisOutfit:boolean;
  currentUser: any;
  type: string;
  rawType: string;
+ gender: string;
 public imgUri: string;
 
  constructor( private params: NavParams,
@@ -2068,7 +2099,7 @@ public imgUri: string;
    // this.images = this.params.get('images');
   this.currentUser = this.params.get("user");
   this.images = this.params.get("images");
-
+  this.gender = this.params.get("gender");
  for (let entry of this.images) {
     console.log(entry); // 1, "string", false
 } 
@@ -2244,7 +2275,7 @@ newPostRef.set(
  cropModal.present();
   }
 openBrands() {
-        this.navctrl.push(brandsPage,{"type":this.rawType});
+        this.navctrl.push(brandsPage,{"type":this.rawType,"gender":this.gender});
     }
   chooseImage(tapimage) {
     this.pickedImage = tapimage;

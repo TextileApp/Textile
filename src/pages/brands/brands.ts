@@ -20,11 +20,14 @@ brandsID: Array<any>;
 type: any;
 brandsList: any;
 category: any;
+genderPref: any;
 mostPopList: Array<any>;
   constructor(public navCtrl: NavController,private ngZone: NgZone,af: AngularFire,private _auth: AuthService,private navParams:NavParams) {
         const authObserver = af.auth.subscribe( user => {
   if (user) {
+this.genderPref = this.navParams.get("gender");
 this.type = this.navParams.get("type");
+if(this.genderPref == "male"){
  if(this.type == "Jewelry"){
 this.brandsList = "JewelryBrands";
   this.category = "mens-watches-and-jewelry";
@@ -69,6 +72,57 @@ this.brandsList = "JewelryBrands";
    this.brandsList = "Brands";
    this.category = "mens-shoes";
  }
+}
+else{
+ if(this.type == "Jewelry"){
+this.brandsList = "JewelryBrands";
+  this.category = "womens-watches-and-jewelry";
+ }
+ else if(this.type == "Hats")
+ {
+   this.brandsList = "Brands";
+   this.category = "hats";
+ }
+ else if(this.type == "Neckwear")
+ {
+   this.brandsList = "Brands";
+   this.category = "womens-scarves";
+ }
+  else if(this.type == "Outerwear")
+ {
+   this.brandsList = "Brands";
+   this.category = "womens-outerwear";
+ }
+   else if(this.type == "Tops")
+ {
+   this.brandsList = "Brands";
+   this.category = "womens-shirts";
+ }
+ else if(this.type == "Belts")
+ {
+   this.brandsList = "Brands";
+   this.category = "womens-belts";
+ }
+  else if(this.type == "Bottoms")
+ {
+   this.brandsList = "Brands";
+   this.category = "womens-pants";
+ }
+  else if(this.type == "Bags")
+ {
+   this.brandsList = "Brands";
+   this.category = "womens-bags";
+ }
+ else if(this.type == "Shoes")
+ {
+   this.brandsList = "Brands";
+   this.category = "womens-shoes";
+ }
+
+
+
+
+}
 
 
 this.ionViewLoaded();
