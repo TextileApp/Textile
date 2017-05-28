@@ -87,6 +87,7 @@ this.ionViewLoaded();
     }
 saveToCloset()
 {
+
   var item;
   for(var i = 0; i< this.items1.length; i++)
   {
@@ -102,6 +103,7 @@ this.db = firebase.database().ref(firebase.auth().currentUser.uid+'/'+this.inter
 if(this.items1[i].selected == true)
 {
 //this.selectedItems.push(item);
+    console.log("killa MATE");
 
 this.db.set(
   this.items1[i].image
@@ -179,7 +181,7 @@ ngAfterViewInit() {
 getAnotherFifty(timesRan)
 {
 var offset = timesRan*50;
-if(timesRan < 4){
+if(timesRan < 10){
  const options = {
   cat:this.whichType
   ,

@@ -43,7 +43,7 @@ function dataURLtoBlob(dataurl) {
 
 export class ContactPage {
     public imgUri: string;
-
+    genderPref:any;
     pet: string = "Hats";
   assetCollection: any;
 isEnabled: boolean;
@@ -134,7 +134,6 @@ af: AngularFire;
    
        console.log(clothes);
        console.log(this.pet);
-       console.log("hentai");
       this.imgUri = data;
       console.log(this.imgUri);
             var uuid = generateUUID();
@@ -195,8 +194,18 @@ newPostRef.set(
     });
  cropModal.present();
   }
+  getUserGender(){
+var ref = firebase.database().ref(this.currentUser+'/gender');
+ref.once('value', (snapshot) => {
+
+ if (snapshot.val() != null) {
+  this.genderPref = snapshot.val();
+}
+});
+}
 openBrands() {
-        this.navCtrl.push(brandsPage);
+              this.navCtrl.push(brandsPage,{"type":this.whichType,"gender":this.genderPref});
+
     }
   public takePicture(sourceType) {
     // Create options for the Camera Dialog
