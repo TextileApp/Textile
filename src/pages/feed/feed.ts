@@ -30,6 +30,7 @@ export class feedPage {
 
 
         this.ionViewLoaded();
+        this.gogogo();
       }
 
     });
@@ -135,7 +136,7 @@ var likeCount;
           thePost.likes[this.myUser] = true;
         }
       }
-        console.log("HELLO 2");
+     
        likeCount = thePost.likeCount;
 
       return thePost;

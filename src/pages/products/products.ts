@@ -112,7 +112,6 @@ shopstyle.products(options).then(response => {
   
 
   } 
-      infiniteScroll.complete();
 
 });
 this.currentOffset = this.currentOffset + 50;
@@ -228,10 +227,10 @@ shopstyle.products(options).then(response => {
 
  var x;
  if(response.products.length > 0){
-   this.noProducts = true;
+    this.noProducts = false;
      for (x in response.products) {
       this.items1.push({'image': response.products[x].image.sizes.Large.url,'name':response.products[x].unbrandedName});
-      console.log("ADDING IMAGES");
+  
     
 
     }
