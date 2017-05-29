@@ -72,9 +72,12 @@ this.totalLikes = snapshot.val();
 }
 )}
  pressEvent($event) {
-
-  this.realEnableDelete();
-
+if(this.isEnabled){
+ this.disableDelete();
+}
+else{
+   this.realEnableDelete();
+}
    }
 isDeleteEnabled()
 {
@@ -83,6 +86,9 @@ return this.isEnabled;
 
 realEnableDelete(){
  this.isEnabled = true;
+}
+disableDelete(){
+  this.isEnabled = false;
 }
 enableDelete(){
 this.navCtrl.push(settingsPage);
