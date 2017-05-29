@@ -24,7 +24,7 @@ const shopstyle = new ShopStyle('uid8976-38160824-19');
 export class productsPage {
   
   @ViewChild(Content) content: Content;
-
+    currentOffset:any;
     pet: string = "Hats";
   assetCollection: any;
 isEnabled: boolean;
@@ -60,7 +60,7 @@ af: AngularFire;
     console.log(this.whichType);
     this.brand = this.params.get("brand");
     console.log(this.brand);
-
+    this.currentOffset = 550;
 
 
  
@@ -85,6 +85,38 @@ this.ionViewLoaded();
       
 
     }
+      doInfinite(infiniteScroll) {
+
+       const options = {
+  cat:this.whichType
+  ,
+  offset:this.currentOffset
+  ,
+  limit: 50,
+  fl: this.brandID,
+  sort: 'Popularity',
+};
+       
+shopstyle.products(options).then(response => {
+
+ var x;
+ if(response.products.length > 0){
+   this.noProducts = true;
+     for (x in response.products) {
+      this.items1.push({'image': response.products[x].image.sizes.Large.url,'name':response.products[x].unbrandedName});
+      
+    
+
+    }
+
+  
+
+  } 
+      infiniteScroll.complete();
+
+});
+this.currentOffset = this.currentOffset + 50;
+  }
 saveToCloset()
 {
 
