@@ -14,10 +14,13 @@ const shopstyle = new ShopStyle('uid8976-38160824-19');
 })
 export class feedPage {
 
-
+ pet: string = "public";
   posts: Array<any>;
-
+followingPosts: Array<any>;
   zone: any;
+followingUsers: Array<any>;
+
+  
 
   myUser: any;
   times: Array<any>;
@@ -26,11 +29,14 @@ export class feedPage {
       if (user) {
         this.zone = new NgZone({ enableLongStackTrace: false });
         this.myUser = user.uid;
+        
 
+        this.getFollowedUsers();
 
-
-        this.ionViewLoaded();
+       
         this.gogogo();
+      // this.filterPosts(); 
+
       }
 
     });
@@ -40,38 +46,24 @@ export class feedPage {
   }
 
   ngAfterViewInit() {
-    /** 
-         var result1 = [];
-         var result2 = [];
-         shopstyle.products({limit:100}).then(response => {
-           var x;
-         for (x in response.brands) {
-          result1.push(response.brands[x].name);
-          result2.push("b"+response.brands[x].id);
-        }
-      });
-      this.brands = result1;
-      this.brandsID = result2;
-      console.log(this.brands);
-        console.log(result1);
-        
-        shopstyle.categories(null)
-      .then(result => console.log(result.categories[0]));
-    */
+
 
 
 
 
   }
-  ionViewLoaded() {
+  runIt() {
     var result2 = [];
+    var temper = [];
     firebase.database().ref("/outfits/").orderByChild("timestamp").on('child_added', function (data) {
       var element = data.val();
       var theKey = data.key;
       if (element) {
         element.key = theKey;
         result2.push(element);
-
+  if (this.followingUsers.indexOf(element.username) > -1) {
+temper.push(element);
+}
         console.log(result2);
       }
     });
@@ -86,9 +78,9 @@ export class feedPage {
           result2.splice(index, 1);
         }
         this.posts = result2;
+        
       }
     });
-
 
 
 
@@ -158,6 +150,21 @@ var likeCount;
       this.setTime(this.times[i].key, this.times[i].timestamp);
     }
 
+  }
+
+  getFollowedUsers(){
+       var tempo = [];
+     firebase.database().ref(this.myUser+"/following/").once('value').then(function(snapshot) {
+  snapshot.forEach(function(childSnapshot) {
+      // key will be "ada" the first time and "alan" the second time
+      var key = childSnapshot.key;
+    
+      var childData = childSnapshot.val();
+      tempo.push(childData);
+  }); 
+});
+this.followingUsers = tempo;
+ this.runIt();
   }
   goToProfile(user) {
     this.navCtrl.push(profilePage, { "user": user });

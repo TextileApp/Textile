@@ -33630,6 +33630,13 @@ button[fab].fab-map {
   line-height: 0px;
 }
 
+.name {
+  top: 50%;
+  left: 50%;
+  margin: auto;
+  text-align: center;
+}
+
 button[fab].fab-map {
   position: absolute;
   z-index: 100;
@@ -33663,6 +33670,13 @@ button[fab].fab-map {
 button[fab].fab-map {
   position: absolute;
   z-index: 100;
+}
+
+.name {
+  top: 50%;
+  left: 50%;
+  margin: auto;
+  text-align: center;
 }
 
 .title {

@@ -26,7 +26,7 @@
   <ion-col  width-33 *ngFor="let f of items1" (tap)="selectPiece(f)" >
 
   <img [ngClass]="{'imagi':f.selected}" *ngIf="f.image" [src]="f.image">
-
+<div class ="name">{{f.name}}</div>
     
   </ion-col>
 </ion-row>

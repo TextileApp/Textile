@@ -6,7 +6,13 @@
     height: 28px;
     line-height: 0px;
 }
-
+.name{
+  
+    top: 50%;
+    left: 50%;
+  margin:auto;
+   text-align: center;
+}
 button[fab].fab-map {
   position: absolute;
  
