@@ -33433,6 +33433,52 @@ ion-col {
   flex-direction: column;
 }
 
+.grid-full ion-row {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.grid-full ion-col {
+  text-align: center;
+  padding: 5px 5px 5px 5px;
+  margin-top: 0px;
+  border: 20px;
+}
+
+.text-on-bottom > .button-inner {
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.grid-full ion-row {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.grid-full ion-col {
+  text-align: center;
+  padding: 5px 5px 5px 5px;
+  margin-top: 0px;
+  border: 20px;
+}
+
+.text-on-bottom > .button-inner {
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .ion-ios-MYICON:before,
 .ion-ios-MYICON-outline:before,
 .ion-md-MYICON:before,
@@ -33624,8 +33670,17 @@ button[fab].fab-map {
   font-size: 22px;
   padding-bottom: 0%;
   padding-top: 5%;
-  padding-left: 20%;
-  padding-right: 20%;
+  padding-left: 22%;
+  padding-right: 22%;
+  margin-bottom: 0%;
+}
+
+.follow {
+  text-align: center;
+  font-size: 16px;
+  padding-bottom: 0%;
+  padding-left: 41%;
+  padding-right: 41%;
   margin-bottom: 0%;
 }
 

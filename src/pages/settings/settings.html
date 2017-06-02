@@ -25,7 +25,12 @@
     <button clear item-right (tap) = "changePassword(newPassword)">save</button>
 
   </ion-item>
-  
+   <ion-item class="error-message" *ngIf="!passwordForm.controls.password.valid  && (passwordChanged || submitAttempt)">
+      <p>Your password needs more than 6 characters.</p>
+    </ion-item>
+       <ion-item class="error-message" *ngIf="changedPass">
+      <p>Changed password succsesfully</p>
+    </ion-item>
 </ion-list>
 
 </ion-content>

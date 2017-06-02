@@ -6,6 +6,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { closetMenuPage } from '../pages/closetMenu/closetMenu';
 import { brandsPage } from '../pages/brands/brands';
 import { feedPage } from '../pages/feed/feed';
+import { followingPage } from '../pages/following/following';
 import { PopoverContentPage } from '../pages/contact/popover';
 import { HomePage,imagePicker } from '../pages/home/home';
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
@@ -54,6 +55,7 @@ firebase.initializeApp(firebaseConfig);
     closetMenuPage,
     profilePage,
     brandsPage,
+    followingPage,
     productsPage,
     feedPage,
     settingsPage,
@@ -80,6 +82,7 @@ firebase.initializeApp(firebaseConfig);
     imagePicker,
     closetMenuPage,
     brandsPage,
+    followingPage,
     productsPage,
     profilePage,
     feedPage,

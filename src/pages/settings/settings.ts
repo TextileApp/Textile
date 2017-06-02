@@ -1,5 +1,6 @@
 import { Component, NgZone} from '@angular/core';
-import { NavController,NavParams,ToastController} from 'ionic-angular';
+import { NavController,NavParams,AlertController} from 'ionic-angular';
+
 import {AngularFire} from 'angularfire2';
 import * as firebase from 'firebase';
 import { ContactPage } from '../contact/contact';
@@ -19,6 +20,7 @@ export class settingsPage {
 public passwordForm;
 brands: Array<any>;
 brandsID: Array<any>;
+changedPass:boolean;
 type: any;
 newPassword: string;
 brandsList: any;
@@ -28,12 +30,12 @@ userID: any;
 currentUser: any;
 usernameText: string;
 mostPopList: Array<any>;
-  passwordChanged: boolean = false;
   submitAttempt: boolean = false;
-  constructor(public navCtrl: NavController,private ngZone: NgZone,public af: AngularFire,private _auth: AuthService,private navParams:NavParams,public toastCtrl: ToastController,public formBuilder: FormBuilder) {
+  constructor(public navCtrl: NavController,private ngZone: NgZone,public af: AngularFire,private _auth: AuthService,private navParams:NavParams,public alertCtrl: AlertController,public formBuilder: FormBuilder) {
         const authObserver = af.auth.subscribe( user => {
           
   if (user) {
+this.changedPass = false;
 this.currentUser = user;
 this.userID = user.uid;
 this.update();
@@ -44,7 +46,9 @@ this.update();
   }
         )};
 
- 
+  showAlert() {
+  
+  }
 
   
  ngAfterViewInit() {
@@ -79,24 +83,22 @@ this.update();
 changePassword(newPass)
 {
   if (!this.passwordForm.valid){
-  let toast = this.toastCtrl.create({
-      message: 'Password must be 6 characters',
-      duration: 2000,
-      position:"middle"
-    
+   let alert = this.alertCtrl.create({
+      title: 'Sorry',
+      subTitle: 'Passwords must be 6 or more characters',
+      buttons: ['OK']
     });
-    toast.present();
+    alert.present();
 
 } else
 {
  var changed = this._auth.updatePassword(newPass);
-  let toast = this.toastCtrl.create({
-      message: 'Password changed successfully',
-      duration: 2000,
-      position:"middle"
-    
+   let alert = this.alertCtrl.create({
+      title: 'Sweet',
+      subTitle: 'Password was updated successfully',
+      buttons: ['OK']
     });
-    toast.present();
+    alert.present();
 }
 }
 update()
@@ -122,14 +124,17 @@ console.log(snapshot.val());
 var ref = firebase.database().ref();
 var q = ref.orderByChild('username').equalTo(newName);
 q.once('value', (snapshot) => {
+
   if (snapshot.val() === null) {
-     let toast = this.toastCtrl.create({
-      message: 'Username saved succsesfully',
-      duration: 2000,
-      position:"middle"
-    
+       let alert = this.alertCtrl.create({
+      title: 'Sweet',
+      subTitle: 'Username was updated successfully',
+      buttons: ['OK']
     });
-    toast.present();
+    alert.present();
+
+  
+
     // username does not yet exist, go ahead and add new user
      var db = firebase.database().ref(this.userID+'/username');
 
@@ -138,13 +143,13 @@ db.set(
 );
   } else {
     this.update()
- let toast = this.toastCtrl.create({
-      message: 'Username already taken',
-      duration: 2000,
-      position:"middle"
-    
+      let alert = this.alertCtrl.create({
+      title: 'Sorry',
+      subTitle: 'Username already taken',
+      buttons: ['OK']
     });
-    toast.present();  }
+    alert.present();
+  }
 });
 // Updates the user attributes:
 

@@ -1,6 +1,7 @@
 import { Component, ViewChild, NgZone} from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {settingsPage} from '../settings/settings';
+import {followingPage} from '../following/following';
 import * as firebase from 'firebase';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
 import { AuthService } from '../../providers/auth-service';
@@ -41,6 +42,9 @@ ionViewWillEnter()
 {
   this.update();
   this.getLikes();
+}
+followingPage(){
+ this.navCtrl.push(followingPage); 
 }
 update()
 {

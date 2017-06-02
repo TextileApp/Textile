@@ -102,7 +102,7 @@ var likeCount;
       if (thePost) {
         if (thePost.likes && thePost.likes[this.myUser]) {
           thePost.likeCount--;
-             console.log("FUCK EM ALL NIQQQA");
+  
              
          console.log(thePost.likeCount);
           var adaRankRef = firebase.database().ref(thePost.user + '/totalLikes');
