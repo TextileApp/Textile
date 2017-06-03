@@ -30,8 +30,9 @@ followingUsers: Array<any>;
         this.zone = new NgZone({ enableLongStackTrace: false });
         this.myUser = user.uid;
         
-
-        this.getFollowedUsers();
+this.followingUsers = this.navParams.get("followedUsers");
+console.log(this.followingUsers);
+ this.runIt(this.followingUsers);
 
        
         this.gogogo();
@@ -52,7 +53,7 @@ followingUsers: Array<any>;
 
 
   }
-  runIt() {
+  runIt(following) {
     var result2 = [];
     var temper = [];
     firebase.database().ref("/outfits/").orderByChild("timestamp").on('child_added', function (data) {
@@ -61,7 +62,7 @@ followingUsers: Array<any>;
       if (element) {
         element.key = theKey;
         result2.push(element);
-  if (this.followingUsers.indexOf(element.username) > -1) {
+  if (following.indexOf(element.username) > -1) {
 temper.push(element);
 }
         console.log(result2);
@@ -156,7 +157,6 @@ var likeCount;
        var tempo = [];
      firebase.database().ref(this.myUser+"/following/").once('value').then(function(snapshot) {
   snapshot.forEach(function(childSnapshot) {
-      // key will be "ada" the first time and "alan" the second time
       var key = childSnapshot.key;
     
       var childData = childSnapshot.val();
@@ -164,7 +164,6 @@ var likeCount;
   }); 
 });
 this.followingUsers = tempo;
- this.runIt();
   }
   goToProfile(user) {
     this.navCtrl.push(profilePage, { "user": user });

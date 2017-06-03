@@ -1877,7 +1877,19 @@ decimalToHex(d, padding) {
     this.navCtrl.push(OutfitsPage);
   }
    goToFeed() {
-    this.navCtrl.push(feedPage);
+         var tempo = [];
+     firebase.database().ref(this.currentUser+"/following/").once('value').then(function(snapshot) {
+  snapshot.forEach(function(childSnapshot) {
+      var key = childSnapshot.key;
+    
+      var childData = childSnapshot.val();
+      tempo.push(childData);
+  }); 
+    console.log(tempo);
+});
+    this.navCtrl.push(feedPage,{"followedUsers":tempo});
+
+  
   }
   saveOutfit() {
 
