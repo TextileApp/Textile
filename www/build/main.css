@@ -33634,6 +33634,8 @@ button[fab].fab-map {
   top: 50%;
   left: 50%;
   margin: auto;
+  padding-top: 1em;
+  padding-bottom: 1em;
   text-align: center;
 }
 
@@ -33658,6 +33660,10 @@ button[fab].fab-map {
   padding-right: 25%;
   font-size: 28px;
   text-align: center;
+}
+
+.colom {
+  height: 20%;
 }
 
 .fab[mini] {

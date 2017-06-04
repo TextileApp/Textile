@@ -22,13 +22,17 @@
     <ion-label color ="navcolor" class="noProducts" [hidden]="!noProducts">No results 🙁</ion-label>
 
    <ion-row wrap>
-  
-  <ion-col  width-33 *ngFor="let f of items1" (tap)="selectPiece(f)" >
+<ion-col width-33 *ngFor="let f of items1" >
+  <ion-col (tap)="selectPiece(f)" >
 
-  <img [ngClass]="{'imagi':f.selected}" *ngIf="f.image" [src]="f.image">
-<div class ="name">{{f.name}}</div>
+  <img style ="height:100%;"[ngClass]="{'imagi':f.selected}" *ngIf="f.image" [src]="f.image">
+
     
   </ion-col>
+  <ion-col>
+    <div class ="name">{{f.name}}</div>
+  </ion-col>
+</ion-col>
 </ion-row>
  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
    <ion-infinite-scroll-content></ion-infinite-scroll-content>
