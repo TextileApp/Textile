@@ -33514,10 +33514,10 @@ ion-col {
   top: 0;
   bottom: 0;
   margin: auto;
-  padding-left: 4%;
-  padding-top: 4%;
-  padding-right: 4%;
-  padding-bottom: 4%;
+  padding-left: 20%;
+  padding-top: 20%;
+  padding-right: 20%;
+  padding-bottom: 20%;
 }
 
 .home .jewelrypics {
@@ -33529,6 +33529,17 @@ ion-col {
   padding-top: 25%;
   padding-right: 25%;
   padding-bottom: 25%;
+}
+
+.home .pantspics {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  padding-left: 32%;
+  padding-top: 32%;
+  padding-right: 32%;
+  padding-bottom: 32%;
 }
 
 .home #card-stack {
@@ -33603,6 +33614,14 @@ button[fab].fab-map {
   z-index: 100;
 }
 
+.pics {
+  margin: auto;
+  padding-left: 20%;
+  padding-top: 20%;
+  padding-right: 20%;
+  padding-bottom: 20%;
+}
+
 .title {
   text-align: center;
   font-size: 22px;
@@ -33614,7 +33633,6 @@ button[fab].fab-map {
 }
 
 .subtitle {
-  text-size: 18px;
   text-align: center;
   padding-bottom: 0%;
   padding-top: 0%;
