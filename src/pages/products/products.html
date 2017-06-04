@@ -19,13 +19,13 @@
 
 </ion-header>
 <ion-content>
-    <ion-label color ="navcolor" class="noProducts" [hidden]="!noProducts">No results 🙁</ion-label>
+    <ion-label color ="navcolor" class="noProducts" [hidden]="noProducts">No results 🙁</ion-label>
 
    <ion-row wrap>
 <ion-col width-33 *ngFor="let f of items1" >
   <ion-col (tap)="selectPiece(f)" >
 
-  <img style ="height:100%;"[ngClass]="{'imagi':f.selected}" *ngIf="f.image" [src]="f.image">
+  <img [ngClass]="{'imagi':f.selected}" *ngIf="f.image" [src]="f.image">
 
     
   </ion-col>
