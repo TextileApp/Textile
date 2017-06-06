@@ -17,7 +17,8 @@ const shopstyle = new ShopStyle('uid8976-38160824-19');
 export class followingPage {
 
 //outfits:Array <any>;
-following: FirebaseListObservable<any>;;
+following: Array<any>;
+followingID: Array<any>;
 brands: Array<any>;
 brandsID: Array<any>;
 changedPass:boolean;
@@ -28,6 +29,7 @@ category: any;
 username: any;
 myUser: any;
 currentUser: any;
+searchQuery: string = '';
 usernameText: string;
 mostPopList: Array<any>;
   submitAttempt: boolean = false;
@@ -36,7 +38,7 @@ mostPopList: Array<any>;
           
   if (user) {
  this.myUser = user.uid;
-this.following = af.database.list(this.myUser+'/following/');
+
 
 }
 
@@ -44,19 +46,65 @@ this.following = af.database.list(this.myUser+'/following/');
         )};
 
 printKey(key){
-  
-    this.navCtrl.push(profilePage, { "user": key });
+    var index = this.following.indexOf(key);
+    var id = this.followingID[index];
+    this.navCtrl.push(profilePage, { "user": id});
   
 }
   
  ngAfterViewInit() {
 
+var temp = [];
+var tempID = [];
+firebase.database().ref(this.myUser+'/following/').on('child_added', function(data) {
+var element = data.val();
+var id = data.key;
 
+temp.push(element);
+tempID.push(id);
+
+});
+this.following = temp;
+this.followingID = tempID;
+
+firebase.database().ref(this.myUser+'/following/').on('child_removed', function(data) {
+var element = data.val();
+var id = data.key;
+if(element){
+var index1 = temp.indexOf(element);
+if (index1 > -1) {
+    temp.splice(index1, 1);
+}
+var index2 = temp.indexOf(id);
+if (index2 > -1) {
+    tempID.splice(index2, 1);
+}
+
+}
+});
+this.following = temp;
+this.followingID = tempID;
+ }
+ initializeItems()
+ {
 
 
 
  }
+ getItems(ev: any) {
+    // Reset items back to all of the items
+    this.initializeItems();
 
+    // set val to the value of the searchbar
+    let val = ev.target.value;
+
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() != '') {
+      this.following = this.following.filter((item) => {
+        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
+  }
 
 
  
