@@ -19,7 +19,7 @@ export class feedPage {
 followingPosts: Array<any>;
   zone: any;
 followingUsers: Array<any>;
-
+doILike:boolean;
   
 
   myUser: any;
@@ -95,7 +95,7 @@ var likeCount;
       if (thePost) {
         if (thePost.likes && thePost.likes[this.myUser]) {
           thePost.likeCount--;
-  
+          
              
          console.log(thePost.likeCount);
           var adaRankRef = firebase.database().ref(thePost.user + '/totalLikes');
@@ -112,7 +112,7 @@ var likeCount;
         } else {
       
           thePost.likeCount++;
-       console.log("HELLO 1");
+    
        
          console.log(thePost.likeCount);
           var adaRankRef = firebase.database().ref(thePost.user + '/totalLikes');
@@ -126,6 +126,7 @@ var likeCount;
           if (!thePost.likes) {
             thePost.likes = {};
           }
+          this.doILike = true;
           thePost.likes[this.myUser] = true;
         }
       }

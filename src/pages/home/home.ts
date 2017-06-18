@@ -7,6 +7,7 @@ import {feedPage} from '../feed/feed';
 import { NavController,ModalController,NavParams,ViewController,ActionSheetController,ToastController,PopoverController,LoadingController,Events,AlertController } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service';
 import {closetMenuPage} from '../closetMenu/closetMenu';
+import { searchproductsPage } from '../searchproducts/searchproducts';
 import {ShareService} from '../../providers/ShareService';
 import{ImagePicker,Camera} from'ionic-native';
 import { Http } from '@angular/http';
@@ -2182,6 +2183,12 @@ this.rawType = "Tops";
           this.openBrands();
           }
         },
+          {
+          text: 'Search',
+          handler: () => {
+          this.openSearch();
+          }
+        },
         {
           text: 'Load from Library',
           handler: () => {
@@ -2289,6 +2296,10 @@ newPostRef.set(
 openBrands() {
         this.navctrl.push(brandsPage,{"type":this.rawType,"gender":this.gender});
     }
+openSearch()
+{
+ this.navctrl.push(searchproductsPage,{"type":this.rawType,"gender":this.gender});
+}
   chooseImage(tapimage) {
     this.pickedImage = tapimage;
        this.events.publish('image:picked', this.pickedImage,this.type);

@@ -103,6 +103,7 @@ changePassword(newPass)
 }
 update()
 {
+
 var ref = firebase.database().ref(this.userID+'/username');
 ref.once('value', (snapshot) => {
   if (snapshot.val() === null) {
@@ -119,7 +120,7 @@ console.log(snapshot.val());
 
   setDisplayname(newName)
   {
-
+var usernameRef = firebase.database().ref('/username/'+this.userID);
 
 var ref = firebase.database().ref();
 var q = ref.orderByChild('username').equalTo(newName);
@@ -141,6 +142,7 @@ q.once('value', (snapshot) => {
 db.set(
   newName
 );
+usernameRef.set(newName);
   } else {
     this.update()
       let alert = this.alertCtrl.create({

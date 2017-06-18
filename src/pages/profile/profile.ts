@@ -48,21 +48,21 @@ ionViewWillEnter()
 }
 update()
 {
+var usernameRef = firebase.database().ref('/username/'+this.myUser);
 var ref = firebase.database().ref(this.myUser+'/username');
 ref.once('value', (snapshot) => {
 
- if (snapshot.val() === null) {
+if (snapshot.val() === null) {
    
 var username;
 var tempUsername;
     username = tempUsername.substr(0, tempUsername.indexOf('@'));
      var db = firebase.database().ref(this.myUser+'/username');
 
-db.set(
- username
-);
-  
-  }else{
+db.set(username);
+usernameRef.set(username);
+  }
+  else {
    this.userName = snapshot.val();
 console.log(snapshot.val());
   }

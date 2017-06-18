@@ -78,7 +78,8 @@
     </ion-col>
     <ion-col style ="padding-left:2em;">
         <button (tap)= "toggleLike(f,f.key,i)"ion-button icon-left clear small>
-        <ion-icon color="heart" name="heart"></ion-icon>
+        <ion-icon *ngIf="f.likes[myUser] != null" color="heart" name="heart"></ion-icon>
+        <ion-icon *ngIf="f.likes[myUser] == null" color="heart" ios="ios-heart-outline"></ion-icon>
         <div style = "color:#222;"*ngIf="f.likeCount > 0" >{{f.likeCount}} Likes</div>
         <div style = "color:#222;" *ngIf="f.likeCount <= 0" >no Likes</div>
       </button>

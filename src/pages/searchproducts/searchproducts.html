@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-buttons >
+		<button color="navcolor" ion-button navPop icon-only>
+			<ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+		</button>
+	</ion-buttons>
+    <ion-title >
+  <p style="font-size:22px;">Search</p></ion-title>
+ 
+ 
+ <ion-buttons end>
+        <button ion-button color = "navcolor" icon-only (click)="openPopover($event)">
+  <ion-icon name="more"></ion-icon></button>
+ </ion-buttons>
+      
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+    <ion-label color ="navcolor" class="noProducts" [hidden]="noProducts">No results 🙁</ion-label>
+
+   <ion-row wrap style ="padding-left:1%; padding-right:1%;">
+<ion-col width-33 *ngFor="let f of items1" >
+  <ion-col (tap)="selectPiece(f)" >
+
+  <img [ngClass]="{'imagi':f.selected}" *ngIf="f.image" [src]="f.image">
+
+    
+  </ion-col>
+  <ion-col>
+    <div class ="name">{{f.name}}</div>
+  </ion-col>
+</ion-col>
+</ion-row>
+ <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+   <ion-infinite-scroll-content></ion-infinite-scroll-content>
+ </ion-infinite-scroll>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    
+    <ion-buttons end>
+      <button ion-button icon-right color="navcolor" (click)="saveToCloset()" >
+        Save to closet
+        <ion-icon name="basket"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

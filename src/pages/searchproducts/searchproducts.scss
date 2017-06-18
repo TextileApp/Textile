@@ -1,0 +1,43 @@
+
+
+.fab[mini] {
+    margin: 0px;
+    width: 11px;
+    height: 28px;
+    line-height: 0px;
+}
+.name{
+  
+    top: 50%;
+    left: 50%;
+    
+  margin:auto;
+  padding-top:1em;
+  padding-bottom:1em;
+   text-align: center;
+}
+button[fab].fab-map {
+  position: absolute;
+ 
+  z-index: 100;
+}
+.action-sheet .button.cancel {
+  color:#EE6C4D !important;
+}
+.imagi{   
+   -webkit-filter: opacity(.2);
+  filter: opacity(.2);
+}
+.noProducts{
+ padding-top:50%;
+ padding-left:25%;
+padding-bottom:25%;
+ padding-right:25%;
+  font-size: 28px;
+  text-align: center;
+
+}
+
+.colom{
+  height:20%;
+}

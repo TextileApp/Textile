@@ -5,6 +5,7 @@ import { OutfitsPage } from '../pages/outfits/outfits';
 import { ContactPage } from '../pages/contact/contact';
 import { closetMenuPage } from '../pages/closetMenu/closetMenu';
 import { brandsPage } from '../pages/brands/brands';
+import { searchproductsPage } from '../pages/searchproducts/searchproducts';
 import { feedPage } from '../pages/feed/feed';
 import { followingPage } from '../pages/following/following';
 import { PopoverContentPage } from '../pages/contact/popover';
@@ -48,6 +49,7 @@ firebase.initializeApp(firebaseConfig);
     OutfitsPage,
     ContactPage,
     HomePage,
+    searchproductsPage,
     LoginPage,
     RegisterPage,
     ResetpwdPage,
@@ -78,6 +80,7 @@ firebase.initializeApp(firebaseConfig);
     MyApp,
     OutfitsPage,
     ContactPage,
+    searchproductsPage,
     HomePage,
     imagePicker,
     closetMenuPage,

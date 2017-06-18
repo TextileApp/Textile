@@ -17,7 +17,11 @@ const shopstyle = new ShopStyle('uid8976-38160824-19');
 export class followingPage {
 
 //outfits:Array <any>;
+
 following: Array<any>;
+originalFollowing: Array<any>;
+allUsers: Array<any>;
+searchedUser: any;
 followingID: Array<any>;
 brands: Array<any>;
 brandsID: Array<any>;
@@ -65,6 +69,7 @@ tempID.push(id);
 
 });
 this.following = temp;
+this.originalFollowing = temp;
 this.followingID = tempID;
 
 firebase.database().ref(this.myUser+'/following/').on('child_removed', function(data) {
@@ -83,13 +88,12 @@ if (index2 > -1) {
 }
 });
 this.following = temp;
+this.originalFollowing = temp;
 this.followingID = tempID;
  }
  initializeItems()
  {
-
-
-
+this.following = this.originalFollowing;
  }
  getItems(ev: any) {
     // Reset items back to all of the items
@@ -101,7 +105,9 @@ this.followingID = tempID;
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
       this.following = this.following.filter((item) => {
+
         return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+
       })
     }
   }
