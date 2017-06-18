@@ -10,9 +10,10 @@
      <p style="font-size:22px;">Following</p>
     </ion-title>
   </ion-navbar>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
 </ion-header>
 <ion-content>
-<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+
 
 <ion-list>
   <ion-item *ngFor="let f of following">
