@@ -56,12 +56,29 @@ console.log(this.followingUsers);
   runIt(following) {
     var result2 = [];
     var temper = [];
+    var likes;
+    var theUser = this.myUser;
     firebase.database().ref("/outfits/").orderByChild("timestamp").on('child_added', function (data) {
       var element = data.val();
       var theKey = data.key;
       if (element) {
         element.key = theKey;
+
         result2.push(element);
+        if(element.likes){
+          likes = element.likes;
+        
+      
+        if(theUser in likes){
+         element.buttonIcon = "heart";
+        }
+        else{
+          element.buttonIcon = "heart-outline";
+        }
+      }
+        else{
+          element.buttonIcon = "heart-outline";
+        }
   if (following.indexOf(element.username) > -1) {
 temper.push(element);
 }
@@ -89,13 +106,15 @@ temper.push(element);
   }
 
   toggleLike(thePost, key, i) {
+var currentUser = this.myUser;
 var likeCount;
+var iLike;
     var postRef = firebase.database().ref('outfits/'+key);
  postRef.transaction(function (thePost) {
       if (thePost) {
-        if (thePost.likes && thePost.likes[this.myUser]) {
+        if (thePost.likes && thePost.likes[currentUser]) {
           thePost.likeCount--;
-          
+
              
          console.log(thePost.likeCount);
           var adaRankRef = firebase.database().ref(thePost.user + '/totalLikes');
@@ -103,39 +122,50 @@ var likeCount;
             if (totalLikes === null) {
               totalLikes = 0;
             }
-
+            
             return totalLikes - 1;
 
           });
-          thePost.likes[this.myUser] = null;
-
+          thePost.likes[currentUser] = null;
+         iLike = false;
         } else {
       
           thePost.likeCount++;
-    
-       
+                 
          console.log(thePost.likeCount);
           var adaRankRef = firebase.database().ref(thePost.user + '/totalLikes');
           adaRankRef.transaction(function (totalLikes) {
             if (totalLikes === null) {
               totalLikes = 0;
             }
+    
             return totalLikes + 1;
           });
 
           if (!thePost.likes) {
             thePost.likes = {};
           }
-          this.doILike = true;
-          thePost.likes[this.myUser] = true;
+           iLike = true;
+          thePost.likes[currentUser] = true;
+          
         }
       }
+
+    
+     
+
      
        likeCount = thePost.likeCount;
 
       return thePost;
     });
  this.posts[i].likeCount = likeCount;
+if(iLike){
+  this.posts[i].buttonIcon = "heart";
+}
+else{
+  this.posts[i].buttonIcon = "heart-outline";
+}
   }
 
 
