@@ -17332,8 +17332,8 @@ ion-searchbar {
   padding: 0 8px;
   min-height: 44px;
   border-top: 0.55px solid transparent;
-  border-bottom: 0.55px solid rgba(0, 0, 0, 0.05);
-  background: rgba(0, 0, 0, 0.2);
+  border-bottom: 0.55px solid #f4f4f4;
+  background: #f4f4f4;
 }
 
 .searchbar-ios .searchbar-search-icon {

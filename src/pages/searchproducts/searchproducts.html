@@ -7,20 +7,12 @@
 	</ion-buttons>
     <ion-title >
   <p style="font-size:22px;">Search</p></ion-title>
- 
- 
- <ion-buttons end>
-        <button ion-button color = "navcolor" icon-only (click)="openPopover($event)">
-  <ion-icon name="more"></ion-icon></button>
- </ion-buttons>
-      
-
   </ion-navbar>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
 
 </ion-header>
 
 <ion-content>
-  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
     <ion-label color ="navcolor" class="noProducts" [hidden]="noProducts">No results 🙁</ion-label>
 
    <ion-row wrap style ="padding-left:1%; padding-right:1%;">
