@@ -7,6 +7,7 @@ import { closetMenuPage } from '../pages/closetMenu/closetMenu';
 import { brandsPage } from '../pages/brands/brands';
 import { searchproductsPage } from '../pages/searchproducts/searchproducts';
 import { feedPage } from '../pages/feed/feed';
+import { listviewPage } from '../pages/listview/listview';
 import { followingPage } from '../pages/following/following';
 import { PopoverContentPage } from '../pages/contact/popover';
 import { HomePage,imagePicker } from '../pages/home/home';
@@ -60,8 +61,10 @@ firebase.initializeApp(firebaseConfig);
     followingPage,
     productsPage,
     feedPage,
+    listviewPage,
     settingsPage,
     ImageCropperComponent,
+
     PopoverContentPage
     
   ],
@@ -87,6 +90,7 @@ firebase.initializeApp(firebaseConfig);
     brandsPage,
     followingPage,
     productsPage,
+    listviewPage,
     profilePage,
     feedPage,
     settingsPage,

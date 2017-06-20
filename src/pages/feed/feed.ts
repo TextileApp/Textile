@@ -5,6 +5,7 @@ import { profilePage } from '../profile/profile';
 import * as firebase from 'firebase';
 import { ContactPage } from '../contact/contact';
 import { AuthService } from '../../providers/auth-service';
+import {listviewPage} from '../listview/listview';
 import { productsPage } from '../products/products';
 const ShopStyle = require('shopstyle-sdk');
 const shopstyle = new ShopStyle('uid8976-38160824-19');
@@ -104,7 +105,12 @@ temper.push(element);
 
 
   }
+goToListview(post){
 
+    this.navCtrl.push(listviewPage,{"first":post.first,"second":post.second,"third":post.third,"fourth":post.fourth,"fifth":post.fifth,"sixth":post.sixth,"seventh":post.seventh,"eigth":post.eigth,"ninth":post.ninth,"tenth":post.tenth,"eleventh":post.eleventh,"twelth":post.twelth});
+
+
+}
   toggleLike(thePost, key, i) {
 var currentUser = this.myUser;
 var likeCount;
