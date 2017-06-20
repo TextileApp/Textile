@@ -15,11 +15,11 @@
 
 
 <ion-list>
-  <ion-item>
+  <ion-item *ngFor="let f of items">
     <ion-thumbnail item-start>
-      <img src="img/thumbnail-totoro.png">
+      <img  *ngIf="f.pic"[src]="f.pic">
     </ion-thumbnail>
-    <h2>My Neighbor Totoro</h2>
+    <h2>{{f.name}}</h2>
     
     <button ion-button clear item-end>View</button>
   </ion-item>

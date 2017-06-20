@@ -107,7 +107,7 @@ temper.push(element);
   }
 goToListview(post){
 
-    this.navCtrl.push(listviewPage,{"first":post.first,"second":post.second,"third":post.third,"fourth":post.fourth,"fifth":post.fifth,"sixth":post.sixth,"seventh":post.seventh,"eigth":post.eigth,"ninth":post.ninth,"tenth":post.tenth,"eleventh":post.eleventh,"twelth":post.twelth});
+    this.navCtrl.push(listviewPage,{"firstname":post.firstname,"secondname":post.secondname,"thirdname":post.thirdname,"fourthname":post.fourthname,"fifthname":post.fifthname,"sixthname":post.sixthname,"seventhname":post.seventhname,"eigthname":post.eigthname,"ninthname":post.ninthname,"tenthname":post.tenthname,"eleventhname":post.eleventhname,"twelthname":post.twelthname,"first":post.first,"second":post.second,"third":post.third,"fourth":post.fourth,"fifth":post.fifth,"sixth":post.sixth,"seventh":post.seventh,"eigth":post.eigth,"ninth":post.ninth,"tenth":post.tenth,"eleventh":post.eleventh,"twelth":post.twelth});
 
 
 }
