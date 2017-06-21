@@ -15,14 +15,24 @@
 
 
 <ion-list>
-  <ion-item *ngFor="let f of items">
+  <ion-item text-wrap *ngFor="let f of items">
+    <ion-row>
+    <ion-col>
     <ion-thumbnail item-start>
       <img  *ngIf="f.pic"[src]="f.pic">
     </ion-thumbnail>
-    <h2>{{f.name}}</h2>
-    
-    <button ion-button clear item-end>View</button>
-  </ion-item>
+    </ion-col>
+    <ion-col>
+    <h3 style = "padding-right:20%; margin:auto; 
+
+">
+{{f.name}}   
+    </h3>
+    </ion-col>
+    </ion-row>
+    <button *ngIf="!f.has" ion-button clear item-right icon-only (click)="addItem(f)" ><ion-icon name="add"></ion-icon></button>
+    <button *ngIf="f.has" ion-button clear item-right icon-only (click)="removeItem(f)" ><ion-icon name="check"></ion-icon></button>
+
 </ion-list>
 
 </ion-content>

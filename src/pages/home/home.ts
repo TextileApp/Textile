@@ -232,99 +232,135 @@ this.stackConfig1 = {
   
 if(type == "Jewelry"){
 var index = this.cards1.indexOf(image);
+var name = this.cardNames1[index];
    if(image && index > -1){
     this.cards1.splice(index, 1);
     this.cards1.unshift(image);
+    this.cardNames1.splice(index,1);
+    this.cardNames1.unshift(name);
     }
 
  }
 if(type == "Hats")
  {
 var index = this.cards2.indexOf(image);
+var name = this.cardNames2[index];
    if(image && index > -1){
     this.cards2.splice(index, 1);
     this.cards2.unshift(image);
+    this.cardNames2.splice(index,1);
+    this.cardNames2.unshift(name);
     }
  }
 if(type == "Neckwear")
  {
 var index = this.cards3.indexOf(image);
+var name = this.cardNames3[index];
    if(image && index > -1){
     this.cards3.splice(index, 1);
     this.cards3.unshift(image);
+    this.cardNames3.splice(index,1);
+    this.cardNames3.unshift(name);
     }
  }
 if(type == "Outerwear")
  {
   var index = this.cards4.indexOf(image);
+  var name = this.cardNames4[index];
    if(image && index > -1){
     this.cards4.splice(index, 1);
     this.cards4.unshift(image);
+        this.cardNames4.splice(index,1);
+    this.cardNames4.unshift(name);
     }
  }
 if(type == "Tops")
  {
   var index = this.cards5.indexOf(image);
+  var name = this.cardNames5[index];
    if(image && index > -1){
     this.cards5.splice(index, 1);
     this.cards5.unshift(image);
+        this.cardNames5.splice(index,1);
+    this.cardNames5.unshift(name);
     }
  }
 if(type == "Tops2")
  {
   var index = this.cards6.indexOf(image);
+  var name = this.cardNames6[index];
    if(image && index > -1){
     this.cards6.splice(index, 1);
     this.cards6.unshift(image);
+    this.cardNames6.splice(index,1);
+    this.cardNames6.unshift(name);
   }
  }
 if(type == "Belts")
  {
 var index = this.cards7.indexOf(image);
+var name = this.cardNames7[index];
    if(image && index > -1){
     this.cards7.splice(index, 1);
     this.cards7.unshift(image);
+    this.cardNames7.splice(index,1);
+    this.cardNames7.unshift(name);
     }
  }
 if(type == "Bottoms")
  {
 var index = this.cards8.indexOf(image);
+var name = this.cardNames8[index];
    if(image && index > -1){
     this.cards8.splice(index, 1);
     this.cards8.unshift(image);
+    this.cardNames8.splice(index,1);
+    this.cardNames8.unshift(name);
     }
  }
  if(type == "Jewelry2")
  {
 var index = this.cards9.indexOf(image);
+var name = this.cardNames9[index];
    if(image && index > -1){
     this.cards9.splice(index, 1);
     this.cards9.unshift(image);
+    this.cardNames9.splice(index,1);
+    this.cardNames9.unshift(name);
     }
 
  }
 if(type == "Bags")
  {
 var index = this.cards10.indexOf(image);
+var name = this.cardNames10[index];
    if(image && index > -1){
     this.cards10.splice(index, 1);
     this.cards10.unshift(image);
+    this.cardNames10.splice(index,1);
+    this.cardNames10.unshift(name);
     }
  }
 if(type == "Shoes")
  {
   var index = this.cards11.indexOf(image);
+  var name = this.cardNames11[index];
    if(image && index > -1){
     this.cards11.splice(index, 1);
     this.cards11.unshift(image);
+    this.cardNames11.splice(index,1);
+    this.cardNames11.unshift(name);
     }
  } 
 if(type == "Bags2")
  {
 var index = this.cards12.indexOf(image);
+var name = this.cardNames12[index];
    if(image && index > -1){
     this.cards12.splice(index, 1);
     this.cards12.unshift(image);
+    this.cardNames12.splice(index,1);
+    this.cardNames12.unshift(name);
     }
  }
  
@@ -530,6 +566,7 @@ else{
 }
 addNewCards1(oldcard: string) {
   this.cards1.push(oldcard);
+  
 }
 
 
@@ -1781,12 +1818,16 @@ nameresult12.push(data.key);
 }
 voteUp1() {
  let removedCard = this.cards1.shift();
+ let removedname = this.cardNames1.shift();
+ this.cardNames1.push(removedCard);
    this.didSaveThisOutfit = false;
 this.addNewCards1(removedCard);
 }
 
 voteUp2() {
  let removedCard = this.cards2.shift();
+ let removedname = this.cardNames2.shift();
+ this.cardNames2.push(removedCard);
    this.didSaveThisOutfit = false;
 this.addNewCards2(removedCard);
  
@@ -1794,7 +1835,8 @@ this.addNewCards2(removedCard);
   voteUp3() {
 let removedCard = this.cards3.shift();
   this.didSaveThisOutfit = false;
-
+ let removedname = this.cardNames3.shift();
+ this.cardNames3.push(removedCard);
 this.addNewCards3(removedCard);
 
 }
@@ -1802,7 +1844,8 @@ this.addNewCards3(removedCard);
 voteUp4() {
  let removedCard = this.cards4.shift();
    this.didSaveThisOutfit = false;
-
+ let removedname = this.cardNames4.shift();
+ this.cardNames4.push(removedCard);
    this.cards4.push(removedCard);
 
 }
@@ -1810,19 +1853,24 @@ voteUp4() {
 voteUp5() {
  let removedCard = this.cards5.shift();
    this.didSaveThisOutfit = false;
+  let removedname = this.cardNames5.shift();
+ this.cardNames5.push(removedCard);
 this.addNewCards5(removedCard);
 }
 
 voteUp6() {
  let removedCard = this.cards6.shift();
    this.didSaveThisOutfit = false;
+ let removedname = this.cardNames6.shift();
+ this.cardNames6.push(removedCard);
 this.addNewCards6(removedCard);
  
 }
   voteUp7() {
 let removedCard = this.cards7.shift();
   this.didSaveThisOutfit = false;
-
+ let removedname = this.cardNames7.shift();
+ this.cardNames7.push(removedCard);
 this.addNewCards7(removedCard);
 
 }
@@ -1830,35 +1878,39 @@ this.addNewCards7(removedCard);
 voteUp8() {
  let removedCard = this.cards8.shift();
    this.didSaveThisOutfit = false;
-
+    let removedname = this.cardNames8.shift();
+ this.cardNames8.push(removedCard);
    this.cards8.push(removedCard);
 
 }
 voteUp9() {
  let removedCard = this.cards9.shift();
    this.didSaveThisOutfit = false;
-
+ let removedname = this.cardNames9.shift();
+ this.cardNames9.push(removedCard);
    this.cards9.push(removedCard);
 
 }
 voteUp10() {
  let removedCard = this.cards10.shift();
    this.didSaveThisOutfit = false;
-
+ let removedname = this.cardNames10.shift();
+ this.cardNames10.push(removedCard);
    this.cards10.push(removedCard);
 
 }
 voteUp11() {
  let removedCard = this.cards11.shift();
    this.didSaveThisOutfit = false;
-
+ this.cardNames11.shift();
    this.cards11.push(removedCard);
 
 }
 voteUp12() {
  let removedCard = this.cards12.shift();
    this.didSaveThisOutfit = false;
-
+ let removedname = this.cardNames12.shift();
+ this.cardNames12.push(removedCard);
    this.cards12.push(removedCard);
 
 }
@@ -2052,6 +2104,18 @@ if(this.cardNames12[0].charAt(0) == '-')
 else{
 namecard12 = this.cardNames12[0];
 }
+console.log(namecard1);
+console.log(namecard2);
+console.log(namecard3);
+console.log(namecard4);
+console.log(namecard5);
+console.log(namecard6);
+console.log(namecard7);
+console.log(namecard8);
+console.log(namecard9);
+console.log(namecard10);
+console.log(namecard11);
+console.log(namecard12);
 
 if(this.showPic1 == true)
 {
