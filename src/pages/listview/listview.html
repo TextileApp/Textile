@@ -30,9 +30,9 @@
     </h3>
     </ion-col>
     </ion-row>
-    <button *ngIf="!f.has" ion-button clear item-right icon-only (click)="addItem(f)" ><ion-icon name="add"></ion-icon></button>
-    <button *ngIf="f.has" ion-button clear item-right icon-only (click)="removeItem(f)" ><ion-icon name="check"></ion-icon></button>
-
+    <button *ngIf="!f.has" ion-button clear item-right icon-only (tap)="addItem(f)" ><ion-icon name="add"></ion-icon></button>
+    <button *ngIf="f.has" ion-button clear item-right icon-only (tap)="removeItem(f)" ><ion-icon name="checkmark"></ion-icon></button>
+  </ion-item>
 </ion-list>
 
 </ion-content>

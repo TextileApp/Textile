@@ -2020,90 +2020,21 @@ var namecard10;
 var namecard11;
 var namecard12;
 
-if(this.cardNames1[0].charAt(0) == '-')
-{
-namecard1 = "imported item";
-}
-else{
+
+
 namecard1 = this.cardNames1[0];
-}
-if(this.cardNames2[0].charAt(0) == '-')
-{
-  namecard2 = "imported item";
-}
-else{
 namecard2 = this.cardNames2[0];
-}
-if(this.cardNames3[0].charAt(0) == '-')
-{
-  namecard3 = "imported item";
-}
-else{
 namecard3 = this.cardNames3[0];
-}
-if(this.cardNames4[0].charAt(0) == '-')
-{
-  namecard4 = "imported item";
-}
-else{
 namecard4 = this.cardNames4[0];
-}
-if(this.cardNames5[0].charAt(0) == '-')
-{
-  namecard5 = "imported item";
-}
-else{
 namecard5 = this.cardNames5[0];
-}
-if(this.cardNames6[0].charAt(0) == '-')
-{
-  namecard6 = "imported item";
-}
-else{
 namecard6= this.cardNames6[0];
-}
-if(this.cardNames7[0].charAt(0) == '-')
-{
-  namecard7 = "imported item";
-}
-else{
 namecard7 = this.cardNames7[0];
-}
-if(this.cardNames8[0].charAt(0) == '-')
-{
-  namecard8 = "imported item";
-}
-else{
 namecard8 = this.cardNames8[0];
-}
-if(this.cardNames9[0].charAt(0) == '-')
-{
-  namecard9 = "imported item";
-}
-else{
 namecard9 = this.cardNames9[0];
-}
-if(this.cardNames10[0].charAt(0) == '-')
-{
-  namecard10 = "imported item";
-}
-else{
 namecard10 = this.cardNames10[0];
-}
-if(this.cardNames11[0].charAt(0) == '-')
-{
-  namecard11 = "imported item";
-}
-else{
 namecard11 = this.cardNames11[0];
-}
-if(this.cardNames12[0].charAt(0) == '-')
-{
-  namecard12 = "imported item";
-}
-else{
 namecard12 = this.cardNames12[0];
-}
+
 console.log(namecard1);
 console.log(namecard2);
 console.log(namecard3);
