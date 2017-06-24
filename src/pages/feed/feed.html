@@ -77,7 +77,7 @@
         <div style = "color:#222;">{{f.username}}</div>
       </button>
     </ion-col>
-    <ion-col style ="padding-left:2em;">
+    <ion-col style ="padding-left:4em;">
         <button (tap)= "toggleLike(f,f.key,i)"ion-button icon-left clear small>
         <ion-icon  color="heart" [name]="f.buttonIcon"></ion-icon>
         <div style = "color:#222;"*ngIf="f.likeCount > 0" >{{f.likeCount}}</div>
@@ -141,19 +141,19 @@
     </ion-col>
   </ion-row>
     <ion-row>
-    <ion-col>
+    <ion-col width-33>
       <button (tap)="goToProfile(f.user)" ion-button small clear>
         <div style = "color:#222;">{{f.username}}</div>
       </button>
     </ion-col>
-    <ion-col style ="padding-left:2em;">
-        <button (tap)= "toggleLike(f,f.key,i)"ion-button icon-left clear small>
+    <ion-col width-33>
+        <button  (tap)= "toggleLike(f,f.key,i)"ion-button icon-left clear small>
         <ion-icon color="heart" name="heart"></ion-icon>
         <div style = "color:#222;"*ngIf="f.likeCount > 0" >{{f.likeCount}} Likes</div>
         <div style = "color:#222;" *ngIf="f.likeCount <= 0" >no Likes</div>
       </button>
     </ion-col>
-    <ion-col center text-center>
+    <ion-col width-33 center text-center>
       <ion-note>
        {{f.time}}
       </ion-note>
