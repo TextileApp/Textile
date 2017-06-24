@@ -23,8 +23,7 @@
 }
 
 .grid-full ion-row {
-  height: 100%;
-  width:100%;
+
   padding: 0;
   margin:0;
   flex-wrap: wrap;
@@ -35,6 +34,21 @@
   text-align: center;
   padding: 5px 5px 5px 5px;
   margin-top:0px;
+
+}
+.colo
+{
+  height: 10%;
+  width:15%;
+}
+.pics
+{
+   
+  display:block !important;
+  max-height:100px !important;
+  width:auto !important;
+
+
 
 }
 
