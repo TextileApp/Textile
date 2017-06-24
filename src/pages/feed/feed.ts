@@ -82,18 +82,20 @@ console.log(this.followingUsers);
         }
   if (following.indexOf(element.username) > -1) {
 temper.push(element);
+
 }
         console.log(result2);
       }
     });
     this.posts = result2;
-
+    this.followingPosts = temper;
     firebase.database().ref("/outfits").orderByChild("timestamp").on('child_removed', function (data) {
       var element = data.val();
 
       if (element) {
         var index = result2.indexOf(element);
         if (index > -1) {
+          
           result2.splice(index, 1);
         }
         this.posts = result2;
