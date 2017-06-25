@@ -3,5 +3,16 @@
 
 
 
+.centerit{
+    display: flex;
+text-align:left;
+align-items: center; 
+}
 
 
+.resize{
+    display: block;
+  max-height: 4em !important;
+  max-width: 4em !important;
+  width: auto !important;
+}

@@ -33585,6 +33585,23 @@ ion-col {
   opacity: 0;
 }
 
+.centerit {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: left;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.resize {
+  display: block;
+  max-height: 4em !important;
+  max-width: 4em !important;
+  width: auto !important;
+}
+
 page-login h2 {
   text-align: center;
   margin: 10px;

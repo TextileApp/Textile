@@ -18,14 +18,12 @@
   <ion-item text-wrap *ngFor="let f of items">
     <ion-row>
     <ion-col>
-    <ion-thumbnail item-start>
-      <img  *ngIf="f.pic"[src]="f.pic">
+    <ion-thumbnail style="padding-left:5%;" item-start>
+      <img class ="resize" *ngIf="f.pic"[src]="f.pic">
     </ion-thumbnail>
     </ion-col>
-    <ion-col>
-    <h3 style = "padding-right:20%; margin:auto; 
-
-">
+    <ion-col class ="centerit">
+    <h3>
 {{f.name}}   
     </h3>
     </ion-col>
