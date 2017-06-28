@@ -33758,6 +33758,14 @@ button[fab].fab-map {
   margin-bottom: 0%;
 }
 
+.pics {
+  margin: auto;
+  padding-left: 20%;
+  padding-top: 20%;
+  padding-right: 20%;
+  padding-bottom: 20%;
+}
+
 page-register h2 {
   text-align: center;
   margin: 10px;

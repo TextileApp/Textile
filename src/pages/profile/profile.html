@@ -17,15 +17,15 @@
 
 <ion-col><p class ="title">{{userName}}</p></ion-col>
 <ion-col>
-  <button class = "follow" (tap)= "followUser()"ion-button icon-left clear>
+  <button style ="align-content:center;" class = "follow" (tap)= "followUser()"ion-button icon-left clear>
         <ion-icon *ngIf = "!isFollowing" color="dark" name="add"></ion-icon>
         <ion-icon *ngIf = "isFollowing" color="dark" name="checkmark"></ion-icon>
 
-        <div *ngIf="!isFollowing" style = "color:#222;">follow</div>
-        <div *ngIf="isFollowing" style = "color:#222;">following</div>
+        <div  *ngIf="!isFollowing" style = "color:#222;">follow</div>
+        <div  *ngIf="isFollowing" style = "color:#222;">following</div>
       </button>
 </ion-col>
-<span style ="align-content:center; padding-left:auto; padding-right:auto;font-size:16px; padding-bottom:0%; margin-bottom:0%;">
+<span style ="align-content:center; padding-left:45%; padding-right:40%;font-size:16px; padding-bottom:0%; margin-bottom:0%;">
   <ion-icon color ="heart" name="heart" item-left></ion-icon>
   <p style="font-size:18px;padding-left:1%; display:inline-block; text-align:center;">{{totalLikes}}</p>
 </span>
@@ -36,48 +36,48 @@
 
  
   <ion-grid>
-  <ion-row>
+<ion-row>
     <ion-col width-33>
-    <img *ngIf="f.first"[src]="f.first">
+    <img class="pics" *ngIf="f.first"[src]="f.first">
     </ion-col>
     <ion-col width-33>
-      <img *ngIf="f.second"[src]="f.second">
+      <img class="pics" *ngIf="f.second"[src]="f.second">
     </ion-col>
      <ion-col width-33>
-      <img *ngIf="f.third"[src]="f.third">
+      <img class="pics" *ngIf="f.third"[src]="f.third">
     </ion-col>
   </ion-row>
  <ion-row>
     <ion-col width-33>
-      <img *ngIf="f.fourth"[src]="f.fourth">
+      <img class="pics" *ngIf="f.fourth"[src]="f.fourth">
     </ion-col>
     <ion-col width-33>
-      <img *ngIf="f.fifth"[src]="f.fifth">
+      <img class="pics" *ngIf="f.fifth"[src]="f.fifth">
     </ion-col>
      <ion-col width-33>
-       <img *ngIf="f.sixth"[src]="f.sixth">
+       <img class="pics" *ngIf="f.sixth"[src]="f.sixth">
     </ion-col>
   </ion-row>
   <ion-row>
     <ion-col width-33>
-     <img *ngIf="f.seventh"[src]="f.seventh">
+     <img class="pics" *ngIf="f.seventh"[src]="f.seventh">
     </ion-col>
     <ion-col width-33>
-      <img *ngIf="f.eighth"[src]="f.eighth">
+      <img class="pics" *ngIf="f.eighth"[src]="f.eighth">
     </ion-col>
      <ion-col width-33>
-      <img *ngIf="f.ninth"[src]="f.ninth">
+      <img class="pics" *ngIf="f.ninth"[src]="f.ninth">
     </ion-col>
   </ion-row>
    <ion-row>
     <ion-col width-33>
-     <img *ngIf="f.tenth"[src]="f.tenth">
+     <img class="pics" *ngIf="f.tenth"[src]="f.tenth">
     </ion-col>
     <ion-col width-33>
-      <img *ngIf="f.eleventh"[src]="f.eleventh">
+      <img class="pics" *ngIf="f.eleventh"[src]="f.eleventh">
     </ion-col>
      <ion-col width-33>
-      <img *ngIf="f.twelth"[src]="f.twelth">
+      <img class="pics" *ngIf="f.twelth"[src]="f.twelth">
     </ion-col>
   </ion-row>
 </ion-grid>
