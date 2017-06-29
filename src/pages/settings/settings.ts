@@ -120,7 +120,9 @@ console.log(snapshot.val());
 
   setDisplayname(newName)
   {
-var usernameRef = firebase.database().ref('/username/'+this.userID);
+       if (/^[0-9A-Za-z]+$/.test(newName))
+{
+var usernameRef = firebase.database().ref('/username/'+newName);
 
 var ref = firebase.database().ref();
 var q = ref.orderByChild('username').equalTo(newName);
@@ -142,18 +144,30 @@ q.once('value', (snapshot) => {
 db.set(
   newName
 );
-usernameRef.set(newName);
+usernameRef.set(this.userID);
   } else {
     this.update()
       let alert = this.alertCtrl.create({
       title: 'Sorry',
       subTitle: 'Username already taken',
       buttons: ['OK']
+     
     });
     alert.present();
   }
 });
 // Updates the user attributes:
+}
+else
+{
+          let alert = this.alertCtrl.create({
+     title: 'Sorry',
+      subTitle: 'Usernames can only contain alphanumeric characters',
+      buttons: ['OK']
+     
+    });
+    alert.present();
+}
 
   }
 }

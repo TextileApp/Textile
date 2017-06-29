@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-buttons>
+		<button color="navcolor" ion-button navPop icon-only>
+			<ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+		</button>
+	</ion-buttons>
+
+    <ion-title>
+     <p style="font-size:22px;">Search</p>
+    </ion-title>
+  </ion-navbar>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+</ion-header>
+<ion-content>
+
+
+<ion-list>
+  <ion-item *ngFor="let f of following">
+    <ion-label (tap) ="printKey(f)">{{f}}</ion-label>
+  </ion-item>
+  
+</ion-list>
+
+</ion-content>

@@ -22,10 +22,13 @@ following: Array<any>;
 originalFollowing: Array<any>;
 allUsers: Array<any>;
 searchedUser: any;
+userFound: any;
+searching:any;
 followingID: Array<any>;
 brands: Array<any>;
 brandsID: Array<any>;
 changedPass:boolean;
+
 type: any;
 newPassword: string;
 brandsList: any;
@@ -95,6 +98,18 @@ this.followingID = tempID;
  {
 this.following = this.originalFollowing;
  }
+ followUser()
+ {
+  var usernameRef = firebase.database().ref(this.myUser+"/following/"+this.searchedUser);
+  var ref = firebase.database().ref('/username/'+this.searchedUser);
+ref.once('value', (snapshot) => {
+var temp = snapshot.val();
+  usernameRef.set(temp);
+  
+});
+this.initializeItems();
+this.searching = false;
+ }
  getItems(ev: any) {
     // Reset items back to all of the items
     this.initializeItems();
@@ -106,10 +121,34 @@ this.following = this.originalFollowing;
     if (val && val.trim() != '') {
       this.following = this.following.filter((item) => {
 
+        if(!(item.toLowerCase().indexOf(val.toLowerCase()) > -1))
+        {
+          this.searching = true;
+          var usernameRef = firebase.database().ref('/username/'+val);
+
+var ref = firebase.database().ref();
+var q = ref.orderByChild('username').equalTo(val);
+usernameRef.once('value', (snapshot) => {
+
+  if (snapshot.val() === null) {
+    this.userFound = false;
+this.searchedUser = "No results 🙁";
+  } else {
+this.userFound = true;
+this.searchedUser = val;
+  
+  }
+});
+        }else{
+          this.searching = false;
+        }
         return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
 
       })
     }
+    else{
+          this.searching = false;
+        }
   }
 
 
