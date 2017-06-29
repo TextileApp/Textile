@@ -1156,14 +1156,15 @@ loadData() {
 ref.once('value', (snapshot) => {
 
  if (snapshot.val() === null) {
-   
+var uid = this.currentUser;
 var username;
 var tempUsername;
     username = tempUsername.substr(0, tempUsername.indexOf('@'));
-     var db = firebase.database().ref(this.currentUser+'/username');
+    username.replace(/\W/g, '');
+     var db = firebase.database().ref(this.currentUser+'/username/'+username);
 
 db.set(
- username
+ uid
 );
   this.userName = username;
   }else{
@@ -2496,8 +2497,7 @@ ImagePicker.getPictures(options).then((results) => {
             var imgBlob: any = new Blob([evt.target.result], { type: 'image/jpeg' });
             imgBlob.name = uuid+'.jpg';
       var uploadTask = this.storageRef.child(this.currentUser+'/'+clothes+'/'+imgBlob.name).put(imgBlob);
-        console.log(imgBlob.name+'fuck the popopopop');
-       console.log("FUCK MY GERORIIIM");
+
 
 // Listen for state changes, errors, and completion of the upload.
 uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
@@ -2517,12 +2517,12 @@ uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
   switch (error.code) {
     case 'storage/unauthorized':
       // User doesn't have permission to access the object
-       console.log('NIGGA WE unauthorized IT');
+     
       break;
 
     case 'storage/canceled':
       // User canceled the upload
-             console.log('NIGGA WE CANCELLED IT');
+  
 
       break;
 
@@ -2534,7 +2534,7 @@ uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
       break;
   }
 }, function() {
-       console.log('NIGGA WE MADE IT');
+     
   // For instance, get the download URL: https://firebasestorage.googleapis.com/...
   var downloadURL = uploadTask.snapshot.downloadURL;
   console.log(downloadURL);
