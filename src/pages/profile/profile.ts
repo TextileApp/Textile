@@ -22,12 +22,13 @@ userName: any;
 totalLikes: any;
 currentUser:any;
 isFollowing: any;
-
+myUsername: any;
 tempUsername: string;
   constructor(public navCtrl: NavController,private ngZone: NgZone,af: AngularFire,private _auth: AuthService,private params: NavParams) {
     const authObserver = af.auth.subscribe( user => {
   if (user) {
      this.myUser = this.params.get("user");
+     this.myUsername = this.params.get("name");
      this.currentUser = user.uid;
   this.outfits = af.database.list(this.myUser+'/outfits/');
  this.getLikes();
@@ -48,7 +49,7 @@ ionViewWillEnter()
 }
 update()
 {
-var usernameRef = firebase.database().ref('/username/'+this.myUser);
+var usernameRef = firebase.database().ref('/username/'+this.myUsername);
 var ref = firebase.database().ref(this.myUser+'/username');
 ref.once('value', (snapshot) => {
 
@@ -77,7 +78,7 @@ this.totalLikes = snapshot.val();
 
 )}
 followUser(){
-    var ref = firebase.database().ref(this.currentUser+'/following/'+this.userName);
+    var ref = firebase.database().ref(this.currentUser+'/following/'+this.myUsername);
 ref.once('value', (snapshot) => {
  if (snapshot.val() === null) {
 this.isFollowing = true;
@@ -96,7 +97,7 @@ else
 }
 
 getFollowing(){
-  var ref = firebase.database().ref(this.currentUser+'/following/'+this.myUser);
+  var ref = firebase.database().ref(this.currentUser+'/following/'+this.myUsername);
 ref.once('value', (snapshot) => {
  if (snapshot.val() === null) {
 this.isFollowing = false;

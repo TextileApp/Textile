@@ -1351,14 +1351,7 @@ if (index > -1) {
 });
 this.cards4 = result4;
 this.cardNames4 = nameresult4;
-firebase.database().ref(this.currentUser+'/Outerwear/').on('child_added', function(data) {
-var element = data.val();
 
-result4.push(element);
-nameresult4.push(data.key);
-});
-
- this.cards4 = result4;
   //this.grid = Array(Math.ceil(this.items.length/2));
   firebase.database().ref(this.currentUser+'/Outerwear/').once('value', function(snapshot) {
 

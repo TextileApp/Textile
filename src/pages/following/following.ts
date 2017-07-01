@@ -55,7 +55,7 @@ mostPopList: Array<any>;
 printKey(key){
     var index = this.following.indexOf(key);
     var id = this.followingID[index];
-    this.navCtrl.push(profilePage, { "user": id});
+    this.navCtrl.push(profilePage, { "user": id,"name":key});
   
 }
   
@@ -64,8 +64,8 @@ printKey(key){
 var temp = [];
 var tempID = [];
 firebase.database().ref(this.myUser+'/following/').on('child_added', function(data) {
-var element = data.val();
-var id = data.key;
+var element = data.key;
+var id = data.val();
 
 temp.push(element);
 tempID.push(id);
