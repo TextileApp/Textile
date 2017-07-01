@@ -6,7 +6,7 @@
 		</button>
 	</ion-buttons>
     <ion-title >
-  <p style="font-size:22px;">Search</p></ion-title>
+  <p style="font-size:22px;">Items</p></ion-title>
  
  
  <ion-buttons end>
@@ -19,7 +19,7 @@
 
 </ion-header>
 <ion-content>
-    <ion-label color ="navcolor" class="noProducts" [hidden]="noProducts">No results 🙁</ion-label>
+    <ion-label color ="navcolor" class="noProducts" [hidden]="!noProducts">No results 🙁</ion-label>
 
    <ion-row wrap style ="padding-left:1%; padding-right:1%;">
 <ion-col width-33 *ngFor="let f of items1" >

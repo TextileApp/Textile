@@ -89,7 +89,9 @@ temper.push(element);
         console.log(result2);
       }
     });
+    
     this.posts = result2;
+    this.posts.reverse();
     this.followingPosts = temper;
     firebase.database().ref("/outfits").orderByChild("timestamp").on('child_removed', function (data) {
       var element = data.val();

@@ -183,11 +183,10 @@ item.selected = true;
 shopstyle.products(options).then(response => {
 
  var x;
-
-   this.noProducts = true;
+ this.noProducts = true;
      for (x in response.products) {
       result1.push({'image': response.products[x].image.sizes.Large.url,'name':response.products[x].unbrandedName});
-    
+    this.noProducts = false;
     }
 
   this.items1 = result1;
