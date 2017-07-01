@@ -32,7 +32,7 @@ doILike:boolean;
         this.myUser = user.uid;
         
 this.followingUsers = this.navParams.get("followedUsers");
-console.log(this.followingUsers);
+
  this.runIt(this.followingUsers);
 
        
@@ -63,6 +63,11 @@ console.log(this.followingUsers);
       var element = data.val();
       var theKey = data.key;
       if (element) {
+        console.log(element.username);
+        if (following.indexOf(element.user) > -1) {
+temper.push(element);
+
+}  
         element.key = theKey;
 
         result2.push(element);
@@ -80,10 +85,7 @@ console.log(this.followingUsers);
         else{
           element.buttonIcon = "heart-outline";
         }
-  if (following.indexOf(element.username) > -1) {
-temper.push(element);
 
-}
         console.log(result2);
       }
     });

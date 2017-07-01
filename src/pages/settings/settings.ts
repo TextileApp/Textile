@@ -103,7 +103,6 @@ changePassword(newPass)
 }
 update()
 {
-
 var ref = firebase.database().ref(this.userID+'/username');
 ref.once('value', (snapshot) => {
   if (snapshot.val() === null) {
@@ -113,10 +112,30 @@ ref.once('value', (snapshot) => {
 console.log(snapshot.val());
   }
 });
+
   
 }
 
- 
+changePosts(username){
+  var user = this.userID;
+   
+       firebase.database().ref("outfits").once('value').then(function(snapshot) {
+  snapshot.forEach(function(childSnapshot) {
+      var key = childSnapshot.key;
+     
+      
+      var childData = childSnapshot.val();
+ var postref = firebase.database().ref("/outfits/"+key+"/"+"username");
+ console.log("WE RUNNIN DIS");
+      if(childData.user == user)
+      {
+      console.log("UPDATED POST");
+      postref.set(username);
+      }
+  }); 
+  
+});
+}
 
   setDisplayname(newName)
   {
@@ -145,8 +164,9 @@ db.set(
   newName
 );
 usernameRef.set(this.userID);
+this.changePosts(newName);
   } else {
-    this.update()
+    this.update();
       let alert = this.alertCtrl.create({
       title: 'Sorry',
       subTitle: 'Username already taken',

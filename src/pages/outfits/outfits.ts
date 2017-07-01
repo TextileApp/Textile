@@ -55,6 +55,7 @@ ref.once('value', (snapshot) => {
    
           var username;
 var tempUsername;
+tempUsername = this._auth.userEmail();
     username = tempUsername.substr(0, tempUsername.indexOf('@'));
      var db = firebase.database().ref(this.myUser+'/username');
 

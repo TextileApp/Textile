@@ -1159,6 +1159,7 @@ ref.once('value', (snapshot) => {
 var uid = this.currentUser;
 var username;
 var tempUsername;
+tempUsername = this.authService.userEmail();
     username = tempUsername.substr(0, tempUsername.indexOf('@'));
     username.replace(/\W/g, '');
      var db = firebase.database().ref(this.currentUser+'/username/'+username);
@@ -1192,10 +1193,12 @@ nameresult1.push(data.key);
    var userStorageRef = firebase.storage().ref().child('Icons/Jewelry.png');
     userStorageRef.getDownloadURL().then(url => {
        var dupe = url;
+         nameresult1.push("Jewelry");
+         nameresult1.push("Jewelry");
          result1.push(dupe);
          result1.push(url);
-
       this.cards1 = result1;
+      this.namecard1 = nameresult1;
 
     });
   }
@@ -1230,9 +1233,12 @@ firebase.database().ref(this.currentUser+'/Hats/').once('value', function(snapsh
   var userStorageRef = firebase.storage().ref().child('Icons/Hat.png');
     userStorageRef.getDownloadURL().then(url => {
        var dupe = url;
-   result2.push(dupe);
+   nameresult2.push("Hat");
+    nameresult2.push("Hat");
+         result2.push(dupe);
          result2.push(url);
-   this.cards2 = result2;
+      this.cards2 = result2;
+      this.namecard2 = nameresult2;
 });
   }
   else{
@@ -1284,14 +1290,17 @@ firebase.database().ref(this.currentUser+'/Neckwear/').once('value', function(sn
 var userStorageRef = firebase.storage().ref().child('Icons/Tie.png');
     userStorageRef.getDownloadURL().then(url => {
        var dupe = url;
-   result3.push(dupe);
-  result3.push(url);
-     
+    nameresult3.push("Tie");
+    nameresult3.push("Tie");
+         result3.push(dupe);
+         result3.push(url);
+      this.cards3 = result3;
+      this.namecard3 = nameresult3;
 
     });
   }
 });
-this.cards3 = result3;
+
 
   //this.grid = Array(Math.ceil(this.items1.length/2));
 
@@ -1357,10 +1366,12 @@ nameresult4.push(data.key);
    var userStorageRef = firebase.storage().ref().child('Icons/Outerwear.png');
     userStorageRef.getDownloadURL().then(url => {
        var dupe = url;
+        nameresult4.push("Jacket");
+    nameresult4.push("Jacket");
          result4.push(dupe);
          result4.push(url);
-
       this.cards4 = result4;
+      this.namecard4= nameresult4;
 
     });
   }
@@ -1394,10 +1405,12 @@ this.cards5 = result5;
 
     userStorageRef1.getDownloadURL().then(url => {
        var dupe = url;
+      nameresult5.push("Shirt");
+    nameresult5.push("Shirt");
          result5.push(dupe);
          result5.push(url);
-
       this.cards5 = result5;
+      this.namecard5= result5;
 
     });
       userStorageRef2.getDownloadURL().then(url => {
@@ -1405,7 +1418,8 @@ this.cards5 = result5;
          result6.push(dupe);
          result6.push(url);
 
-      this.cards6 = result6;
+        this.cards6 = result6;
+      this.namecard6 = nameresult6;
 
     });
   }
@@ -1436,20 +1450,7 @@ this.cardnames6 = nameresult6;
   var result7 = [];
    var nameresult7 = [];
   //this.grid = Array(Math.ceil(this.items.length/2));
-  firebase.database().ref(this.currentUser+'/Belts/').once('value', function(snapshot) {
 
-  if (!(snapshot.exists())) {
-   var userStorageRef = firebase.storage().ref().child('Icons/Belt.png');
-    userStorageRef.getDownloadURL().then(url => {
-       var dupe = url;
-         result7.push(dupe);
-         result7.push(url);
-
-      this.cards7 = result7;
-
-    });
-  }
-});
 
 firebase.database().ref(this.currentUser+'/Belts/').on('child_removed', function(data) {
 var element = data.val();
@@ -1480,10 +1481,12 @@ nameresult7.push(data.key);
    var userStorageRef = firebase.storage().ref().child('Icons/Belt.png');
     userStorageRef.getDownloadURL().then(url => {
        var dupe = url;
+         nameresult7.push("Belt");
+    nameresult7.push("Belt");
          result7.push(dupe);
          result7.push(url);
-
       this.cards7 = result7;
+      this.namecard7= nameresult7;
 
     });
   }
@@ -1507,20 +1510,6 @@ this.cardNames7 = nameresult7;
  var result8 = [];
   var nameresult8 = [];
   //this.grid = Array(Math.ceil(this.items.length/2));
-  firebase.database().ref(this.currentUser+'/Bottoms/').once('value', function(snapshot) {
-
-  if (!(snapshot.exists())) {
-   var userStorageRef = firebase.storage().ref().child('Icons/pantsIcon.png');
-    userStorageRef.getDownloadURL().then(url => {
-       var dupe = url;
-         result8.push(dupe);
-         result8.push(url);
-
-      this.cards8 = result8;
-
-    });
-  }
-});
 
 firebase.database().ref(this.currentUser+'/Bottoms/').on('child_removed', function(data) {
 var element = data.val();
@@ -1551,10 +1540,12 @@ nameresult8.push(data.key);
    var userStorageRef = firebase.storage().ref().child('Icons/pantsIcon.png');
     userStorageRef.getDownloadURL().then(url => {
        var dupe = url;
+    nameresult8.push("Pants");
+    nameresult8.push("Pants");
          result8.push(dupe);
          result8.push(url);
-
       this.cards8 = result8;
+      this.namecard8= nameresult8;
 
     });
   }
@@ -1576,20 +1567,8 @@ this.cardNames8 = nameresult8;
  var result9 = [];
   var nameresult9 = [];
   //this.grid = Array(Math.ceil(this.items.length/2));
-  firebase.database().ref(this.currentUser+'/Jewelry/').once('value', function(snapshot) {
 
-  if (!(snapshot.exists())) {
-   var userStorageRef = firebase.storage().ref().child('Icons/Jewelry.png');
-    userStorageRef.getDownloadURL().then(url => {
-       var dupe = url;
-         result9.push(dupe);
-         result9.push(url);
 
-      this.cards9 = result9;
-
-    });
-  }
-});
 
 firebase.database().ref(this.currentUser+'/Jewelry/').on('child_removed', function(data) {
 var element = data.val();
@@ -1620,10 +1599,13 @@ nameresult9.push(data.key);
    var userStorageRef = firebase.storage().ref().child('Icons/Jewelry.png');
     userStorageRef.getDownloadURL().then(url => {
        var dupe = url;
+
+    nameresult9.push("Jewelry");
+    nameresult9.push("Jewelry");
          result9.push(dupe);
          result9.push(url);
-
       this.cards9 = result9;
+      this.namecard9= nameresult9;
 
     });
   }
@@ -1634,20 +1616,7 @@ nameresult9.push(data.key);
  var result10 = [];
   var nameresult10 = [];
   //this.grid = Array(Math.ceil(this.items.length/2));
-  firebase.database().ref(this.currentUser+'/Bags/').once('value', function(snapshot) {
 
-  if (!(snapshot.exists())) {
-   var userStorageRef = firebase.storage().ref().child('Icons/Bag2.png');
-    userStorageRef.getDownloadURL().then(url => {
-       var dupe = url;
-         result10.push(dupe);
-         result10.push(url);
-
-      this.cards10 = result10;
-
-    });
-  }
-});
 
 firebase.database().ref(this.currentUser+'/Bags/').on('child_removed', function(data) {
 var element = data.val();
@@ -1678,10 +1647,13 @@ nameresult10.push(data.key);
    var userStorageRef = firebase.storage().ref().child('Icons/Bag2.png');
     userStorageRef.getDownloadURL().then(url => {
        var dupe = url;
+    nameresult10.push("Bag");
+    nameresult10.push("Bag");
          result10.push(dupe);
          result10.push(url);
 
       this.cards10 = result10;
+      this.namecard10 = nameresult10;
 
     });
   }
@@ -1703,20 +1675,7 @@ this.cardNames10 = nameresult10;
  var result11 = [];
  var nameresult11 = [];
   //this.grid = Array(Math.ceil(this.items.length/2));
-  firebase.database().ref(this.currentUser+'/Shoes/').once('value', function(snapshot) {
 
-  if (!(snapshot.exists())) {
-   var userStorageRef = firebase.storage().ref().child('Icons/shoeIcon.png');
-    userStorageRef.getDownloadURL().then(url => {
-       var dupe = url;
-         result11.push(dupe);
-         result11.push(url);
-
-      this.cards11 = result11;
-
-    });
-  }
-});
 
 firebase.database().ref(this.currentUser+'/Shoes/').on('child_removed', function(data) {
 var element = data.val();
@@ -1744,14 +1703,16 @@ nameresult11.push(data.key);
   firebase.database().ref(this.currentUser+'/Shoes/').once('value', function(snapshot) {
 
   if (!(snapshot.exists())) {
-   var userStorageRef = firebase.storage().ref().child('Icons/ShoesIcon.png');
+   var userStorageRef = firebase.storage().ref().child('Icons/shoeIcon.png');
     userStorageRef.getDownloadURL().then(url => {
        var dupe = url;
+          nameresult11.push("Shoes");
+         nameresult11.push("Shoes");
          result11.push(dupe);
          result11.push(url);
 
       this.cards11 = result11;
-
+      this.namecard11 = nameresult11;
     });
   }
 });
@@ -1768,11 +1729,13 @@ nameresult11.push(data.key);
    var userStorageRef = firebase.storage().ref().child('Icons/Bag1.png');
     userStorageRef.getDownloadURL().then(url => {
        var dupe = url;
+         nameresult12.push("Bag");
+         nameresult12.push("Bag");
          result12.push(dupe);
          result12.push(url);
 
       this.cards12 = result12;
-
+      this.namecard12 = nameresult12;
     });
   }
 });
@@ -1800,20 +1763,7 @@ nameresult12.push(data.key);
  this.cards12 = result12;
  this.cardNames12 = nameresult12;
   //this.grid = Array(Math.ceil(this.items.length/2));
-  firebase.database().ref(this.currentUser+'/Bags/').once('value', function(snapshot) {
 
-  if (!(snapshot.exists())) {
-   var userStorageRef = firebase.storage().ref().child('Icons/Bag1.png');
-    userStorageRef.getDownloadURL().then(url => {
-       var dupe = url;
-         result12.push(dupe);
-         result12.push(url);
-
-      this.cards12 = result12;
-
-    });
-  }
-});
 
 
 }
