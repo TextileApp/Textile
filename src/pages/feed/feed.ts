@@ -209,8 +209,8 @@ else{
 });
 this.followingUsers = tempo;
   }
-  goToProfile(user) {
-    this.navCtrl.push(profilePage, { "user": user });
+  goToProfile(post) {
+    this.navCtrl.push(profilePage, { "user": post.user,"name":post.username });
   }
   setTime(key, timestamp) {
     var result2 = [];

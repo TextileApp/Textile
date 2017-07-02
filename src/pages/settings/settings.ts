@@ -28,7 +28,8 @@ category: any;
 username: any;
 userID: any;
 currentUser: any;
-usernameText: string;
+oldUsername: any;
+usernameText: any;
 mostPopList: Array<any>;
   submitAttempt: boolean = false;
   constructor(public navCtrl: NavController,private ngZone: NgZone,public af: AngularFire,private _auth: AuthService,private navParams:NavParams,public alertCtrl: AlertController,public formBuilder: FormBuilder) {
@@ -103,12 +104,14 @@ changePassword(newPass)
 }
 update()
 {
+
 var ref = firebase.database().ref(this.userID+'/username');
 ref.once('value', (snapshot) => {
   if (snapshot.val() === null) {
 
   }else{
    this.usernameText = snapshot.val();
+   this.oldUsername = snapshot.val();
 console.log(snapshot.val());
   }
 });
@@ -118,7 +121,7 @@ console.log(snapshot.val());
 
 changePosts(username){
   var user = this.userID;
-   
+   this.update();
        firebase.database().ref("outfits").once('value').then(function(snapshot) {
   snapshot.forEach(function(childSnapshot) {
       var key = childSnapshot.key;
@@ -126,10 +129,10 @@ changePosts(username){
       
       var childData = childSnapshot.val();
  var postref = firebase.database().ref("/outfits/"+key+"/"+"username");
- console.log("WE RUNNIN DIS");
+
       if(childData.user == user)
       {
-      console.log("UPDATED POST");
+      
       postref.set(username);
       }
   }); 
@@ -141,13 +144,18 @@ changePosts(username){
   {
        if (/^[0-9A-Za-z]+$/.test(newName))
 {
-var usernameRef = firebase.database().ref('/username/'+newName);
+  console.log(this.oldUsername);
+  console.log("old usernammae above: ");
+var usernameRef = firebase.database().ref("/username/"+newName);
+var oldnameref = firebase.database().ref("/username/"+this.oldUsername);
+ oldnameref.set(null);
 
 var ref = firebase.database().ref();
 var q = ref.orderByChild('username').equalTo(newName);
 q.once('value', (snapshot) => {
 
   if (snapshot.val() === null) {
+   
        let alert = this.alertCtrl.create({
       title: 'Sweet',
       subTitle: 'Username was updated successfully',
@@ -163,8 +171,10 @@ q.once('value', (snapshot) => {
 db.set(
   newName
 );
+
 usernameRef.set(this.userID);
 this.changePosts(newName);
+
   } else {
     this.update();
       let alert = this.alertCtrl.create({
