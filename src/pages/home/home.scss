@@ -51,43 +51,118 @@ height:100%;
 display:inline-block;
 
 }
+
+
 .home {
 margin:0;
 margin-top:6%;
-.pics{
-    position:absolute;
-    top:0;
-    bottom:0; 
-    margin:auto;
-    padding-left:20%;
-    padding-top:20%;
-    padding-right:20%;
-    padding-bottom:20%;
-}
+
 .jewelrypics
 {
   position:absolute;
-    top:0;
-    bottom:0; 
-    margin:auto;
-    padding-left:25%;
-    padding-top:25%;
-    padding-right:25%;
-    padding-bottom:25%;
+   
+     display: block;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    max-height: 65%;
+    max-width:65%;
 
 
+}
+.hatpics
+{
+  position:absolute;
+   
+     display: block;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    max-width: 70%;
+
+
+}
+.tilepics {
+ position:absolute;
+   
+     display: block;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    max-height: 70%;
+
+}
+.shoepics {
+
+  position:absolute;
+   
+     display: block;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    max-height: 70%;
+    max-width: 70%;
+
+
+
+}
+.neckpics {
+
+  position:absolute;
+   
+     display: block;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    max-height: 75%;
+    max-width:80%;
+
+
+}
+.shirtpics {
+   position:absolute;
+   
+     display: block;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    max-height: 70%;
 
 }
 .pantspics
 {
+
   position:absolute;
-    top:0;
-    bottom:0; 
-    margin:auto;
-    padding-left:32%;
-    padding-top:32%;
-    padding-right:32%;
-    padding-bottom:32%;
+   
+     display: block;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    max-height: 75%;
+
+
+
 
 
 

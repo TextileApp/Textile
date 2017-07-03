@@ -65,8 +65,7 @@ export class HomePage implements OnInit{
   @ViewChildren('mycards11') swingCards11: QueryList<SwingCardComponent>;
    @ViewChild('myswing12') swingStack12: SwingStackComponent;
   @ViewChildren('mycards12') swingCards12: QueryList<SwingCardComponent>;
-     //@ViewChild('myswing13') swingStack13: SwingStackComponent;
-   // @ViewChildren('mycards13') swingCards13: QueryList<SwingCardComponent>;
+
   genderPref: any;
   userName: any;
   testRadioOpen: boolean;
@@ -420,7 +419,6 @@ this.showDelete8 = false;
 this.showDelete9 = false;
   this.showDelete10 = false;
   this.showDelete12 = false;
-    this.showDress = true;
     this.didSaveThisOutfit = false;
   
  
@@ -971,6 +969,7 @@ activateCard2(){
   this.card12Activated = false;
 
    if(this.showPic1 == true){
+    console.log("SHOw pic 1 = true");
   this.showCard1 = true;
 
    }
@@ -2300,16 +2299,11 @@ this.rawType = "Tops";
     cropModal.onDidDismiss(data => {
        if(data){
        if(this.type == "Hats"){
-        console.log("ITS HATS");
+   
         clothes = 'Hats';
        }
-       if(this.type == "'Hats'")
-       {
-    console.log("ITS HATSSjjsjjj");
-       }
-       console.log(clothes);
-       console.log(this.type);
-       console.log("hentai");
+      
+  
       this.imgUri = data;
       console.log(this.imgUri);
             var uuid = generateUUID();

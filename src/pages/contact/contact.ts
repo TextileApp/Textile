@@ -8,6 +8,7 @@ import { brandsPage } from '../brands/brands';
 import { AuthService } from '../../providers/auth-service';
 import {ShareService} from '../../providers/ShareService';
 import { Events } from 'ionic-angular';
+import { searchproductsPage } from '../searchproducts/searchproducts';
 import { ImageCropperComponent } from "../cropper/img-cropper";
 
 import * as firebase from 'firebase';
@@ -88,15 +89,23 @@ af: AngularFire;
       
 
     }
-          public presentActionSheet() {
+
+    
+         public presentActionSheet() {
 
     let actionSheet = this.actionSheetCtrl.create({
-      title: 'Select Image Source',
+      title: 'Select Source',
       buttons: [
-          {
+         {
           text: 'Database',
           handler: () => {
-           this.openBrands(); //Camera.PictureSourceType.PHOTOLIBRARY);
+          this.openBrands();
+          }
+        },
+          {
+          text: 'Search',
+          handler: () => {
+          this.openSearch();
           }
         },
         {
@@ -119,6 +128,11 @@ af: AngularFire;
     });
     actionSheet.present();
   }
+  
+  openSearch()
+{
+ this.navCtrl.push(searchproductsPage,{"type":this.whichType,"gender":this.genderPref});
+}
   public presentCropModal(img: string,clothes: string) {
     var aspect = 1;
     if(this.pet == "Dresses"){

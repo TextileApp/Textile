@@ -60,7 +60,7 @@ af: AngularFire;
     console.log(this.whichType);
     this.brand = this.params.get("brand");
     console.log(this.brand);
-    this.currentOffset = 550;
+    this.currentOffset = 0;
 
 
  
@@ -104,7 +104,9 @@ shopstyle.products(options).then(response => {
    this.noProducts = true;
      for (x in response.products) {
       this.items1.push({'image': response.products[x].image.sizes.Large.url,'name':response.products[x].unbrandedName});
-      
+if(this.items1.length > 0){
+    this.noProducts = false;
+      }
     
 
     }
@@ -130,11 +132,9 @@ this.db = firebase.database().ref(firebase.auth().currentUser.uid+'/'+this.inter
 }else{
      this.db = firebase.database().ref(firebase.auth().currentUser.uid+'/'+this.internalType+'/'+this.items1[i].name);
 }
-    console.log("NOICE MATE");
 if(this.items1[i].selected == true)
 {
-//this.selectedItems.push(item);
-    console.log("killa MATE");
+
 
 this.db.set(
   this.items1[i].image
@@ -190,7 +190,7 @@ shopstyle.products(options).then(response => {
     }
 
   this.items1 = result1;
-  this.getAnotherFifty(1);
+
  
 
 
@@ -208,43 +208,6 @@ ngAfterViewInit() {
 }
 
 
-getAnotherFifty(timesRan)
-{
-var offset = timesRan*50;
-if(timesRan < 10){
- const options = {
-  cat:this.whichType
-  ,
-  offset:offset 
-  ,
-  limit: 50,
-  fl: this.brandID,
-  sort: 'Popularity',
-};
-       
-shopstyle.products(options).then(response => {
-
- var x;
- if(response.products.length > 0){
-    this.noProducts = false;
-     for (x in response.products) {
-      this.items1.push({'image': response.products[x].image.sizes.Large.url,'name':response.products[x].unbrandedName});
-  
-    
-
-    }
-
-  
-
-  } 
-
-});
-
-      
-timesRan++;
-this.getAnotherFifty(timesRan);
-}
-}
 
       
 
