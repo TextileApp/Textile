@@ -60,7 +60,7 @@ af: AngularFire;
     console.log(this.whichType);
     this.brand = this.params.get("brand");
     console.log(this.brand);
-    this.currentOffset = 0;
+    this.currentOffset = 50;
 
 
  
