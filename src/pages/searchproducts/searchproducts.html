@@ -5,6 +5,12 @@
 			<ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
 		</button>
 	</ion-buttons>
+   <ion-buttons end>
+      <button ion-button icon-right color="navcolor" (click)="saveToCloset()" >
+        
+        <ion-icon name="basket"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title >
   <p style="font-size:22px;">Search</p></ion-title>
   </ion-navbar>
@@ -32,15 +38,3 @@
    <ion-infinite-scroll-content></ion-infinite-scroll-content>
  </ion-infinite-scroll>
 </ion-content>
-
-<ion-footer>
-  <ion-toolbar>
-    
-    <ion-buttons end>
-      <button ion-button icon-right color="navcolor" (click)="saveToCloset()" >
-        Save to closet
-        <ion-icon name="basket"></ion-icon>
-      </button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-footer>

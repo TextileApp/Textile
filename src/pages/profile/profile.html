@@ -17,7 +17,7 @@
 
 <ion-col><p class ="title">{{userName}}</p></ion-col>
 <ion-col>
-  <button style ="align-content:center;" class = "follow" (tap)= "followUser()"ion-button icon-left clear>
+  <button style ="align-content:center; margin-left: auto; margin-right: auto;  " class = "follow" (tap)= "followUser()"ion-button icon-left clear>
         <ion-icon *ngIf = "!isFollowing" color="dark" name="add"></ion-icon>
         <ion-icon *ngIf = "isFollowing" color="dark" name="checkmark"></ion-icon>
 
@@ -25,7 +25,7 @@
         <div  *ngIf="isFollowing" style = "color:#222;">following</div>
       </button>
 </ion-col>
-<span style ="align-content:center; padding-left:45%; padding-right:40%;font-size:16px; padding-bottom:0%; margin-bottom:0%;">
+<span style ="align-content:center; padding-left:46%; padding-right:40%;font-size:16px; padding-bottom:0%; margin-bottom:0%;">
   <ion-icon color ="heart" name="heart" item-left></ion-icon>
   <p style="font-size:18px;padding-left:1%; display:inline-block; text-align:center;">{{totalLikes}}</p>
 </span>

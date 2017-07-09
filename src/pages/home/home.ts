@@ -1162,10 +1162,11 @@ tempUsername = this.authService.userEmail();
     username = tempUsername.substr(0, tempUsername.indexOf('@'));
     username.replace(/\W/g, '');
      var db = firebase.database().ref(this.currentUser+'/username/'+username);
-
+     var publicdb = firebase.database().ref('/username/'+username);
 db.set(
  uid
 );
+publicdb.set(uid);
   this.userName = username;
   }else{
    this.userName = snapshot.val();
