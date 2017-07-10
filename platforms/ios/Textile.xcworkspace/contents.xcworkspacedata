@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../../../Documents/OneDrive/AnyWall-master-23 (original 3)/AnyWall-iOS/seattle.gpx">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Documents/OneDrive/GPSApp/alki.gpx">
+   </FileRef>
+   <FileRef
       location = "group:Textile.xcodeproj">
    </FileRef>
 </Workspace>

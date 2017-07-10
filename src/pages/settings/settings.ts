@@ -28,6 +28,7 @@ category: any;
 username: any;
 userID: any;
 currentUser: any;
+gender: string;
 oldUsername: any;
 usernameText: any;
 mostPopList: Array<any>;
@@ -53,29 +54,25 @@ this.update();
 
   
  ngAfterViewInit() {
-/** 
-     var result1 = [];
-     var result2 = [];
-     shopstyle.products({limit:100}).then(response => {
-       var x;
-     for (x in response.brands) {
-      result1.push(response.brands[x].name);
-      result2.push("b"+response.brands[x].id);
-    }
-  });
-  this.brands = result1;
-  this.brandsID = result2;
-  console.log(this.brands);
-    console.log(result1);
-    
-    shopstyle.categories(null)
-  .then(result => console.log(result.categories[0]));
-*/
+var userid = this.userID;
+var ref = firebase.database().ref(userid+'/gender');
+ref.once('value', (snapshot) => {
 
+ if (snapshot.val() != null) {
+  this.gender = snapshot.val();
+}
+else{
 
+}
+});
 
 
  }
+ changeSelect(gender){
+   var userid = this.userID;
+var ref = firebase.database().ref(userid+'/gender');
+ref.set(gender);
+}
   elementChanged(input){
     let field = input.inputControl.name;
     this[field + "Changed"] = true;

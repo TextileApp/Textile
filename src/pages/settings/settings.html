@@ -17,12 +17,12 @@
   <ion-item>
     <ion-label fixed>Username</ion-label>
     <ion-input type="text" [(ngModel)]="usernameText" ></ion-input>
-    <button clear item-right (tap) = "setDisplayname(usernameText)" >save</button>
+    <button color="navcolor" item-right (tap) = "setDisplayname(usernameText)" >save</button>
   </ion-item>
   <ion-item [formGroup]="passwordForm">
     <ion-label fixed>Password</ion-label>
     <ion-input placeholder="•••••••"    #password formControlName="password" type="password" (change)="elementChanged(password)"[(ngModel)]="newPassword" [class.invalid]="!passwordForm.controls.password.valid && (passwordChanged || submitAttempt)"></ion-input>
-    <button clear item-right (tap) = "changePassword(newPassword)">save</button>
+    <button  color="navcolor" item-right (tap) = "changePassword(newPassword)">save</button>
 
   </ion-item>
    <ion-item class="error-message" *ngIf="!passwordForm.controls.password.valid  && (passwordChanged || submitAttempt)">
@@ -30,6 +30,13 @@
     </ion-item>
        <ion-item class="error-message" *ngIf="changedPass">
       <p>Changed password succsesfully</p>
+    </ion-item>
+       <ion-item>
+      <ion-label>Gender</ion-label>
+      <ion-select [(ngModel)]="gender" (ionChange)="changeSelect(gender)">
+        <ion-option value="female">Female</ion-option>
+        <ion-option value="male">Male</ion-option>
+      </ion-select>
     </ion-item>
 </ion-list>
 
