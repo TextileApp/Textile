@@ -63,13 +63,21 @@ printKey(key){
 
 var temp = [];
 var tempID = [];
+var currentuser = this.myUser;
 firebase.database().ref(this.myUser+'/following/').on('child_added', function(data) {
-var element = data.key;
-var id = data.val();
+var element = data.val();
+var id = data.key;
+  var ref = firebase.database().ref(id+'/username');
+ref.once('value', (snapshot) => {
+var tempo = snapshot.val();
+console.log(id);
+console.log(tempo);
+var followingref = firebase.database().ref(currentuser+"/following/"+id);
+  followingref.set(tempo);
 
+});
 temp.push(element);
 tempID.push(id);
-
 });
 this.following = temp;
 this.originalFollowing = temp;
@@ -90,6 +98,17 @@ if (index2 > -1) {
 
 }
 });
+firebase.database().ref(this.myUser+'/following/').on('child_changed', function(data) {
+var element = data.val();
+var id = data.key;
+console.log("CHANGING BITCH");
+console.log(element);
+console.log(data.key);
+var index1 = tempID.indexOf(id);
+if (index1 > -1) {
+  temp[index1] = element;
+}
+});
 this.following = temp;
 this.originalFollowing = temp;
 this.followingID = tempID;
@@ -100,11 +119,12 @@ this.following = this.originalFollowing;
  }
  followUser()
  {
-  var usernameRef = firebase.database().ref(this.myUser+"/following/"+this.searchedUser);
+  
   var ref = firebase.database().ref('/username/'+this.searchedUser);
 ref.once('value', (snapshot) => {
 var temp = snapshot.val();
-  usernameRef.set(temp);
+var usernameRef = firebase.database().ref(this.myUser+"/following/"+temp);
+  usernameRef.set(this.searchedUser);
   
 });
 this.initializeItems();

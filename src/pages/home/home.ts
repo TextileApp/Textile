@@ -1161,10 +1161,10 @@ var tempUsername;
 tempUsername = this.authService.userEmail();
     username = tempUsername.substr(0, tempUsername.indexOf('@'));
     username.replace(/\W/g, '');
-     var db = firebase.database().ref(this.currentUser+'/username/'+username);
+     var db = firebase.database().ref(this.currentUser+'/username');
      var publicdb = firebase.database().ref('/username/'+username);
 db.set(
- uid
+ username
 );
 publicdb.set(uid);
   this.userName = username;
@@ -2150,7 +2150,7 @@ function dataURLtoBlob(dataurl) {
 
   <ion-toolbar>
     <ion-title>
-      Choose a item
+      Choose an item
     </ion-title>
       <ion-buttons start>
     <button icon-only ion-button (click)="dismiss()">

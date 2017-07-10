@@ -78,7 +78,7 @@ this.totalLikes = snapshot.val();
 
 )}
 followUser(){
-    var ref = firebase.database().ref(this.currentUser+'/following/'+this.myUsername);
+    var ref = firebase.database().ref(this.currentUser+'/following/'+this.myUser);
 ref.once('value', (snapshot) => {
  if (snapshot.val() === null) {
 this.isFollowing = true;
@@ -97,7 +97,7 @@ else
 }
 
 getFollowing(){
-  var ref = firebase.database().ref(this.currentUser+'/following/'+this.myUsername);
+  var ref = firebase.database().ref(this.currentUser+'/following/'+this.myUser);
 ref.once('value', (snapshot) => {
  if (snapshot.val() === null) {
 this.isFollowing = false;
