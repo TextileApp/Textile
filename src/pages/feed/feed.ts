@@ -59,7 +59,7 @@ this.followingUsers = this.navParams.get("followedUsers");
     var temper = [];
     var likes;
     var theUser = this.myUser;
-    firebase.database().ref("/outfits/").orderByChild("timestamp").on('child_added', function (data) {
+    firebase.database().ref("/outfits/").orderByChild("order").on('child_added', function (data) {
       var element = data.val();
       var theKey = data.key;
       if (element) {
@@ -94,7 +94,7 @@ temper.push(element);
     this.posts = result2;
   
     this.followingPosts = temper;
-    firebase.database().ref("/outfits").orderByChild("timestamp").on('child_removed', function (data) {
+    firebase.database().ref("/outfits").orderByChild("order").on('child_removed', function (data) {
       var element = data.val();
 
       if (element) {
@@ -184,7 +184,7 @@ else{
 
   gogogo() {
     var temp = [];
-    firebase.database().ref("outfits/").orderByChild("timestamp").on('child_added', function (data) {
+    firebase.database().ref("outfits/").orderByChild("order").on('child_added', function (data) {
       var element = data.val();
       if (element) {
         temp.push({ "key": data.key, "timestamp": element.timestamp });

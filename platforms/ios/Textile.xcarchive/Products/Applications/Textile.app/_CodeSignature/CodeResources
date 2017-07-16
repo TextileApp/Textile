@@ -86,7 +86,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		LH7R73zXQjagdCbYMgHqUKNQtB8=
+		oliC7xGzuIBtTabDP/KqLpfbZ2o=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -94,7 +94,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		kmF+vhy0CMB0hql1g5ggTkuWJzQ=
+		rL5muO/mJhUYaZkCQJlX/qANeg0=
 		</data>
 		<key>GMEmptyFolder@1x.png</key>
 		<data>
@@ -158,7 +158,7 @@
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		EHMsLR6/hL3AwGQjcU7WEeG1IpE=
+		H/SXkWsLXsf7yXBJaQzFDQ9brDw=
 		</data>
 		<key>PEPhotoCropEditor.bundle/PEPhotoCropEditorBorder.png</key>
 		<data>
@@ -415,11 +415,11 @@
 		</data>
 		<key>www/build/main.js</key>
 		<data>
-		9sqdk94VFHx1LtcmKaS4Q8UTzxE=
+		vYPmdx/VEygHP/u5ovs25HsbbWc=
 		</data>
 		<key>www/build/main.js.map</key>
 		<data>
-		QwNP+igRhfAhTTJKazha+xkEc6Y=
+		0DSXZGIlJKZpgPpy2NogqoxSRBY=
 		</data>
 		<key>www/build/polyfills.js</key>
 		<data>
@@ -824,11 +824,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			LH7R73zXQjagdCbYMgHqUKNQtB8=
+			oliC7xGzuIBtTabDP/KqLpfbZ2o=
 			</data>
 			<key>hash2</key>
 			<data>
-			lLA5vZMaDrvpDDXidoK4fCdQVuGTKxGysLtJAo0P5UU=
+			OtSLYMkTDXVac5PpWIRWGpvbubCKNXDIQpfqpUkAshg=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -846,11 +846,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			kmF+vhy0CMB0hql1g5ggTkuWJzQ=
+			rL5muO/mJhUYaZkCQJlX/qANeg0=
 			</data>
 			<key>hash2</key>
 			<data>
-			zb1F7jP+cNKWAm/os4JgpPsMw7eWAsq2+4G1J6WuZnI=
+			59ZEmlFTe8fkFRbTp+jcXrUkVbhKnMKyk7q83Gsz9PA=
 			</data>
 		</dict>
 		<key>GMEmptyFolder@1x.png</key>
@@ -1011,11 +1011,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			EHMsLR6/hL3AwGQjcU7WEeG1IpE=
+			H/SXkWsLXsf7yXBJaQzFDQ9brDw=
 			</data>
 			<key>hash2</key>
 			<data>
-			KEbNG5LjK1GUOOBeMGlwrOUm57lsaqD8R9pUuYZkNTA=
+			hBMdFrs4DTlGtyps1POL6vl9RpzH9Erb8MXAyoxbhzU=
 			</data>
 		</dict>
 		<key>PEPhotoCropEditor.bundle/PEPhotoCropEditorBorder.png</key>
@@ -1601,22 +1601,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			9sqdk94VFHx1LtcmKaS4Q8UTzxE=
+			vYPmdx/VEygHP/u5ovs25HsbbWc=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZXNLYKROjf9159n43sMdoOiAuWsasyAlaO7jFFSG5NU=
+			gUXpYwK9yEeP1Yj9K1CH+N6w9oV3e6D5afMWEmMTokE=
 			</data>
 		</dict>
 		<key>www/build/main.js.map</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			QwNP+igRhfAhTTJKazha+xkEc6Y=
+			0DSXZGIlJKZpgPpy2NogqoxSRBY=
 			</data>
 			<key>hash2</key>
 			<data>
-			DofcM9bdmJ6fkEy6pxwaTlLqmYmY8DyzHhJ5q5mxBCc=
+			XWXI0VoMGEAc/vbfxpmCnlPwxPER7sduJlF8hE36/sk=
 			</data>
 		</dict>
 		<key>www/build/polyfills.js</key>

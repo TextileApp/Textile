@@ -2,6 +2,15 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../../../Documents/OneDrive/GPSApp/seattlelop.gpx">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Documents/OneDrive/GPSApp/theforest.gpx">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Documents/OneDrive/GPSApp/Town.gpx">
+   </FileRef>
+   <FileRef
       location = "group:../../../Documents/OneDrive/AnyWall-master-23 (original 3)/AnyWall-iOS/seattle.gpx">
    </FileRef>
    <FileRef

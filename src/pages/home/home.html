@@ -31,7 +31,7 @@
     <ion-card [hidden]="!showCard1"  (press)="pressEvent($event)" #mycards1 swing-card *ngFor="let c of cards1; trackBy:trackByCards1 let t=index;"[style.zIndex]="-1*t" [style.marginTop]="t === 0 ? '0px':'0px'"(tap)="openModal1(cards1)">
                                         <button style= "width:100%; height:100%; top:-6.80%; right:2.85%;"[hidden]="!card1Activated"(click)="activateCard1()" color = "light"  ion-button icon-only><ion-icon color="navcolor" name="add"></ion-icon></button>
 
-          <img class ="jewelrypics" [hidden]="!showPic1" *ngIf="c"[src]="c"id="image">
+          <img class ="jewelrypics" [hidden]="!showPic1" *ngIf="c"[src]="c.url"id="image">
   
     </ion-card>
      </div>

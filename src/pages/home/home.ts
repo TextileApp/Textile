@@ -1176,11 +1176,11 @@ publicdb.set(uid);
   loader.present();
     var result1 = [];
     var nameresult1 = [];
-
-firebase.database().ref(this.currentUser+'/Jewelry/').on('child_added', function(data) {
+var myuser = this.currentUser;
+firebase.database().ref(myuser+'/Jewelry/').on('child_added', function(data) {
 var element = data.val();
-
-result1.push(element);
+var name = data.key;
+result1.push(element.url);
 nameresult1.push(data.key);
 });
 
@@ -1207,7 +1207,7 @@ nameresult1.push(data.key);
 firebase.database().ref(this.currentUser+'/Jewelry/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
-var index = result1.indexOf(element);
+var index = result1.indexOf(element.url);
 if (index > -1) {
     result1.splice(index, 1);
     nameresult1.splice(index,1);
@@ -1222,8 +1222,9 @@ var nameresult2 = [];
 firebase.database().ref(this.currentUser+'/Hats/').on('child_added', function(data) {
 var element = data.val();
 if(element){
+
 nameresult2.push(data.key);
-result2.push(element);
+result2.push(element.url);
 }
 });
  this.cards2 = result2;
@@ -1249,7 +1250,7 @@ firebase.database().ref(this.currentUser+'/Hats/').once('value', function(snapsh
   firebase.database().ref(this.currentUser+'/Hats/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
-var index = result2.indexOf(element);
+var index = result2.indexOf(element.url);
 if (index > -1) {
     result2.splice(index, 1);
     nameresult2.splice(index,1);
@@ -1265,7 +1266,7 @@ this.cardNames2 = nameresult2;
 firebase.database().ref(this.currentUser+'/Neckwear/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
-var index = result3.indexOf(element);
+var index = result3.indexOf(element.url);
 if (index > -1) {
     result3.splice(index, 1);
     nameresult3.splice(index,1);
@@ -1279,7 +1280,7 @@ this.cardNames3 = nameresult3;
 firebase.database().ref(this.currentUser+'/Neckwear/').on('child_added', function(data) {
 var element = data.val();
 if(element){
-result3.push(element);
+result3.push(element.url);
 nameresult3.push(data.key);
 }
 });
@@ -1310,7 +1311,7 @@ var userStorageRef = firebase.storage().ref().child('Icons/Tie.png');
 var element = data.val();
 if(element){
 
-result4.push(element);
+result4.push(element.url);
 nameresult4.push(data.key);
 }
 });
@@ -1342,7 +1343,7 @@ this.cards4 = result4;
 firebase.database().ref(this.currentUser+'/Outerwear/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
-var index = result4.indexOf(element);
+var index = result4.indexOf(element.url);
 if (index > -1) {
     result4.splice(index, 1);
     nameresult4.splice(index,1);
@@ -1379,9 +1380,9 @@ var result6 = [];
 firebase.database().ref(this.currentUser+'/Tops/').on('child_added', function(data) {
 var element = data.val();
 
-result5.push(element);
+result5.push(element.url);
 nameresult5.push(data.key);
-result6.push(element);
+result6.push(element.url);
 nameresult6.push(data.key);
 });
 
@@ -1421,7 +1422,7 @@ this.cards5 = result5;
 firebase.database().ref(this.currentUser+'/Tops/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
-var index = result5.indexOf(element);
+var index = result5.indexOf(element.url);
 if (index > -1) {
     result5.splice(index, 1);
     nameresult5.splice(index,1);
@@ -1448,7 +1449,7 @@ this.cardnames6 = nameresult6;
 firebase.database().ref(this.currentUser+'/Belts/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
-var index = result1.indexOf(element);
+var index = result1.indexOf(element.url);
 if (index > -1) {
     result7.splice(index, 1);
     nameresult7.splice(index,1);
@@ -1488,7 +1489,7 @@ nameresult7.push(data.key);
 firebase.database().ref(this.currentUser+'/Belts/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
-var index = result7.indexOf(element);
+var index = result7.indexOf(element.url);
 if (index > -1) {
     result7.splice(index, 1);
     nameresult7.splice(index,1);
@@ -1507,7 +1508,7 @@ this.cardNames7 = nameresult7;
 firebase.database().ref(this.currentUser+'/Bottoms/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
-var index = result1.indexOf(element);
+var index = result1.indexOf(element.url);
 if (index > -1) {
     result8.splice(index, 1);
     nameresult8.splice(index,1);
@@ -1520,7 +1521,7 @@ this.cardNames8 = nameresult8;
 firebase.database().ref(this.currentUser+'/Bottoms/').on('child_added', function(data) {
 var element = data.val();
 
-result8.push(element);
+result8.push(element.url);
 nameresult8.push(data.key);
 });
 
@@ -1547,7 +1548,7 @@ nameresult8.push(data.key);
 firebase.database().ref(this.currentUser+'/Bottoms/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
-var index = result8.indexOf(element);
+var index = result8.indexOf(element.url);
 if (index > -1) {
     result8.splice(index, 1);
     nameresult8.splice(index,1);
@@ -1566,7 +1567,7 @@ this.cardNames8 = nameresult8;
 firebase.database().ref(this.currentUser+'/Jewelry/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
-var index = result9.indexOf(element);
+var index = result9.indexOf(element.url);
 if (index > -1) {
     result9.splice(index, 1);
     nameresult9.splice(index,1);
@@ -1579,7 +1580,7 @@ this.cardNames9 = nameresult9;
 firebase.database().ref(this.currentUser+'/Jewelry/').on('child_added', function(data) {
 var element = data.val();
 
-result9.push(element);
+result9.push(element.url);
 nameresult9.push(data.key);
 });
 
@@ -1614,7 +1615,7 @@ nameresult9.push(data.key);
 firebase.database().ref(this.currentUser+'/Bags/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
-var index = result10.indexOf(element);
+var index = result10.indexOf(element.url);
 if (index > -1) {
     result10.splice(index, 1);
     nameresult10.splice(index,1);
@@ -1627,7 +1628,7 @@ this.cardNames10 = nameresult10;
 firebase.database().ref(this.currentUser+'/Bags/').on('child_added', function(data) {
 var element = data.val();
 
-result10.push(element);
+result10.push(element.url);
 nameresult10.push(data.key);
 });
 
@@ -1655,7 +1656,7 @@ nameresult10.push(data.key);
 firebase.database().ref(this.currentUser+'/Bags/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
-var index = result10.indexOf(element);
+var index = result10.indexOf(element.url);
 if (index > -1) {
     result10.splice(index, 1);
     nameresult10.splice(index,1);
@@ -1673,7 +1674,7 @@ this.cardNames10 = nameresult10;
 firebase.database().ref(this.currentUser+'/Shoes/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
-var index = result11.indexOf(element);
+var index = result11.indexOf(element.url);
 if (index > -1) {
     result11.splice(index, 1);
     nameresult11.splice(index,1);
@@ -1686,7 +1687,7 @@ this.cardNames11 = nameresult11;
 firebase.database().ref(this.currentUser+'/Shoes/').on('child_added', function(data) {
 var element = data.val();
 
-result11.push(element);
+result11.push(element.url);
 nameresult11.push(data.key);
 });
 
@@ -1736,7 +1737,7 @@ nameresult11.push(data.key);
 firebase.database().ref(this.currentUser+'/Bags/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
-var index = result12.indexOf(element);
+var index = result12.indexOf(element.url);
 if (index > -1) {
     result12.splice(index, 1);
     nameresult12.splice(index,1);
@@ -1749,7 +1750,7 @@ this.cardNames12 = nameresult12;
 firebase.database().ref(this.currentUser+'/Bags/').on('child_added', function(data) {
 var element = data.val();
 
-result12.push(element);
+result12.push(element.url);
 nameresult12.push(data.key);
 });
 
@@ -2086,13 +2087,9 @@ else{
   topcard12 = "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe";
 }
 
-
-
-
-
 this.lastSavedFitRef.set(
   {first:topcard1,second:topcard2,third:topcard3,fourth:topcard4,fifth:topcard5,sixth:topcard6,seventh:topcard7,eighth:topcard8,ninth:topcard9,tenth:topcard10,eleventh:topcard11,twelth:topcard12,timestamp:firebase.database.ServerValue.TIMESTAMP}
-);
+)
  let toast = this.toastCtrl.create({
       message: 'Outfit saved successfully ❤️️',
       duration: 3000,
@@ -2102,7 +2099,19 @@ this.lastSavedFitRef.set(
     toast.present();
     this.didSaveThisOutfit = true;
   var allOutfits = firebase.database().ref('/outfits/'+this.lastSavedFitRef.key);
-allOutfits.set({firstname:namecard1,secondname:namecard2,thirdname:namecard3,fourthname:namecard4,fifthname:namecard5,sixthname:namecard6,seventhname:namecard7,eighthname:namecard8,ninthname:namecard9,tenthname:namecard10,eleventhname:namecard11,twelthname:namecard12,first:topcard1,second:topcard2,third:topcard3,fourth:topcard4,fifth:topcard5,sixth:topcard6,seventh:topcard7,eighth:topcard8,ninth:topcard9,tenth:topcard10,eleventh:topcard11,twelth:topcard12,timestamp:firebase.database.ServerValue.TIMESTAMP,user:firebase.auth().currentUser.uid,username:this.userName,likeCount:0});
+allOutfits.set({firstname:namecard1,secondname:namecard2,thirdname:namecard3,fourthname:namecard4,fifthname:namecard5,sixthname:namecard6,seventhname:namecard7,eighthname:namecard8,ninthname:namecard9,tenthname:namecard10,eleventhname:namecard11,twelthname:namecard12,first:topcard1,second:topcard2,third:topcard3,fourth:topcard4,fifth:topcard5,sixth:topcard6,seventh:topcard7,eighth:topcard8,ninth:topcard9,tenth:topcard10,eleventh:topcard11,twelth:topcard12,timestamp:firebase.database.ServerValue.TIMESTAMP,user:firebase.auth().currentUser.uid,username:this.userName,likeCount:0},function(error) {
+   if (error) {
+   } else {
+allOutfits.child("timestamp").once('value').then(function(snapshot) {
+  var time = snapshot.val();
+  var neg = 0 - time;
+  console.log(time);
+  console.log(neg);
+  this.allOutfits.child("/order").set(neg);
+  
+});
+   }
+});
 }
 
   else if(this.didSaveThisOutfit == true){

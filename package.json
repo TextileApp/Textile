@@ -1,62 +1,84 @@
 {
-  "name": "ionic-hello-world",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
-  "private": true,
-  "scripts": {
-    "clean": "ionic-app-scripts clean",
-    "build": "ionic-app-scripts build",
-    "ionic:build": "ionic-app-scripts build",
-    "ionic:serve": "ionic-app-scripts serve"
-  },
-  "dependencies": {
-    "@angular/common": "2.2.1",
-    "@angular/compiler": "2.2.1",
-    "@angular/compiler-cli": "2.2.1",
-    "@angular/core": "2.2.1",
-    "@angular/forms": "2.2.1",
-    "@angular/http": "2.2.1",
-    "@angular/platform-browser": "2.2.1",
-    "@angular/platform-browser-dynamic": "2.2.1",
-    "@angular/platform-server": "2.2.1",
-    "@ionic/cloud-angular": "^0.10.0",
-    "@ionic/storage": "1.1.7",
-    "@types/cropperjs": "0.0.23",
-    "angular2-swing": "^0.10.0",
-    "angularfire2": "^2.0.0-beta.6",
-    "cropperjs": "^1.0.0-beta.2",
-    "firebase": "^3.6.6",
-    "ionic-angular": "2.0.0-rc.5",
-    "ionic-native": "2.2.11",
-    "ionicons": "3.0.0",
-    "rxjs": "5.0.0-beta.12",
-    "shopstyle-sdk": "^1.1.1",
-    "zone.js": "0.6.26"
-  },
-  "devDependencies": {
-    "@ionic/app-scripts": "1.0.0",
-    "@types/jasmine": "^2.5.43",
-    "@types/request": "0.0.39",
-    "typescript": "2.1.6"
-  },
-  "cordovaPlugins": [
-    "cordova-plugin-whitelist",
-    "cordova-plugin-device",
-    "cordova-plugin-console",
-    "cordova-plugin-statusbar",
-    "cordova-plugin-splashscreen",
-    "ionic-plugin-keyboard"
-  ],
-  "cordovaPlatforms": [
-    "ios",
-    {
-      "platform": "ios",
-      "version": "",
-      "locator": "ios"
+    "name": "ionic-hello-world",
+    "author": "Ionic Framework",
+    "homepage": "http://ionicframework.com/",
+    "private": true,
+    "scripts": {
+        "clean": "ionic-app-scripts clean",
+        "build": "ionic-app-scripts build",
+        "ionic:build": "ionic-app-scripts build",
+        "ionic:serve": "ionic-app-scripts serve"
+    },
+    "dependencies": {
+        "@angular/common": "2.2.1",
+        "@angular/compiler": "2.2.1",
+        "@angular/compiler-cli": "2.2.1",
+        "@angular/core": "2.2.1",
+        "@angular/forms": "2.2.1",
+        "@angular/http": "2.2.1",
+        "@angular/platform-browser": "2.2.1",
+        "@angular/platform-browser-dynamic": "2.2.1",
+        "@angular/platform-server": "2.2.1",
+        "@ionic/cloud-angular": "^0.10.0",
+        "@ionic/storage": "1.1.7",
+        "@types/cropperjs": "0.0.23",
+        "angular2-swing": "^0.10.0",
+        "angularfire2": "^2.0.0-beta.6",
+        "cordova-android": "^6.2.3",
+        "cropperjs": "^1.0.0-beta.2",
+        "firebase": "^3.6.6",
+        "ionic-angular": "2.0.0-rc.5",
+        "ionic-native": "2.2.11",
+        "ionicons": "3.0.0",
+        "rxjs": "5.0.0-beta.12",
+        "shopstyle-sdk": "^1.1.1",
+        "zone.js": "0.6.26",
+        "cordova-plugin-console": "1.0.5",
+        "cordova-plugin-crop": "~0.3.1",
+        "cordova-plugin-device": "1.1.4",
+        "cordova-plugin-statusbar": "2.2.1",
+        "cordova-plugin-whitelist": "1.3.1",
+        "ionic-plugin-deploy": "~0.6.5",
+        "ionic-plugin-keyboard": "~2.2.1"
+    },
+    "devDependencies": {
+        "@ionic/app-scripts": "1.0.0",
+        "@types/jasmine": "^2.5.43",
+        "@types/request": "0.0.39",
+        "typescript": "2.1.6"
+    },
+    "cordovaPlugins": [
+        "cordova-plugin-whitelist",
+        "cordova-plugin-device",
+        "cordova-plugin-console",
+        "cordova-plugin-statusbar",
+        "cordova-plugin-splashscreen",
+        "ionic-plugin-keyboard"
+    ],
+    "cordovaPlatforms": [
+        "ios",
+        {
+            "platform": "ios",
+            "version": "",
+            "locator": "ios"
+        }
+    ],
+    "description": "Ionic2FirebaseEmail: An Ionic project",
+    "config": {
+        "ionic_sass": "./scripts/sass.config.js"
+    },
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-console": {},
+            "cordova-plugin-crop": {},
+            "cordova-plugin-device": {},
+            "cordova-plugin-statusbar": {},
+            "cordova-plugin-whitelist": {},
+            "ionic-plugin-deploy": {},
+            "ionic-plugin-keyboard": {}
+        },
+        "platforms": [
+            "android"
+        ]
     }
-  ],
-  "description": "Ionic2FirebaseEmail: An Ionic project",
-  "config": {
-    "ionic_sass": "./scripts/sass.config.js"
-  }
 }
