@@ -101,6 +101,7 @@
 		FBA0CFB072A94AF789D5BA9D /* adler32.c in Sources */ = {isa = PBXBuildFile; fileRef = A1CA7DFC6D38451C9765426D /* adler32.c */; };
 		FC9E36BC006F40E891B6D47E /* infback.c in Sources */ = {isa = PBXBuildFile; fileRef = FDA151FD833049829F74A99B /* infback.c */; };
 		FF2C5DAAE30F4DB291928B29 /* CDVLocalFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B4651D8B2E43F9BD029E3D /* CDVLocalFilesystem.m */; };
+		24F0B2EFAA2A4F53960A5869 /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6DBB1A1D5348A48349214C /* CDVInAppBrowser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -294,6 +295,8 @@
 		FC59013066894852955161F4 /* UNIBaseRequest.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = UNIBaseRequest.m; path = "ionic-plugin-deploy/UNIBaseRequest.m"; sourceTree = "<group>"; };
 		FDA151FD833049829F74A99B /* infback.c */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = infback.c; path = "ionic-plugin-deploy/infback.c"; sourceTree = "<group>"; };
 		FE609DBEAE244EB1B5DDF3BB /* ca.lproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = ca.lproj; sourceTree = "<group>"; };
+		2E6DBB1A1D5348A48349214C /* CDVInAppBrowser.m */ = {isa = PBXFileReference; name = "CDVInAppBrowser.m"; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		BF020542DE5A45298A623590 /* CDVInAppBrowser.h */ = {isa = PBXFileReference; name = "CDVInAppBrowser.h"; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -558,6 +561,8 @@
 				4A53F80F511D4187A2C6AC88 /* UNIJsonNode.h */,
 				08267FF8517242F6807BC8FA /* IonicKeyboard.m */,
 				1C6C46FFB204449FBFE32FD5 /* IonicKeyboard.h */,
+				2E6DBB1A1D5348A48349214C /* CDVInAppBrowser.m */,
+				BF020542DE5A45298A623590 /* CDVInAppBrowser.h */,
 			);
 			name = Plugins;
 			path = Textile/Plugins;
@@ -759,6 +764,7 @@
 				F933AE329BF54DD0ACE02F1B /* UNIHTTPStringResponse.m in Sources */,
 				569FC0CFA20D409A88BE7DEF /* UNIJsonNode.m in Sources */,
 				8B94AC950BFB454293A79FE5 /* IonicKeyboard.m in Sources */,
+				24F0B2EFAA2A4F53960A5869 /* CDVInAppBrowser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

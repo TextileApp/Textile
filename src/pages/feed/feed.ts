@@ -89,8 +89,7 @@ temper.push(element);
         console.log(result2);
       }
     });
-    result2.reverse();
-    temper.reverse();
+
     this.posts = result2;
   
     this.followingPosts = temper;
@@ -113,8 +112,56 @@ temper.push(element);
 
   }
 goToListview(post){
-
-    this.navCtrl.push(listviewPage,{"firstname":post.firstname,"secondname":post.secondname,"thirdname":post.thirdname,"fourthname":post.fourthname,"fifthname":post.fifthname,"sixthname":post.sixthname,"seventhname":post.seventhname,"eighthname":post.eighthname,"ninthname":post.ninthname,"tenthname":post.tenthname,"eleventhname":post.eleventhname,"twelthname":post.twelthname,"first":post.first,"second":post.second,"third":post.third,"fourth":post.fourth,"fifth":post.fifth,"sixth":post.sixth,"seventh":post.seventh,"eighth":post.eighth,"ninth":post.ninth,"tenth":post.tenth,"eleventh":post.eleventh,"twelth":post.twelth});
+  if(!post.firstinfo)
+  {
+   post.firstinfo = {"brand":"import","id":"import","clickUrl":false};
+  }
+    if(!post.secondinfo)
+  {
+   post.secondinfo = {"brand":"import","id":"import","clickUrl":false};
+  }
+    if(!post.thirdinfo)
+  {
+   post.thirdinfo = {"brand":"import","id":"import","clickUrl":false};
+  }
+    if(!post.fourthinfo)
+  {
+   post.fourthinfo = {"brand":"import","id":"import","clickUrl":false};
+  }
+    if(!post.fifthinfo)
+  {
+   post.fifthinfo = {"brand":"import","id":"import","clickUrl":false};
+  }
+    if(!post.sixthinfo)
+  {
+   post.sixthinfo = {"brand":"import","id":"import","clickUrl":false};
+  }
+    if(!post.seventhinfo)
+  {
+   post.seventhinfo = {"brand":"import","id":"import","clickUrl":false};
+  }
+    if(!post.eigthinfo)
+  {
+   post.eigthinfo = {"brand":"import","id":"import","clickUrl":false};
+  }
+    if(!post.ninthinfo)
+  {
+   post.ninthinfo = {"brand":"import","id":"import","clickUrl":false};
+  }
+    if(!post.tenthinfo)
+  {
+   post.tenthinfo = {"brand":"import","id":"import","clickUrl":false};
+  }
+    if(!post.eleventhinfo)
+  {
+   post.eleventhinfo = {"brand":"import","id":"import","clickUrl":false};
+  }
+    if(!post.twelthinfo)
+  {
+   post.twelthinfo = {"brand":"import","id":"import","clickUrl":false};
+  }
+  console.log(post.firstinfo);
+      this.navCtrl.push(listviewPage,{"firstname":post.firstname,"firstinfo":post.firstinfo,"secondinfo":post.secondinfo,"thirdinfo":post.thirdinfo,"fourthinfo":post.fourthinfo,"fifthinfo":post.fifthinfo,"sixthinfo":post.sixthinfo,"seventhinfo":post.seventhinfo,"eigthinfo":post.eigthinfo,"ninthinfo":post.ninthinfo,"tenthinfo":post.tenthinfo,"eleventhinfo":post.eleventhinfo,"twelthinfo":post.twelthinfo,"secondname":post.secondname,"thirdname":post.thirdname,"fourthname":post.fourthname,"fifthname":post.fifthname,"sixthname":post.sixthname,"seventhname":post.seventhname,"eighthname":post.eighthname,"ninthname":post.ninthname,"tenthname":post.tenthname,"eleventhname":post.eleventhname,"twelthname":post.twelthname,"first":post.first,"second":post.second,"third":post.third,"fourth":post.fourth,"fifth":post.fifth,"sixth":post.sixth,"seventh":post.seventh,"eighth":post.eighth,"ninth":post.ninth,"tenth":post.tenth,"eleventh":post.eleventh,"twelth":post.twelth});
 
 
 }

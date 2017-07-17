@@ -86,7 +86,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		oliC7xGzuIBtTabDP/KqLpfbZ2o=
+		XoWPF4s8/RPMmlz0nPfvqucvJ7M=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -94,7 +94,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		rL5muO/mJhUYaZkCQJlX/qANeg0=
+		KC1GdXL9sCPOlA0B4/PrQsQGa3M=
 		</data>
 		<key>GMEmptyFolder@1x.png</key>
 		<data>
@@ -158,7 +158,7 @@
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		H/SXkWsLXsf7yXBJaQzFDQ9brDw=
+		NC0FAlvt1i9IYBHaF0+ewT2xhLo=
 		</data>
 		<key>PEPhotoCropEditor.bundle/PEPhotoCropEditorBorder.png</key>
 		<data>
@@ -205,7 +205,7 @@
 		</dict>
 		<key>config.xml</key>
 		<data>
-		c4LI+eNcOJMPniyXefOCKvAd7+Y=
+		ePAeA7iD7+faw3oEwJCao7PHulc=
 		</data>
 		<key>de.lproj/GMImagePicker.strings</key>
 		<dict>
@@ -415,11 +415,11 @@
 		</data>
 		<key>www/build/main.js</key>
 		<data>
-		vYPmdx/VEygHP/u5ovs25HsbbWc=
+		clmh38kgTpAzNsaolIuFOCd4fn0=
 		</data>
 		<key>www/build/main.js.map</key>
 		<data>
-		0DSXZGIlJKZpgPpy2NogqoxSRBY=
+		478LaH0PYbYzRn7/2YLeSvxiJKU=
 		</data>
 		<key>www/build/polyfills.js</key>
 		<data>
@@ -439,7 +439,7 @@
 		</data>
 		<key>www/cordova_plugins.js</key>
 		<data>
-		vBfZ8u18xtYKFk4FHM5aj4wz9kk=
+		b0ANXhCH5+irOcaMvjlkbcIw9hw=
 		</data>
 		<key>www/index.html</key>
 		<data>
@@ -576,6 +576,10 @@
 		<key>www/plugins/cordova-plugin-file/www/resolveLocalFileSystemURI.js</key>
 		<data>
 		T1t7ZcY0U+V6tPD8c7TI2s4U6Ek=
+		</data>
+		<key>www/plugins/cordova-plugin-inappbrowser/www/inappbrowser.js</key>
+		<data>
+		J+j0Bp70irA8uX+Bf6o06IwRuDI=
 		</data>
 		<key>www/plugins/cordova-plugin-splashscreen/www/splashscreen.js</key>
 		<data>
@@ -824,11 +828,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			oliC7xGzuIBtTabDP/KqLpfbZ2o=
+			XoWPF4s8/RPMmlz0nPfvqucvJ7M=
 			</data>
 			<key>hash2</key>
 			<data>
-			OtSLYMkTDXVac5PpWIRWGpvbubCKNXDIQpfqpUkAshg=
+			ANxRRR8c47D0q4TuZGL41vy77dHBd0EEf9xe/ulX39c=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -846,11 +850,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			rL5muO/mJhUYaZkCQJlX/qANeg0=
+			KC1GdXL9sCPOlA0B4/PrQsQGa3M=
 			</data>
 			<key>hash2</key>
 			<data>
-			59ZEmlFTe8fkFRbTp+jcXrUkVbhKnMKyk7q83Gsz9PA=
+			lGOhGToUBcR8gdFmrcDbjgIoomPY5dJ3fSmfA/Vo2nk=
 			</data>
 		</dict>
 		<key>GMEmptyFolder@1x.png</key>
@@ -1011,11 +1015,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			H/SXkWsLXsf7yXBJaQzFDQ9brDw=
+			NC0FAlvt1i9IYBHaF0+ewT2xhLo=
 			</data>
 			<key>hash2</key>
 			<data>
-			hBMdFrs4DTlGtyps1POL6vl9RpzH9Erb8MXAyoxbhzU=
+			KI+iu8C9aw+QutEUzdIpp028EAir8w/iL56mRGOrV0w=
 			</data>
 		</dict>
 		<key>PEPhotoCropEditor.bundle/PEPhotoCropEditorBorder.png</key>
@@ -1094,11 +1098,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			c4LI+eNcOJMPniyXefOCKvAd7+Y=
+			ePAeA7iD7+faw3oEwJCao7PHulc=
 			</data>
 			<key>hash2</key>
 			<data>
-			8z5tox8i1zgTf0wspbEzX+8aAHSy50ZSIYJUmYtm+kw=
+			f62NDWWvX2OchVw/7sU6D41aACJrtrUdBSAzJmmFX7I=
 			</data>
 		</dict>
 		<key>de.lproj/GMImagePicker.strings</key>
@@ -1601,22 +1605,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			vYPmdx/VEygHP/u5ovs25HsbbWc=
+			clmh38kgTpAzNsaolIuFOCd4fn0=
 			</data>
 			<key>hash2</key>
 			<data>
-			gUXpYwK9yEeP1Yj9K1CH+N6w9oV3e6D5afMWEmMTokE=
+			0IJfJyRaKIa+tMasROcEhksWJGL6kIQoMvHYatTp7VI=
 			</data>
 		</dict>
 		<key>www/build/main.js.map</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			0DSXZGIlJKZpgPpy2NogqoxSRBY=
+			478LaH0PYbYzRn7/2YLeSvxiJKU=
 			</data>
 			<key>hash2</key>
 			<data>
-			XWXI0VoMGEAc/vbfxpmCnlPwxPER7sduJlF8hE36/sk=
+			fog1sAhczfkiQDLaMKbbDuGgGy7m3dIy37tgyApfXkg=
 			</data>
 		</dict>
 		<key>www/build/polyfills.js</key>
@@ -1667,11 +1671,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			vBfZ8u18xtYKFk4FHM5aj4wz9kk=
+			b0ANXhCH5+irOcaMvjlkbcIw9hw=
 			</data>
 			<key>hash2</key>
 			<data>
-			SQ3gi02aOdjpNVpnyzKbH2rboBdmGWka+zxDw/lxyZ4=
+			ykc/89aEdzbOeCXVgunxROnNPDKMPbMtTjB3R31TF14=
 			</data>
 		</dict>
 		<key>www/index.html</key>
@@ -2046,6 +2050,17 @@
 			<key>hash2</key>
 			<data>
 			ALXQfvasV3WagP5nexo3GayiUF0t39QJTwvsmS0Imf4=
+			</data>
+		</dict>
+		<key>www/plugins/cordova-plugin-inappbrowser/www/inappbrowser.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			J+j0Bp70irA8uX+Bf6o06IwRuDI=
+			</data>
+			<key>hash2</key>
+			<data>
+			Hm4EhZaYB0qLZo5ybMoMuV3Zzgwgfzq91keQkTyZhXQ=
 			</data>
 		</dict>
 		<key>www/plugins/cordova-plugin-splashscreen/www/splashscreen.js</key>

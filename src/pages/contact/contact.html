@@ -20,7 +20,7 @@
 </ion-header>
 <ion-content>
    <ion-row wrap>
-  <ion-col width-33 *ngFor="let f of items1 | async" (click)="show(f.$value)" >
+  <ion-col width-33 *ngFor="let f of items1 | async" (click)="show(f.url,f.$key)" >
        <div style="position: relative; top:0%; left:0px;">
     <ion-fab right top>
       <button *ngIf ="isEnabled"ion-fab mini class="fab-map" mini color="navcolor" (click)="deleteItem(f.$key)">
@@ -28,7 +28,7 @@
       </button>
     </ion-fab>
   </div>
-  <img *ngIf="f.$value"[src]="f.$value">
+  <img *ngIf="f.url"[src]="f.url">
   </ion-col>
 </ion-row>
 

@@ -45,6 +45,9 @@
         },
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.ionicframework.ionic2firebaseemail197311"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.ionicframework.ionic2firebaseemail197311"
         }
     },
     "dependent_plugins": {

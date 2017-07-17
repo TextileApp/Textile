@@ -1,5 +1,6 @@
 import { Component, NgZone} from '@angular/core';
-import { NavController,NavParams,AlertController} from 'ionic-angular';
+import { NavController,NavParams,AlertController,Platform} from 'ionic-angular';
+import {InAppBrowser} from 'ionic-native';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
 import * as firebase from 'firebase';
 import { ContactPage } from '../contact/contact';
@@ -43,6 +44,18 @@ nine: any;
 ten: any;
 eleven: any;
 twelve: any;
+infoone: any;
+infotwo: any;
+infothree: any;
+infofour: any;
+infofive: any;
+infosix: any;
+infoseven: any;
+infoeight: any;
+infonine: any;
+infoten: any;
+infoeleven: any;
+infotwelve: any;
 onelocation: any;
 twolocation: any;
 threelocation: any;
@@ -86,7 +99,7 @@ usernameText: string;
 items: Array<any>;
 itemnames: Array<any>;
   submitAttempt: boolean = false;
-  constructor(public navCtrl: NavController,private ngZone: NgZone,public af: AngularFire,private _auth: AuthService,private navParams:NavParams,public alertCtrl: AlertController,public formBuilder: FormBuilder) {
+  constructor(public navCtrl: NavController,private ngZone: NgZone,public af: AngularFire,private _auth: AuthService,private navParams:NavParams,public alertCtrl: AlertController,public formBuilder: FormBuilder,public platform: Platform) {
           this.nameone = this.navParams.get("firstname"); 
         this.nametwo = this.navParams.get("secondname");
           this.namethree = this.navParams.get("thirdname");
@@ -99,6 +112,18 @@ itemnames: Array<any>;
           this.nameten = this.navParams.get("tenthname");
           this.nameeleven = this.navParams.get("eleventhname");
           this.nametwelve = this.navParams.get("twelthname");
+          this.infoone = this.navParams.get("firstinfo");
+          this.infotwo = this.navParams.get("secondinfo");
+          this.infothree = this.navParams.get("thirdinfo");
+          this.infofour = this.navParams.get("fourthinfo");
+          this.infofive = this.navParams.get("fifthinfo");
+          this.infosix = this.navParams.get("sixthinfo");
+          this.infoseven = this.navParams.get("seventhinfo");
+          this.infoeight = this.navParams.get("eigthinfo");
+          this.infonine = this.navParams.get("ninthinfo");
+          this.infoten = this.navParams.get("tenthinfo");
+          this.infoeleven = this.navParams.get("eleventhinfo");
+          this.infotwelve = this.navParams.get("twelthinfo");
         const authObserver = af.auth.subscribe( user => {
 
          this.myUser = user.uid;
@@ -243,7 +268,7 @@ else{
        this.onehas = false;
     }
 });
-            this.items.push({"pic":this.one,"name":this.nameone,"number":1,"has":this.onehas,"location":this.onelocation});
+            this.items.push({"pic":this.one,"name":this.nameone,"number":1,"has":this.onehas,"location":this.onelocation,"brand":this.infoone.brand,"clickUrl":this.infoone.clickUrl});
           }
           if(this.two == "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe")
           {
@@ -260,7 +285,7 @@ else{
        this.twohas = false;
     }
 });
-             this.items.push({"pic":this.two,"name":this.nametwo,"number":2,"has":this.twohas,"location":this.twolocation});
+             this.items.push({"pic":this.two,"name":this.nametwo,"number":2,"has":this.twohas,"location":this.twolocation,"brand":this.infotwo.brand,"clickUrl":this.infotwo.clickUrl});
 
           }
           if(this.three == "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe")
@@ -278,7 +303,7 @@ else{
        this.threehas = false;
     }
 });
-                      this.items.push({"pic":this.three,"name":this.namethree,"number":3,"has":this.threehas,"location":this.threelocation});
+                      this.items.push({"pic":this.three,"name":this.namethree,"number":3,"has":this.threehas,"location":this.threelocation,"brand":this.infothree.brand,"clickUrl":this.infothree.clickUrl});
           }
           if(this.four == "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe")
           {
@@ -294,11 +319,10 @@ else{
         }
       else{
        this.fourhas = false;
-       console.log("WE dont got 4 xbish");
     }
 
 });
-            this.items.push({"pic":this.four,"name":this.namefour,"number":4,"has":this.fourhas,"location":this.fourlocation});
+            this.items.push({"pic":this.four,"name":this.namefour,"number":4,"has":this.fourhas,"location":this.fourlocation,"brand":this.infofour.brand,"clickUrl":this.infofour.clickUrl});
           }
           if(this.five == "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe")
           {
@@ -313,10 +337,10 @@ else{
         }
       else{
        this.fivehas = false;
-       console.log("WE dont got 5 bish");
+  
     }
 });
-             this.items.push({"pic":this.five,"name":this.namefive,"number":5,"has":this.fivehas,"location":this.fivelocation});
+             this.items.push({"pic":this.five,"name":this.namefive,"number":5,"has":this.fivehas,"location":this.fivelocation,"brand":this.infofive.brand,"clickUrl":this.infofive.clickUrl});
           }
              if(this.six == "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe")
           {
@@ -334,7 +358,7 @@ else{
   
     }
 });
-        this.items.push({"pic":this.six,"name":this.namesix,"number":6,"has":this.sixhas,"location":this.sixlocation});
+        this.items.push({"pic":this.six,"name":this.namesix,"number":6,"has":this.sixhas,"location":this.sixlocation,"brand":this.infosix.brand,"clickUrl":this.infosix.clickUrl});
 
           }
           if(this.seven == "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe")
@@ -353,7 +377,7 @@ else{
        this.sevenhas = false;
     }
 });
-         this.items.push({"pic":this.seven,"name":this.nameseven,"number":7,"has":this.sevenhas,"location":this.sevenlocation});
+         this.items.push({"pic":this.seven,"name":this.nameseven,"number":7,"has":this.sevenhas,"location":this.sevenlocation,"brand":this.infoseven.brand,"clickUrl":this.infoseven.clickUrl});
 
           }
           if(this.eight == "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe")
@@ -373,7 +397,7 @@ else{
       
     }
 });
-                    this.items.push({"pic":this.eight,"name":this.nameeight,"number":8,"has":this.eighthas,"location":this.eightlocation});
+                    this.items.push({"pic":this.eight,"name":this.nameeight,"number":8,"has":this.eighthas,"location":this.eightlocation,"brand":this.infoeight.brand,"clickUrl":this.infoeight.clickUrl});
           }
           if(this.nine == "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe")
           {
@@ -390,7 +414,7 @@ else{
        this.ninehas = false;
     }
 });
-                      this.items.push({"pic":this.nine,"name":this.namenine,"number":9,"has":this.ninehas,"location":this.ninelocation});
+                      this.items.push({"pic":this.nine,"name":this.namenine,"number":9,"has":this.ninehas,"location":this.ninelocation,"brand":this.infonine.brand,"clickUrl":this.infonine.clickUrl});
           }
           if(this.ten == "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe")
           {
@@ -407,7 +431,7 @@ else{
        this.tenhas = false;
     }
 });
-                      this.items.push({"pic":this.ten,"name":this.nameten,"number":10,"has":this.tenhas,"location":this.tenlocation});
+                      this.items.push({"pic":this.ten,"name":this.nameten,"number":10,"has":this.tenhas,"location":this.tenlocation,"brand":this.infoten.brand,"clickUrl":this.infoten.clickUrl});
           }
            if(this.eleven == "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe")
           {
@@ -424,7 +448,7 @@ else{
        this.elevenhas = false;
     }
 });
-                 this.items.push({"pic":this.eleven,"name":this.nameeleven,"number":11,"has":this.elevenhas,"location":this.elevenlocation});
+                 this.items.push({"pic":this.eleven,"name":this.nameeleven,"number":11,"has":this.elevenhas,"location":this.elevenlocation,"brand":this.infoeleven.brand,"clickUrl":this.infoeleven.clickUrl});
           }
            if(this.twelve == "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe")
           {
@@ -441,7 +465,7 @@ else{
        this.twelvehas = false;
     }
 });
-                this.items.push({"pic":this.twelve,"name":this.nametwelve,"number":12,"has":this.twelvehas,"location":this.twelvelocation});
+                this.items.push({"pic":this.twelve,"name":this.nametwelve,"number":12,"has":this.twelvehas,"location":this.twelvelocation,"brand":this.infotwelve.brand,"clickUrl":this.infotwelve.clickUrl});
           }
 
 
@@ -458,63 +482,166 @@ else{
   addItem(item)
   {
     var category;
+    var id;
+    var clickUrl;
+    var brand;
     var ref;
 if(item.number == 1)
 {
 category = "Jewelry";
+if(!this.infoone.brand){
+  id = "import";
+  brand = "import";
+  clickUrl = "import";
+}
+id = this.infoone.id;
+brand = this.infoone.brand;
+clickUrl = this.infoone.clickUrl;
 }
 else if(item.number == 2)
 {
+  if(!this.infotwo.brand){
+  id = "import";
+  brand = "import";
+  clickUrl = "import";
+}
 category = "Hats";
+id = this.infotwo.id;
+brand = this.infotwo.brand;
+clickUrl = this.infotwo.clickUrl;
 }
 else if(item.number == 3)
 {
+  if(!this.infothree.brand){
+  id = "import";
+  brand = "import";
+  clickUrl = "import";
+}
 category = "Neckwear";
+id = this.infothree.id;
+brand = this.infothree.brand;
+clickUrl = this.infothree.clickUrl;
 }
 else if(item.number == 4)
 {
+  if(!this.infofour.brand){
+  id = "import";
+  brand = "import";
+  clickUrl = "import";
+}
 category = "Outerwear";
+id = this.infofour.id;
+brand = this.infofour.brand;
+clickUrl = this.infofour.clickUrl;
 }
 else if(item.number == 5)
 {
+  if(!this.infofive.brand){
+  id = "import";
+  brand = "import";
+  clickUrl = "import";
+}
 category = "Tops"
+id = this.infofive.id;
+brand = this.infofive.brand;
+clickUrl = this.infofive.clickUrl;
 }
 else if(item.number == 6)
 {
+  if(!this.infosix.brand){
+  id = "import";
+  brand = "import";
+  clickUrl = "import";
+}
 category = "Tops";
+id = this.infosix.id;
+brand = this.infosix.brand;
+clickUrl = this.infosix.clickUrl;
 }
 else if(item.number == 7)
 {
+  if(!this.infoseven.brand){
+  id = "import";
+  brand = "import";
+  clickUrl = "import";
+}
 category = "Belts";
+id = this.infoseven.id;
+brand = this.infoseven.brand;
+clickUrl = this.infoseven.clickUrl;
 }
 else if(item.number == 8)
 {
+  if(!this.infoeight.brand){
+  id = "import";
+  brand = "import";
+  clickUrl = "import";
+}
 category = "Bottoms";
+id = this.infoeight.id;
+brand = this.infoeight.brand;
+clickUrl = this.infoeight.clickUrl;
 }
 else if(item.number == 9)
 {
+  if(!this.infonine.brand){
+  id = "import";
+  brand = "import";
+  clickUrl = "import";
+}
 category = "Jewelry";
+id = this.infonine.id;
+brand = this.infonine.brand;
+clickUrl = this.infonine.clickUrl;
 }
 else if(item.number == 10)
 {
+  if(!this.infoten.brand){
+  id = "import";
+  brand = "import";
+  clickUrl = "import";
+}
 category = "Bags";
+id = this.infoten.id;
+brand = this.infoten.brand;
+clickUrl = this.infoten.clickUrl;
 }
 else if(item.number == 11)
 {
+  if(!this.infoeleven.brand){
+  id = "import";
+  brand = "import";
+  clickUrl = "import";
+}
 category = "Shoes";
+id = this.infoeleven.id;
+brand = this.infoeleven.brand;
+clickUrl = this.infoeleven.clickUrl;
 }
 else if(item.number == 12)
 {
+  if(!this.infotwelve.brand){
+  id = "import";
+  brand = "import";
+  clickUrl = "import";
+}
 category = "Bags";
+id = this.infotwelve.id;
+brand = this.infotwelve.brand;
+clickUrl = this.infotwelve.clickUrl;
 }
  ref = firebase.database().ref(firebase.auth().currentUser.uid+'/'+category+'/'+item.location);
  ref.set(
-item.pic
+   {"url":item.pic,"id":id,"brand":brand,"clickUrl":clickUrl}
+
  )
  
  item.has = true;
   }
-  
+   launch(url) {
+let browser = new InAppBrowser(url, "_system");
+
+   }
   removeItem(item)
   {
 

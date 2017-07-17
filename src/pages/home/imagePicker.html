@@ -16,7 +16,7 @@
 <ion-content>
    <ion-row wrap>
   <ion-col width-33 *ngFor="let f of images" (click)="chooseImage(f)">
-  <img *ngIf="f"[src]="f">
+  <img *ngIf="f"[src]="f.url">
   </ion-col>
 </ion-row>
 </ion-content>
