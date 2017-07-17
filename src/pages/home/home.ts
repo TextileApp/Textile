@@ -1477,8 +1477,8 @@ nameresult7.push(data.key);
        var dupe = url;
          nameresult7.push("Belt");
     nameresult7.push("Belt");
-         result7.push(dupe);
-         result7.push(url);
+         result7.push({"url":dupe});
+         result7.push({"url":url});
       this.cards7 = result7;
       this.namecard7= nameresult7;
 
@@ -2004,12 +2004,7 @@ console.log(namecard9);
 console.log(namecard10);
 console.log(namecard11);
 console.log(namecard12);
-   if(!this.cards1[0].brand){
-    this.cards1[0].brand = "import";
-    this.cards1[0].id = "import";
-    this.cards1[0].clickUrl = false;
 
-   }
       if(!this.cards2[0].brand){
     this.cards2[0].brand = "import";
     this.cards2[0].id = "import";
@@ -2080,16 +2075,23 @@ if(this.showPic1 == true)
 {
    topcard1 = this.cards1[0].url;
 
-
+console.log(topcard1)
 }else{
   topcard1 = "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe";
+    this.cards1[0].brand = "none";
+    this.cards1[0].id = "none";
+    this.cards1[0].clickUrl = false;
 }
 if(this.showPic2 == true)
 {
 topcard2 = this.cards2[0].url;
+console.log(topcard2);
 }
 else{
   topcard2 = "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe";
+  this.cards2[0].brand = "none";
+  this.cards2[0].id = "none";
+  this.cards2[0].clickUrl = false;
 }
 if(this.showPic3 == true)
 {
@@ -2097,6 +2099,9 @@ topcard3 = this.cards3[0].url;
 }
 else{
   topcard3 = "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe";
+  this.cards3[0].brand = "none";
+  this.cards3[0].id = "none";
+  this.cards3[0].clickUrl = false;
 }
 
 if(this.showPic4 == true)
@@ -2105,6 +2110,9 @@ topcard4 = this.cards4[0].url;
 }
 else{
   topcard4 = "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe";
+  this.cards4[0].brand = "none";
+  this.cards4[0].id = "none";
+  this.cards4[0].clickUrl = false;
 }
 if(this.showPic5 == true)
 {
@@ -2113,14 +2121,20 @@ topcard5 = this.cards5[0].url;
 }
 else{
   topcard5 = "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe";
+  this.cards5[0].brand = "none";
+  this.cards5[0].id = "none";
+  this.cards5[0].clickUrl = false;
 }
 if(this.showPic6 == true)
 {
   topcard6 = this.cards6[0].url;
-
+  
 }
 else{
   topcard6 = "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe";
+  this.cards6[0].brand = "none";
+  this.cards6[0].id = "none";
+  this.cards6[0].clickUrl = false;
 }
 if(this.showPic7 == true)
 {
@@ -2129,6 +2143,9 @@ if(this.showPic7 == true)
 }
 else{
   topcard7 = "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe";
+  this.cards7[0].brand = "none";
+  this.cards7[0].id = "none";
+  this.cards7[0].clickUrl = false;
 }
 if(this.showPic8 == true)
 {
@@ -2136,6 +2153,9 @@ if(this.showPic8 == true)
 }
 else{
   topcard8 = "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe";
+  this.cards8[0].brand = "none";
+  this.cards8[0].id = "none";
+  this.cards8[0].clickUrl = false;
 }
 if(this.showPic9 == true)
 {
@@ -2144,6 +2164,9 @@ if(this.showPic9 == true)
 }
 else{
   topcard9 = "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe";
+  this.cards9[0].brand = "none";
+  this.cards9[0].id = "none";
+  this.cards9[0].clickUrl = false;
 }
 if(this.showPic10 == true)
 {
@@ -2152,6 +2175,9 @@ if(this.showPic10 == true)
 }
 else{
   topcard10 = "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe";
+  this.cards10[0].brand = "none";
+  this.cards10[0].id = "none";
+  this.cards10[0].clickUrl = false;
 }
 if(this.showPic11 == true)
 {
@@ -2160,6 +2186,9 @@ if(this.showPic11 == true)
 }
 else{
   topcard11 = "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe";
+  this.cards11[0].brand = "none";
+  this.cards11[0].id = "none";
+  this.cards11[0].clickUrl = false;
 }
 if(this.showPic12 == true)
 {
@@ -2168,8 +2197,11 @@ topcard12 = this.cards12[0].url;
 }
 else{
   topcard12 = "https://firebasestorage.googleapis.com/v0/b/streetwear-3906e.appspot.com/o/Icons%2Fblank.png?alt=media&token=6e900447-a122-4e67-b4e0-fb70fd932cfe";
+  this.cards12[0].brand = "none";
+  this.cards12[0].id = "none";
+  this.cards12[0].clickUrl = false;
 }
-
+console.log("hahahahah");
 this.lastSavedFitRef.set(
   {first:topcard1,second:topcard2,third:topcard3,fourth:topcard4,fifth:topcard5,sixth:topcard6,seventh:topcard7,eighth:topcard8,ninth:topcard9,tenth:topcard10,eleventh:topcard11,twelth:topcard12,timestamp:firebase.database.ServerValue.TIMESTAMP}
 )

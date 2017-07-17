@@ -127,6 +127,7 @@ saveToCloset()
     if ((this.items1[i].name).indexOf('.') > -1)
 {
 this.items1[i].name = this.items1[i].name.replace('.','-');
+this.items1[i].name = this.items1[i].name.replace('#','');
 this.db = firebase.database().ref(firebase.auth().currentUser.uid+'/'+this.internalType+'/'+this.items1[i].name);
 
 

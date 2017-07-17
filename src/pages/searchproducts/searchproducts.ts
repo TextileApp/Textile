@@ -198,29 +198,30 @@ shopstyle.products(options).then(response => {
 });
 this.currentOffset = this.currentOffset + 50;
   }
+
 saveToCloset()
 {
 
   var item;
   for(var i = 0; i< this.items1.length; i++)
   {
-    if (((this.items1[i].name).indexOf('.') > -1)||(this.items1[i].name).indexOf('#'))
+    if ((this.items1[i].name).indexOf('.') > -1)
 {
 this.items1[i].name = this.items1[i].name.replace('.','-');
 this.items1[i].name = this.items1[i].name.replace('#','');
-this.db = firebase.database().ref(firebase.auth().currentUser.uid+'/'+this.type+'/'+this.items1[i].name);
+this.db = firebase.database().ref(firebase.auth().currentUser.uid+'/'+this.internalType+'/'+this.items1[i].name);
+
 
 }else{
-     this.db = firebase.database().ref(firebase.auth().currentUser.uid+'/'+this.type+'/'+this.items1[i].name);
+     this.db = firebase.database().ref(firebase.auth().currentUser.uid+'/'+this.internalType+'/'+this.items1[i].name);
 }
-    console.log("NOICE MATE");
 if(this.items1[i].selected == true)
 {
-//this.selectedItems.push(item);
-    console.log("killa MATE");
+
 
 this.db.set(
-  this.items1[i].image
+{"url":this.items1[i].image,"id":this.items1[i].id,"clickUrl":this.items1[i].clickUrl,"brand":this.items1[i].brand}
+  
 );
 };
 }
