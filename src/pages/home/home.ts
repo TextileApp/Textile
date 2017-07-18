@@ -2217,14 +2217,18 @@ this.lastSavedFitRef.set(
 allOutfits.set({firstname:namecard1,firstinfo:{brand:this.cards1[0].brand,id:this.cards1[0].id,clickUrl:this.cards1[0].clickUrl},secondinfo:{brand:this.cards2[0].brand,id:this.cards2[0].id,clickUrl:this.cards2[0].clickUrl},thirdinfo:{brand:this.cards3[0].brand,id:this.cards3[0].id,clickUrl:this.cards3[0].clickUrl},fourthinfo:{brand:this.cards4[0].brand,id:this.cards4[0].id,clickUrl:this.cards4[0].clickUrl},fifthinfo:{brand:this.cards5[0].brand,id:this.cards5[0].id,clickUrl:this.cards5[0].clickUrl},sixthinfo:{brand:this.cards6[0].brand,id:this.cards6[0].id,clickUrl:this.cards6[0].clickUrl,seventhinfo:{brand:this.cards7[0].brand,id:this.cards7[0].id,clickUrl:this.cards7[0].clickUrl}},eigthinfo:{brand:this.cards8[0].brand,id:this.cards8[0].id,clickUrl:this.cards8[0].clickUrl},ninthinfo:{brand:this.cards9[0].brand,id:this.cards9[0].id,clickUrl:this.cards9[0].clickUrl},tenthinfo:{brand:this.cards10[0].brand,id:this.cards10[0].id,clickUrl:this.cards10[0].clickUrl},eleventhinfo:{brand:this.cards11[0].brand,id:this.cards11[0].id,clickUrl:this.cards11[0].clickUrl},twelthinfo:{brand:this.cards12[0].brand,id:this.cards12[0].id,clickUrl:this.cards12[0].clickUrl},secondname:namecard2,thirdname:namecard3,fourthname:namecard4,fifthname:namecard5,sixthname:namecard6,seventhname:namecard7,eighthname:namecard8,ninthname:namecard9,tenthname:namecard10,eleventhname:namecard11,twelthname:namecard12,first:topcard1,second:topcard2,third:topcard3,fourth:topcard4,fifth:topcard5,sixth:topcard6,seventh:topcard7,eighth:topcard8,ninth:topcard9,tenth:topcard10,eleventh:topcard11,twelth:topcard12,timestamp:firebase.database.ServerValue.TIMESTAMP,user:firebase.auth().currentUser.uid,username:this.userName,likeCount:0},function(error) {
    if (error) {
    } else {
+
 allOutfits.child("timestamp").once('value').then(function(snapshot) {
   var time = snapshot.val();
+  console.log(time);
   var neg = 0 - time;
   console.log(time);
   console.log(neg);
-  this.allOutfits.child("/order").set(neg);
+allOutfits.child("/order").set(neg);
   
 });
+
+
    }
 });
 }
