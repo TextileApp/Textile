@@ -1195,8 +1195,8 @@ console.log(result1);
        var dupe = url;
          nameresult1.push("Jewelry");
          nameresult1.push("Jewelry");
-         result1.push(dupe);
-         result1.push(url);
+         result1.push({"url":dupe,"id":"none","clickUrl":false,"brand":"none"});
+         result1.push({"url":url,"id":"none","clickUrl":false,"brand":"none"});
       this.cards1 = result1;
       this.namecard1 = nameresult1;
 
@@ -1207,7 +1207,7 @@ console.log(result1);
 firebase.database().ref(this.currentUser+'/Jewelry/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
-var index = result1.indexOf(element.url);
+var index = result1.indexOf(element);
 if (index > -1) {
     result1.splice(index, 1);
     nameresult1.splice(index,1);
@@ -1236,8 +1236,8 @@ firebase.database().ref(this.currentUser+'/Hats/').once('value', function(snapsh
        var dupe = url;
    nameresult2.push("Hat");
     nameresult2.push("Hat");
-         result2.push(dupe);
-         result2.push(url);
+         result2.push({"url":dupe,"id":"none","clickUrl":false,"brand":"none"});
+         result2.push({"url":url,"id":"none","clickUrl":false,"brand":"none"});
       this.cards2 = result2;
       this.namecard2 = nameresult2;
 });
@@ -1250,7 +1250,7 @@ firebase.database().ref(this.currentUser+'/Hats/').once('value', function(snapsh
   firebase.database().ref(this.currentUser+'/Hats/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
-var index = result2.indexOf(element.url);
+var index = result2.indexOf(element);
 if (index > -1) {
     result2.splice(index, 1);
     nameresult2.splice(index,1);
@@ -1266,7 +1266,7 @@ this.cardNames2 = nameresult2;
 firebase.database().ref(this.currentUser+'/Neckwear/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
-var index = result3.indexOf(element.url);
+var index = result3.indexOf(element);
 if (index > -1) {
     result3.splice(index, 1);
     nameresult3.splice(index,1);
@@ -1293,8 +1293,8 @@ var userStorageRef = firebase.storage().ref().child('Icons/Tie.png');
        var dupe = url;
     nameresult3.push("Tie");
     nameresult3.push("Tie");
-         result3.push(dupe);
-         result3.push(url);
+         result3.push({"url":url,"id":"none","clickUrl":false,"brand":"none"});
+         result3.push({"url":dupe,"id":"none","clickUrl":false,"brand":"none"});
       this.cards3 = result3;
       this.namecard3 = nameresult3;
 
@@ -1320,30 +1320,14 @@ nameresult4.push(data.key);
  this.cardNames4 = nameresult4;
   // this.grid = Array(Math.ceil(this.items1.length/2));
 
-   firebase.database().ref(this.currentUser+'/Outerwear/').once('value', function(snapshot) {
 
-  if (!(snapshot.exists())) {
-var userStorageRef = firebase.storage().ref().child('Icons/Outerwear.png');
-    userStorageRef.getDownloadURL().then(url => {
-       var dupe = url;
-                  result4.push(url);
-                  result4.push(dupe);
-                       loader.dismiss();     
 
-                  
-    });
-  }
-  else{
-               loader.dismiss();
 
-  }
-}); 
-this.cards4 = result4;
 
 firebase.database().ref(this.currentUser+'/Outerwear/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
-var index = result4.indexOf(element.url);
+var index = result4.indexOf(element);
 if (index > -1) {
     result4.splice(index, 1);
     nameresult4.splice(index,1);
@@ -1362,13 +1346,14 @@ this.cardNames4 = nameresult4;
        var dupe = url;
         nameresult4.push("Jacket");
     nameresult4.push("Jacket");
-         result4.push(dupe);
-         result4.push(url);
+         result4.push({"url":dupe,"id":"none","clickUrl":false,"brand":"none"});
+         result4.push({"url":url,"id":"none","clickUrl":false,"brand":"none"});
       this.cards4 = result4;
       this.namecard4= nameresult4;
 
     });
   }
+ 
 });
 
 var result5 = [];
@@ -1396,33 +1381,39 @@ this.cards5 = result5;
   if (!(snapshot.exists())) {
    var userStorageRef1 = firebase.storage().ref().child('Icons/shirtIcon.png');
    var userStorageRef2 = firebase.storage().ref().child('Icons/Shirt2.png');
-
+  loader.dismiss();  
     userStorageRef1.getDownloadURL().then(url => {
        var dupe = url;
       nameresult5.push("Shirt");
     nameresult5.push("Shirt");
-         result5.push(dupe);
-         result5.push(url);
+         result5.push({"url":dupe,"id":"none","clickUrl":false,"brand":"none"});
+         result5.push({"url":url,"id":"none","clickUrl":false,"brand":"none"});
       this.cards5 = result5;
       this.namecard5= result5;
 
     });
       userStorageRef2.getDownloadURL().then(url => {
        var dupe = url;
-         result6.push(dupe);
-         result6.push(url);
+              nameresult6.push("Shirt");
+              nameresult6.push("Shirt");
+         result6.push({"url":dupe,"id":"none","clickUrl":false,"brand":"none"});
+         result6.push({"url":url,"id":"none","clickUrl":false,"brand":"none"});
 
         this.cards6 = result6;
       this.namecard6 = nameresult6;
 
     });
   }
+     else{
+    loader.dismiss();
+
+  }
 });
 
 firebase.database().ref(this.currentUser+'/Tops/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
-var index = result5.indexOf(element.url);
+var index = result5.indexOf(element);
 if (index > -1) {
     result5.splice(index, 1);
     nameresult5.splice(index,1);
@@ -1449,7 +1440,7 @@ this.cardnames6 = nameresult6;
 firebase.database().ref(this.currentUser+'/Belts/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
-var index = result1.indexOf(element.url);
+var index = result1.indexOf(element);
 if (index > -1) {
     result7.splice(index, 1);
     nameresult7.splice(index,1);
@@ -1477,8 +1468,8 @@ nameresult7.push(data.key);
        var dupe = url;
          nameresult7.push("Belt");
     nameresult7.push("Belt");
-         result7.push({"url":dupe});
-         result7.push({"url":url});
+         result7.push({"url":dupe,"id":"none","clickUrl":false,"brand":"none"});
+         result7.push({"url":url,"id":"none","clickUrl":false,"brand":"none"});
       this.cards7 = result7;
       this.namecard7= nameresult7;
 
@@ -1489,7 +1480,7 @@ nameresult7.push(data.key);
 firebase.database().ref(this.currentUser+'/Belts/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
-var index = result7.indexOf(element.url);
+var index = result7.indexOf(element);
 if (index > -1) {
     result7.splice(index, 1);
     nameresult7.splice(index,1);
@@ -1508,7 +1499,7 @@ this.cardNames7 = nameresult7;
 firebase.database().ref(this.currentUser+'/Bottoms/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
-var index = result1.indexOf(element.url);
+var index = result1.indexOf(element);
 if (index > -1) {
     result8.splice(index,1);
     nameresult8.splice(index,1);
@@ -1536,8 +1527,8 @@ nameresult8.push(data.key);
        var dupe = url;
     nameresult8.push("Pants");
     nameresult8.push("Pants");
-         result8.push(dupe);
-         result8.push(url);
+         result8.push({"url":dupe,"id":"none","clickUrl":false,"brand":"none"});
+         result8.push({"url":url,"id":"none","clickUrl":false,"brand":"none"});
       this.cards8 = result8;
       this.namecard8= nameresult8;
 
@@ -1548,7 +1539,7 @@ nameresult8.push(data.key);
 firebase.database().ref(this.currentUser+'/Bottoms/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
-var index = result8.indexOf(element.url);
+var index = result8.indexOf(element);
 if (index > -1) {
     result8.splice(index, 1);
     nameresult8.splice(index,1);
@@ -1567,7 +1558,7 @@ this.cardNames8 = nameresult8;
 firebase.database().ref(this.currentUser+'/Jewelry/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
-var index = result9.indexOf(element.url);
+var index = result9.indexOf(element);
 if (index > -1) {
     result9.splice(index, 1);
     nameresult9.splice(index,1);
@@ -1596,8 +1587,8 @@ nameresult9.push(data.key);
 
     nameresult9.push("Jewelry");
     nameresult9.push("Jewelry");
-         result9.push(dupe);
-         result9.push(url);
+         result9.push({"url":dupe,"id":"none","clickUrl":false,"brand":"none"});
+         result9.push({"url":url,"id":"none","clickUrl":false,"brand":"none"});
       this.cards9 = result9;
       this.namecard9= nameresult9;
 
@@ -1615,7 +1606,7 @@ nameresult9.push(data.key);
 firebase.database().ref(this.currentUser+'/Bags/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
-var index = result10.indexOf(element.url);
+var index = result10.indexOf(element);
 if (index > -1) {
     result10.splice(index, 1);
     nameresult10.splice(index,1);
@@ -1643,8 +1634,8 @@ nameresult10.push(data.key);
        var dupe = url;
     nameresult10.push("Bag");
     nameresult10.push("Bag");
-         result10.push(dupe);
-         result10.push(url);
+         result10.push({"url":dupe,"id":"none","clickUrl":false,"brand":"none"});
+         result10.push({"url":url,"id":"none","clickUrl":false,"brand":"none"});
 
       this.cards10 = result10;
       this.namecard10 = nameresult10;
@@ -1656,7 +1647,7 @@ nameresult10.push(data.key);
 firebase.database().ref(this.currentUser+'/Bags/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
-var index = result10.indexOf(element.url);
+var index = result10.indexOf(element);
 if (index > -1) {
     result10.splice(index, 1);
     nameresult10.splice(index,1);
@@ -1674,7 +1665,7 @@ this.cardNames10 = nameresult10;
 firebase.database().ref(this.currentUser+'/Shoes/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
-var index = result11.indexOf(element.url);
+var index = result11.indexOf(element);
 if (index > -1) {
     result11.splice(index, 1);
     nameresult11.splice(index,1);
@@ -1702,8 +1693,8 @@ nameresult11.push(data.key);
        var dupe = url;
           nameresult11.push("Shoes");
          nameresult11.push("Shoes");
-         result11.push(dupe);
-         result11.push(url);
+         result11.push({"url":dupe,"id":"none","clickUrl":false,"brand":"none"});
+         result11.push({"url":url,"id":"none","clickUrl":false,"brand":"none"});
 
       this.cards11 = result11;
       this.namecard11 = nameresult11;
@@ -1725,8 +1716,8 @@ nameresult11.push(data.key);
        var dupe = url;
          nameresult12.push("Bag");
          nameresult12.push("Bag");
-         result12.push(dupe);
-         result12.push(url);
+         result12.push({"url":dupe,"id":"none","clickUrl":false,"brand":"none"});
+         result12.push({"url":url,"id":"none","clickUrl":false,"brand":"none"});
 
       this.cards12 = result12;
       this.namecard12 = nameresult12;
@@ -1737,7 +1728,7 @@ nameresult11.push(data.key);
 firebase.database().ref(this.currentUser+'/Bags/').on('child_removed', function(data) {
 var element = data.val();
 if(element){
-var index = result12.indexOf(element.url);
+var index = result12.indexOf(element);
 if (index > -1) {
     result12.splice(index, 1);
     nameresult12.splice(index,1);
@@ -2214,7 +2205,7 @@ this.lastSavedFitRef.set(
     toast.present();
     this.didSaveThisOutfit = true;
   var allOutfits = firebase.database().ref('/outfits/'+this.lastSavedFitRef.key);
-allOutfits.set({firstname:namecard1,firstinfo:{brand:this.cards1[0].brand,id:this.cards1[0].id,clickUrl:this.cards1[0].clickUrl},secondinfo:{brand:this.cards2[0].brand,id:this.cards2[0].id,clickUrl:this.cards2[0].clickUrl},thirdinfo:{brand:this.cards3[0].brand,id:this.cards3[0].id,clickUrl:this.cards3[0].clickUrl},fourthinfo:{brand:this.cards4[0].brand,id:this.cards4[0].id,clickUrl:this.cards4[0].clickUrl},fifthinfo:{brand:this.cards5[0].brand,id:this.cards5[0].id,clickUrl:this.cards5[0].clickUrl},sixthinfo:{brand:this.cards6[0].brand,id:this.cards6[0].id,clickUrl:this.cards6[0].clickUrl,seventhinfo:{brand:this.cards7[0].brand,id:this.cards7[0].id,clickUrl:this.cards7[0].clickUrl}},eigthinfo:{brand:this.cards8[0].brand,id:this.cards8[0].id,clickUrl:this.cards8[0].clickUrl},ninthinfo:{brand:this.cards9[0].brand,id:this.cards9[0].id,clickUrl:this.cards9[0].clickUrl},tenthinfo:{brand:this.cards10[0].brand,id:this.cards10[0].id,clickUrl:this.cards10[0].clickUrl},eleventhinfo:{brand:this.cards11[0].brand,id:this.cards11[0].id,clickUrl:this.cards11[0].clickUrl},twelthinfo:{brand:this.cards12[0].brand,id:this.cards12[0].id,clickUrl:this.cards12[0].clickUrl},secondname:namecard2,thirdname:namecard3,fourthname:namecard4,fifthname:namecard5,sixthname:namecard6,seventhname:namecard7,eighthname:namecard8,ninthname:namecard9,tenthname:namecard10,eleventhname:namecard11,twelthname:namecard12,first:topcard1,second:topcard2,third:topcard3,fourth:topcard4,fifth:topcard5,sixth:topcard6,seventh:topcard7,eighth:topcard8,ninth:topcard9,tenth:topcard10,eleventh:topcard11,twelth:topcard12,timestamp:firebase.database.ServerValue.TIMESTAMP,user:firebase.auth().currentUser.uid,username:this.userName,likeCount:0},function(error) {
+allOutfits.set({firstname:namecard1,firstinfo:{brand:this.cards1[0].brand,id:this.cards1[0].id,clickUrl:this.cards1[0].clickUrl},secondinfo:{brand:this.cards2[0].brand,id:this.cards2[0].id,clickUrl:this.cards2[0].clickUrl},thirdinfo:{brand:this.cards3[0].brand,id:this.cards3[0].id,clickUrl:this.cards3[0].clickUrl},fourthinfo:{brand:this.cards4[0].brand,id:this.cards4[0].id,clickUrl:this.cards4[0].clickUrl},fifthinfo:{brand:this.cards5[0].brand,id:this.cards5[0].id,clickUrl:this.cards5[0].clickUrl},sixthinfo:{brand:this.cards6[0].brand,id:this.cards6[0].id,clickUrl:this.cards6[0].clickUrl},seventhinfo:{brand:this.cards7[0].brand,id:this.cards7[0].id,clickUrl:this.cards7[0].clickUrl},eigthinfo:{brand:this.cards8[0].brand,id:this.cards8[0].id,clickUrl:this.cards8[0].clickUrl},ninthinfo:{brand:this.cards9[0].brand,id:this.cards9[0].id,clickUrl:this.cards9[0].clickUrl},tenthinfo:{brand:this.cards10[0].brand,id:this.cards10[0].id,clickUrl:this.cards10[0].clickUrl},eleventhinfo:{brand:this.cards11[0].brand,id:this.cards11[0].id,clickUrl:this.cards11[0].clickUrl},twelthinfo:{brand:this.cards12[0].brand,id:this.cards12[0].id,clickUrl:this.cards12[0].clickUrl},secondname:namecard2,thirdname:namecard3,fourthname:namecard4,fifthname:namecard5,sixthname:namecard6,seventhname:namecard7,eighthname:namecard8,ninthname:namecard9,tenthname:namecard10,eleventhname:namecard11,twelthname:namecard12,first:topcard1,second:topcard2,third:topcard3,fourth:topcard4,fifth:topcard5,sixth:topcard6,seventh:topcard7,eighth:topcard8,ninth:topcard9,tenth:topcard10,eleventh:topcard11,twelth:topcard12,timestamp:firebase.database.ServerValue.TIMESTAMP,user:firebase.auth().currentUser.uid,username:this.userName,likeCount:0},function(error) {
    if (error) {
    } else {
 

@@ -124,16 +124,15 @@ saveToCloset()
   var item;
   for(var i = 0; i< this.items1.length; i++)
   {
-    if ((this.items1[i].name).indexOf('.') > -1)
-{
+
 this.items1[i].name = this.items1[i].name.replace('.','-');
 this.items1[i].name = this.items1[i].name.replace('#','');
 this.db = firebase.database().ref(firebase.auth().currentUser.uid+'/'+this.internalType+'/'+this.items1[i].name);
 
 
-}else{
+
      this.db = firebase.database().ref(firebase.auth().currentUser.uid+'/'+this.internalType+'/'+this.items1[i].name);
-}
+
 if(this.items1[i].selected == true)
 {
 

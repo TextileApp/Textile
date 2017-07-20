@@ -190,41 +190,46 @@ shopstyle.products(options).then(response => {
  var x;
  if(response.products.length > 0){
    this.noProducts = true;
+  
      for (x in response.products) {
-      this.items1.push({'image': response.products[x].image.sizes.Large.url,'name':response.products[x].unbrandedName});
-    }
+        if(response.products[x].brand){
+      this.items1.push({'image': response.products[x].image.sizes.Large.url,'name':response.products[x].unbrandedName,'id':response.products[x].id,'clickUrl':response.products[x].clickUrl,"brand":response.products[x].brand.name});
+        }
+    else{
+      this.items1.push({'image': response.products[x].image.sizes.Large.url,'name':response.products[x].unbrandedName,'id':response.products[x].id,'clickUrl':response.products[x].clickUrl,"brand":response.products[x].retailer.name});
+
+    }    }
   } 
 
 });
 this.currentOffset = this.currentOffset + 50;
   }
-
 saveToCloset()
 {
 
   var item;
   for(var i = 0; i< this.items1.length; i++)
   {
-    if ((this.items1[i].name).indexOf('.') > -1)
+    if (((this.items1[i].name).indexOf('.') > -1)||(this.items1[i].name).indexOf('#'))
 {
 this.items1[i].name = this.items1[i].name.replace('.','-');
 this.items1[i].name = this.items1[i].name.replace('#','');
-this.db = firebase.database().ref(firebase.auth().currentUser.uid+'/'+this.internalType+'/'+this.items1[i].name);
-
+this.db = firebase.database().ref(firebase.auth().currentUser.uid+'/'+this.type+'/'+this.items1[i].name);
 
 }else{
-     this.db = firebase.database().ref(firebase.auth().currentUser.uid+'/'+this.internalType+'/'+this.items1[i].name);
+     this.db = firebase.database().ref(firebase.auth().currentUser.uid+'/'+this.type+'/'+this.items1[i].name);
 }
+ 
 if(this.items1[i].selected == true)
 {
-
+//this.selectedItems.push(item);
 
 this.db.set(
-{"url":this.items1[i].image,"id":this.items1[i].id,"clickUrl":this.items1[i].clickUrl,"brand":this.items1[i].brand}
-  
+ {"url":this.items1[i].image,"id":this.items1[i].id,"clickUrl":this.items1[i].clickUrl,"brand":this.items1[i].brand}
 );
 };
 }
+
 this.navCtrl.popToRoot();
   }
   selectPiece(item){
@@ -300,8 +305,13 @@ shopstyle.products(options).then(response => {
 
    this.noProducts = true;
      for (x in response.products) {
-      result1.push({'image': response.products[x].image.sizes.Large.url,'name':response.products[x].unbrandedName});
-    
+        if(response.products[x].brand){
+      result1.push({'image': response.products[x].image.sizes.Large.url,'name':response.products[x].unbrandedName,'id':response.products[x].id,'clickUrl':response.products[x].clickUrl,"brand":response.products[x].brand.name});
+        }
+    else{
+      result1.push({'image': response.products[x].image.sizes.Large.url,'name':response.products[x].unbrandedName,'id':response.products[x].id,'clickUrl':response.products[x].clickUrl,"brand":response.products[x].retailer.name});
+
+    }
     }
 
   this.items1 = result1;
