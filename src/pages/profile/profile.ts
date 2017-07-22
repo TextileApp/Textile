@@ -79,6 +79,12 @@ this.totalLikes = snapshot.val();
 )}
 followUser(){
     var ref = firebase.database().ref(this.currentUser+'/following/'+this.myUser);
+    var nameref = firebase.database().ref(this.currentUser+'/username');
+    var otheref = firebase.database().ref(this.myUser+'/followers/'+this.currentUser);
+nameref.once('value', (snapshot) => {
+  var name = snapshot.val();
+ otheref.set(name);
+})
 ref.once('value', (snapshot) => {
  if (snapshot.val() === null) {
 this.isFollowing = true;
@@ -114,16 +120,9 @@ changedTitle(outfitkey: string,newtitle: string){
 //firebase.database().ref(this.myUser+'/outfits/'+outfit.key).remove();
 this.outfits.update(outfitkey,{title:newtitle});
 }
-deleteOutfits(outfitkey: string){
-var allOutfits =firebase.database().ref('/outfits/'+outfitkey);
-allOutfits.remove(function(error){
 
-});
 
 //firebase.database().ref(this.myUser+'/outfits/'+outfit.key).remove();
-console.log(outfitkey);
-this.outfits.remove(outfitkey);
-}
 
 
 }

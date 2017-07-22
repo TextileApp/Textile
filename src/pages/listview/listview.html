@@ -28,7 +28,8 @@
     </h3>
     </ion-col>
     </ion-row>
-     <button *ngIf="f.clickUrl" ion-button clear item-right icon-only (tap)="launch(f.clickUrl)" ><ion-icon ios="ios-pricetag-outline"></ion-icon></button>
+     <button [hidden]="!f.clickUrl" ion-button clear item-right icon-only (tap)="launch(f.clickUrl)" ><ion-icon ios="ios-pricetag-outline"></ion-icon></button>
+
     <button *ngIf="!f.has" ion-button clear item-right icon-only (tap)="addItem(f)" ><ion-icon name="add"></ion-icon></button>
     <button *ngIf="f.has" ion-button clear item-right icon-only (tap)="removeItem(f)" ><ion-icon name="checkmark"></ion-icon></button>
   </ion-item>

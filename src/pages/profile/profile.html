@@ -16,6 +16,8 @@
 <ion-content>
 
 <ion-col><p class ="title">{{userName}}</p></ion-col>
+
+<ion-row>
 <ion-col>
   <button style ="align-content:center; margin-left: auto; margin-right: auto;  " class = "follow" (tap)= "followUser()"ion-button icon-left clear>
         <ion-icon *ngIf = "!isFollowing" color="dark" name="add"></ion-icon>
@@ -25,10 +27,21 @@
         <div  *ngIf="isFollowing" style = "color:#222;">following</div>
       </button>
 </ion-col>
+</ion-row>
+<ion-row>
+<ion-col style ="align-content:center;" width-33>
+  hello
+</ion-col>
+<ion-col width-33>
 <span style ="align-content:center; padding-left:46%; padding-right:40%;font-size:16px; padding-bottom:0%; margin-bottom:0%;">
   <ion-icon *ngIf="totalLikes" color ="heart" name="heart" item-left></ion-icon>
   <p style="font-size:18px;padding-left:1%; display:inline-block; text-align:center;">{{totalLikes}}</p>
 </span>
+</ion-col>
+<ion-col width-33>
+  hello
+</ion-col>
+</ion-row>
 <ion-slides style = "padding-top:0%; padding-bottom:0%; margin-top:0%; margin-bottom:0%;"[options]="mySlideOptions">
 <ion-slide  *ngFor="let f of outfits | async">
    
