@@ -89,7 +89,7 @@ ref.once('value', (snapshot) => {
  if (snapshot.val() === null) {
 this.isFollowing = true;
 ref.set(
-this.myUser
+this.myUsername
 );
 }
 else

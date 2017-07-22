@@ -1915,7 +1915,7 @@ decimalToHex(d, padding) {
       var key = childSnapshot.key;
     
       var childData = childSnapshot.val();
-      tempo.push(childData);
+      tempo.push(key);
   }); 
     console.log(tempo);
 });
