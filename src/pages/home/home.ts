@@ -1910,7 +1910,7 @@ decimalToHex(d, padding) {
   }
    goToFeed() {
          var tempo = [];
-     firebase.database().ref(this.currentUser+"/following/").once('value').then(function(snapshot) {
+     firebase.database().ref("/following/"+this.currentUser).once('value').then(function(snapshot) {
   snapshot.forEach(function(childSnapshot) {
       var key = childSnapshot.key;
     

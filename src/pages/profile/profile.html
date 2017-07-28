@@ -16,30 +16,43 @@
 <ion-content>
 
 <ion-col><p class ="title">{{userName}}</p></ion-col>
+<ion-row>
+  <ion-col >
+<span style ="display:flex;justify-content:center;align-items:center;">
+  <ion-icon *ngIf="totalLikes" color ="heart" name="heart" item-left></ion-icon>
+  <p style="font-size:16px; padding-left:1%; display:inline-block; text-align:center;">{{totalLikes}}</p>
+</span>
+</ion-col>
+</ion-row>
 
 <ion-row>
-<ion-col>
-  <button style ="align-content:center; margin-left: auto; margin-right: auto;  " class = "follow" (tap)= "followUser()"ion-button icon-left clear>
+  <ion-col width-25>
+
+</ion-col>
+<ion-col  style="display:flex;justify-content:center;align-items:center;" width-25>
+   <button (tap)="goToFollowers()" ion-button small clear><span style="font-weight: 500; color:#222;">{{followerCount}} </span> <span style="color:#A9A9A9;">&nbsp;&nbsp;followers</span>
+   </button>
+</ion-col>
+
+<ion-col width-25  style="display:flex;justify-content:center;align-items:center;">
+ <button (tap)="goToFollowing()" ion-button small clear>
+<span style="color:#222; font-weight: 500;">{{followingCount}} </span> <span style="color:#A9A9A9;">&nbsp;&nbsp;following</span>
+ </button>
+</ion-col>
+  <ion-col width-25>
+
+</ion-col>
+</ion-row>
+
+<ion-row>
+<ion-col style ="display:flex;justify-content:center;align-items:center; padding-top:5%;">
+  <button small color="bar" round (tap)= "followUser()"ion-button icon-left>
         <ion-icon *ngIf = "!isFollowing" color="dark" name="add"></ion-icon>
         <ion-icon *ngIf = "isFollowing" color="dark" name="checkmark"></ion-icon>
 
         <div  *ngIf="!isFollowing" style = "color:#222;">follow</div>
         <div  *ngIf="isFollowing" style = "color:#222;">following</div>
       </button>
-</ion-col>
-</ion-row>
-<ion-row>
-<ion-col style ="align-content:center;" width-33>
-  hello
-</ion-col>
-<ion-col width-33>
-<span style ="align-content:center; padding-left:46%; padding-right:40%;font-size:16px; padding-bottom:0%; margin-bottom:0%;">
-  <ion-icon *ngIf="totalLikes" color ="heart" name="heart" item-left></ion-icon>
-  <p style="font-size:18px;padding-left:1%; display:inline-block; text-align:center;">{{totalLikes}}</p>
-</span>
-</ion-col>
-<ion-col width-33>
-  hello
 </ion-col>
 </ion-row>
 <ion-slides style = "padding-top:0%; padding-bottom:0%; margin-top:0%; margin-bottom:0%;"[options]="mySlideOptions">

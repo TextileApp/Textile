@@ -246,12 +246,12 @@ else{
 
   getFollowedUsers(){
        var tempo = [];
-     firebase.database().ref(this.myUser+"/following/").once('value').then(function(snapshot) {
+     firebase.database().ref("/following/"+this.myUser).once('value').then(function(snapshot) {
   snapshot.forEach(function(childSnapshot) {
       var key = childSnapshot.key;
     
       var childData = childSnapshot.val();
-      tempo.push(childData);
+      tempo.push(key);
   }); 
 });
 this.followingUsers = tempo;

@@ -64,7 +64,7 @@ printKey(key){
 var temp = [];
 var tempID = [];
 var currentuser = this.myUser;
-firebase.database().ref(this.myUser+'/following/').on('child_added', function(data) {
+firebase.database().ref('/following/'+this.myUser).on('child_added', function(data) {
 var element = data.val();
 var id = data.key;
   var ref = firebase.database().ref(id+'/username');
@@ -72,7 +72,7 @@ ref.once('value', (snapshot) => {
 var tempo = snapshot.val();
 console.log(id);
 console.log(tempo);
-var followingref = firebase.database().ref(currentuser+"/following/"+id);
+var followingref = firebase.database().ref("/following/"+currentuser+'/'+id);
   followingref.set(tempo);
 
 });
@@ -83,7 +83,7 @@ this.following = temp;
 this.originalFollowing = temp;
 this.followingID = tempID;
 
-firebase.database().ref(this.myUser+'/following/').on('child_removed', function(data) {
+firebase.database().ref('/following/'+this.myUser).on('child_removed', function(data) {
 var element = data.val();
 var id = data.key;
 if(element){
@@ -98,7 +98,7 @@ if (index2 > -1) {
 
 }
 });
-firebase.database().ref(this.myUser+'/following/').on('child_changed', function(data) {
+firebase.database().ref('/following/'+this.myUser).on('child_changed', function(data) {
 var element = data.val();
 var id = data.key;
 console.log("CHANGING BITCH");

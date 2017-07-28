@@ -33810,9 +33810,8 @@ button[fab].fab-map {
 
 .follow {
   text-align: center;
-  font-size: 16px;
+  font-size: 14px;
   padding-bottom: 0%;
-  padding-left: 41%;
   margin-bottom: 0%;
 }
 
@@ -33832,6 +33831,52 @@ button[fab].fab-map {
   padding-top: 20%;
   padding-right: 20%;
   padding-bottom: 20%;
+}
+
+.grid-full ion-row {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.grid-full ion-col {
+  text-align: center;
+  padding: 5px 5px 5px 5px;
+  margin-top: 0px;
+  border: 20px;
+}
+
+.text-on-bottom > .button-inner {
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.grid-full ion-row {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.grid-full ion-col {
+  text-align: center;
+  padding: 5px 5px 5px 5px;
+  margin-top: 0px;
+  border: 20px;
+}
+
+.text-on-bottom > .button-inner {
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 page-register h2 {

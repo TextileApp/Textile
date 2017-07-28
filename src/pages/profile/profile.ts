@@ -5,52 +5,95 @@ import * as firebase from 'firebase';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
 import { AuthService } from '../../providers/auth-service';
 import { Slides,NavParams } from 'ionic-angular';
+import {profileFollowPage} from '../profilefollow/profilefollow'
 @Component({
   selector: 'page-profile',
   templateUrl: 'profile.html'
 })
 export class profilePage{
 outfits: FirebaseListObservable<any>;
- mySlideOptions: any;
+ profileSlideOptions: any;
 //outfits:Array <any>;
 @ViewChild(Slides) slides: Slides;
 
-myUser: any;
+profileUser: any;
 af: AngularFire;
 isEnabled: boolean;
 userName: any;
 totalLikes: any;
 currentUser:any;
+followers: Array<any>;
+following: Array<any>;
+followerCount: any;
+followingCount: any;
 isFollowing: any;
-myUsername: any;
+profileUsername: any;
+currentUsername: any;
 tempUsername: string;
+firebaseRefs: any;
   constructor(public navCtrl: NavController,private ngZone: NgZone,af: AngularFire,private _auth: AuthService,private params: NavParams) {
     const authObserver = af.auth.subscribe( user => {
   if (user) {
-     this.myUser = this.params.get("user");
-     this.myUsername = this.params.get("name");
+     this.profileUser = this.params.get("user");
+     this.profileUsername = this.params.get("name");
      this.currentUser = user.uid;
-  this.outfits = af.database.list(this.myUser+'/outfits/');
+  this.outfits = af.database.list(this.profileUser+'/outfits/');
  this.getLikes();
   this.update();
   this.getFollowing();
+
   } 
   this.isEnabled = false;
 
 });
+
   }
   
    ngAfterViewInit() {
+     var tempfollowing = [];
+ var tempfollowers = [];
+var numberfollowers = 0;
+var numberfollowing = 0;
+ firebase.database().ref('following/'+this.profileUser).on('child_added', function(data) {
+var element = data.val();
+var name = data.key;
+tempfollowing.push({"name":element,"id":name});
+
+
+});
+this.following = tempfollowing;
+
+ firebase.database().ref('followers/'+this.profileUser).on('child_added', function(data) {
+var element = data.val();
+var name = data.key;
+tempfollowers.push({"name":element,"id":name});
+
+});
+
+this.followers = tempfollowers;
+
+
+
+var followingCountRef = firebase.database().ref('/following/'+this.profileUser);
+ firebase.database().ref('following/'+this.profileUser).on("value", (snapshot) => {
+  this.followingCount = snapshot.numChildren();
+})
+var followerCountRef = firebase.database().ref('/followers/'+this.profileUser);
+ firebase.database().ref('/followers/'+this.profileUser).on("value",(snapshot) => {
+  this.followerCount = snapshot.numChildren();
+})
+
    }
 ionViewWillEnter()
 {
   this.update();
   this.getLikes();
 }
+
 update()
 {
-var usernameRef = firebase.database().ref('/username/'+this.myUsername);
-var ref = firebase.database().ref(this.myUser+'/username');
+var usernameRef = firebase.database().ref('/username/'+this.profileUsername);
+var ref = firebase.database().ref(this.profileUser+'/username');
 ref.once('value', (snapshot) => {
 
 if (snapshot.val() === null) {
@@ -58,7 +101,7 @@ if (snapshot.val() === null) {
 var username;
 var tempUsername;
     username = tempUsername.substr(0, tempUsername.indexOf('@'));
-     var db = firebase.database().ref(this.myUser+'/username');
+     var db = firebase.database().ref(this.profileUser+'/username');
 
 db.set(username);
 usernameRef.set(username);
@@ -68,42 +111,83 @@ usernameRef.set(username);
 console.log(snapshot.val());
   }
 });
-  
+var currentUsernameref = firebase.database().ref('/username/'+this.currentUser);
+currentUsernameref.once('value', (snapshot) => {
+
+if (snapshot.val() === null) {
+   
+
+  }
+  else {
+this.currentUsername = snapshot.val();
+  }
+});
+}
+goToFollowing()
+{
+this.navCtrl.push(profileFollowPage,{"users":this.following,"title":"following"});
+
+}
+goToFollowers()
+{
+this.navCtrl.push(profileFollowPage,{"users":this.followers,"title":"followers"});
+
 }
 getLikes(){
-  var ref = firebase.database().ref(this.myUser+'/totalLikes');
+  var ref = firebase.database().ref(this.profileUser+'/totalLikes');
 ref.once('value', (snapshot) => {
 this.totalLikes = snapshot.val();
 }
 
 )}
+
+
 followUser(){
-    var ref = firebase.database().ref(this.currentUser+'/following/'+this.myUser);
+    var followingref = firebase.database().ref('/following/'+this.currentUser+'/'+this.profileUser);
+    var followersref = firebase.database().ref('/followers/'+this.profileUser+'/'+this.currentUser);
+    //var followingCountRef = firebase.database().ref('/following/'+this.currentUser+'/followingCount');
+   // var followersCountRef = firebase.database().ref('/followers/'+this.profileUser+'/followersCount');
     var nameref = firebase.database().ref(this.currentUser+'/username');
-    var otheref = firebase.database().ref(this.myUser+'/followers/'+this.currentUser);
+
+
+var name;
 nameref.once('value', (snapshot) => {
-  var name = snapshot.val();
- otheref.set(name);
+  name = snapshot.val();
+ followersref.set(name);
 })
-ref.once('value', (snapshot) => {
- if (snapshot.val() === null) {
+followingref.once('value', (snapshot) => {
+ if (snapshot.val() == null) {
 this.isFollowing = true;
-ref.set(
-this.myUsername
+followingref.set(
+this.profileUsername
 );
 }
 else
 {
-  ref.remove();
+  followingref.remove();
   this.isFollowing = false;
+}
+})
+followersref.once('value', (snapshot) => {
+ if (snapshot.val() == null) {
+
+followersref.set(
+this.currentUsername
+);
+}
+else
+{
+  followersref.remove();
+  
 }
 })
   
  
 }
+ 
 
 getFollowing(){
-  var ref = firebase.database().ref(this.currentUser+'/following/'+this.myUser);
+  var ref = firebase.database().ref('/followers/'+this.profileUser+'/'+this.currentUser);
 ref.once('value', (snapshot) => {
  if (snapshot.val() === null) {
 this.isFollowing = false;
@@ -115,14 +199,13 @@ this.isFollowing = false;
 )}
 
 
-
 changedTitle(outfitkey: string,newtitle: string){
-//firebase.database().ref(this.myUser+'/outfits/'+outfit.key).remove();
+//firebase.database().ref(this.profileUser+'/outfits/'+outfit.key).remove();
 this.outfits.update(outfitkey,{title:newtitle});
 }
 
 
-//firebase.database().ref(this.myUser+'/outfits/'+outfit.key).remove();
+//firebase.database().ref(this.profileUser+'/outfits/'+outfit.key).remove();
 
 
 }

@@ -6,6 +6,8 @@ import * as firebase from 'firebase';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
 import { AuthService } from '../../providers/auth-service';
 import { Slides } from 'ionic-angular';
+import {profileFollowPage} from '../profilefollow/profilefollow';
+
 @Component({
   selector: 'page-outfits',
   templateUrl: 'outfits.html'
@@ -21,7 +23,10 @@ af: AngularFire;
 isEnabled: boolean;
 userName: any;
 totalLikes: any;
-
+followers: Array<any>;
+following: Array<any>;
+followerCount: any;
+followingCount: any;
 tempUsername: string;
   constructor(public navCtrl: NavController,private ngZone: NgZone,af: AngularFire,private _auth: AuthService,) {
     const authObserver = af.auth.subscribe( user => {
@@ -36,7 +41,40 @@ tempUsername: string;
 });
   }
   
-   ngAfterViewInit() {
+    ngAfterViewInit() {
+     var tempfollowing = [];
+ var tempfollowers = [];
+var numberfollowers = 0;
+var numberfollowing = 0;
+ firebase.database().ref('following/'+this.myUser).on('child_added', function(data) {
+var element = data.val();
+var name = data.key;
+tempfollowing.push({"name":element,"id":name});
+
+
+});
+this.following = tempfollowing;
+
+ firebase.database().ref('followers/'+this.myUser).on('child_added', function(data) {
+var element = data.val();
+var name = data.key;
+tempfollowers.push({"name":element,"id":name});
+
+});
+
+this.followers = tempfollowers;
+
+
+
+var followingCountRef = firebase.database().ref('/following/'+this.myUser);
+ firebase.database().ref('following/'+this.myUser).on("value", (snapshot) => {
+  this.followingCount = snapshot.numChildren();
+})
+var followerCountRef = firebase.database().ref('/followers/'+this.myUser);
+ firebase.database().ref('/followers/'+this.myUser).on("value",(snapshot) => {
+  this.followerCount = snapshot.numChildren();
+})
+
    }
 ionViewWillEnter()
 {
@@ -70,6 +108,7 @@ console.log(snapshot.val());
 });
   
 }
+
 getLikes(){
   var ref = firebase.database().ref(this.myUser+'/totalLikes');
 ref.once('value', (snapshot) => {
@@ -94,6 +133,16 @@ realEnableDelete(){
 }
 disableDelete(){
   this.isEnabled = false;
+}
+goToFollowing()
+{
+this.navCtrl.push(profileFollowPage,{"users":this.following,"title":"following"});
+
+}
+goToFollowers()
+{
+this.navCtrl.push(profileFollowPage,{"users":this.followers,"title":"followers"});
+
 }
 enableDelete(){
 this.navCtrl.push(settingsPage);
