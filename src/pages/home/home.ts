@@ -11,12 +11,15 @@ import { searchproductsPage } from '../searchproducts/searchproducts';
 import {ShareService} from '../../providers/ShareService';
 import{ImagePicker,Camera} from'ionic-native';
 import { Http } from '@angular/http';
+import { AngularFireDatabase } from 'angularfire2/database';
 import { FirebaseApp,AngularFire } from 'angularfire2';
 import { ImageCropperComponent } from "../cropper/img-cropper";
 import 'rxjs/Rx';
 const ShopStyle = require('shopstyle-sdk');
 const shopstyle = new ShopStyle('uid8976-38160824-19');
 declare var window: any
+
+declare var FCMPlugin;
 function generateUUID(){
     var d = new Date().getTime();
     if(window.performance && typeof window.performance.now === "function"){
@@ -169,7 +172,7 @@ lastSavedFitRef: any;
   allPants: Array<any>;
   allShoes: Array<any>;
   
-  constructor( public popoverCtrl: PopoverController,public navCtrl: NavController,public af:AngularFire,public loadingCtrl: LoadingController, public authService: AuthService,private http: Http, private ngZone: NgZone,public modalCtrl: ModalController,public toastCtrl: ToastController,public events:Events,public alertCtrl: AlertController
+  constructor( public popoverCtrl: PopoverController,public navCtrl: NavController,public afd: AngularFireDatabase,public af:AngularFire,public loadingCtrl: LoadingController, public authService: AuthService,private http: Http, private ngZone: NgZone,public modalCtrl: ModalController,public toastCtrl: ToastController,public events:Events,public alertCtrl: AlertController
   ) {
            
        const authObserver = af.auth.subscribe( user => {
@@ -365,7 +368,54 @@ var name = this.cardNames12[index];
  
   });
       }
-  
+   ionViewDidLoad() {
+    FCMPlugin.onNotification(function(data){
+    if(data.wasTapped){
+      //Notification was received on device tray and tapped by the user.
+      alert( JSON.stringify(data) );
+    }else{
+      //Notification was received in foreground. Maybe the user needs to be notified.
+      alert( JSON.stringify(data) );
+    }
+    });
+
+FCMPlugin.onTokenRefresh(function(token){
+    alert( token );
+});    
+  }
+
+  tokensetup() {
+    var promise = new Promise((resolve, reject) => {
+      FCMPlugin.getToken(function(token){
+    resolve(token);
+      }, (err) => {
+        reject(err);
+});
+    })
+    return promise;
+  }
+
+  storetoken(t) {
+    this.afd.list(this.firestore).push({
+      uid: firebase.auth().currentUser.uid,
+      devtoken: t
+        
+    }).then(() => {
+      alert('Token stored');
+      }).catch(() => {
+        alert('Token not stored');
+      })
+
+    this.afd.list(this.firemsg).push({
+      sendername: firebase.auth().currentUser.displayName,
+      message: 'hello'
+    }).then(() => {
+      alert('Message stored');
+      }).catch(() => {
+        alert('Message not stored');
+  })  
+}
+
   ngOnInit() {
     // subscribe to the auth object to check for the login status
     // of the user, if logged in, save some user information and

@@ -91,6 +91,8 @@ ext {
 apply from: "com-sarriaroman-photoviewer/ionic2firebaseemail197311-photoviewer.gradle"
 apply from: "com.synconset.imagepicker/ionic2firebaseemail197311-ignorelinterrors.gradle"
 apply from: "com.synconset.imagepicker/ionic2firebaseemail197311-androidtarget.gradle"
+apply from: "phonegap-plugin-push/ionic2firebaseemail197311-push.gradle"
+apply from: "cordova-plugin-fcm/ionic2firebaseemail197311-FCMPlugin.gradle"
 // PLUGIN GRADLE EXTENSIONS END
 
 def hasBuildExtras = file('build-extras.gradle').exists()
@@ -255,6 +257,11 @@ dependencies {
     compile "com.android.support:appcompat-v7:23+"
     compile "com.android.support:support-v4:24.1.1+"
     compile "com.soundcloud.android:android-crop:1.0.0@aar"
+    compile "com.android.support:support-v13:23+"
+    compile "com.google.android.gms:play-services-gcm:11+"
+    compile "me.leolin:ShortcutBadger:1.1.14@aar"
+    compile "com.google.firebase:firebase-core:+"
+    compile "com.google.firebase:firebase-messaging:+"
     // SUB-PROJECT DEPENDENCIES END
 }
 

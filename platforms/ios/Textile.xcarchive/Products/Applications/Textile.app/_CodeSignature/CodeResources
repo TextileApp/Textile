@@ -86,7 +86,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		Yy27tNGPRnF0R4kl0BzI6FdK+kY=
+		7j7lKnBFMEDNNqO0r6E5svz1jbo=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -94,7 +94,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		e6LBIXWuliJMNv96Ju+MXQO3maA=
+		gFbOftPPEVE9GXd0YVjY3QMsmJM=
 		</data>
 		<key>GMEmptyFolder@1x.png</key>
 		<data>
@@ -122,7 +122,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		1rUAOK/VCPSroc055J42d9X2AbM=
+		1b5YVGZSKnkA1CJlDja5/DgvGow=
 		</data>
 		<key>LaunchImage-568h@2x.png</key>
 		<data>
@@ -131,6 +131,22 @@
 		<key>LaunchImage-700-568h@2x.png</key>
 		<data>
 		wxoZ3lqGitOojCy//ZgXxnYLM5g=
+		</data>
+		<key>LaunchImage-700-Landscape@2x~ipad.png</key>
+		<data>
+		0J1knzL0Th2Lq/Ir/npHetBGkQM=
+		</data>
+		<key>LaunchImage-700-Landscape~ipad.png</key>
+		<data>
+		t7EVYy24g1rofOfw1dc5059SXhA=
+		</data>
+		<key>LaunchImage-700-Portrait@2x~ipad.png</key>
+		<data>
+		TR3QM/ciHJTXp8qgfpkcDZw+r8I=
+		</data>
+		<key>LaunchImage-700-Portrait~ipad.png</key>
+		<data>
+		NSvifOxnRQ9nCQU74dUUvSXJ52I=
 		</data>
 		<key>LaunchImage-700@2x.png</key>
 		<data>
@@ -148,6 +164,14 @@
 		<data>
 		J0m5x1q69gRRE+wg+25mbwP1h5I=
 		</data>
+		<key>LaunchImage-Portrait@2x~ipad.png</key>
+		<data>
+		TR3QM/ciHJTXp8qgfpkcDZw+r8I=
+		</data>
+		<key>LaunchImage-Portrait~ipad.png</key>
+		<data>
+		NSvifOxnRQ9nCQU74dUUvSXJ52I=
+		</data>
 		<key>LaunchImage.png</key>
 		<data>
 		fzKMqeT4IYsaTMBZBfJ0g5lyct8=
@@ -158,7 +182,7 @@
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		8+rNKFZORQVx7rE1irM4vsxLPQg=
+		1ItqnWBOr6rk9ChA+nX+nUpV3aQ=
 		</data>
 		<key>PEPhotoCropEditor.bundle/PEPhotoCropEditorBorder.png</key>
 		<data>
@@ -192,7 +216,7 @@
 		</data>
 		<key>archived-expanded-entitlements.xcent</key>
 		<data>
-		vO/gVYVVkU1zHBaxd4xJ53/ga5k=
+		uVC4UsEAjsaAorNMAW+mHUKgk9o=
 		</data>
 		<key>ca.lproj/GMImagePicker.strings</key>
 		<dict>
@@ -205,7 +229,7 @@
 		</dict>
 		<key>config.xml</key>
 		<data>
-		ePAeA7iD7+faw3oEwJCao7PHulc=
+		3xmSHr2Hpwqbwry7T/nbPqtpyY8=
 		</data>
 		<key>de.lproj/GMImagePicker.strings</key>
 		<dict>
@@ -218,7 +242,7 @@
 		</dict>
 		<key>embedded.mobileprovision</key>
 		<data>
-		bDZ+ARMJAgUKc0HMPh0WDKI6IE4=
+		KuFZERpdgfPIPHlGtPgoOpySJPg=
 		</data>
 		<key>en.lproj/GMImagePicker.strings</key>
 		<dict>
@@ -415,11 +439,11 @@
 		</data>
 		<key>www/build/main.js</key>
 		<data>
-		Bma4GZDYUXlf+BAcX7su8rDjDXY=
+		AUtDyna+Cto8gXtaeXSWNXYTQWc=
 		</data>
 		<key>www/build/main.js.map</key>
 		<data>
-		nkQ4mV4ronpHNltsTeBxnesVCIg=
+		h/uGZw5SesR4qktYf+4n7JF/CSE=
 		</data>
 		<key>www/build/polyfills.js</key>
 		<data>
@@ -435,11 +459,11 @@
 		</data>
 		<key>www/cordova.js</key>
 		<data>
-		hYeg9zH5hCPufSL3lQ4iz/z1w5U=
+		U5qD+h8czHzRSMNDeKZnVmgA3ao=
 		</data>
 		<key>www/cordova_plugins.js</key>
 		<data>
-		b0ANXhCH5+irOcaMvjlkbcIw9hw=
+		LnHZ0zMd8U3NTQBRi6zooKPmr3o=
 		</data>
 		<key>www/index.html</key>
 		<data>
@@ -596,6 +620,10 @@
 		<key>www/plugins/ionic-plugin-keyboard/www/ios/keyboard.js</key>
 		<data>
 		gexyZjGUVvhbQiJbBzCrImXWv34=
+		</data>
+		<key>www/plugins/phonegap-plugin-push/www/push.js</key>
+		<data>
+		5lqeq3eXKNBSZFridjwkmGk0IH8=
 		</data>
 		<key>www/service-worker.js</key>
 		<data>
@@ -828,11 +856,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Yy27tNGPRnF0R4kl0BzI6FdK+kY=
+			7j7lKnBFMEDNNqO0r6E5svz1jbo=
 			</data>
 			<key>hash2</key>
 			<data>
-			uoy7+p+nRRn2FZAMz1cXoMw7JuLPkWo+tNZ6xhEtt4U=
+			aRrNEc7aPY0t9ntigg9z3MHBHTiGlhs4KXQLIvn107Q=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -850,11 +878,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			e6LBIXWuliJMNv96Ju+MXQO3maA=
+			gFbOftPPEVE9GXd0YVjY3QMsmJM=
 			</data>
 			<key>hash2</key>
 			<data>
-			/ypBYCTHFqopnneFo6bMwN+DpR/oeg+vMYbNBK6LXwA=
+			5u8ykV68NUjXAaMbyFhnAaB7UrftUYRAiqpfxH9FSwA=
 			</data>
 		</dict>
 		<key>GMEmptyFolder@1x.png</key>
@@ -945,6 +973,50 @@
 			zydyJ6ZtjaMqtFC7Trzb0IoFaYr5OvMhhjbpsq9NdYg=
 			</data>
 		</dict>
+		<key>LaunchImage-700-Landscape@2x~ipad.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			0J1knzL0Th2Lq/Ir/npHetBGkQM=
+			</data>
+			<key>hash2</key>
+			<data>
+			/4U8U816IAf6aMoQ9+HL7tcsCYeqLi43GvFkNOJtQ3A=
+			</data>
+		</dict>
+		<key>LaunchImage-700-Landscape~ipad.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			t7EVYy24g1rofOfw1dc5059SXhA=
+			</data>
+			<key>hash2</key>
+			<data>
+			fiPl/yFqa9Y/lH4QItSN1oQZJyv9eI/RGJsJOd3P0kQ=
+			</data>
+		</dict>
+		<key>LaunchImage-700-Portrait@2x~ipad.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			TR3QM/ciHJTXp8qgfpkcDZw+r8I=
+			</data>
+			<key>hash2</key>
+			<data>
+			JqM2YKzWrw2GcfygspWLncqJtaENEJjYW3dJTqCncQg=
+			</data>
+		</dict>
+		<key>LaunchImage-700-Portrait~ipad.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			NSvifOxnRQ9nCQU74dUUvSXJ52I=
+			</data>
+			<key>hash2</key>
+			<data>
+			EkS0MvWydqlKpa3PrHB8y62+HR5//V5WCg+2Z4aX1yw=
+			</data>
+		</dict>
 		<key>LaunchImage-700@2x.png</key>
 		<dict>
 			<key>hash</key>
@@ -989,6 +1061,28 @@
 			obrKCZCi45lu2aarFIDxk7m5DXNuZNCSkiKQFprZd5s=
 			</data>
 		</dict>
+		<key>LaunchImage-Portrait@2x~ipad.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			TR3QM/ciHJTXp8qgfpkcDZw+r8I=
+			</data>
+			<key>hash2</key>
+			<data>
+			JqM2YKzWrw2GcfygspWLncqJtaENEJjYW3dJTqCncQg=
+			</data>
+		</dict>
+		<key>LaunchImage-Portrait~ipad.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			NSvifOxnRQ9nCQU74dUUvSXJ52I=
+			</data>
+			<key>hash2</key>
+			<data>
+			EkS0MvWydqlKpa3PrHB8y62+HR5//V5WCg+2Z4aX1yw=
+			</data>
+		</dict>
 		<key>LaunchImage.png</key>
 		<dict>
 			<key>hash</key>
@@ -1015,11 +1109,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			8+rNKFZORQVx7rE1irM4vsxLPQg=
+			1ItqnWBOr6rk9ChA+nX+nUpV3aQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			EKOcvch2lxTpjox82lNKmFsNZvMpUP1FEd9ZBV/AqzU=
+			DRMGI1CGZFptymgvsVNbGyaX2JMhmN6BVDPvUn90iTk=
 			</data>
 		</dict>
 		<key>PEPhotoCropEditor.bundle/PEPhotoCropEditorBorder.png</key>
@@ -1074,11 +1168,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			vO/gVYVVkU1zHBaxd4xJ53/ga5k=
+			uVC4UsEAjsaAorNMAW+mHUKgk9o=
 			</data>
 			<key>hash2</key>
 			<data>
-			l3BKiWC0+szu9UOXoI+10KRWJHw2JzWSFaoqJ98iZWw=
+			e/joE7ObU4L5jO1+1JUxZxM/FUkgLPoVg6yex5UVEFk=
 			</data>
 		</dict>
 		<key>ca.lproj/GMImagePicker.strings</key>
@@ -1098,11 +1192,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ePAeA7iD7+faw3oEwJCao7PHulc=
+			3xmSHr2Hpwqbwry7T/nbPqtpyY8=
 			</data>
 			<key>hash2</key>
 			<data>
-			f62NDWWvX2OchVw/7sU6D41aACJrtrUdBSAzJmmFX7I=
+			f390KhbVGDuo+oTQHsgK8acqoJtbMD1vVyDaWG96j5s=
 			</data>
 		</dict>
 		<key>de.lproj/GMImagePicker.strings</key>
@@ -1122,11 +1216,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			bDZ+ARMJAgUKc0HMPh0WDKI6IE4=
+			KuFZERpdgfPIPHlGtPgoOpySJPg=
 			</data>
 			<key>hash2</key>
 			<data>
-			vAo+8wrYFf+AGWYoBUA6c/cv+zJAUDHSF1hreeEODl8=
+			fYNjoThxhj49eXAtSIdQY3j1LY0w39JlRaVENkLALxc=
 			</data>
 		</dict>
 		<key>en.lproj/GMImagePicker.strings</key>
@@ -1605,22 +1699,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Bma4GZDYUXlf+BAcX7su8rDjDXY=
+			AUtDyna+Cto8gXtaeXSWNXYTQWc=
 			</data>
 			<key>hash2</key>
 			<data>
-			lTaEyZU0FlKhYzDY2/ra/9Vz4U7gVNh18utOW0Kadt8=
+			Iq/ePML5kZkYKHUBprQpt9FP3m/qWz9emNd15DhQSoc=
 			</data>
 		</dict>
 		<key>www/build/main.js.map</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			nkQ4mV4ronpHNltsTeBxnesVCIg=
+			h/uGZw5SesR4qktYf+4n7JF/CSE=
 			</data>
 			<key>hash2</key>
 			<data>
-			p4v7oZtifVyvJTItqNasnWudb48YpQxFp4fLdvKcoFM=
+			yT4446hHhHxPlnbQrexM1KEK62+opLYPlnspWbWHNLo=
 			</data>
 		</dict>
 		<key>www/build/polyfills.js</key>
@@ -1660,22 +1754,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			hYeg9zH5hCPufSL3lQ4iz/z1w5U=
+			U5qD+h8czHzRSMNDeKZnVmgA3ao=
 			</data>
 			<key>hash2</key>
 			<data>
-			dfmFgVVKEylAM88S8U6sOC51nA/iWk1KrTshtEvuBmo=
+			vvROt4nAghiz/nS7ekznMtV1kOKlu40f/Me6P8Npd+4=
 			</data>
 		</dict>
 		<key>www/cordova_plugins.js</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			b0ANXhCH5+irOcaMvjlkbcIw9hw=
+			LnHZ0zMd8U3NTQBRi6zooKPmr3o=
 			</data>
 			<key>hash2</key>
 			<data>
-			ykc/89aEdzbOeCXVgunxROnNPDKMPbMtTjB3R31TF14=
+			LvQqv0lG8vAG/APwfflr0RkcdY4SS1TuQyf9cBO4s6s=
 			</data>
 		</dict>
 		<key>www/index.html</key>
@@ -2105,6 +2199,17 @@
 			<key>hash2</key>
 			<data>
 			s8oy4VvWgJx67mjrcY9CWo7fZ0VqTuZEyLnykDMBTXs=
+			</data>
+		</dict>
+		<key>www/plugins/phonegap-plugin-push/www/push.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			5lqeq3eXKNBSZFridjwkmGk0IH8=
+			</data>
+			<key>hash2</key>
+			<data>
+			fnu6B3igubTsRbXXflx/zb6AbO9quQlivKUyNjtq/qo=
 			</data>
 		</dict>
 		<key>www/service-worker.js</key>

@@ -45,6 +45,13 @@
         },
         "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "com.ionicframework.ionic2firebaseemail197311"
+        },
+        "phonegap-plugin-push": {
+            "SENDER_ID": "307268348961",
+            "PACKAGE_NAME": "com.ionicframework.ionic2firebaseemail197311"
+        },
+        "cordova-plugin-fcm": {
+            "PACKAGE_NAME": "com.ionicframework.ionic2firebaseemail197311"
         }
     },
     "dependent_plugins": {

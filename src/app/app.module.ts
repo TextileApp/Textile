@@ -26,6 +26,7 @@ import { ShareService } from '../providers/ShareService';
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
 import { SwingModule } from 'angular2-swing';
 import { ImageCropperComponent } from'../pages/cropper/img-cropper';
+import { Push } from '@ionic-native/push';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyCbJvS86BwyrrfTy3lwJ71tt0zkoTz6wRU",
@@ -42,7 +43,18 @@ const myFirebaseAuthConfig = {
 const cloudSettings: CloudSettings = {
   'core': {
     'app_id': '3a4b03cd'
+  }, 'push': {
+    'sender_id': '307268348961',
+    'pluginConfig': {
+      'ios': {
+        'badge': true,
+        'sound': true
+      },
+      'android': {
+      }
+    }
   }
+
 };
 firebase.initializeApp(firebaseConfig);
 
@@ -109,7 +121,7 @@ firebase.initializeApp(firebaseConfig);
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthService,ShareService
+    AuthService,ShareService,Push
   ],
 })
 export class AppModule {}
