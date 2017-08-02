@@ -28,25 +28,6 @@
     <string>0.0.1</string>
     <key>LSRequiresIPhoneOS</key>
     <true/>
-    <key>NSMainNibFile</key>
-    <string/>
-    <key>NSMainNibFile~ipad</key>
-    <string/>
-    <key>UISupportedInterfaceOrientations</key>
-    <array>
-      <string>UIInterfaceOrientationPortrait</string>
-      <string>UIInterfaceOrientationLandscapeLeft</string>
-      <string>UIInterfaceOrientationLandscapeRight</string>
-    </array>
-    <key>UISupportedInterfaceOrientations~ipad</key>
-    <array>
-      <string>UIInterfaceOrientationPortrait</string>
-      <string>UIInterfaceOrientationLandscapeLeft</string>
-      <string>UIInterfaceOrientationPortraitUpsideDown</string>
-      <string>UIInterfaceOrientationLandscapeRight</string>
-    </array>
-    <key>UIRequiresFullScreen</key>
-    <true/>
     <key>NSAppTransportSecurity</key>
     <dict>
       <key>NSAllowsArbitraryLoads</key>
@@ -110,19 +91,34 @@
         </dict>
       </dict>
     </dict>
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string/>
     <key>NSCameraUsageDescription</key>
     <string/>
     <key>NSLocationWhenInUseUsageDescription</key>
+    <string/>
+    <key>NSMainNibFile</key>
+    <string/>
+    <key>NSMainNibFile~ipad</key>
+    <string/>
+    <key>NSPhotoLibraryUsageDescription</key>
     <string/>
     <key>UIBackgroundModes</key>
     <array>
       <string>remote-notification</string>
     </array>
-    <key>GCM_SENDER_ID</key>
-    <string>85075801930</string>
-    <key>IS_GCM_ENABLED</key>
+    <key>UIRequiresFullScreen</key>
     <true/>
+    <key>UISupportedInterfaceOrientations</key>
+    <array>
+      <string>UIInterfaceOrientationPortrait</string>
+      <string>UIInterfaceOrientationLandscapeLeft</string>
+      <string>UIInterfaceOrientationLandscapeRight</string>
+    </array>
+    <key>UISupportedInterfaceOrientations~ipad</key>
+    <array>
+      <string>UIInterfaceOrientationPortrait</string>
+      <string>UIInterfaceOrientationLandscapeLeft</string>
+      <string>UIInterfaceOrientationPortraitUpsideDown</string>
+      <string>UIInterfaceOrientationLandscapeRight</string>
+    </array>
   </dict>
 </plist>

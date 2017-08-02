@@ -33,6 +33,9 @@
     <feature name="Device">
         <param name="ios-package" value="CDVDevice" />
     </feature>
+    <feature name="FCMPlugin">
+        <param name="ios-package" value="FCMPlugin" />
+    </feature>
     <feature name="File">
         <param name="ios-package" value="CDVFile" />
         <param name="onload" value="true" />
@@ -53,9 +56,6 @@
     </feature>
     <feature name="Keyboard">
         <param name="ios-package" onload="true" value="IonicKeyboard" />
-    </feature>
-    <feature name="PushNotification">
-        <param name="ios-package" value="PushPlugin" />
     </feature>
     <name>Textile</name>
     <description>The fun way to plan outfits.</description>
@@ -138,7 +138,4 @@
     <preference name="AutoHideSplashScreen" value="false" />
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="FadeSplashScreen" value="false" />
-    <feature name="FCMPlugin">
-        <param name="ios-package" value="FCMPlugin" />
-    </feature>
 </widget>

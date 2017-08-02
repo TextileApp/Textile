@@ -1,5 +1,5 @@
 import { Component, NgZone } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, LoadingController } from 'ionic-angular';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { profilePage } from '../profile/profile';
 import * as firebase from 'firebase';
@@ -25,15 +25,99 @@ doILike:boolean;
 
   myUser: any;
   times: Array<any>;
-  constructor(public navCtrl: NavController, private ngZone: NgZone, af: AngularFire, private _auth: AuthService, private navParams: NavParams) {
+  constructor(public navCtrl: NavController, private ngZone: NgZone, af: AngularFire, private _auth: AuthService,public loadingCtrl: LoadingController, private navParams: NavParams) {
+    
     const authObserver = af.auth.subscribe(user => {
+      
       if (user) {
         this.zone = new NgZone({ enableLongStackTrace: false });
         this.myUser = user.uid;
-        
-this.followingUsers = this.navParams.get("followedUsers");
 
- this.runIt(this.followingUsers);
+
+this.followingUsers = this.navParams.get("followedUsers");
+var following = this.navParams.get("followedUsers");
+    let loader = this.loadingCtrl.create({
+    content: ""
+  });
+  loader.present();
+    var result2 = [];
+    var temper = [];
+    var likes;
+    
+    var theUser = this.myUser;
+    firebase.database().ref("/outfits/").orderByChild("order").on('child_added', function (data) {
+      var element = data.val();
+      var theKey = data.key;
+      if (element) {
+        element.key = theKey;
+
+        result2.push(element);
+        if(element.likes){
+          likes = element.likes;
+        
+      
+        if(theUser in likes){
+         element.buttonIcon = "heart";
+        }
+        else{
+          element.buttonIcon = "heart-outline";
+        }
+      }
+        else{
+          element.buttonIcon = "heart-outline";
+        }
+
+     
+      }
+    });
+    this.posts = result2;
+ firebase.database().ref('feed/'+this.myUser).orderByChild("order").on('child_added', function (data) {
+      var element = data.val();
+      var theKey = data.key;
+      if (element) {
+        element.key = theKey;
+
+        temper.push(element);
+        if(element.likes){
+          likes = element.likes;
+        
+      
+        if(theUser in likes){
+         element.buttonIcon = "heart";
+        }
+        else{
+          element.buttonIcon = "heart-outline";
+        }
+      }
+        else{
+          element.buttonIcon = "heart-outline";
+        }
+
+     
+      }
+    });
+    this.followingPosts = temper;
+  
+    
+    firebase.database().ref("/outfits").orderByChild("order").on('child_removed', function (data) {
+      var element = data.val();
+
+      if (element) {
+        var index = result2.indexOf(element);
+        if (index > -1) {
+          
+          result2.splice(index, 1);
+        }
+        this.posts = result2;
+        
+      }
+    });
+
+ firebase.database().ref("/outfits/").once('value', function(snapshot) {
+  loader.dismiss();
+});
+
+
 
        
         this.gogogo();
@@ -54,62 +138,9 @@ this.followingUsers = this.navParams.get("followedUsers");
 
 
   }
+
   runIt(following) {
-    var result2 = [];
-    var temper = [];
-    var likes;
-    var theUser = this.myUser;
-    firebase.database().ref("/outfits/").orderByChild("order").on('child_added', function (data) {
-      var element = data.val();
-      var theKey = data.key;
-      if (element) {
-        console.log(element.username);
-        if (following.indexOf(element.user) > -1) {
-temper.push(element);
-
-}  
-        element.key = theKey;
-
-        result2.push(element);
-        if(element.likes){
-          likes = element.likes;
-        
-      
-        if(theUser in likes){
-         element.buttonIcon = "heart";
-        }
-        else{
-          element.buttonIcon = "heart-outline";
-        }
-      }
-        else{
-          element.buttonIcon = "heart-outline";
-        }
-
-        console.log(result2);
-      }
-    });
-
-    this.posts = result2;
-  
-    this.followingPosts = temper;
-    firebase.database().ref("/outfits").orderByChild("order").on('child_removed', function (data) {
-      var element = data.val();
-
-      if (element) {
-        var index = result2.indexOf(element);
-        if (index > -1) {
-          
-          result2.splice(index, 1);
-        }
-        this.posts = result2;
-        
-      }
-    });
-
-
-
-
+   
   }
 goToListview(post){
   if(!post.firstinfo)
@@ -160,7 +191,6 @@ goToListview(post){
   {
    post.twelthinfo = {"brand":"import","id":"import","clickUrl":false};
   }
-  console.log(post.firstinfo);
       this.navCtrl.push(listviewPage,{"firstname":post.firstname,"firstinfo":post.firstinfo,"secondinfo":post.secondinfo,"thirdinfo":post.thirdinfo,"fourthinfo":post.fourthinfo,"fifthinfo":post.fifthinfo,"sixthinfo":post.sixthinfo,"seventhinfo":post.seventhinfo,"eigthinfo":post.eigthinfo,"ninthinfo":post.ninthinfo,"tenthinfo":post.tenthinfo,"eleventhinfo":post.eleventhinfo,"twelthinfo":post.twelthinfo,"secondname":post.secondname,"thirdname":post.thirdname,"fourthname":post.fourthname,"fifthname":post.fifthname,"sixthname":post.sixthname,"seventhname":post.seventhname,"eighthname":post.eighthname,"ninthname":post.ninthname,"tenthname":post.tenthname,"eleventhname":post.eleventhname,"twelthname":post.twelthname,"first":post.first,"second":post.second,"third":post.third,"fourth":post.fourth,"fifth":post.fifth,"sixth":post.sixth,"seventh":post.seventh,"eighth":post.eighth,"ninth":post.ninth,"tenth":post.tenth,"eleventh":post.eleventh,"twelth":post.twelth});
 
 
@@ -175,8 +205,6 @@ var iLike;
         if (thePost.likes && thePost.likes[currentUser]) {
           thePost.likeCount--;
 
-             
-         console.log(thePost.likeCount);
           var adaRankRef = firebase.database().ref(thePost.user + '/totalLikes');
           adaRankRef.transaction(function (totalLikes) {
             if (totalLikes === null) {
@@ -192,7 +220,6 @@ var iLike;
       
           thePost.likeCount++;
                  
-         console.log(thePost.likeCount);
           var adaRankRef = firebase.database().ref(thePost.user + '/totalLikes');
           adaRankRef.transaction(function (totalLikes) {
             if (totalLikes === null) {
@@ -244,18 +271,7 @@ else{
 
   }
 
-  getFollowedUsers(){
-       var tempo = [];
-     firebase.database().ref("/following/"+this.myUser).once('value').then(function(snapshot) {
-  snapshot.forEach(function(childSnapshot) {
-      var key = childSnapshot.key;
-    
-      var childData = childSnapshot.val();
-      tempo.push(key);
-  }); 
-});
-this.followingUsers = tempo;
-  }
+  
   goToProfile(post) {
     this.navCtrl.push(profilePage, { "user": post.user,"name":post.username });
   }

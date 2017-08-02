@@ -28,6 +28,9 @@
         "cordova-plugin-device": {
             "PACKAGE_NAME": "com.ionicframework.ionic2firebaseemail197311"
         },
+        "cordova-plugin-fcm": {
+            "PACKAGE_NAME": "com.ionicframework.ionic2firebaseemail197311"
+        },
         "cordova-plugin-file": {
             "PACKAGE_NAME": "com.ionicframework.ionic2firebaseemail197311"
         },
@@ -47,13 +50,6 @@
             "PACKAGE_NAME": "com.ionicframework.ionic2firebaseemail197311"
         },
         "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "com.ionicframework.ionic2firebaseemail197311"
-        },
-        "phonegap-plugin-push": {
-            "SENDER_ID": "85075801930",
-            "PACKAGE_NAME": "com.ionicframework.ionic2firebaseemail197311"
-        },
-        "cordova-plugin-fcm": {
             "PACKAGE_NAME": "com.ionicframework.ionic2firebaseemail197311"
         }
     },

@@ -101,7 +101,6 @@ if (index2 > -1) {
 firebase.database().ref('/following/'+this.myUser).on('child_changed', function(data) {
 var element = data.val();
 var id = data.key;
-console.log("CHANGING BITCH");
 console.log(element);
 console.log(data.key);
 var index1 = tempID.indexOf(id);

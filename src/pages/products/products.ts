@@ -80,7 +80,6 @@ this.ionViewLoaded();
 
      //this.grid = Array(Math.ceil(this.items.length/2));
 
-     console.log("FUCK EM ALL");
 
       
 

@@ -44,6 +44,7 @@ import {
   templateUrl: 'home.html'
 })
 export class HomePage implements OnInit{
+ 
  @ViewChild('myswing1') swingStack1: SwingStackComponent;
   @ViewChildren('mycards1') swingCards1: QueryList<SwingCardComponent>;
   @ViewChild('myswing2') swingStack2: SwingStackComponent;
@@ -172,15 +173,17 @@ lastSavedFitRef: any;
   allPants: Array<any>;
   allShoes: Array<any>;
   
-  constructor( public popoverCtrl: PopoverController,public navCtrl: NavController,public afd: AngularFireDatabase,public af:AngularFire,public loadingCtrl: LoadingController, public authService: AuthService,private http: Http, private ngZone: NgZone,public modalCtrl: ModalController,public toastCtrl: ToastController,public events:Events,public alertCtrl: AlertController
+  constructor( public popoverCtrl: PopoverController,public navCtrl: NavController,public af:AngularFire,public loadingCtrl: LoadingController, public authService: AuthService,private http: Http, private ngZone: NgZone,public modalCtrl: ModalController,public toastCtrl: ToastController,public events:Events,public alertCtrl: AlertController
   ) {
-           
+     
        const authObserver = af.auth.subscribe( user => {
   if (!user) {
         //navCtrl.push(LoginPage);
         navCtrl.setRoot(LoginPage);
       }else{
-         
+                this.tokensetup().then((token) => {
+      this.storetoken(token);
+    })
 
 this.stackConfig1 = {
       throwOutConfidence: (offset, element) => {
@@ -396,24 +399,11 @@ FCMPlugin.onTokenRefresh(function(token){
   }
 
   storetoken(t) {
-    this.afd.list(this.firestore).push({
-      uid: firebase.auth().currentUser.uid,
-      devtoken: t
-        
-    }).then(() => {
-      alert('Token stored');
+firebase.database().ref(this.currentUser+"/notificationTokens").set(t).then(() => {
       }).catch(() => {
-        alert('Token not stored');
       })
 
-    this.afd.list(this.firemsg).push({
-      sendername: firebase.auth().currentUser.displayName,
-      message: 'hello'
-    }).then(() => {
-      alert('Message stored');
-      }).catch(() => {
-        alert('Message not stored');
-  })  
+  
 }
 
   ngOnInit() {
@@ -2255,6 +2245,8 @@ this.lastSavedFitRef.set(
     toast.present();
     this.didSaveThisOutfit = true;
   var allOutfits = firebase.database().ref('/outfits/'+this.lastSavedFitRef.key);
+  var userOutfits = firebase.database().ref('/userOutfits/'+this.currentUser+'/'+this.lastSavedFitRef.key);
+
 allOutfits.set({firstname:namecard1,firstinfo:{brand:this.cards1[0].brand,id:this.cards1[0].id,clickUrl:this.cards1[0].clickUrl},secondinfo:{brand:this.cards2[0].brand,id:this.cards2[0].id,clickUrl:this.cards2[0].clickUrl},thirdinfo:{brand:this.cards3[0].brand,id:this.cards3[0].id,clickUrl:this.cards3[0].clickUrl},fourthinfo:{brand:this.cards4[0].brand,id:this.cards4[0].id,clickUrl:this.cards4[0].clickUrl},fifthinfo:{brand:this.cards5[0].brand,id:this.cards5[0].id,clickUrl:this.cards5[0].clickUrl},sixthinfo:{brand:this.cards6[0].brand,id:this.cards6[0].id,clickUrl:this.cards6[0].clickUrl},seventhinfo:{brand:this.cards7[0].brand,id:this.cards7[0].id,clickUrl:this.cards7[0].clickUrl},eigthinfo:{brand:this.cards8[0].brand,id:this.cards8[0].id,clickUrl:this.cards8[0].clickUrl},ninthinfo:{brand:this.cards9[0].brand,id:this.cards9[0].id,clickUrl:this.cards9[0].clickUrl},tenthinfo:{brand:this.cards10[0].brand,id:this.cards10[0].id,clickUrl:this.cards10[0].clickUrl},eleventhinfo:{brand:this.cards11[0].brand,id:this.cards11[0].id,clickUrl:this.cards11[0].clickUrl},twelthinfo:{brand:this.cards12[0].brand,id:this.cards12[0].id,clickUrl:this.cards12[0].clickUrl},secondname:namecard2,thirdname:namecard3,fourthname:namecard4,fifthname:namecard5,sixthname:namecard6,seventhname:namecard7,eighthname:namecard8,ninthname:namecard9,tenthname:namecard10,eleventhname:namecard11,twelthname:namecard12,first:topcard1,second:topcard2,third:topcard3,fourth:topcard4,fifth:topcard5,sixth:topcard6,seventh:topcard7,eighth:topcard8,ninth:topcard9,tenth:topcard10,eleventh:topcard11,twelth:topcard12,timestamp:firebase.database.ServerValue.TIMESTAMP,user:firebase.auth().currentUser.uid,username:this.userName,likeCount:0},function(error) {
    if (error) {
    } else {
@@ -2266,6 +2258,23 @@ allOutfits.child("timestamp").once('value').then(function(snapshot) {
   console.log(time);
   console.log(neg);
 allOutfits.child("/order").set(neg);
+  
+});
+
+
+   }
+});
+userOutfits.set({firstname:namecard1,firstinfo:{brand:this.cards1[0].brand,id:this.cards1[0].id,clickUrl:this.cards1[0].clickUrl},secondinfo:{brand:this.cards2[0].brand,id:this.cards2[0].id,clickUrl:this.cards2[0].clickUrl},thirdinfo:{brand:this.cards3[0].brand,id:this.cards3[0].id,clickUrl:this.cards3[0].clickUrl},fourthinfo:{brand:this.cards4[0].brand,id:this.cards4[0].id,clickUrl:this.cards4[0].clickUrl},fifthinfo:{brand:this.cards5[0].brand,id:this.cards5[0].id,clickUrl:this.cards5[0].clickUrl},sixthinfo:{brand:this.cards6[0].brand,id:this.cards6[0].id,clickUrl:this.cards6[0].clickUrl},seventhinfo:{brand:this.cards7[0].brand,id:this.cards7[0].id,clickUrl:this.cards7[0].clickUrl},eigthinfo:{brand:this.cards8[0].brand,id:this.cards8[0].id,clickUrl:this.cards8[0].clickUrl},ninthinfo:{brand:this.cards9[0].brand,id:this.cards9[0].id,clickUrl:this.cards9[0].clickUrl},tenthinfo:{brand:this.cards10[0].brand,id:this.cards10[0].id,clickUrl:this.cards10[0].clickUrl},eleventhinfo:{brand:this.cards11[0].brand,id:this.cards11[0].id,clickUrl:this.cards11[0].clickUrl},twelthinfo:{brand:this.cards12[0].brand,id:this.cards12[0].id,clickUrl:this.cards12[0].clickUrl},secondname:namecard2,thirdname:namecard3,fourthname:namecard4,fifthname:namecard5,sixthname:namecard6,seventhname:namecard7,eighthname:namecard8,ninthname:namecard9,tenthname:namecard10,eleventhname:namecard11,twelthname:namecard12,first:topcard1,second:topcard2,third:topcard3,fourth:topcard4,fifth:topcard5,sixth:topcard6,seventh:topcard7,eighth:topcard8,ninth:topcard9,tenth:topcard10,eleventh:topcard11,twelth:topcard12,timestamp:firebase.database.ServerValue.TIMESTAMP,user:firebase.auth().currentUser.uid,username:this.userName,likeCount:0},function(error) {
+   if (error) {
+   } else {
+
+userOutfits.child("timestamp").once('value').then(function(snapshot) {
+  var time = snapshot.val();
+  console.log(time);
+  var neg = 0 - time;
+  console.log(time);
+  console.log(neg);
+userOutfits.child("/order").set(neg);
   
 });
 
@@ -2645,7 +2654,7 @@ uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
   var downloadURL = uploadTask.snapshot.downloadURL;
   console.log(downloadURL);
  
-     this.db = firebase.database().ref(firebase.auth().currentUser.uid+'/'+clothes);
+this.db = firebase.database().ref(firebase.auth().currentUser.uid+'/'+clothes);
 var newPostRef = this.db.push();
 
 

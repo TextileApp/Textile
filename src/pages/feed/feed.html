@@ -95,7 +95,7 @@
 </div>
 <div *ngSwitchCase="'private'">
         <ion-card *ngFor="let f of followingPosts; let i = index" no-padding> 
-   <ion-grid>
+    <ion-grid>
  <ion-row (tap)="goToListview(f)">
     <ion-col class="colo" width-33>
     <img class="pics" *ngIf="f.first"[src]="f.first">
@@ -146,8 +146,8 @@
         <div style = "color:#222;">{{f.username}}</div>
       </button>
     </ion-col>
-    <ion-col style ="padding-left:4em;">
-        <button (tap)= "toggleLike(f,f.key,i)"ion-button icon-left clear small>
+      <ion-col class="like">
+        <button class="like" (tap)= "toggleLike(f,f.key,i)"ion-button icon-left clear small>
         <ion-icon  color="heart" [name]="f.buttonIcon"></ion-icon>
         <div style = "color:#222;"*ngIf="f.likeCount > 0" >{{f.likeCount}}</div>
       </button>

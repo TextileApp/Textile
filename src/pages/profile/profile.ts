@@ -150,14 +150,10 @@ followUser(){
     var nameref = firebase.database().ref(this.currentUser+'/username');
 
 
-var name;
-nameref.once('value', (snapshot) => {
-  name = snapshot.val();
- followersref.set(name);
-})
+
 followingref.once('value', (snapshot) => {
  if (snapshot.val() == null) {
-this.isFollowing = true;
+
 followingref.set(
 this.profileUsername
 );
@@ -165,20 +161,23 @@ this.profileUsername
 else
 {
   followingref.remove();
-  this.isFollowing = false;
 }
 })
 followersref.once('value', (snapshot) => {
- if (snapshot.val() == null) {
+ if (!snapshot.val()) {
+nameref.once('value', (snapshott) => {
+  var name;
+  name = snapshott.val();
+ followersref.set(name);
+ this.isFollowing = true;
+})
 
-followersref.set(
-this.currentUsername
-);
 }
 else
 {
   followersref.remove();
-  
+  this.isFollowing = false;
+
 }
 })
   
