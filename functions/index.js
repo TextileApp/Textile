@@ -76,11 +76,11 @@ exports.sendFollowerNotification = functions.database.ref('/followers/{followedU
 exports.updateFeed = functions.database.ref('/userOutfits/{userId}/{outfitId}').onWrite(event => {
 
   const outfitId = event.params.outfitId;
-  var user = event.params.outfitId;
+  var user = event.params.userId;
 
   if(!event.data.val()){
     
-      let followersRef = admin.database().ref('/followers/'+user);
+      let followersRef = admin.database().ref('/following/'+user);
     //post was deleted
     followersRef.once("value", function(snap) {
       snap.forEach(function(childSnapshot) {
@@ -109,23 +109,22 @@ exports.updateFollowers = functions.database.ref('/following/{followerId}/{follo
 
 
   if(!event.data.val()){
-    user = event.data.previous.val().user;
-      let followersRef = admin.database().ref('/followers/'+user);
-    //post was deleted
+      // user was unfollowed
+      let followersRef = admin.database().ref('/userOutfits/'+followedId);
     followersRef.once("value", function(snap) {
       snap.forEach(function(childSnapshot) {
-        let followerId = childSnapshot.key;
+        let outfitId = childSnapshot.key;
         admin.database().ref('/feed/'+followerId+'/'+outfitId).remove();
         console.log('Removed post from feed of user: '+ followerId);
       });
     });
   }else{
-    //post was added
+    //user was followed
      user = event.data.val().user;
-     let followersRef = admin.database().ref('/followers/'+user);
+     let followersRef = admin.database().ref('/userOutfits/'+followedId);
     followersRef.once("value", function(snap) {
       snap.forEach(function(childSnapshot) {
-        let followerId = childSnapshot.key;
+        let outfitId = childSnapshot.key;
         admin.database().ref('/feed/'+followerId+'/'+outfitId).set(event.data.val());
         console.log('Added post to feed of user: '+ followerId);
       });
