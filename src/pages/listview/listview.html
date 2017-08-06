@@ -16,26 +16,31 @@
 
 <ion-list>
   <ion-item text-wrap *ngFor="let f of items">
-    <ion-row>
-    <ion-col>
-    <ion-thumbnail style="padding-left:5%;" item-start>
+    <ion-row class ="container">
+    <ion-col class = "inside" width-25>
+    <ion-thumbnail  style="padding-left:5%;" item-start>
       <img class ="resize" *ngIf="f.pic"[src]="f.pic">
     </ion-thumbnail>
     </ion-col>
-    <ion-col class ="centerit">
+    <ion-col width-50 class="centerit">
     
     <h3>
 {{f.name}}   
     </h3>
-  <div *ngIf="!f.clickUrl" style="width:4em;"></div>
+       
+
     </ion-col>
-    </ion-row>
-     
 
-     <button *ngIf="f.clickUrl" ion-button clear item-right icon-only (tap)="launch(f.clickUrl)" ><ion-icon ios="ios-pricetag-outline"></ion-icon></button>
+<ion-col width-10>
 
+
+     <button style = "margin-left:0; padding-left:0;"*ngIf="f.clickUrl" ion-button clear item-right icon-only (tap)="launch(f.clickUrl)" ><ion-icon ios="ios-pricetag-outline"></ion-icon></button>
+    </ion-col>
+        <ion-col width-10>
     <button *ngIf="!f.has" ion-button clear item-right icon-only (tap)="addItem(f)" ><ion-icon name="add"></ion-icon></button>
     <button *ngIf="f.has" ion-button clear item-right icon-only (tap)="removeItem(f)" ><ion-icon name="checkmark"></ion-icon></button>
+        </ion-col>
+    </ion-row>
   </ion-item>
 </ion-list>
 

@@ -156,7 +156,10 @@ var allOutfits =firebase.database().ref('/outfits/'+outfitkey);
 allOutfits.remove(function(error){
 
 });
+var allOutfits =firebase.database().ref('/userOutfits/'+outfitkey);
+allOutfits.remove(function(error){
 
+});
 //firebase.database().ref(this.myUser+'/outfits/'+outfit.key).remove();
 console.log(outfitkey);
 this.outfits.remove(outfitkey);

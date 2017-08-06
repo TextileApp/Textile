@@ -3,14 +3,24 @@
 
 
 
-.centerit{
-display: flex;
-text-align:left;
-padding-right:20%;
-align-items: center; 
+
+
+.container{
+    display: flex!important;
 }
-
-
+  .container > .inside{
+padding-right:0;
+margin-right:0;
+text-align: left !important;
+align-items: center !important;
+}
+.centerit{
+  display: flex;
+  padding-right:0; 
+  margin-right:0; 
+  
+  align-items: center !important;
+}
 .resize{
     display: block;
   max-height: 4em !important;
