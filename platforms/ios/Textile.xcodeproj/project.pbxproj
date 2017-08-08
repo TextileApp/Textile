@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		003132A80CD1494DA66A06C0 /* PECropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B037D7D6A1E148458CF61005 /* PECropViewController.m */; };
 		018FB6B73DD940FBA31CD9F3 /* PECropView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAABA07F6F064B11815A693D /* PECropView.m */; };
@@ -682,6 +683,7 @@
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = F9U27V33AC;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -879,6 +881,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = Textile/Textile.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = F9U27V33AC;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -902,6 +905,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				PRODUCT_NAME = Textile;
+				PROVISIONING_PROFILE = "45c3b6fa-1045-4106-a808-687cae1cfd0d";
+				PROVISIONING_PROFILE_SPECIFIER = "XC iOS Ad Hoc: com.ionicframework.ionic2firebaseemail197311";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -937,6 +942,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				PRODUCT_NAME = Textile;
+				PROVISIONING_PROFILE = "45c3b6fa-1045-4106-a808-687cae1cfd0d";
+				PROVISIONING_PROFILE_SPECIFIER = "XC iOS Ad Hoc: com.ionicframework.ionic2firebaseemail197311";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

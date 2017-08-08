@@ -15,7 +15,7 @@
 
 
 <ion-list>
-  <ion-item text-wrap *ngFor="let f of items">
+  <ion-item style="padding-right:0px !important; margin-right:0px !important;" text-wrap *ngFor="let f of items">
     <ion-row class ="container">
     <ion-col class = "inside" width-25>
     <ion-thumbnail  style="padding-left:5%;" item-start>
@@ -31,12 +31,12 @@
 
     </ion-col>
 
-<ion-col width-10>
+<ion-col width-10 no-padding>
 
 
-     <button style = "margin-left:0; padding-left:0;"*ngIf="f.clickUrl" ion-button clear item-right icon-only (tap)="launch(f.clickUrl)" ><ion-icon ios="ios-pricetag-outline"></ion-icon></button>
+     <button style = "margin-right:0; padding-right:0;"*ngIf="f.clickUrl" ion-button clear item-right icon-only (tap)="launch(f.clickUrl)" ><ion-icon ios="ios-pricetag-outline"></ion-icon></button>
     </ion-col>
-        <ion-col width-10>
+        <ion-col width-10 no-padding>
     <button *ngIf="!f.has" ion-button clear item-right icon-only (tap)="addItem(f)" ><ion-icon name="add"></ion-icon></button>
     <button *ngIf="f.has" ion-button clear item-right icon-only (tap)="removeItem(f)" ><ion-icon name="checkmark"></ion-icon></button>
         </ion-col>

@@ -33656,6 +33656,8 @@ ion-col {
   display: -webkit-flex !important;
   display: -ms-flexbox !important;
   display: flex !important;
+  padding-right: 0px !important;
+  margin-right: 0px !important;
 }
 
 .container > .inside {
@@ -33685,6 +33687,10 @@ ion-col {
   max-width: 4em !important;
   height: auto !important;
   width: auto !important;
+}
+
+.item-inner {
+  padding-right: 0px !important;
 }
 
 page-login h2 {

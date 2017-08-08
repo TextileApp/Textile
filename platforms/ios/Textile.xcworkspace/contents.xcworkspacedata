@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../../../Documents/OneDrive/GPSApp/fastShoreline.gpx">
-   </FileRef>
-   <FileRef
       location = "group:Textile.xcodeproj">
    </FileRef>
 </Workspace>

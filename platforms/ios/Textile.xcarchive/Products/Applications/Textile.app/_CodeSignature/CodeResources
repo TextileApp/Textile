@@ -86,7 +86,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		O1Escrf6u1oo3z0FHxIsbjeV3rg=
+		3CSkDmXDAuNSqxtzC2Cqdo3q33M=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -94,7 +94,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		Hw/1F5hCgvT1D3iDIVGMcFWbj7s=
+		2CXufbGe7XJWVLTR6ZR24RUm48k=
 		</data>
 		<key>GMEmptyFolder@1x.png</key>
 		<data>
@@ -186,7 +186,7 @@
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		OKx+R9Bf6oCuTIDhhM5F5rtpD/4=
+		tZ2vhlayKQ0jDh1U1Ea1FDbgQcQ=
 		</data>
 		<key>PEPhotoCropEditor.bundle/GoogleService-Info.plist</key>
 		<data>
@@ -443,15 +443,15 @@
 		</data>
 		<key>www/build/main.css</key>
 		<data>
-		4lZfKc6mNeHhS1CSHUenaE33bWY=
+		AvgK07HNQQ2Ifj7/NNHq+PaoTZI=
 		</data>
 		<key>www/build/main.js</key>
 		<data>
-		kZmD3Kh1hoTa+1ULKMAzLItQpl4=
+		8Up4lkKmMVTEP2UEA9KC3EeuYcA=
 		</data>
 		<key>www/build/main.js.map</key>
 		<data>
-		cL69uFQZXcvuGQUl4FNineHg3HU=
+		Npgoqe6IEFPxtb8uFVyxAC6NYr8=
 		</data>
 		<key>www/build/polyfills.js</key>
 		<data>
@@ -864,11 +864,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			O1Escrf6u1oo3z0FHxIsbjeV3rg=
+			3CSkDmXDAuNSqxtzC2Cqdo3q33M=
 			</data>
 			<key>hash2</key>
 			<data>
-			sjtXZms+odH1DuolRT2FGr5t4bdNlwzXVk2+7URy3P0=
+			FtYnFzbq6jtIFTk//ZkA594tvlDqXs6TE62dF3JiBBk=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -886,11 +886,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Hw/1F5hCgvT1D3iDIVGMcFWbj7s=
+			2CXufbGe7XJWVLTR6ZR24RUm48k=
 			</data>
 			<key>hash2</key>
 			<data>
-			yPh1+S3N1QEx4dmYsX/y26djiBCoTg3i8Ju3n+HCtwU=
+			Etc4SKJm6hQ2qbf+NpZ23F9x/ZWfw2EQ13Abl1DTgPM=
 			</data>
 		</dict>
 		<key>GMEmptyFolder@1x.png</key>
@@ -1128,11 +1128,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			OKx+R9Bf6oCuTIDhhM5F5rtpD/4=
+			tZ2vhlayKQ0jDh1U1Ea1FDbgQcQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			1nMSHchZ8fu/FuIF8vAOmb4ODaOPO1/QeDvkg+OpLVI=
+			Q2HO/NSPqlLswkamkNop2moH/092ZegUDLNX1YJGgG4=
 			</data>
 		</dict>
 		<key>PEPhotoCropEditor.bundle/GoogleService-Info.plist</key>
@@ -1718,33 +1718,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			4lZfKc6mNeHhS1CSHUenaE33bWY=
+			AvgK07HNQQ2Ifj7/NNHq+PaoTZI=
 			</data>
 			<key>hash2</key>
 			<data>
-			T/4iwXcaP3v1+3NEhAJUSVqWF7DDDzOtcz74eqQlOIY=
+			WKLfZNJHQrIabbMC+zPjHt40K0MumgivuQvZCSqP3jI=
 			</data>
 		</dict>
 		<key>www/build/main.js</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			kZmD3Kh1hoTa+1ULKMAzLItQpl4=
+			8Up4lkKmMVTEP2UEA9KC3EeuYcA=
 			</data>
 			<key>hash2</key>
 			<data>
-			CjpFqa8huflM9m4TO74t9gialj/M0ERt7Vy01qnlbQw=
+			JQVBaSU+7cdpwdMq9xJYI37OcyO327Qz1zhEajBJor4=
 			</data>
 		</dict>
 		<key>www/build/main.js.map</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			cL69uFQZXcvuGQUl4FNineHg3HU=
+			Npgoqe6IEFPxtb8uFVyxAC6NYr8=
 			</data>
 			<key>hash2</key>
 			<data>
-			503Xrm9ekGFEBgd2tgD5RE+4DIwVhpGGjy41FhwEg7Y=
+			L8YT9I7nqksiTxZTQ24JBcAqpqzhmV8goG0F+7PtZtw=
 			</data>
 		</dict>
 		<key>www/build/polyfills.js</key>

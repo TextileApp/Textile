@@ -7,6 +7,8 @@
 
 .container{
     display: flex!important;
+    padding-right:0px !important;
+    margin-right:0px !important;
 }
   .container > .inside{
 padding-right:0;
@@ -27,4 +29,7 @@ align-items: center !important;
   max-width: 4em !important;
   height: auto !important;
   width: auto !important;
+}
+.item-inner {
+   padding-right: 0px!important;
 }
