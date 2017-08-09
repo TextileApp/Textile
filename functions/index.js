@@ -86,7 +86,6 @@ exports.updateFeed = functions.database.ref('/userOutfits/{userId}/{outfitId}').
       snap.forEach(function(childSnapshot) {
         let followerId = childSnapshot.key;
         admin.database().ref('/feed/'+followerId+'/'+outfitId).remove();
-        console.log('Removed post from feed of user: '+ followerId);
       });
     });
   }else{
@@ -97,7 +96,6 @@ exports.updateFeed = functions.database.ref('/userOutfits/{userId}/{outfitId}').
       snap.forEach(function(childSnapshot) {
         let followerId = childSnapshot.key;
         admin.database().ref('/feed/'+followerId+'/'+outfitId).set(event.data.val());
-        console.log('Added post to feed of user: '+ followerId);
       });
     });
   }

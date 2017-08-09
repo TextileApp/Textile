@@ -1186,11 +1186,10 @@ activateCard2(){
 
 loadData() {
 
-   let loader = this.loadingCtrl.create({
+  let loader = this.loadingCtrl.create({
     content: ""
   });
   //Show the loading indicator
-
   var ref = firebase.database().ref(this.currentUser+'/username');
 ref.once('value', (snapshot) => {
 
@@ -1213,9 +1212,30 @@ publicdb.set(uid);
   }
 });
 
-  loader.present();
+  //loader.present();
     var result1 = [];
+    result1.push("assets/img/shoeIcon.png");
+    result1.push("assets/img/shoeIcon.png");
+    result1.push("assets/img/shoeIcon.png");
+    result1.push("assets/img/shoeIcon.png");
+    result1.push("assets/img/shoeIcon.png");
+    result1.push("assets/img/shoeIcon.png");
+    result1.push("assets/img/shoeIcon.png");
+    result1.push("assets/img/shoeIcon.png");
+    result1.push("assets/img/shoeIcon.png");
+    result1.push("assets/img/shoeIcon.png");
+    result1.push("assets/img/shoeIcon.png");
+    result1.push("assets/img/shoeIcon.png");
     var nameresult1 = [];
+    nameresult1.push("shoe");
+    nameresult1.push("shoe");
+    nameresult1.push("shoe");
+    nameresult1.push("shoe");
+    nameresult1.push("shoe");
+    nameresult1.push("shoe");
+    nameresult1.push("shoe");
+    nameresult1.push("shoe");
+    nameresult1.push("shoe");
 var myuser = this.currentUser;
 firebase.database().ref(this.currentUser+'/Jewelry/').on('child_added', function(data) {
 var element = data.val();
@@ -2232,7 +2252,7 @@ else{
   this.cards12[0].id = "none";
   this.cards12[0].clickUrl = false;
 }
-console.log("hahahahah");
+
 this.lastSavedFitRef.set(
   {first:topcard1,second:topcard2,third:topcard3,fourth:topcard4,fifth:topcard5,sixth:topcard6,seventh:topcard7,eighth:topcard8,ninth:topcard9,tenth:topcard10,eleventh:topcard11,twelth:topcard12,timestamp:firebase.database.ServerValue.TIMESTAMP}
 )
