@@ -152,16 +152,16 @@ changedTitle(outfitkey: string,newtitle: string){
 this.outfits.update(outfitkey,{title:newtitle});
 }
 deleteOutfits(outfitkey: string){
-var allOutfits =firebase.database().ref('/outfits/'+outfitkey);
-allOutfits.remove(function(error){
+var outfit =firebase.database().ref('/outfits/'+outfitkey);
+outfit.remove(function(error){
 
 });
-var allOutfits =firebase.database().ref('/userOutfits/'+outfitkey);
+var allOutfits =firebase.database().ref('/userOutfits/'+this.myUser+'/'+outfitkey);
 allOutfits.remove(function(error){
 
 });
 //firebase.database().ref(this.myUser+'/outfits/'+outfit.key).remove();
-console.log(outfitkey);
+
 this.outfits.remove(outfitkey);
 }
 

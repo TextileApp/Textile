@@ -254,7 +254,65 @@ else{
   this.posts[i].buttonIcon = "heart-outline";
 }
   }
+  toggleLikeFollowed(thePost, key, i) {
+var currentUser = this.myUser;
+var likeCount;
+var iLike;
+    var postRef = firebase.database().ref('outfits/'+key);
+ postRef.transaction(function (thePost) {
+      if (thePost) {
+        if (thePost.likes && thePost.likes[currentUser]) {
+          thePost.likeCount--;
 
+          var adaRankRef = firebase.database().ref(thePost.user + '/totalLikes');
+          adaRankRef.transaction(function (totalLikes) {
+            if (totalLikes === null) {
+              totalLikes = 0;
+            }
+            
+            return totalLikes - 1;
+
+          });
+          thePost.likes[currentUser] = null;
+         iLike = false;
+        } else {
+      
+          thePost.likeCount++;
+                 
+          var adaRankRef = firebase.database().ref(thePost.user + '/totalLikes');
+          adaRankRef.transaction(function (totalLikes) {
+            if (totalLikes === null) {
+              totalLikes = 0;
+            }
+    
+            return totalLikes + 1;
+          });
+
+          if (!thePost.likes) {
+            thePost.likes = {};
+          }
+           iLike = true;
+          thePost.likes[currentUser] = true;
+          
+        }
+      }
+
+    
+     
+
+     
+       likeCount = thePost.likeCount;
+
+      return thePost;
+    });
+ this.followingPosts[i].likeCount = likeCount;
+if(iLike){
+  this.followingPosts[i].buttonIcon = "heart";
+}
+else{
+  this.followingPosts[i].buttonIcon = "heart-outline";
+}
+  }
 
   gogogo() {
     var temp = [];

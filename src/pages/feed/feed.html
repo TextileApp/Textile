@@ -147,14 +147,14 @@
       </button>
     </ion-col>
       <ion-col class="like">
-        <button class="like" (tap)= "toggleLike(f,f.key,i)"ion-button icon-left clear small>
+        <button class="like" (tap)= "toggleLikeFollowed(f,f.key,i)"ion-button icon-left clear small>
         <ion-icon  color="heart" [name]="f.buttonIcon"></ion-icon>
         <div style = "color:#222;"*ngIf="f.likeCount > 0" >{{f.likeCount}}</div>
       </button>
     </ion-col>
     <ion-col center text-center>
       <ion-note>
-       {{f.time}}
+       {{f.followedTime}}
       </ion-note>
     </ion-col>
   </ion-row>

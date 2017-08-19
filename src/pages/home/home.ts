@@ -375,15 +375,15 @@ var name = this.cardNames12[index];
     FCMPlugin.onNotification(function(data){
     if(data.wasTapped){
       //Notification was received on device tray and tapped by the user.
-      alert( JSON.stringify(data) );
+     // alert( JSON.stringify(data) );
     }else{
       //Notification was received in foreground. Maybe the user needs to be notified.
-      alert( JSON.stringify(data) );
+      //alert( JSON.stringify(data) );
     }
     });
 
 FCMPlugin.onTokenRefresh(function(token){
-    alert( token );
+//    alert( token );
 });    
   }
 
@@ -1214,28 +1214,7 @@ publicdb.set(uid);
 
   //loader.present();
     var result1 = [];
-    result1.push("assets/img/shoeIcon.png");
-    result1.push("assets/img/shoeIcon.png");
-    result1.push("assets/img/shoeIcon.png");
-    result1.push("assets/img/shoeIcon.png");
-    result1.push("assets/img/shoeIcon.png");
-    result1.push("assets/img/shoeIcon.png");
-    result1.push("assets/img/shoeIcon.png");
-    result1.push("assets/img/shoeIcon.png");
-    result1.push("assets/img/shoeIcon.png");
-    result1.push("assets/img/shoeIcon.png");
-    result1.push("assets/img/shoeIcon.png");
-    result1.push("assets/img/shoeIcon.png");
     var nameresult1 = [];
-    nameresult1.push("shoe");
-    nameresult1.push("shoe");
-    nameresult1.push("shoe");
-    nameresult1.push("shoe");
-    nameresult1.push("shoe");
-    nameresult1.push("shoe");
-    nameresult1.push("shoe");
-    nameresult1.push("shoe");
-    nameresult1.push("shoe");
 var myuser = this.currentUser;
 firebase.database().ref(this.currentUser+'/Jewelry/').on('child_added', function(data) {
 var element = data.val();
@@ -1979,7 +1958,7 @@ decimalToHex(d, padding) {
   }); 
     console.log(tempo);
 });
-    this.navCtrl.push(feedPage,{"followedUsers":tempo});
+    this.navCtrl.push(feedPage,{"followedUsers":tempo,"username":this.userName});
 
   
   }

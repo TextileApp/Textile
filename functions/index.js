@@ -100,6 +100,62 @@ exports.updateFeed = functions.database.ref('/userOutfits/{userId}/{outfitId}').
     });
   }
 });
+exports.updateLikes = functions.database.ref('/userOutfits/{userId}/{outfitId}/likes').onWrite(event => {
+
+  const outfitId = event.params.outfitId;
+  var user = event.params.userId;
+
+ if(event.data.val()){
+    //post was added
+  
+     let followersRef = admin.database().ref('/followers/'+user);
+    followersRef.once("value", function(snap) {
+      snap.forEach(function(childSnapshot) {
+        let followerId = childSnapshot.key;
+        admin.database().ref('/feed/'+followerId+'/'+outfitId+'/likes').set(event.data.val());
+      });
+    });
+     admin.database().ref('/outfits/'+outfitId+'/likes').set(event.data.val());
+ 
+ }
+  });
+exports.updateLikeCount = functions.database.ref('/userOutfits/{userId}/{outfitId}/likeCount').onWrite(event => {
+
+  const outfitId = event.params.outfitId;
+  var user = event.params.userId;
+
+ if(event.data.val()){
+    //post was added
+  
+     let followersRef = admin.database().ref('/followers/'+user);
+    followersRef.once("value", function(snap) {
+      snap.forEach(function(childSnapshot) {
+        let followerId = childSnapshot.key;
+        admin.database().ref('/feed/'+followerId+'/'+outfitId+'/likeCount').set(event.data.val());
+      });
+    });
+     admin.database().ref('/outfits/'+outfitId+'/likeCount').set(event.data.val());
+ 
+ }
+  });
+exports.updateLikeCount = functions.database.ref('/username/{username}').onWrite(event => {
+
+  const username = event.params.username;
+
+ if(event.data.val()){
+    //post was added
+     var userId = event.data.val();
+     let followersRef = admin.database().ref('/followers/'+userId);
+    followersRef.once("value", function(snap) {
+      snap.forEach(function(childSnapshot) {
+        let followerId = childSnapshot.key;
+        admin.database().ref('/feed/'+followerId+'/'+outfitId+'/username').set(username);
+      });
+    });
+     admin.database().ref('/outfits/'+outfitId+'/username').set(username);
+ 
+ }
+  });
 exports.updateFollowers = functions.database.ref('/following/{followerId}/{followedId}').onWrite(event => {
 
   const followerId = event.params.followerId;
@@ -123,8 +179,9 @@ exports.updateFollowers = functions.database.ref('/following/{followerId}/{follo
     followersRef.once("value", function(snap) {
       snap.forEach(function(childSnapshot) {
         let outfitId = childSnapshot.key;
-        admin.database().ref('/feed/'+followerId+'/'+outfitId).set(event.data.val());
-        console.log('Added post to feed of user: '+ followerId);
+        admin.database().ref('/feed/'+followerId+'/'+outfitId).set(childSnapshot.val());
+    
+        console.log('Added post:'+outfitId+'to feed of user: '+ followerId);
       });
     });
   }
