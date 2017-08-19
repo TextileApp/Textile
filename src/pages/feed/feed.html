@@ -85,7 +85,8 @@
     </ion-col>
     <ion-col center text-center>
       <ion-note>
-       {{f.time}}
+      <div *ngIf ="f.time"> {{f.time}}</div>
+      <div *ngIf ="!f.time">just now</div>
       </ion-note>
     </ion-col>
   </ion-row>
@@ -154,7 +155,9 @@
     </ion-col>
     <ion-col center text-center>
       <ion-note>
-       {{f.followedTime}}
+        
+      <div *ngIf ="f.time"> {{f.time}}</div>
+      <div *ngIf ="!f.time">just now</div>
       </ion-note>
     </ion-col>
   </ion-row>

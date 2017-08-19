@@ -25,6 +25,7 @@ doILike:boolean;
 
   myUser: any;
   times: Array<any>;
+  followingTimes: Array<any>;
   constructor(public navCtrl: NavController, private ngZone: NgZone, af: AngularFire, private _auth: AuthService,public loadingCtrl: LoadingController, private navParams: NavParams) {
     
     const authObserver = af.auth.subscribe(user => {
@@ -121,6 +122,7 @@ var following = this.navParams.get("followedUsers");
 
        
         this.gogogo();
+        this.tototo();
       // this.filterPosts(); 
 
       }
@@ -328,6 +330,21 @@ else{
     }
 
   }
+tototo() {
+    var temp = [];
+    firebase.database().ref("feed/"+this.myUser).orderByChild("order").on('child_added', function (data) {
+      var element = data.val();
+      if (element) {
+        console.log(element.timestamp);
+        temp.push({ "key": data.key, "timestamp": element.timestamp });
+      }
+    });
+    this.followingTimes = temp;
+    for (var i = 0; i < this.followingTimes.length; i++) {
+      this.setTimeFollowed(this.followingTimes[i].key, this.followingTimes[i].timestamp);
+    }
+
+  }
 
   
   goToProfile(post) {
@@ -341,6 +358,17 @@ else{
 
     var since = this.timeConversion(input);
 
+    ref.set(since);
+
+  }
+   setTimeFollowed(key, timestamp) {
+    var result2 = [];
+    var ref = firebase.database().ref("feed/" + this.myUser+'/'+key + "/time");
+    var now = (new Date).getTime();
+    var input = now - timestamp;
+console.log(input);
+    var since = this.timeConversion(input);
+    console.log(since);
     ref.set(since);
 
   }
