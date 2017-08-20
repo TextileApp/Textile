@@ -342,6 +342,7 @@ tototo() {
     this.followingTimes = temp;
     for (var i = 0; i < this.followingTimes.length; i++) {
       this.setTimeFollowed(this.followingTimes[i].key, this.followingTimes[i].timestamp);
+      console.log(this.followingTimes[i].timestamp);
     }
 
   }

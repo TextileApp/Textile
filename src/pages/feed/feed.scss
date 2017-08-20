@@ -49,9 +49,9 @@
 .pics
 {
    
-  display:block !important;
-  max-height:120px !important;
-  width:auto !important;
+max-height: 100%;
+  width: 100%;
+  object-fit: cover; 
 
 
 
@@ -59,6 +59,111 @@
 
 .text-on-bottom > .button-inner {
   flex-direction: column;
+}
+.jewelrypics
+{
+  position:absolute;
+   
+     display: block;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    max-height: 65%;
+    max-width:65%;
+
+
+}
+.hatpics
+{
+  position:absolute;
+   
+     display: block;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    max-width: 70%;
+
+
+}
+.tilepics {
+ position:absolute;
+   
+     display: block;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    max-height: 70%;
+
+}
+.shoepics {
+
+  position:absolute;
+   
+     display: block;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    max-height: 70%;
+    max-width: 70%;
+
+
+
+}
+.neckpics {
+
+  position:absolute;
+   
+     display: block;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    max-height: 75%;
+    max-width:80%;
+
+
+}
+.shirtpics {
+   
+  
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    max-height: 70%;
+
+}
+.pantspics
+{
+
+  position:absolute;
+   
+     display: block;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    max-height: 75%;
+
+
 }
 .cell-1 {
  // background-color: #C5DCFC;
