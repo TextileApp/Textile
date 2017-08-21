@@ -81,6 +81,7 @@
     <allow-navigation href="http://10.10.203.163:8100" />
     <allow-navigation href="http://153.90.43.81:8100" />
     <allow-navigation href="http://10.0.0.28:8100" />
+    <allow-navigation href="http://10.0.0.56:8100" />
     <icon src="resources/ios/icon/icon-small@3x.png" />
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
@@ -134,8 +135,9 @@
     <preference name="FadeSplashScreenDuration" value="300" />
     <preference name="SplashMaintainAspectRatio" value="true" />
     <preference name="SplashScreen" value="screen" />
-    <preference name="SplashScreenDelay" value="30000" />
-    <preference name="AutoHideSplashScreen" value="false" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
+    <preference name="SplashScreenDelay" value="20000" />
+    <preference name="AutoHideSplashScreen" value="true" />
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="FadeSplashScreen" value="false" />
 </widget>

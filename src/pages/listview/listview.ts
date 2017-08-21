@@ -124,10 +124,11 @@ itemnames: Array<any>;
           this.infoten = this.navParams.get("tenthinfo");
           this.infoeleven = this.navParams.get("eleventhinfo");
           this.infotwelve = this.navParams.get("twelthinfo");
+          this.currentUser = this.navParams.get("user");
         const authObserver = af.auth.subscribe( user => {
 
          this.myUser = user.uid;
-         this.currentUser = user.uid;
+        
          this.items = [];
           this.one = this.navParams.get("first");
           this.two = this.navParams.get("second");
@@ -191,6 +192,7 @@ this.namefive = "imported item";
 else{
 this.fivelocation = this.namefive;
 }
+
 if(String(this.namesix).charAt(0) == '-')
 {
 this.sixlocation = this.namesix;
