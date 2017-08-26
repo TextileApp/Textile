@@ -37,21 +37,29 @@
 }
 .grid-full ion-col {
   text-align: center;
-  padding: 5px 5px 5px 5px;
   margin-top:0px;
 
 }
 .colo
 {
-  height: 10%;
-  width:15%;
+  height: 10% !important;
+  margin: auto;
+  text-align: center;
+justify-content: center;
 }
 .pics
 {
    
-max-height: 100%;
-  width: 100%;
-  object-fit: cover; 
+
+  max-height: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  width: auto !important;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:auto !important;
+  margin-bottom:auto !important;
+  align-items:center !important;
 
 
 

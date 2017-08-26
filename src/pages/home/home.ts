@@ -153,7 +153,7 @@ lastSavedFitRef: any;
   cardNames2: Array<any>;
   cardNames3: Array<any>;
   cardNames4: Array<any>;
-   cardNames5: Array<any>;
+  cardNames5: Array<any>;
   cardNames6: Array<any>;
   cardNames7: Array<any>;
   cardNames8: Array<any>;
@@ -1616,7 +1616,7 @@ nameresult9.push(data.key);
 
  this.cards9 = result9;
  this.cardNames9 = nameresult9;
-  //this.grid = Array(Math.ceil(this.items.length/2));
+  //this.grid = Array(Math.ceil(this.items.length/2));  
   firebase.database().ref(this.currentUser+'/Jewelry/').once('value', function(snapshot) {
 
   if (!(snapshot.exists())) {
@@ -2022,18 +2022,6 @@ namecard10 = this.cardNames10[0];
 namecard11 = this.cardNames11[0];
 namecard12 = this.cardNames12[0];
 
-console.log(namecard1);
-console.log(namecard2);
-console.log(namecard3);
-console.log(namecard4);
-console.log(namecard5);
-console.log(namecard6);
-console.log(namecard7);
-console.log(namecard8);
-console.log(namecard9);
-console.log(namecard10);
-console.log(namecard11);
-console.log(namecard12);
 
       if(!this.cards2[0].brand){
     this.cards2[0].brand = "import";

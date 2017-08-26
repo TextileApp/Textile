@@ -186,6 +186,7 @@ else{
 }
 if(String(this.namefive).charAt(0) == '-')
 {
+var name = this.namefive;
  this.fivelocation = this.namefive;
 this.namefive = "imported item";
 }
@@ -332,7 +333,7 @@ else{
           }
           else
           {
-                        var ref = firebase.database().ref(this.currentUser+'/Tops/'+this.fivelocation);
+ var ref = firebase.database().ref(this.currentUser+'/Tops/'+this.fivelocation);
       ref.once('value', (snapshot) => {
        if (snapshot.val() != null) {
         this.fivehas = true;
