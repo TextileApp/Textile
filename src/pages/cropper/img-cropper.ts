@@ -27,6 +27,7 @@ export class ImageCropperComponent {
             modal: true,
             guides: true,
             highlight: false,
+            viewMode:0,
             background: true,
             autoCrop: true,
             rotatable: false,
@@ -43,6 +44,7 @@ export class ImageCropperComponent {
 
     confirm() {
         let croppedImgB64String: string = this.cropper.getCroppedCanvas({
+            fillColor: '#ffff',
             width: 1080,
             height: 1080
         }).toDataURL('image/jpeg', (90 / 100)); // 90 / 100 = photo quality

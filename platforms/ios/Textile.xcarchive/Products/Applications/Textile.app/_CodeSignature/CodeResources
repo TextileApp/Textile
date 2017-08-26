@@ -86,7 +86,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		+zEsvPD703qxc7cOTntIPsQ0HpE=
+		Fz6CKKkXMad+gCMHLTabVVyA5ss=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -94,7 +94,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		tJedZ/rCAz3aq11ZlXQK6xeR5Qk=
+		xt5roUSSHbEmEjTNMviMZ5ChygE=
 		</data>
 		<key>GMEmptyFolder@1x.png</key>
 		<data>
@@ -162,7 +162,7 @@
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		JKS8AHpUWVcgolPqHkDho1ebKaw=
+		1l6RrDv9CYSUwDN3bztWiplK7IU=
 		</data>
 		<key>PEPhotoCropEditor.bundle/GoogleService-Info.plist</key>
 		<data>
@@ -419,7 +419,7 @@
 		</data>
 		<key>www/build/main.css</key>
 		<data>
-		evu23X1h4aJPTTa+GxRgCF2QaRw=
+		AzxDBpR5PJQpfUtg/D42fsFH/Y0=
 		</data>
 		<key>www/build/main.js</key>
 		<data>
@@ -840,11 +840,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+zEsvPD703qxc7cOTntIPsQ0HpE=
+			Fz6CKKkXMad+gCMHLTabVVyA5ss=
 			</data>
 			<key>hash2</key>
 			<data>
-			itM69Ff28GKzhLYZ/VdHC3/DukYFVzW27iSBN3zwK9I=
+			hLi56EwP1tnb4BzJVQ7yrZfusPtmAm82IBDdkn1h/Bw=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -862,11 +862,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			tJedZ/rCAz3aq11ZlXQK6xeR5Qk=
+			xt5roUSSHbEmEjTNMviMZ5ChygE=
 			</data>
 			<key>hash2</key>
 			<data>
-			mINA+siFd9mmsHAX6qywelcJ7JstlSOGDQvymBEIlag=
+			BY+bo9mqa7s3wAI60tAHylx/R/FkWy36xkCOqIjRirw=
 			</data>
 		</dict>
 		<key>GMEmptyFolder@1x.png</key>
@@ -1038,11 +1038,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			JKS8AHpUWVcgolPqHkDho1ebKaw=
+			1l6RrDv9CYSUwDN3bztWiplK7IU=
 			</data>
 			<key>hash2</key>
 			<data>
-			9n2vyH6CMRe7LVPJ5Tm5OTZjEUgZ+ogW3ZPBxQKk4mE=
+			+ToO8UqxOu8wfCx+kPLQlzbgW0EQyfJb3LVD62Z/zEU=
 			</data>
 		</dict>
 		<key>PEPhotoCropEditor.bundle/GoogleService-Info.plist</key>
@@ -1628,11 +1628,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			evu23X1h4aJPTTa+GxRgCF2QaRw=
+			AzxDBpR5PJQpfUtg/D42fsFH/Y0=
 			</data>
 			<key>hash2</key>
 			<data>
-			a/+hFeKziYOEizWx5OeDfgAQ9NC8Syu9LXQPQdfncTQ=
+			Ihg/mlUZa/bbh95uhvEF/HTylDkHQUU7IHxaKzcEXdA=
 			</data>
 		</dict>
 		<key>www/build/main.js</key>
