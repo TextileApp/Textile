@@ -28,7 +28,8 @@
 
     </ion-fab>
   </div>
-    <ion-card [hidden]="!showCard1"  (press)="pressEvent($event)" #mycards1 swing-card *ngFor="let c of cards1; trackBy:trackByCards1 let t=index;"[style.zIndex]="-1*t" [style.marginTop]="t === 0 ? '0px':'0px'"(tap)="openModal1(cards1)">
+    <ion-card   [hidden]="!showCard1"  (press)="pressEvent($event)" #mycards1 swing-card *ngFor="let c of cards1; trackBy:trackByCards1 let t=index; let first=first;"[style.zIndex]="-1*t" [style.marginTop]="t === 0 ? '0px':'0px'"(tap)="openModal1(cards1)" [ngClass]="{'firstone': first || t === 1 || t === 2, 'otherone': t>2}">
+
                                         <button style= "width:100%; height:100%; top:-6.80%; right:2.85%;"[hidden]="!card1Activated"(click)="activateCard1()" color = "light"  ion-button icon-only><ion-icon color="navcolor" name="add"></ion-icon></button>
 
           <img class ="jewelrypics" [hidden]="!showPic1" *ngIf="c"[src]="c.url"id="image">
@@ -36,7 +37,7 @@
     </ion-card>
      </div>
 
-   <div class ="firstcol"  swing-stack #myswing2 [stackConfig]="stackConfig2" (throwoutleft)="voteUp2()" (throwoutright)="voteUp2()" id="card-stack"[style.zIndex]="-1000">
+   <div class ="firstcol"  swing-stack #myswing2 [stackConfig]="stackConfig2" (throwoutleft)="voteUp2()" (throwoutright)="voteUp2()" id="card-stack"[style.zIndex]="-1000" >
          <div [hidden]="!showCard2" style="position: relative; top:-7%; left:8%;">
 
     <ion-fab right top>
@@ -46,7 +47,7 @@
 
     </ion-fab>
   </div>
-    <ion-card [hidden]="!showCard2"  (press)="pressEvent($event)"  #mycards2 swing-card *ngFor="let p of cards2; trackBy:trackByCards2; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal2(cards2)">
+    <ion-card [hidden]="!showCard2"  (press)="pressEvent($event)"  #mycards2 swing-card *ngFor="let p of cards2; trackBy:trackByCards2; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal2(cards2)"  [ngClass]="{'firstone': first || i === 1 || i === 2, 'otherone': i>2}">
                                         <button style= "width:100%; height:100%; top:-6.80%; right:2.85%;"[hidden]="!card2Activated"(click)="activateCard2()" color = "light"  ion-button icon-only><ion-icon color="navcolor" name="add"></ion-icon></button>
 
           <img class ="hatpics" [hidden]= "!showPic2" *ngIf="p"[src]="p.url"id="image">
@@ -64,7 +65,7 @@
 
     </ion-fab>
   </div>
-    <ion-card [hidden]="!showCard3"  #mycards3 swing-card (press)="pressEvent($event)" *ngFor="let p of cards3; trackBy:trackByCards3; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal3(cards3)">
+    <ion-card [hidden]="!showCard3"  #mycards3 swing-card (press)="pressEvent($event)" *ngFor="let p of cards3; trackBy:trackByCards3; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal3(cards3)"  [ngClass]="{'firstone': first || i === 1 || i === 2, 'otherone': i>2}">
                                         <button style= "width:100%; height:100%; top:-6.80%; right:2.85%;"[hidden]="!card3Activated"(click)="activateCard3()" color = "light"  ion-button icon-only><ion-icon color="navcolor" name="add"></ion-icon></button>
 
           <img class ="neckpics" [hidden]= "!showPic3" *ngIf="p"[src]="p.url"id="image">
@@ -81,7 +82,8 @@
 
     </ion-fab>
   </div>
-    <ion-card [hidden]="!showCard4"  #mycards4 swing-card (press)="pressEvent($event)" *ngFor="let p of cards4; trackBy:trackByCards4; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal4(cards4)">
+    <ion-card [hidden]="!showCard4"  #mycards4 swing-card (press)="pressEvent($event)" *ngFor="let p of cards4; trackBy:trackByCards4; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal4(cards4)"  [ngClass]="{'firstone': first || i === 1 || i === 2, 'otherone': i>2}">
+
                                         <button style= "width:100%; height:100%; top:-6.80%; right:2.85%;"[hidden]="!card4Activated"(click)="activateCard4()" color = "light"  ion-button icon-only><ion-icon color="navcolor" name="add"></ion-icon></button>
 
           <img class="tilepics" [hidden]= "!showPic4" *ngIf="p"[src]="p.url"id="image">
@@ -92,7 +94,7 @@
          <div [hidden]="!showCard5" style="position: relative; top:-7%; left:8%;">
 
   </div>
-    <ion-card [hidden]="!showCard5"  #mycards5 swing-card (press)="pressEvent($event)" *ngFor="let p of cards5; trackBy:trackByCards5; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal5(cards5)">
+    <ion-card [hidden]="!showCard5"  #mycards5 swing-card (press)="pressEvent($event)" *ngFor="let p of cards5; trackBy:trackByCards5; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal5(cards5)" [ngClass]="{'firstone': first || i === 1 || i === 2, 'otherone': i>2}">
     <button style= "width:100%; height:100%; top:-6.80%; right:2.85%;"[hidden]="!card5Activated"(click)="activateCard5()" color = "light"  ion-button icon-only><ion-icon color="navcolor" name="add"></ion-icon></button>
 
           <img class="shirtpics" [hidden]= "!showPic5" *ngIf="p"[src]="p.url"id="image">
@@ -109,7 +111,7 @@
 
     </ion-fab>
   </div>
-    <ion-card [hidden]="!showCard6"  #mycards6 swing-card (press)="pressEvent($event)" *ngFor="let p of cards6; trackBy:trackByCards6; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal6(cards6)">
+    <ion-card [hidden]="!showCard6"  #mycards6 swing-card (press)="pressEvent($event)" *ngFor="let p of cards6; trackBy:trackByCards6; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal6(cards6)" [ngClass]="{'firstone': first || i === 1 || i === 2, 'otherone': i>2}">
         <button style= "width:100%; height:100%; top:-6.80%; right:2.85%;"[hidden]="!card6Activated"(click)="activateCard6()" color = "light"  ion-button icon-only><ion-icon color="navcolor" name="add"></ion-icon></button>
 
           <img class="shirtpics" [hidden]= "!showPic6" *ngIf="p"[src]="p.url"id="image">
@@ -126,7 +128,7 @@
 
     </ion-fab>
   </div>
-    <ion-card [hidden]="!showCard7"  #mycards7 swing-card (press)="pressEvent($event)" *ngFor="let p of cards7; trackBy:trackByCards7; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal7(cards7)">
+    <ion-card [hidden]="!showCard7"  #mycards7 swing-card (press)="pressEvent($event)" *ngFor="let p of cards7; trackBy:trackByCards7; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal7(cards7)" [ngClass]="{'firstone': first || i === 1 || i === 2, 'otherone': i>2}">
               <button style= "width:100%; height:100%; top:-6.80%; right:2.85%;"[hidden]="!card7Activated"(click)="activateCard7()" color = "light"  ion-button icon-only><ion-icon color="navcolor" name="add"></ion-icon></button>
 
           <img class="shoepics" [hidden]= "!showPic7" *ngIf="p"[src]="p.url"id="image">
@@ -138,7 +140,7 @@
 
   
   </div>
-    <ion-card [hidden]="!showCard8"  #mycards8 swing-card (press)="pressEvent($event)" *ngFor="let p of cards8; trackBy:trackByCards8; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal8(cards8)">
+    <ion-card [hidden]="!showCard8"  #mycards8 swing-card (press)="pressEvent($event)" *ngFor="let p of cards8; trackBy:trackByCards8; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal8(cards8)" [ngClass]="{'firstone': first || i === 1 || i === 2, 'otherone': i>2}">
                                         <button style= "width:100%; height:100%; top:-6.80%; right:2.85%;"[hidden]="!card8Activated"(click)="activateCard8()" color = "light"  ion-button icon-only><ion-icon color="navcolor" name="add"></ion-icon></button>
 
           <img class ="pantspics" [hidden]= "!showPic8" *ngIf="p"[src]="p.url"id="image">
@@ -157,7 +159,7 @@
 
   </div>
 
-    <ion-card [hidden]="!showCard9"  #mycards9 swing-card (press)="pressEvent($event)" *ngFor="let p of cards9; trackBy:trackByCards9; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal9(cards9)">
+    <ion-card [hidden]="!showCard9"  #mycards9 swing-card (press)="pressEvent($event)" *ngFor="let p of cards9; trackBy:trackByCards9; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal9(cards9)" [ngClass]="{'firstone': first || i === 1 || i === 2, 'otherone': i>2}">
                                  <button style= "width:100%; height:100%; top:-6.80%; right:2.85%;"[hidden]="!card9Activated"(click)="activateCard9()" color = "light"  ion-button icon-only><ion-icon color="navcolor" name="add"></ion-icon></button>
 
           <img class ="jewelrypics" [hidden]= "!showPic9" *ngIf="p"[src]="p.url"id="image">
@@ -175,7 +177,7 @@
 
     </ion-fab>
   </div>
-    <ion-card [hidden]="!showCard10"  #mycards10 swing-card (press)="pressEvent($event)" *ngFor="let p of cards10; trackBy:trackByCards10; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal10(cards10)">
+    <ion-card [hidden]="!showCard10"  #mycards10 swing-card (press)="pressEvent($event)" *ngFor="let p of cards10; trackBy:trackByCards10; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal10(cards10)" [ngClass]="{'firstone': first || i === 1 || i === 2, 'otherone': i>2}">
    <button style= "width:100%; height:100%; top:-6.80%; right:2.85%;"[hidden]="!card10Activated"(click)="activateCard10()" color = "light"  ion-button icon-only><ion-icon color="navcolor" name="add"></ion-icon></button>
 
           <img class="tilepics" [hidden]= "!showPic10" *ngIf="p"[src]="p.url"id="image">
@@ -186,7 +188,7 @@
          <div [hidden]="!showCard11" style="position: relative; top:-7%; left:8%;">
 
   </div>
-    <ion-card [hidden]="!showCard11"  #mycards11 swing-card (press)="pressEvent($event)" *ngFor="let p of cards11; trackBy:trackByCards11; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal11(cards11)">
+    <ion-card [hidden]="!showCard11"  #mycards11 swing-card (press)="pressEvent($event)" *ngFor="let p of cards11; trackBy:trackByCards11; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal11(cards11)" [ngClass]="{'firstone': first || i === 1 ||i === 2, 'otherone': i>2}">
     <button style= "width:100%; height:100%; top:-6.80%; right:2.85%;"[hidden]="!card11Activated"(click)="activateCard11()" color = "light"  ion-button icon-only><ion-icon color="navcolor" name="add"></ion-icon></button>
 
           <img class="shoepics" [hidden]= "!showPic11" *ngIf="p"[src]="p.url"id="image">
@@ -203,7 +205,7 @@
 
     </ion-fab>
   </div>
-    <ion-card [hidden]="!showCard12"  #mycards12 swing-card (press)="pressEvent($event)" *ngFor="let p of cards12; trackBy:trackByCards12; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal12(cards12)">
+    <ion-card [hidden]="!showCard12"  #mycards12 swing-card (press)="pressEvent($event)" *ngFor="let p of cards12; trackBy:trackByCards12; let i=index;"[style.zIndex]="-1*i" [style.marginTop]="i === 0 ? '0px':'0px'"(tap)="openModal12(cards12)" [ngClass]="{'firstone': first || i === 1 ||i  === 2, 'otherone': i>2}">
         <button style= "width:100%; height:100%; top:-6.80%; right:2.85%;"[hidden]="!card12Activated"(click)="activateCard12()" color = "light"  ion-button icon-only><ion-icon color="navcolor" name="add"></ion-icon></button>
 
           <img class="tilepics" [hidden]= "!showPic12" *ngIf="p"[src]="p.url"id="image">

@@ -52,7 +52,12 @@ display:inline-block;
 
 }
 
-
+.firstone{
+box-shadow: 0 1 2px rgba(0,0,0,.3) !important;
+}
+.otherone{
+box-shadow: 0 0 0px rgba(0,0,0,0);
+}
 .home {
 margin:0;
 margin-top:6%;
@@ -73,6 +78,7 @@ margin-top:6%;
 
 
 }
+  
 .hatpics
 {
   position:absolute;

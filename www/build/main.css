@@ -33623,6 +33623,14 @@ ion-col {
   display: inline-block;
 }
 
+.firstone {
+  box-shadow: 0 1 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+.otherone {
+  box-shadow: 0 0 0px transparent;
+}
+
 .home {
   margin: 0;
   margin-top: 6%;
