@@ -53,10 +53,10 @@ display:inline-block;
 }
 
 .firstone{
-box-shadow: 0 1 2px rgba(0,0,0,.3) !important;
+box-shadow: 1 1 0 0px rgba(0, 0, 0, 0.001) !important;
 }
 .otherone{
-box-shadow: 0 0 0px rgba(0,0,0,0);
+box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.00) !important;
 }
 .home {
 margin:0;

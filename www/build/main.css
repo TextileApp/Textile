@@ -33624,11 +33624,11 @@ ion-col {
 }
 
 .firstone {
-  box-shadow: 0 1 2px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: 1 1 0 0px rgba(0, 0, 0, 0.001) !important;
 }
 
 .otherone {
-  box-shadow: 0 0 0px transparent;
+  box-shadow: 0 0 0 0px rgba(255, 255, 255, 0) !important;
 }
 
 .home {

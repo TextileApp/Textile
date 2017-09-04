@@ -60,7 +60,7 @@
     <name>Textile</name>
     <description>The fun way to plan outfits.</description>
     <author email="info@textileapp.co" href="http://textileapp.co">Textile Team</author>
-    <content original-src="index.html" src="http://10.0.0.12:8100" />
+    <content original-src="index.html" src="http://10.0.0.25:8100" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -140,7 +140,7 @@
     <preference name="SplashMaintainAspectRatio" value="true" />
     <preference name="SplashScreen" value="screen" />
     <preference name="ShowSplashScreenSpinner" value="false" />
-    <preference name="SplashScreenDelay" value="20000" />
+    <preference name="SplashScreenDelay" value="0" />
     <preference name="AutoHideSplashScreen" value="true" />
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="FadeSplashScreen" value="false" />

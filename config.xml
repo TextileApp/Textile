@@ -74,7 +74,7 @@
   <preference name="SplashMaintainAspectRatio" value="true"/>
   <preference name="SplashScreen" value="screen"/>
   <preference name="ShowSplashScreenSpinner" value="false"/>
-  <preference name="SplashScreenDelay" value="20000"/>
+  <preference name="SplashScreenDelay" value="0"/>
   <preference name="AutoHideSplashScreen" value="true"/>
   <preference name="SplashShowOnlyFirstTime" value="false"/>
   <preference name="FadeSplashScreen" value="false"/>
