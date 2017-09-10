@@ -1222,7 +1222,6 @@ var name = data.key;
 result1.push({"url":element.url,"id":element.id,"clickUrl":element.clickUrl,"brand":element.brand});
 nameresult1.push(data.key);
 });
-console.log(result1);
  this.cards1 = result1;
  this.cardNames1 = nameresult1;
   //this.grid = Array(Math.ceil(this.items.length/2));
@@ -1243,18 +1242,12 @@ console.log(result1);
   }
 });
 
-firebase.database().ref(this.currentUser+'/Jewelry/').on('child_removed', function(data) {
-var element = data.val();
-if(element){
-var index = result1.indexOf(element);
-if (index > -1) {
-    result1.splice(index, 1);
-    nameresult1.splice(index,1);
-}
-}
-});
-this.cardNames1 = nameresult1;
-this.cards1 = result1;
+firebase.database().ref(this.currentUser+'/Jewelry/').on('child_removed', (data) => {
+  var element = data.val();
+  this.removeJewelry(element.url);
+  this.removeJewelryTwo(element.url);
+  });
+
 var result2 = [];
 var nameresult2 = [];
 
@@ -1286,32 +1279,20 @@ firebase.database().ref(this.currentUser+'/Hats/').once('value', function(snapsh
 
   }
 });
-  firebase.database().ref(this.currentUser+'/Hats/').on('child_removed', function(data) {
+
+  firebase.database().ref(this.currentUser+'/Hats/').on('child_removed', (data) => {
 var element = data.val();
-if(element){
-var index = result2.indexOf(element);
-if (index > -1) {
-    result2.splice(index, 1);
-    nameresult2.splice(index,1);
-}
-}
+this.removeHat(element.url);
 });
-this.cards2 = result2;
-this.cardNames2 = nameresult2;
+
   var result3 = [];
   var nameresult3 = [];
 //this.cards3 = [];
 
-firebase.database().ref(this.currentUser+'/Neckwear/').on('child_removed', function(data) {
-var element = data.val();
-if(element){
-var index = result3.indexOf(element);
-if (index > -1) {
-    result3.splice(index, 1);
-    nameresult3.splice(index,1);
-}
-}
-});
+firebase.database().ref(this.currentUser+'/Neckwear/').on('child_removed',  (data) => {
+  var element = data.val();
+  this.removeNeckwear(element.url);
+  });
 this.cards3 = result3;
 this.cardNames3 = nameresult3;
 
@@ -1363,16 +1344,10 @@ nameresult4.push(data.key);
 
 
 
-firebase.database().ref(this.currentUser+'/Outerwear/').on('child_removed', function(data) {
-var element = data.val();
-if(element){
-var index = result4.indexOf(element);
-if (index > -1) {
-    result4.splice(index, 1);
-    nameresult4.splice(index,1);
-}
-}
-});
+firebase.database().ref(this.currentUser+'/Outerwear/').on('child_removed',  (data) => {
+  var element = data.val();
+  this.removeOuterwear(element.url);
+  });
 this.cards4 = result4;
 this.cardNames4 = nameresult4;
 
@@ -1449,23 +1424,11 @@ this.cards5 = result5;
   }
 });
 
-firebase.database().ref(this.currentUser+'/Tops/').on('child_removed', function(data) {
-var element = data.val();
-if(element){
-var index = result5.indexOf(element);
-if (index > -1) {
-    result5.splice(index, 1);
-    nameresult5.splice(index,1);
-    result6.splice(index, 1);
-    nameresult6.splice(index,1);
-}
-}
-this.cards5 = result5;
-this.cardnames5 = nameresult5;
-this.cards6 = result6;
-this.cardnames6 = nameresult6;
-});
-
+firebase.database().ref(this.currentUser+'/Tops/').on('child_removed',  (data) => {
+  var element = data.val();
+  this.removeTopOne(element.url);
+  this.removeTopTwo(element.url);
+  });
 
 
 
@@ -1476,16 +1439,10 @@ this.cardnames6 = nameresult6;
   //this.grid = Array(Math.ceil(this.items.length/2));
 
 
-firebase.database().ref(this.currentUser+'/Belts/').on('child_removed', function(data) {
-var element = data.val();
-if(element){
-var index = result1.indexOf(element);
-if (index > -1) {
-    result7.splice(index, 1);
-    nameresult7.splice(index,1);
-}
-}
-});
+firebase.database().ref(this.currentUser+'/Belts/').on('child_removed',  (data) => {
+  var element = data.val();
+  this.removeTopBelt(element.url);
+  });
 this.cards7 = result7;
 this.cardNames7 = nameresult7;
 
@@ -1535,16 +1492,10 @@ this.cardNames7 = nameresult7;
   var nameresult8 = [];
   //this.grid = Array(Math.ceil(this.items.length/2));
 
-firebase.database().ref(this.currentUser+'/Bottoms/').on('child_removed', function(data) {
-var element = data.val();
-if(element){
-var index = result1.indexOf(element);
-if (index > -1) {
-    result8.splice(index,1);
-    nameresult8.splice(index,1);
-}
-}
-});
+firebase.database().ref(this.currentUser+'/Bottoms/').on('child_removed',  (data) => {
+  var element = data.val();
+  this.removePants(element.url);
+  });
 this.cards8 = result8;
 this.cardNames8 = nameresult8;
 
@@ -1575,18 +1526,7 @@ nameresult8.push(data.key);
   }
 });
 
-firebase.database().ref(this.currentUser+'/Bottoms/').on('child_removed', function(data) {
-var element = data.val();
-if(element){
-var index = result8.indexOf(element);
-if (index > -1) {
-    result8.splice(index, 1);
-    nameresult8.splice(index,1);
-}
-}
-});
-this.cards8 = result8;
-this.cardNames8 = nameresult8;
+
 
  var result9 = [];
   var nameresult9 = [];
@@ -1594,16 +1534,7 @@ this.cardNames8 = nameresult8;
 
 
 
-firebase.database().ref(this.currentUser+'/Jewelry/').on('child_removed', function(data) {
-var element = data.val();
-if(element){
-var index = result9.indexOf(element);
-if (index > -1) {
-    result9.splice(index, 1);
-    nameresult9.splice(index,1);
-}
-}
-});
+
 this.cards9 = result9;
 this.cardNames9 = nameresult9;
 
@@ -1642,16 +1573,11 @@ nameresult9.push(data.key);
   //this.grid = Array(Math.ceil(this.items.length/2));
 
 
-firebase.database().ref(this.currentUser+'/Bags/').on('child_removed', function(data) {
-var element = data.val();
-if(element){
-var index = result10.indexOf(element);
-if (index > -1) {
-    result10.splice(index, 1);
-    nameresult10.splice(index,1);
-}
-}
-});
+firebase.database().ref(this.currentUser+'/Bags/').on('child_removed', (data) => {
+  var element = data.val();
+  this.removeBagOne(element.url);
+  this.removeBagTwo(element.url);
+  });
 this.cards10 = result10;
 this.cardNames10 = nameresult10;
 
@@ -1683,34 +1609,18 @@ nameresult10.push(data.key);
   }
 });
 
-firebase.database().ref(this.currentUser+'/Bags/').on('child_removed', function(data) {
-var element = data.val();
-if(element){
-var index = result10.indexOf(element);
-if (index > -1) {
-    result10.splice(index, 1);
-    nameresult10.splice(index,1);
-}
-}
-});
-this.cards10 = result10;
-this.cardNames10 = nameresult10;
+
+
 
  var result11 = [];
  var nameresult11 = [];
   //this.grid = Array(Math.ceil(this.items.length/2));
 
 
-firebase.database().ref(this.currentUser+'/Shoes/').on('child_removed', function(data) {
-var element = data.val();
-if(element){
-var index = result11.indexOf(element);
-if (index > -1) {
-    result11.splice(index, 1);
-    nameresult11.splice(index,1);
-}
-}
-});
+firebase.database().ref(this.currentUser+'/Shoes/').on('child_removed',  (data) => {
+  var element = data.val();
+  this.removeShoe(element.url);
+  });
 this.cards11 = result11;
 this.cardNames11 = nameresult11;
 
@@ -1790,6 +1700,248 @@ nameresult12.push(data.key);
 
 
 
+}
+removeHat(element)
+{
+  function search(nameKey, myArray){
+    for (var i=0; i < myArray.length; i++) {
+        if (myArray[i].url === nameKey) {
+            return myArray[i];
+        }
+    }
+}
+  if(element){
+    console.log("REMOVED:");
+    console.log(element);
+    console.log(this.cards2);
+
+  
+  var index = this.cards2.indexOf(search(element, this.cards2));
+  if (index > -1) {
+      this.cards2.splice(index, 1);
+      this.cardNames2.splice(index,1);
+      console.log("spliced");
+  }
+  }
+}
+removeJewelry(element)
+{
+  function search(nameKey, myArray){
+    for (var i=0; i < myArray.length; i++) {
+        if (myArray[i].url === nameKey) {
+            return myArray[i];
+        }
+    }
+}
+  if(element){
+  
+
+  
+  var index = this.cards1.indexOf(search(element, this.cards1));
+  if (index > -1) {
+      this.cards1.splice(index, 1);
+      this.cardNames1.splice(index,1);
+      console.log("spliced");
+  }
+  }
+}
+removeNeckwear(element)
+{
+  function search(nameKey, myArray){
+    for (var i=0; i < myArray.length; i++) {
+        if (myArray[i].url === nameKey) {
+            return myArray[i];
+        }
+    }
+}
+  if(element){
+    console.log("REMOVED:");
+    console.log(element);
+    console.log(this.cards3);
+
+  
+  var index = this.cards3.indexOf(search(element, this.cards3));
+  if (index > -1) {
+      this.cards3.splice(index, 1);
+      this.cardNames3.splice(index,1);
+      console.log("spliced");
+  }
+  }
+}
+removeOuterwear(element)
+{
+  function search(nameKey, myArray){
+    for (var i=0; i < myArray.length; i++) {
+        if (myArray[i].url === nameKey) {
+            return myArray[i];
+        }
+    }
+}
+  if(element){
+    console.log("REMOVED:");
+    console.log(element);
+    console.log(this.cards4);
+
+  
+  var index = this.cards4.indexOf(search(element, this.cards4));
+  if (index > -1) {
+      this.cards4.splice(index, 1);
+      this.cardNames4.splice(index,1);
+      console.log("spliced");
+  }
+  }
+}
+
+removeTopOne(element)
+{
+  function search(nameKey, myArray){
+    for (var i=0; i < myArray.length; i++) {
+        if (myArray[i].url === nameKey) {
+            return myArray[i];
+        }
+    }
+}
+  if(element){
+
+
+  
+  var index = this.cards5.indexOf(search(element, this.cards5));
+  if (index > -1) {
+      this.cards5.splice(index, 1);
+      this.cardNames5.splice(index,1);
+      console.log("spliced");
+  }
+  }
+}
+
+removeTopTwo(element)
+{
+  function search(nameKey, myArray){
+    for (var i=0; i < myArray.length; i++) {
+        if (myArray[i].url === nameKey) {
+            return myArray[i];
+        }
+    }
+}
+  if(element){
+
+
+  
+  var index = this.cards6.indexOf(search(element, this.cards6));
+  if (index > -1) {
+      this.cards6.splice(index, 1);
+      this.cardNames6.splice(index,1);
+      console.log("spliced");
+  }
+  }
+}
+removeTopBelt(element)
+{
+  function search(nameKey, myArray){
+    for (var i=0; i < myArray.length; i++) {
+        if (myArray[i].url === nameKey) {
+            return myArray[i];
+        }
+    }
+}
+  if(element){
+  var index = this.cards7.indexOf(search(element, this.cards7));
+  if (index > -1) {
+      this.cards7.splice(index, 1);
+      this.cardNames7.splice(index,1);
+      console.log("spliced");
+  }
+  }
+}
+removePants(element)
+{
+  function search(nameKey, myArray){
+    for (var i=0; i < myArray.length; i++) {
+        if (myArray[i].url === nameKey) {
+            return myArray[i];
+        }
+    }
+}
+  if(element){
+var index = this.cards8.indexOf(search(element, this.cards8));
+  if (index > -1) {
+      this.cards8.splice(index, 1);
+      this.cardNames8.splice(index,1);
+      console.log("spliced");
+  }
+  }
+}
+removeJewelryTwo(element)
+{
+  function search(nameKey, myArray){
+    for (var i=0; i < myArray.length; i++) {
+        if (myArray[i].url === nameKey) {
+            return myArray[i];
+        }
+    }
+}
+  if(element){
+  var index = this.cards9.indexOf(search(element, this.cards9));
+  if (index > -1) {
+      this.cards9.splice(index, 1);
+      this.cardNames9.splice(index,1);
+      console.log("spliced");
+  }
+  }
+}
+removeBagOne(element)
+{
+  function search(nameKey, myArray){
+    for (var i=0; i < myArray.length; i++) {
+        if (myArray[i].url === nameKey) {
+            return myArray[i];
+        }
+    }
+}
+  if(element){
+  var index = this.cards10.indexOf(search(element, this.cards10));
+  if (index > -1) {
+      this.cards10.splice(index, 1);
+      this.cardNames10.splice(index,1);
+      console.log("spliced");
+  }
+  }
+}
+removeShoe(element)
+{
+  function search(nameKey, myArray){
+    for (var i=0; i < myArray.length; i++) {
+        if (myArray[i].url === nameKey) {
+            return myArray[i];
+        }
+    }
+}
+  if(element){
+  var index = this.cards11.indexOf(search(element, this.cards11));
+  if (index > -1) {
+      this.cards11.splice(index, 1);
+      this.cardNames11.splice(index,1);
+      console.log("spliced");
+  }
+  }
+}
+removeBagTwo(element)
+{
+  function search(nameKey, myArray){
+    for (var i=0; i < myArray.length; i++) {
+        if (myArray[i].url === nameKey) {
+            return myArray[i];
+        }
+    }
+}
+  if(element){
+  var index = this.cards12.indexOf(search(element, this.cards12));
+  if (index > -1) {
+      this.cards12.splice(index, 1);
+      this.cardNames12.splice(index,1);
+      console.log("spliced");
+  }
+  }
 }
 voteUp1() {
  let removedCard = this.cards1.shift();

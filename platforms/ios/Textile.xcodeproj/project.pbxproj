@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		003132A80CD1494DA66A06C0 /* PECropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B037D7D6A1E148458CF61005 /* PECropViewController.m */; };
 		018FB6B73DD940FBA31CD9F3 /* PECropView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAABA07F6F064B11815A693D /* PECropView.m */; };
