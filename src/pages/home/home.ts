@@ -1403,7 +1403,7 @@ this.cards5 = result5;
          result5.push({"url":dupe,"id":"none","clickUrl":false,"brand":"none"});
          result5.push({"url":url,"id":"none","clickUrl":false,"brand":"none"});
       this.cards5 = result5;
-      this.namecard5= result5;
+      this.namecard5= nameresult5;
 
     });
       userStorageRef2.getDownloadURL().then(url => {

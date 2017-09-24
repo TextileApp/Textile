@@ -193,6 +193,9 @@ goToListview(post){
   {
    post.twelthinfo = {"brand":"import","id":"import","clickUrl":false};
   }
+  console.log("NAMES ARE");
+  console.log(post.fifthname);
+  console.log(post.sixthname);
       this.navCtrl.push(listviewPage,{"firstname":post.firstname,"user":post.user,"firstinfo":post.firstinfo,"secondinfo":post.secondinfo,"thirdinfo":post.thirdinfo,"fourthinfo":post.fourthinfo,"fifthinfo":post.fifthinfo,"sixthinfo":post.sixthinfo,"seventhinfo":post.seventhinfo,"eigthinfo":post.eigthinfo,"ninthinfo":post.ninthinfo,"tenthinfo":post.tenthinfo,"eleventhinfo":post.eleventhinfo,"twelthinfo":post.twelthinfo,"secondname":post.secondname,"thirdname":post.thirdname,"fourthname":post.fourthname,"fifthname":post.fifthname,"sixthname":post.sixthname,"seventhname":post.seventhname,"eighthname":post.eighthname,"ninthname":post.ninthname,"tenthname":post.tenthname,"eleventhname":post.eleventhname,"twelthname":post.twelthname,"first":post.first,"second":post.second,"third":post.third,"fourth":post.fourth,"fifth":post.fifth,"sixth":post.sixth,"seventh":post.seventh,"eighth":post.eighth,"ninth":post.ninth,"tenth":post.tenth,"eleventh":post.eleventh,"twelth":post.twelth});
 
 

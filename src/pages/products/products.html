@@ -23,11 +23,9 @@
 
    <ion-row wrap style ="padding-left:1%; padding-right:1%;">
 <ion-col width-33 *ngFor="let f of items1" >
-  <ion-col (tap)="selectPiece(f)" >
+  <ion-col  class ="container" (tap)="selectPiece(f)" >
+  <img [ngClass]="{'imagi':f.selected}" class="imag" *ngIf="f.image" [src]="f.image">
 
-  <img [ngClass]="{'imagi':f.selected}" *ngIf="f.image" [src]="f.image">
-
-    
   </ion-col>
   <ion-col>
     <div class ="name">{{f.name}}</div>

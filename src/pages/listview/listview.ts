@@ -167,7 +167,7 @@ this.twolocation = this.nametwo;
 }
 if(String(this.namethree).charAt(0) == '-')
 {
-loc = this
+loc = this.namethree;
 this.threelocation = this.namethree;
 this.namethree = "imported item";
 }
@@ -192,6 +192,8 @@ this.namefive = "imported item";
 }
 else{
 this.fivelocation = this.namefive;
+console.log(this.fivelocation);
+console.log("ABOVEMEEE");
 }
 
 if(String(this.namesix).charAt(0) == '-')
@@ -201,6 +203,8 @@ this.namesix = "imported item";
 }
 else{
 this.sixlocation = this.namesix;
+console.log(this.sixlocation);
+console.log("ABOVEMEEE");
 }
 if(String(this.nameseven).charAt(0) == '-')
 {
@@ -333,6 +337,8 @@ else{
           }
           else
           {
+            console.log("BELOW BOY:");
+            console.log(this.fivelocation.url);
  var ref = firebase.database().ref(this.currentUser+'/Tops/'+this.fivelocation);
       ref.once('value', (snapshot) => {
        if (snapshot.val() != null) {
@@ -351,6 +357,8 @@ else{
           }
           else
           {
+            console.log("BELOW BOY:");
+            console.log(this.sixlocation);
                         var ref = firebase.database().ref(this.currentUser+'/Tops/'+this.sixlocation);
       ref.once('value', (snapshot) => {
        if (snapshot.val() != null) {

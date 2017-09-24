@@ -33926,6 +33926,23 @@ button[fab].fab-map {
   filter: opacity(0.2);
 }
 
+.imag {
+  max-height: 120px !important;
+  max-width: 100% !important;
+  height: auto !important;
+  width: auto !important;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+  -webkit-align-items: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
 .noProducts {
   padding-top: 50%;
   padding-left: 25%;
@@ -33937,6 +33954,24 @@ button[fab].fab-map {
 
 .colom {
   height: 20%;
+}
+
+.container {
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  padding-right: 0px !important;
+  margin-right: 0px !important;
+}
+
+.container > .inside {
+  padding-right: 0;
+  margin-right: 0;
+  text-align: left !important;
+  -webkit-align-items: center !important;
+  -ms-flex-align: center !important;
+  -ms-grid-row-align: center !important;
+  align-items: center !important;
 }
 
 .fab[mini] {

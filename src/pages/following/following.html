@@ -10,7 +10,6 @@
      <p style="font-size:22px;">Following</p>
     </ion-title>
   </ion-navbar>
-  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
 </ion-header>
 <ion-content>
 
@@ -19,10 +18,7 @@
   <ion-item *ngFor="let f of following">
     <ion-label (tap) ="printKey(f)">{{f}}</ion-label>
   </ion-item>
-  <ion-item *ngIf="searching">
-    <ion-label>{{searchedUser}}</ion-label>
-     <button *ngIf="userFound" ion-button clear item-right icon-only (tap)="followUser()" ><ion-icon name="add"></ion-icon></button>
-  </ion-item>
+
   
 </ion-list>
 
